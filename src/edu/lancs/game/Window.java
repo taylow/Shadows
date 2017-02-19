@@ -1,7 +1,6 @@
 package edu.lancs.game;
 
 import edu.lancs.game.scenes.Scene;
-import jdk.internal.util.xml.impl.Input;
 import org.jsfml.graphics.RenderWindow;
 import org.jsfml.window.VideoMode;
 import org.jsfml.window.WindowStyle;
@@ -22,11 +21,12 @@ public class Window extends RenderWindow {
 
     /***
      * Creates a window with set game variables such as resolution, display type, and frame rate
-     * @param width
-     * @param height
-     * @param title
-     * @param isFullscreen
-     * @param frameRate
+     *
+     * @param width - Width of the Window
+     * @param height - Height of the Window
+     * @param title - Title of the Window
+     * @param isFullscreen - Whether or not the Window is in fullscreen mode
+     * @param frameRate - The frame rate limit for the Window
      */
     public Window(int width, int height, String title, boolean isFullscreen, int frameRate) {
         this.width = width;
@@ -37,6 +37,7 @@ public class Window extends RenderWindow {
 
         this.scenes = new ArrayList<>();
 
+        // sets the game to full screen or default
         if (isFullscreen)
             this.create(new VideoMode(width, height), title, WindowStyle.FULLSCREEN);
         else
@@ -46,7 +47,11 @@ public class Window extends RenderWindow {
         this.setCurrentScene(0);
     }
 
-    public void drawScene() {
+    /***
+     * Draws the currently active scene until deactivated. If multiple Scenes are activated, the
+     * one to be activated first will be drawn until others are deactivated.
+     */
+    public void drawActiveScene() {
         while (true) {
             System.out.println(currentScene);
             scenes.get(currentScene).display();
@@ -64,24 +69,67 @@ public class Window extends RenderWindow {
         return scenes.size() - 1;
     }
 
+    /***
+     * Returns a Scene at a specific index value in the ArrayList.
+     *
+     * @param sceneIndex - Index value of Scene
+     * @return - Scene at specified index
+     */
     public Scene getScene(int sceneIndex) {
         return scenes.get(sceneIndex);
     }
 
+    /***
+     * Returns width of the Window.
+     *
+     * @return - Width of the Window
+     */
     public int getWidth() {
         return width;
     }
 
+    /***
+     * Returns height of the Window.
+     *
+     * @return - Height of the Window
+     */
     public int getHeight() {
         return height;
     }
 
-    public int getCurrentScene() {
+    /***
+     * Returns the current Scene index value in the ArrayList.
+     *
+     * @return - Current Scene index value
+     */
+    public int getCurrentSceneIndex() {
         return currentScene;
     }
 
+    /***
+     * Deactivates old scenes and activates the one at an index.
+     *
+     * @param currentScene - Scene to be activated
+     */
     public void setCurrentScene(int currentScene) {
-        this.currentScene = currentScene;
+        // checks if there are actually scenes to work with
+        if(scenes.size() != 0) {
+            if (scenes.get(getCurrentSceneIndex()).isActive())
+                System.out.println("Deactivating scene " + getCurrentSceneIndex());
+                scenes.get(getCurrentSceneIndex()).deactivate(); // deactivates old scene if it's active
+
+            this.currentScene = currentScene; // sets current scene index
+            scenes.get(getCurrentSceneIndex()).activate(); // activates current scene
+        }
+    }
+
+    /***
+     * Returns the Scene that is currently activated.
+     *
+     * @return - Currently activated Scene
+     */
+    public Scene getCurrentScene() {
+        return scenes.get(getCurrentSceneIndex());
     }
 
     public ResourceManager getResourceManager() {

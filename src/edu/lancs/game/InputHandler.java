@@ -1,12 +1,11 @@
 package edu.lancs.game;
 
-import org.jsfml.graphics.RenderWindow;
 import org.jsfml.window.Keyboard;
 
 public class InputHandler {
-    private static RenderWindow window;
+    private static Window window;
 
-    public InputHandler(RenderWindow window) {
+    public InputHandler(Window window) {
         this.window = window;
     }
 

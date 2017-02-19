@@ -19,9 +19,7 @@ public class BackButton extends Button {
     @Override
     public void click() {
         Debug.print("[Button] Back Button");
-        getWindow().getScene(0).activate();
         getWindow().setCurrentScene(0);
-        getWindow().getScene(1).deactivate();
         //TODO: This whole section is fucked up. Need a higher up InputHandler for this
     }
 }

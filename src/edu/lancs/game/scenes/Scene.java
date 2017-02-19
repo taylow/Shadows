@@ -21,12 +21,11 @@ public abstract class Scene {
         this.window = window;
         this.title = "";
         this.backgroundColour = Color.BLACK; // default colour is black - use setBackgroundColour to change
-
-        mousePosition = new Vector2i(1, 1);
+        this.mousePosition = new Vector2i(1, 1);
     }
 
     /***
-     * Displays the current Scene onto the game Window.
+     * Displays the current Scene onto the game Window and handles events.
      */
     public void display() {
         activate(); // sets this scene to the active scene
@@ -34,63 +33,114 @@ public abstract class Scene {
 
         // while the scene is active, draw everything and handle all the events
         while (isActive()) {
-            getWindow().clear(getBackgroundColour());
-            draw(getWindow());
+            getWindow().clear(getBackgroundColour()); // clear the background to the background colour
+            draw(getWindow()); // draw to the Window
 
             for (Event event : getWindow().pollEvents()) {
                 // check if default events happen (close, etc)
                 switch (event.type) {
-                    case CLOSED:
+                    case CLOSED: // pressed the close button
                         window.close();
-                        System.exit(0);
+                        System.exit(0); // closes the system
                         break;
                     case MOUSE_MOVED:
-                        mousePosition = event.asMouseEvent().position;
+                        mousePosition = event.asMouseEvent().position; // updates mouse position on current scene
                     default:
-                        executeEvent(event);
+                        executeEvent(event); // any other action that isn't listed here will be handled in executeEvent() in the sub class
                         break;
                 }
             }
-            getWindow().display();
+            getWindow().display(); // draws all the changed to the Window
         }
     }
 
+    /***
+     * An abstract method to draw vectors to the Window.
+     *
+     * @param window - Window that the objects will be drawn to
+     */
     public abstract void draw(Window window);
 
+    /***
+     * An abstract method to handle events specific to this Scene.
+     *
+     * @param event - Event that has been triggered
+     */
     public abstract void executeEvent(Event event);
 
+    /***
+     * Sets the current scene to active and will draw to the Window until deactivated.
+     */
     public void activate() {
         isActive = true;
     }
 
+    /***
+     * Sets the current scene to inactive which will stop it from being drawn to the Window.
+     */
     public void deactivate() {
         isActive = false;
     }
 
+    /***
+     * Returns whether or not the scene is active.
+     *
+     * @return - Current activity state of the scene
+     */
     public boolean isActive() {
         return isActive;
     }
 
+    /***
+     * Returns the Window this scene is being drawn to.
+     *
+     * @return - Window that owns this scene
+     */
     public Window getWindow() {
         return window;
     }
 
+    /***
+     * Returns the clear colour set in the scene.
+     *
+     * @return - Clear colour
+     */
     public Color getBackgroundColour() {
         return backgroundColour;
     }
 
+    /***
+     * Sets the clear colour that will colour the background on update
+     *
+     * @param backgroundColour - Clear colour
+     */
     public void setBackgroundColour(Color backgroundColour) {
         this.backgroundColour = backgroundColour;
     }
 
+    /***
+     * Returns the title of the scene (appended to the original title as TITLE - SCENE_TITLE).
+     *
+     * @return - Scene title
+     */
     public String getTitle() {
         return title;
     }
 
+    /***
+     * Sets the title of the scene to be displayed on the Window(appended to the original title as TITLE - SCENE_TITLE).
+     *
+     * @param title - Scene title
+     */
     public void setTitle(String title) {
         this.title = title;
     }
 
+    /***
+     * Gets the current mouse position on the scene in a Vector2i format.
+     *
+     * @return - Vector2i mouse coordinate
+     */
     public Vector2i getMousePosition() {
         return mousePosition;
     }

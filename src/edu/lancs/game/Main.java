@@ -9,8 +9,9 @@ public class Main {
         Window window = new Window(GAME_WIDTH, GAME_HEIGHT, GAME_TITLE, GAME_FULLSCREEN, GAME_FRAME_RATE);
 
         MenuScene menu = new MenuScene(window);
-        window.addScene(menu);
+        int menuSceneIndex = window.addScene(menu);
 
-        window.drawScene();
+        window.setCurrentScene(menuSceneIndex);
+        window.drawActiveScene();
     }
 }

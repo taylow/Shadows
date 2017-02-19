@@ -21,6 +21,9 @@ public class MenuButton extends Button {
 
     private Type type;
 
+    private TestScene testScene;
+    private int testSceneIndex;
+
 
     public MenuButton(Window window, Scene parentScene, String text, Type type, float xPos, float yPos) {
         super(window, parentScene, xPos, yPos, MENU_BUTTON_WIDTH, MENU_BUTTON_HEIGHT);
@@ -47,6 +50,9 @@ public class MenuButton extends Button {
                 setSelectTexture(window.getResourceManager().getTextures("quit_hover"));
                 break;
         }
+
+        testScene = new TestScene(getWindow(), getParentScene());
+        testSceneIndex = getWindow().addScene(testScene);
     }
 
     @Override
@@ -69,11 +75,7 @@ public class MenuButton extends Button {
 
             case LEVEL_EDITOR:
                 Debug.print("[Button] Level Editor ");
-                TestScene testScene = new TestScene(getWindow(), getParentScene());
-                int testSceneIndex = getWindow().addScene(testScene);
-                testScene.activate();
                 getWindow().setCurrentScene(testSceneIndex);
-                getParentScene().deactivate();
                 break;
 
             case EXIT:
