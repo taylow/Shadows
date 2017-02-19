@@ -11,6 +11,6 @@ public class Debug {
     public static void print(String string) {
         // if Constant DEBUG is true, print to console
         if(DEBUG)
-            System.out.println(string);
+            System.out.println("[DEBUG] " + string);
     }
 }

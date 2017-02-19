@@ -10,7 +10,6 @@ public class Main {
 
         MenuScene menu = new MenuScene(window);
         int menuSceneIndex = window.addScene(menu);
-
         window.setCurrentScene(menuSceneIndex);
         window.drawActiveScene();
     }

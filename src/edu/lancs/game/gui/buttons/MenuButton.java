@@ -2,8 +2,10 @@ package edu.lancs.game.gui.buttons;
 
 import edu.lancs.game.Debug;
 import edu.lancs.game.Window;
+import edu.lancs.game.scenes.GameScene;
 import edu.lancs.game.scenes.Scene;
 import edu.lancs.game.scenes.TestScene;
+import org.jsfml.audio.Sound;
 
 import java.io.IOException;
 import java.net.URI;
@@ -20,9 +22,6 @@ public class MenuButton extends Button {
     private Window window;
 
     private Type type;
-
-    private TestScene testScene;
-    private int testSceneIndex;
 
 
     public MenuButton(Window window, Scene parentScene, String text, Type type, float xPos, float yPos) {
@@ -50,9 +49,6 @@ public class MenuButton extends Button {
                 setSelectTexture(window.getResourceManager().getTextures("quit_hover"));
                 break;
         }
-
-        testScene = new TestScene(getWindow(), getParentScene());
-        testSceneIndex = getWindow().addScene(testScene);
     }
 
     @Override
@@ -60,6 +56,13 @@ public class MenuButton extends Button {
         switch (type) {
             case NEW_GAME:
                 Debug.print("[Button] New Game");
+                GameScene gameScene = new GameScene(getWindow());
+                int gameSceneIndex = getWindow().addScene(gameScene);
+                gameScene.activate();
+                if(getParentScene().getMusic() != null)
+                    getParentScene().getMusic().stop();
+                getWindow().setCurrentScene(gameSceneIndex);
+                getParentScene().deactivate();
                 break;
 
             case HIGH_SCORES:
@@ -75,7 +78,11 @@ public class MenuButton extends Button {
 
             case LEVEL_EDITOR:
                 Debug.print("[Button] Level Editor ");
+                TestScene testScene = new TestScene(getWindow(), getParentScene());
+                int testSceneIndex = getWindow().addScene(testScene);
+                testScene.activate();
                 getWindow().setCurrentScene(testSceneIndex);
+                getParentScene().deactivate();
                 break;
 
             case EXIT:
@@ -83,5 +90,10 @@ public class MenuButton extends Button {
                 System.exit(0);
                 break;
         }
+    }
+
+    @Override
+    public void mouseOver() {
+        getWindow().getResourceManager().getSound("projectile").play();
     }
 }

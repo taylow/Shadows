@@ -11,6 +11,7 @@ public abstract class Button extends RectangleShape {
     private Scene parentScene;
 
     private boolean isSelected;
+    private boolean hasExited;
 
     private Texture defaultTexture;
     private Texture selectTexture;
@@ -21,12 +22,15 @@ public abstract class Button extends RectangleShape {
         this.window = window;
         this.parentScene = parentScene;
         this.isSelected = false;
+        this.isSelected = true;
 
         setSize(new Vector2f(width, height));
         setPosition(new Vector2f(xPos, yPos));
     }
 
     public abstract void click();
+
+    public abstract void mouseOver();
 
     public void setDefaultTexture(Texture defaultTexture) {
         this.defaultTexture = defaultTexture;
@@ -43,10 +47,16 @@ public abstract class Button extends RectangleShape {
 
     public void setSelected(boolean selected) {
         isSelected = selected;
-        if(isSelected)
+        if(isSelected) {
             setTexture(selectTexture);
-        else
+            if(hasExited) {
+                hasExited = false;
+                mouseOver();
+            }
+        } else {
             setTexture(defaultTexture);
+            hasExited = true;
+        }
     }
 
     public void setText(String text) {

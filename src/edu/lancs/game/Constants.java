@@ -19,4 +19,10 @@ public class Constants {
     public static final int MENU_BUTTON_HEIGHT = 83;
     public static final int TITLE_BANNER_WIDTH = 600;
     public static final int TITLE_BANNER_HEIGHT = 200;
+
+    /*Player Constants*/
+    public static final int PLAYER_WIDTH = 128;
+    public static final int PLAYER_HEIGHT = 128;
+    public static final int PLAYER_STARTING_X = 128;
+    public static final int PLAYER_STARTING_Y = 128;
 }

@@ -22,4 +22,9 @@ public class BackButton extends Button {
         getWindow().setCurrentScene(0);
         //TODO: This whole section is fucked up. Need a higher up InputHandler for this
     }
+
+    @Override
+    public void mouseOver() {
+
+    }
 }

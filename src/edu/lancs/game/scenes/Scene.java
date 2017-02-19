@@ -1,6 +1,7 @@
 package edu.lancs.game.scenes;
 
 import edu.lancs.game.Window;
+import org.jsfml.audio.Sound;
 import org.jsfml.graphics.Color;
 import org.jsfml.system.Vector2i;
 import org.jsfml.window.event.Event;
@@ -16,6 +17,8 @@ public abstract class Scene {
     private boolean isActive;
 
     private Vector2i mousePosition;
+
+    private Sound music;
 
     public Scene(Window window) {
         this.window = window;
@@ -39,7 +42,7 @@ public abstract class Scene {
             for (Event event : getWindow().pollEvents()) {
                 // check if default events happen (close, etc)
                 switch (event.type) {
-                    case CLOSED: // pressed the close button
+                    case CLOSED: // presse
                         window.close();
                         System.exit(0); // closes the system
                         break;
@@ -143,5 +146,25 @@ public abstract class Scene {
      */
     public Vector2i getMousePosition() {
         return mousePosition;
+    }
+
+    /***
+     * Sets the background music to a Sound
+     *
+     * @param music - Music to be played in the background
+     */
+    public void setMusic(String music) {
+        this.music = getWindow().getResourceManager().getSound(music);
+        this.music.setLoop(true);
+        this.music.play();
+    }
+
+    /***
+     * Returns the current background music.
+     *
+     * @return - Current background music
+     */
+    public Sound getMusic() {
+        return music;
     }
 }

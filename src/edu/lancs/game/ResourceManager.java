@@ -11,6 +11,7 @@ import java.util.HashMap;
 public class ResourceManager {
     private HashMap<String, Sound> sounds;
     private HashMap<String, Texture> textures;
+    private HashMap<String, Texture> animations;
 
     public ResourceManager(String filePath) {
         sounds = new HashMap<>();
@@ -21,7 +22,7 @@ public class ResourceManager {
     public void loadResources(String filePath) {
         loadtextures(filePath);
         loadSprites(filePath + "sprites/game");
-        loadAnimations(filePath);
+        loadAnimations(filePath + animations);
         loadSounds(filePath + "sounds");
         loadFonts(filePath);
     }
@@ -92,7 +93,41 @@ public class ResourceManager {
      * @param filePath - Location of animations
      */
     private void loadAnimations(String filePath) {
-        //TODO: load textures here
+        File directory = new File(filePath);
+        File[] directoryListing = directory.listFiles();
+        if (directoryListing != null) {
+            for (File file : directoryListing) {
+                if(file.isDirectory()) {
+                    loadAnimations(file.getPath());
+                } else {
+                    loadAnimation(file.getPath());
+                }
+            }
+        } else {
+            System.err.println("Sound " + directory.getPath() + " could not be loaded");
+        }
+    }
+
+    /***
+     * Loads a single sound into the sounds ArrayList using the filename (without extension) as
+     * its HashMap name.
+     *
+     * @param filePath - File to the specific sound
+     */
+    private void loadAnimation(String filePath) {
+        File file = new File(filePath);
+        try {
+            SoundBuffer soundBuffer = new SoundBuffer();
+            soundBuffer.loadFromFile(file.toPath());
+            Sound sound = new Sound(soundBuffer);
+
+            String rawFileName = file.getName().substring(0, file.getName().lastIndexOf('.'));
+            sounds.put(rawFileName, sound);
+
+            Debug.print("Loaded sound: " + rawFileName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /***

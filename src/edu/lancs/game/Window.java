@@ -53,7 +53,7 @@ public class Window extends RenderWindow {
      */
     public void drawActiveScene() {
         while (true) {
-            System.out.println(currentScene);
+            Debug.print("Drawing current scene " + currentScene);
             scenes.get(currentScene).display();
         }
     }
@@ -66,6 +66,7 @@ public class Window extends RenderWindow {
      */
     public int addScene(Scene scene) {
         scenes.add(scene);
+        Debug.print("Adding scene to scene index " + (scenes.size() - 1));
         return scenes.size() - 1;
     }
 
@@ -115,7 +116,7 @@ public class Window extends RenderWindow {
         // checks if there are actually scenes to work with
         if(scenes.size() != 0) {
             if (scenes.get(getCurrentSceneIndex()).isActive())
-                System.out.println("Deactivating scene " + getCurrentSceneIndex());
+                Debug.print("Deactivating scene " + getCurrentSceneIndex());
                 scenes.get(getCurrentSceneIndex()).deactivate(); // deactivates old scene if it's active
 
             this.currentScene = currentScene; // sets current scene index
