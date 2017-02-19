@@ -50,7 +50,7 @@ public class MenuButton extends Button {
     }
 
     @Override
-    public void performEvent() {
+    public void click() {
         switch (type) {
             case NEW_GAME:
                 Debug.print("[Button] New Game");
@@ -69,7 +69,7 @@ public class MenuButton extends Button {
 
             case LEVEL_EDITOR:
                 Debug.print("[Button] Level Editor ");
-                TestScene testScene = new TestScene(getWindow());
+                TestScene testScene = new TestScene(getWindow(), getParentScene());
                 int testSceneIndex = getWindow().addScene(testScene);
                 testScene.activate();
                 getWindow().setCurrentScene(testSceneIndex);

@@ -16,24 +16,26 @@ import static edu.lancs.game.gui.buttons.MenuButton.Type.*;
 public class MenuScene extends Scene {
 
     private ArrayList<Button> buttons;
-    private Decoration titleBanner;
+    private ArrayList<Decoration> decorations;
 
     public MenuScene(Window window) {
         super(window);
         setTitle("Main Menu");
-        setBackgroundColour(Color.CYAN);
+        setBackgroundColour(Color.BLACK);
         buttons = new ArrayList<>();
+        decorations = new ArrayList<>();
         buttons.add(new MenuButton(window, this, "New Game", NEW_GAME, getWindow().getWidth() / 2 - (MENU_BUTTON_WIDTH / 2), 230));
         buttons.add(new MenuButton(window, this, "High Scores", HIGH_SCORES, getWindow().getWidth() / 2 - (MENU_BUTTON_WIDTH / 2), 230 + MENU_BUTTON_HEIGHT * 1.1f));
         buttons.add(new MenuButton(window, this, "Level Editor", LEVEL_EDITOR, getWindow().getWidth() / 2 - (MENU_BUTTON_WIDTH / 2), 230 + MENU_BUTTON_HEIGHT * 2.2f));
         buttons.add(new MenuButton(window, this, "Quit", EXIT, getWindow().getWidth() / 2 - (MENU_BUTTON_WIDTH / 2), 230 + MENU_BUTTON_HEIGHT * 3.3f));
-        titleBanner = new Decoration(window, "title_banner", getWindow().getWidth() / 2 - (TITLE_BANNER_WIDTH / 2), 10, TITLE_BANNER_WIDTH, TITLE_BANNER_HEIGHT);
+        decorations.add(new Decoration(window, "menu_wood_background", 0, 0, getWindow().getWidth(), getWindow().getHeight()));
+        decorations.add(new Decoration(window, "title_banner", getWindow().getWidth() / 2 - (TITLE_BANNER_WIDTH / 2), 20, TITLE_BANNER_WIDTH, TITLE_BANNER_HEIGHT));
     }
 
     @Override
     public void draw(Window window) {
+        decorations.forEach(window::draw);
         buttons.forEach(window::draw);
-        window.draw(titleBanner);
     }
 
     @Override
@@ -43,7 +45,6 @@ public class MenuScene extends Scene {
                 for(Button button : buttons) {
                     if(button.getGlobalBounds().intersection(new FloatRect(getMousePosition().x, getMousePosition().y, 1.0f, 1.0f)) != null) {
                         button.setSelected(true);
-                        break;
                     } else {
                         button.setSelected(false);
                     }
@@ -52,7 +53,7 @@ public class MenuScene extends Scene {
             case MOUSE_BUTTON_PRESSED:
                 for(Button button : buttons) {
                     if(button.isSelected()) {
-                        button.performEvent();
+                        button.click();
                         break;
                     }
                 }

@@ -26,7 +26,7 @@ public abstract class Button extends RectangleShape {
         setPosition(new Vector2f(xPos, yPos));
     }
 
-    public abstract void performEvent();
+    public abstract void click();
 
     public void setDefaultTexture(Texture defaultTexture) {
         this.defaultTexture = defaultTexture;
