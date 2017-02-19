@@ -94,6 +94,6 @@ public class MenuButton extends Button {
 
     @Override
     public void mouseOver() {
-        getWindow().getResourceManager().getSound("projectile").play();
+        getWindow().getResourceManager().getSound("menu_click").play();
     }
 }
