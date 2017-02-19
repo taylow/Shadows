@@ -2,434 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df7e5be-326c-48a9-947d-b0eec08caa13" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/bossmusic.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/music/Projectile.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/music/bossmusic.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/music/enemyDeath.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/music/health.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/music/menu-final.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/music/menu.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/music/repentant.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Backgrounds/MenuBackground.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Backgrounds/deathscroll.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Backgrounds/newBg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Backgrounds/playbackground.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Buttons/MenuHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Buttons/NewGmeHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Buttons/Options.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Buttons/QutHover.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Buttons/Title.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Buttons/mainmenu.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Buttons/newGame.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Buttons/quit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/HUD/armourBlue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/HUD/armourGrey.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/HUD/barBorder.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/HUD/healthGreen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/HUD/healthRed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/HUD/healthbar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Icons/armour.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Icons/health.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Pickups/Att Speed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Pickups/Axe.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Pickups/Healthy.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Pickups/Sheild.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Pickups/Speed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Pickups/horzBullet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Pickups/largeBullet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Pickups/power up.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Pickups/randomBullet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Pickups/rowBullet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Pickups/triBullet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Projectiles/AirBlast.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Projectiles/bone.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Projectiles/horz.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Projectiles/horzBullet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Projectiles/large.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Projectiles/largeBullet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Projectiles/line.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Projectiles/lineBullet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Projectiles/normal.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Projectiles/normalblast.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Projectiles/random.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Projectiles/randomBullet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Projectiles/row.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Projectiles/rowBullet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Projectiles/skeletonBossBlast.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Projectiles/tri.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Projectiles/triBullet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Sprites/MovingWizard.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Sprites/knightBlack.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Sprites/knightBoss.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Sprites/knightSteel.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Sprites/skeleton.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Sprites/skeletonBoss.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Sprites/spider.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Sprites/spiderAnimate.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Sprites/troll.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Sprites/trollBoss.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Sprites/wizardDamaged.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Sprites/xKnight.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Sprites/yKnight.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/Doors/31.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/Doors/32.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/Doors/33.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/bosstiles/21.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/bosstiles/22.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/bosstiles/23.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/bosstiles/24.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/bosstiles/25.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/bosstiles/26.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/bosstiles/27.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/impassable/11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/impassable/12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/impassable/13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/impassable/14.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/passable/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/passable/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/passable/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/passable/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/passable/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/passable/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/passable/7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/passable/8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/tiles.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/traps/41.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/traps/42.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/Images/Tiles/traps/43.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/bullet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/chest_closed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/chest_open.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/chest_sprite.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/chests.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/cursor.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/dude_running.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/README.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/dragonbones/Knight.dbproj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/dragonbones/library/Body.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/dragonbones/library/Hair.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/dragonbones/library/Head.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/dragonbones/library/Head1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/dragonbones/library/Head2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/dragonbones/library/LeftFoot (1).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/dragonbones/library/LeftFoot (2).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/dragonbones/library/LeftFoot (3).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/dragonbones/library/LeftHand (1).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/dragonbones/library/LeftHand (2).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/dragonbones/library/LeftHand (3).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/dragonbones/library/RightFoot (1).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/dragonbones/library/RightFoot (2).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/dragonbones/library/RightFoot (3).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/dragonbones/library/RightHand (1).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/dragonbones/library/RightHand (2).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/dragonbones/library/RightHand (3).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/dragonbones/library/Shield.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Attack (1).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Attack (10).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Attack (2).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Attack (3).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Attack (4).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Attack (5).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Attack (6).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Attack (7).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Attack (8).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Attack (9).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Dead (1).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Dead (10).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Dead (2).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Dead (3).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Dead (4).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Dead (5).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Dead (6).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Dead (7).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Dead (8).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Dead (9).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Idle (1).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Idle (10).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Idle (2).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Idle (3).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Idle (4).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Idle (5).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Idle (6).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Idle (7).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Idle (8).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Idle (9).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Jump (1).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Jump (10).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Jump (2).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Jump (3).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Jump (4).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Jump (5).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Jump (6).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Jump (7).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Jump (8).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Jump (9).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/JumpAttack (1).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/JumpAttack (10).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/JumpAttack (2).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/JumpAttack (3).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/JumpAttack (4).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/JumpAttack (5).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/JumpAttack (6).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/JumpAttack (7).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/JumpAttack (8).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/JumpAttack (9).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Run (1).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Run (10).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Run (2).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Run (3).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Run (4).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Run (5).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Run (6).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Run (7).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Run (8).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Run (9).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Walk (1).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Walk (10).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Walk (2).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Walk (3).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Walk (4).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Walk (5).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Walk (6).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Walk (7).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Walk (8).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/freeknight/png/Walk (9).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_00.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_01.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_02.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_03.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_04.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_05.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_06.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_07.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_08.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_09.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_14.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_15.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_17.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_18.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_19.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_20.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_21.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_22.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_23.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_24.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_25.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_26.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_27.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_28.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_29.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_30.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_31.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_32.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_33.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_34.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_35.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_36.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_37.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_38.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/attack/Armature-Attack_39.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_00.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_01.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_02.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_03.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_04.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_05.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_06.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_07.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_08.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_09.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_14.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_15.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_17.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_18.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_19.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_20.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_21.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_22.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_23.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_24.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_25.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_26.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_27.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_28.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_29.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_30.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_31.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_32.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_33.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_34.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_35.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_36.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_37.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_38.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_39.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_40.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_41.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_42.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_43.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_44.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_45.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_46.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_47.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_48.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_49.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_51.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_52.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_53.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_54.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_55.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_56.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_57.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_58.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_59.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_60.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_61.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/dead/Armature-Dead_62.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_00.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_01.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_02.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_03.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_04.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_05.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_06.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_07.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_08.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_09.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_14.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_15.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_17.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_18.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_19.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_20.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_21.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_22.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_23.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_24.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_25.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_26.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_27.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_28.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_29.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_30.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_31.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_32.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_33.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_34.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_35.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_36.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_37.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_38.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_39.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_40.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_41.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_42.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_43.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_44.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_45.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_46.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_47.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_48.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_49.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_51.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_52.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_53.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_54.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_55.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_56.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_57.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_58.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_59.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_60.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_61.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_62.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_63.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_64.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_65.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_66.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_67.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_68.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_69.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_70.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_71.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_72.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_73.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/idle/Armature-Idle_74.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_00.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_01.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_02.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_03.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_04.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_05.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_06.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_07.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_08.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_09.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_14.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_15.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_17.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_18.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_19.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_20.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_21.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_22.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_23.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_24.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_25.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_26.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_27.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_28.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_29.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_30.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_31.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_32.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_33.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_34.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_35.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_36.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_37.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_38.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_39.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_40.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_41.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_42.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_43.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_44.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_45.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_46.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_47.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_48.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/knight/run/Armature-Run_49.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/placeholder_sprite.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/placeholder_tile.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/player_running.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/player_spritesheet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OLD/resources - Copy/sprites/shadow.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/Decoration.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/gui/Decoration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/TestScene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/TestScene.java" />
     </list>
     <ignored path="SCC210 - OOP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -479,25 +54,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestScene.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TestScene.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/TestScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+            <state relative-caret-position="85">
+              <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#637#638#0" expanded="true" />
-                <element signature="e#675#676#0" expanded="true" />
+                <element signature="e#586#587#0" expanded="true" />
+                <element signature="e#624#625#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Decoration.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Decoration.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/Decoration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="187">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -506,11 +81,9 @@
       <file leaf-file-name="MenuScene.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -567,10 +140,10 @@
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/Decoration.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/ResourceManager.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/MenuButton.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/TestScene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/Decoration.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/TestScene.java" />
       </list>
     </option>
   </component>
@@ -1071,26 +644,34 @@
       <option name="presentableId" value="Default" />
       <updated>1487464780101</updated>
     </task>
+    <task id="LOCAL-00001" summary="Moved Decoration out of the button package and deleted the duplicate resource files">
+      <created>1487489748633</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1487489748633</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="1" width="1854" height="1011" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286385" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3286385" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2502787" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2502787" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1141,6 +722,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Moved Decoration out of the button package and deleted the duplicate resource files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved Decoration out of the button package and deleted the duplicate resource files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1447,16 +1032,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/MenuButton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
@@ -1467,23 +1042,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/TestScene.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/Decoration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#637#638#0" expanded="true" />
-            <element signature="e#675#676#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="187">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/Decoration.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="68">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/TestScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#586#587#0" expanded="true" />
+            <element signature="e#624#625#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

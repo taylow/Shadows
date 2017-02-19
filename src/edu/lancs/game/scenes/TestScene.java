@@ -1,11 +1,9 @@
 package edu.lancs.game.scenes;
 
 import edu.lancs.game.Window;
-import edu.lancs.game.gui.buttons.Decoration;
+import edu.lancs.game.gui.Decoration;
 import org.jsfml.graphics.Color;
 import org.jsfml.window.event.Event;
-
-import static edu.lancs.game.Constants.*;
 
 public class TestScene extends Scene {
 

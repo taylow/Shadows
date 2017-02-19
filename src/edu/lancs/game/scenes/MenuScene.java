@@ -2,7 +2,7 @@ package edu.lancs.game.scenes;
 
 import edu.lancs.game.Window;
 import edu.lancs.game.gui.buttons.Button;
-import edu.lancs.game.gui.buttons.Decoration;
+import edu.lancs.game.gui.Decoration;
 import edu.lancs.game.gui.buttons.MenuButton;
 import org.jsfml.graphics.Color;
 import org.jsfml.graphics.FloatRect;
