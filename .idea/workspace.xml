@@ -2,34 +2,407 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df7e5be-326c-48a9-947d-b0eec08caa13" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/lancs/game/gui/MiniMap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/InputHandler.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/InputHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/ResourceManager.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/ResourceManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Window.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Window.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/entity/Entity.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/entity/Entity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/gui/buttons/MenuButton$1.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/gui/buttons/MenuButton$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/gui/buttons/MenuButton$Type.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/gui/buttons/MenuButton$Type.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/gui/buttons/MenuButton.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/gui/buttons/MenuButton.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/scenes/MenuScene$1.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/scenes/MenuScene$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/scenes/MenuScene.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/scenes/MenuScene.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/scenes/Scene$1.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/scenes/Scene$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/scenes/Scene.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/scenes/Scene.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/scenes/TestScene.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/scenes/TestScene.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sprites/game/tiles/green/tiles_green.png" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/tiles_green.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_00.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_03.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_04.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_05.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_06.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_07.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_08.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_09.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_10.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_11.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_12.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_13.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_14.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_15.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_17.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_18.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_19.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_20.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_21.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_22.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_23.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_24.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_25.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_26.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_27.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_28.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_29.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_30.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_31.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_32.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_33.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_34.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_35.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_36.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_37.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_38.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_39.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_00.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_03.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_04.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_05.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_06.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_07.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_08.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_09.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_10.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_11.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_12.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_13.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_14.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_15.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_17.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_18.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_19.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_20.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_21.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_22.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_23.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_24.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_25.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_26.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_27.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_28.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_29.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_30.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_31.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_32.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_33.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_34.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_35.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_36.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_37.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_38.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_39.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_40.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_41.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_42.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_43.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_44.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_45.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_46.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_47.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_48.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_49.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_50.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_51.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_52.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_53.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_54.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_55.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_56.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_57.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_58.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_59.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_60.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_61.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_62.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_00.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_03.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_04.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_05.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_06.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_07.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_08.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_09.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_10.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_11.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_12.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_13.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_14.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_15.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_17.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_18.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_19.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_20.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_21.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_22.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_23.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_24.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_25.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_26.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_27.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_28.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_29.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_30.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_31.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_32.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_33.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_34.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_35.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_36.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_37.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_38.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_39.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_40.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_41.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_42.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_43.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_44.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_45.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_46.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_47.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_48.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_49.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_50.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_51.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_52.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_53.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_54.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_55.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_56.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_57.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_58.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_59.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_60.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_61.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_62.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_63.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_64.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_65.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_66.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_67.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_68.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_69.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_70.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_71.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_72.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_73.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_74.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_00.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_03.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_04.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_05.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_06.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_07.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_08.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_09.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_10.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_11.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_12.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_13.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_14.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_15.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_17.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_18.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_19.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_20.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_21.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_22.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_23.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_24.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_25.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_26.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_27.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_28.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_29.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_30.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_31.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_32.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_33.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_34.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_35.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_36.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_37.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_38.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_39.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_40.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_41.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_42.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_43.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_44.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_45.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_46.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_47.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_48.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_49.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/buttons/back_default.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/buttons/back_hover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/buttons/next_default.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/buttons/next_hover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/buttons/previous_default.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/buttons/previous_hover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/buttons/tutorial_default.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/buttons/tutorial_hover.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/misc/tutorial_controls.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_001.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_002.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_003.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_004.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_005.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_006.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_007.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_008.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_009.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_010.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_011.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_012.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_013.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_014.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_015.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_016.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_017.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_018.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_019.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_020.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_021.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_022.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_023.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_024.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_025.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_026.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_027.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_028.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_029.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_030.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_031.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_032.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_033.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_034.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_035.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_036.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_037.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_043.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_052.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_053.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_054.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_069.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_070.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_071.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_086.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_087.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_088.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_093.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_094.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_095.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_099.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_100.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_101.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_105.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_106.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_107.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_111.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_112.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_113.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_117.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_118.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_123.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_124.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_129.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_130.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_135.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_136.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_141.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_142.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_147.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_148.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_153.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/mud/l0_tiles_green_154.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_E_round_closed_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_E_round_closed_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_E_round_closed_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_E_round_open.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_E_round_steps_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_E_round_steps_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_N_round_blocked.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_N_round_closed_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_N_round_closed_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_N_round_closed_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_N_round_open.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_N_round_steps_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_N_round_steps_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_S_round_closed_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_S_round_closed_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_S_round_closed_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_S_round_open.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_S_round_steps_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_S_round_steps_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_W_round_closed_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_W_round_closed_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_W_round_closed_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_W_round_open.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_W_round_steps_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_W_round_steps_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/square/green_stone_door_E_round_steps_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/square/green_stone_door_E_round_steps_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/square/green_stone_door_E_square_closed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/square/green_stone_door_E_square_open.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/square/green_stone_door_N_round_steps_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/square/green_stone_door_N_round_steps_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/square/green_stone_door_N_square_closed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/square/green_stone_door_N_square_open.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/square/green_stone_door_S_round_steps_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/square/green_stone_door_S_round_steps_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/square/green_stone_door_S_square_closed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/square/green_stone_door_S_square_open.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/square/green_stone_door_W_round_steps_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/square/green_stone_door_W_round_steps_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/square/green_stone_door_W_square_closed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/square/green_stone_door_W_square_open.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/cobble/green_stone_floor_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/cobble/green_stone_floor_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/cobble/green_stone_floor_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/cobble/green_stone_floor_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/cobble/green_stone_floor_5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/cobble/green_stone_floor_6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/cobble/green_stone_floor_7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/void/green_stone_floor_corner_NE_void.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/void/green_stone_floor_corner_NW_void.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/void/green_stone_floor_corner_SE_void.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/void/green_stone_floor_corner_SW_void.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/void/green_stone_floor_corner_center_void.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/water/l0_tiles_green_056.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/water/l0_tiles_green_057.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/water/l0_tiles_green_120.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/water/l0_tiles_green_126.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/water/l0_tiles_green_132.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/water/l0_tiles_green_138.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/water/l0_tiles_green_144.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/water/l0_tiles_green_150.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/water/l0_tiles_green_156.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/wood/l0_tiles_green_058.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/wood/l0_tiles_green_059.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/wood/l0_tiles_green_060.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/wood/l0_tiles_green_061.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/wood/l0_tiles_green_062.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/wood/l0_tiles_green_063.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/wood/l0_tiles_green_064.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/wood/l0_tiles_green_065.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/wood/l0_tiles_green_066.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/corners/green_stone_corner_NE.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/corners/green_stone_corner_NW.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/corners/green_stone_corner_SE.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/corners/green_stone_corner_SW.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/edges/green_stone_wall_E_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/edges/green_stone_wall_E_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/edges/green_stone_wall_N_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/edges/green_stone_wall_N_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/edges/green_stone_wall_N_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/edges/green_stone_wall_N_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/edges/green_stone_wall_N_5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/edges/green_stone_wall_S_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/edges/green_stone_wall_S_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/edges/green_stone_wall_W_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/edges/green_stone_wall_W_2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Constants.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Constants.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/ResourceManager.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/ResourceManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/Window.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/Window.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/entity/Entity.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/entity/Entity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/BackButton.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/BackButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/MenuButton.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/MenuButton.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/Scene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/Scene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/TestScene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/TestScene.java" />
     </list>
     <ignored path="SCC210 - OOP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,11 +428,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+            <state relative-caret-position="434">
+              <caret line="95" column="43" selection-start-line="95" selection-start-column="43" selection-end-line="95" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,10 +440,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuScene.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ArrayList.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/util/ArrayList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="428" column="0" selection-start-line="428" selection-start-column="0" selection-end-line="428" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuScene.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="765">
               <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -85,6 +468,30 @@
             <state relative-caret-position="85">
               <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameScene.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Scene.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/Scene.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="317">
+              <caret line="50" column="57" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,14 +548,14 @@
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/Decoration.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/Window.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/Scene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/ResourceManager.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Entity.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/Scene.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" />
       </list>
     </option>
   </component>
@@ -656,7 +1063,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487560100679</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Basic animation loading added">
+      <created>1487566121189</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1487566121189</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -736,11 +1150,12 @@
     <MESSAGE value="Added player entity and GameScene" />
     <MESSAGE value="Changes menu sound" />
     <MESSAGE value="Basic Player loading" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic Player loading" />
+    <MESSAGE value="Basic animation loading added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic animation loading added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -804,14 +1219,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/OptionsScene.java" />
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/Decoration.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="652" column="0" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/Inputtable.java" />
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Main.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1016,16 +1423,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/Scene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1230">
-          <caret line="49" column="50" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/MiniMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1047,16 +1444,6 @@
         <state relative-caret-position="368">
           <caret line="261" column="48" selection-start-line="261" selection-start-column="48" selection-end-line="261" selection-end-column="48" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1091,20 +1478,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+        <state relative-caret-position="765">
+          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/Scene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+        <state relative-caret-position="317">
+          <caret line="50" column="57" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="428" column="0" selection-start-line="428" selection-start-column="0" selection-end-line="428" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="95" column="43" selection-start-line="95" selection-start-column="43" selection-end-line="95" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

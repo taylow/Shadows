@@ -26,7 +26,7 @@ public class Player extends Entity {
     public Player(Window window, String textureName) {
         super(window, textureName, PLAYER_STARTING_X, PLAYER_STARTING_Y, PLAYER_WIDTH, PLAYER_HEIGHT);
         frame = 0;
-        state = RUNNING;
+        state = IDLE;
         idleAnimation = getWindow().getResourceManager().getAnimations("idle_knight");
         runAnimation = getWindow().getResourceManager().getAnimations("run_knight");
         attackAnimation = getWindow().getResourceManager().getAnimations("attack_knight");
@@ -35,7 +35,6 @@ public class Player extends Entity {
 
     @Override
     public void performAction() {
-        System.out.println("TEST");
     }
 
     @Override
@@ -63,20 +62,42 @@ public class Player extends Entity {
             frame = 0;
     }
 
+    /***
+     * Moves the player left by PLAYER_BASE_MOVEMENT
+     */
     public void moveLeft() {
         move(-PLAYER_BASE_MOVEMENT, 0f);
     }
 
+    /***
+     * Moves the player right by PLAYER_BASE_MOVEMENT
+     */
     public void moveRight() {
         move(PLAYER_BASE_MOVEMENT, 0f);
+        if(state != RUNNING)
+            state = RUNNING;
     }
 
+    /***
+     * Moves the player up by PLAYER_BASE_MOVEMENT
+     */
     public void moveUp() {
         move(0f, -PLAYER_BASE_MOVEMENT);
     }
 
+    /***
+     * Moves the player down by PLAYER_BASE_MOVEMENT
+     */
     public void moveDown() {
         move(0f, PLAYER_BASE_MOVEMENT);
     }
 
+    /***
+     * Sets the current state of the Player
+     * @param state - Current state of the Playerdddd
+     */
+    public void setState(State state) {
+        this.state = state;
+        frame = 0; // resets frame as some states have more frames
+    }
 }
