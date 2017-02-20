@@ -16,7 +16,7 @@ import static edu.lancs.game.Constants.*;
 public class MenuButton extends Button {
 
     public enum Type {
-        NEW_GAME, HIGH_SCORES, LEVEL_EDITOR, EXIT
+        NEW_GAME, HIGH_SCORES, TUTORIAL, EXIT
     }
 
     private Window window;
@@ -39,9 +39,9 @@ public class MenuButton extends Button {
                 setSelectTexture(window.getResourceManager().getTextures("high_scores_hover"));
                 break;
 
-            case LEVEL_EDITOR:
-                setDefaultTexture(window.getResourceManager().getTextures("level_editor_default"));
-                setSelectTexture(window.getResourceManager().getTextures("level_editor_hover"));
+            case TUTORIAL:
+                setDefaultTexture(window.getResourceManager().getTextures("tutorial_default"));
+                setSelectTexture(window.getResourceManager().getTextures("tutorial_hover"));
                 break;
 
             case EXIT:
@@ -76,7 +76,7 @@ public class MenuButton extends Button {
                 }
                 break;
 
-            case LEVEL_EDITOR:
+            case TUTORIAL:
                 Debug.print("[Button] Level Editor ");
                 TestScene testScene = new TestScene(getWindow(), getParentScene());
                 int testSceneIndex = getWindow().addScene(testScene);

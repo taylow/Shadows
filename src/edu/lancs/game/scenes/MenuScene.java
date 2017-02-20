@@ -6,6 +6,7 @@ import edu.lancs.game.gui.Decoration;
 import edu.lancs.game.gui.buttons.MenuButton;
 import org.jsfml.graphics.Color;
 import org.jsfml.graphics.FloatRect;
+import org.jsfml.graphics.Text;
 import org.jsfml.window.event.Event;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ public class MenuScene extends Scene {
 
     private ArrayList<Button> buttons;
     private ArrayList<Decoration> decorations;
+    private Text text;
 
     public MenuScene(Window window) {
         super(window);
@@ -26,9 +28,10 @@ public class MenuScene extends Scene {
         decorations = new ArrayList<>();
         buttons.add(new MenuButton(window, this, "New Game", NEW_GAME, getWindow().getWidth() / 2 - (MENU_BUTTON_WIDTH / 2), 230));
         buttons.add(new MenuButton(window, this, "High Scores", HIGH_SCORES, getWindow().getWidth() / 2 - (MENU_BUTTON_WIDTH / 2), 230 + MENU_BUTTON_HEIGHT * 1.1f));
-        buttons.add(new MenuButton(window, this, "Level Editor", LEVEL_EDITOR, getWindow().getWidth() / 2 - (MENU_BUTTON_WIDTH / 2), 230 + MENU_BUTTON_HEIGHT * 2.2f));
+        buttons.add(new MenuButton(window, this, "Tutorial", TUTORIAL, getWindow().getWidth() / 2 - (MENU_BUTTON_WIDTH / 2), 230 + MENU_BUTTON_HEIGHT * 2.2f));
         buttons.add(new MenuButton(window, this, "Quit", EXIT, getWindow().getWidth() / 2 - (MENU_BUTTON_WIDTH / 2), 230 + MENU_BUTTON_HEIGHT * 3.3f));
         decorations.add(new Decoration(window, "menu_wood_background", 0, 0, getWindow().getWidth(), getWindow().getHeight()));
+        decorations.add(new Decoration(window, "menu_scroll", getWindow().getWidth() / 2 - ((TITLE_BANNER_WIDTH + 200) / 2), 10, TITLE_BANNER_WIDTH + 200, TITLE_BANNER_HEIGHT + 30));
         decorations.add(new Decoration(window, "title_banner", getWindow().getWidth() / 2 - (TITLE_BANNER_WIDTH / 2), 20, TITLE_BANNER_WIDTH, TITLE_BANNER_HEIGHT));
 
         setMusic("menu_music");

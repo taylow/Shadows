@@ -21,8 +21,8 @@ public class Constants {
     public static final int TITLE_BANNER_HEIGHT = 200;
 
     /*Player Constants*/
-    public static final int PLAYER_WIDTH = 128;
-    public static final int PLAYER_HEIGHT = 128;
+    public static final int PLAYER_WIDTH = 99;
+    public static final int PLAYER_HEIGHT = 137;
     public static final int PLAYER_STARTING_X = 128;
     public static final int PLAYER_STARTING_Y = 128;
     public static final int PLAYER_BASE_MOVEMENT = 5;

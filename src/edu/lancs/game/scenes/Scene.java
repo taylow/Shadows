@@ -46,6 +46,9 @@ public abstract class Scene {
                         window.close();
                         System.exit(0); // closes the system
                         break;
+                    case KEY_PRESSED:
+                        getWindow().getInputHandler().processInputs(event.asKeyEvent().key);
+                        break;
                     case MOUSE_MOVED:
                         mousePosition = event.asMouseEvent().position; // updates mouse position on current scene
                     default:

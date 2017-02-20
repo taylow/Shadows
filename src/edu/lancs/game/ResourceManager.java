@@ -6,25 +6,29 @@ import org.jsfml.graphics.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ResourceManager {
     private HashMap<String, Sound> sounds;
+    private HashMap<String, Font> fonts;
     private HashMap<String, Texture> textures;
-    private HashMap<String, Texture> animations;
+    private HashMap<String, ArrayList<Texture>> animations;
 
     public ResourceManager(String filePath) {
         sounds = new HashMap<>();
+        fonts = new HashMap<>();
         textures = new HashMap<>();
+        animations = new HashMap<>();
         loadResources(filePath);
     }
 
     public void loadResources(String filePath) {
         loadtextures(filePath);
         loadSprites(filePath + "sprites/game");
-        loadAnimations(filePath + animations);
+        loadAnimations(filePath + "animations");
         loadSounds(filePath + "sounds");
-        loadFonts(filePath);
+        loadFonts(filePath + "misc/fonts");
     }
 
     /***
@@ -100,11 +104,14 @@ public class ResourceManager {
                 if(file.isDirectory()) {
                     loadAnimations(file.getPath());
                 } else {
-                    loadAnimation(file.getPath());
+                    String rawFileName = file.getParentFile().getName();
+                    animations.put(rawFileName, loadAnimation(file.getParentFile().getPath()));
+                    Debug.print("Loaded animation: " + rawFileName);
+                    break;
                 }
             }
         } else {
-            System.err.println("Sound " + directory.getPath() + " could not be loaded");
+            System.err.println("Animation " + directory.getPath() + " could not be loaded");
         }
     }
 
@@ -114,20 +121,37 @@ public class ResourceManager {
      *
      * @param filePath - File to the specific sound
      */
-    private void loadAnimation(String filePath) {
-        File file = new File(filePath);
-        try {
-            SoundBuffer soundBuffer = new SoundBuffer();
-            soundBuffer.loadFromFile(file.toPath());
-            Sound sound = new Sound(soundBuffer);
+    private ArrayList<Texture> loadAnimation(String filePath) {
+        ArrayList<Texture> animationTextures = new ArrayList<>();
+        File directory = new File(filePath);
+        File[] directoryListing = directory.listFiles();
+        if (directoryListing != null) {
+            for (File file : directoryListing) {
+                Image image = new Image();
+                try {
+                    image.loadFromFile(file.toPath());
 
-            String rawFileName = file.getName().substring(0, file.getName().lastIndexOf('.'));
-            sounds.put(rawFileName, sound);
+                    //TODO: Add masking (if needed)
+                    //image.createMaskFromColor(Color.BLACK);
 
-            Debug.print("Loaded sound: " + rawFileName);
-        } catch (IOException e) {
-            e.printStackTrace();
+                    Texture texture = new Texture();
+                    texture.loadFromImage(image);
+                    texture.setSmooth(true);
+
+                    animationTextures.add(texture);
+
+                    String rawFileName = file.getName().substring(0, file.getName().lastIndexOf('.'));
+                    Debug.print("Loaded animation frame: " + rawFileName);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (TextureCreationException e) {
+                    e.printStackTrace();
+                }
+            }
+        } else {
+            System.err.println("Animation " + directory.getPath() + " could not be loaded");
         }
+        return animationTextures;
     }
 
     /***
@@ -180,14 +204,75 @@ public class ResourceManager {
      * @param filePath - Location of fonts
      */
     private void loadFonts(String filePath) {
-        //TODO: load textures here
+        File directory = new File(filePath);
+        File[] directoryListing = directory.listFiles();
+        if (directoryListing != null) {
+            for (File file : directoryListing) {
+                if(file.isDirectory()) {
+                    loadFonts(file.getPath());
+                } else {
+                    loadFont(file.getPath());
+                }
+            }
+        } else {
+            System.err.println("Font " + directory.getPath() + " could not be loaded");
+        }
+    }
+
+    /***
+     * Loads a single font into the fonts ArrayList using the filename (without extension) as
+     * its HashMap name.
+     *
+     * @param filePath - File to the specific font
+     */
+    private void loadFont(String filePath) {
+        File file = new File(filePath);
+        try {
+            Font font = new Font();
+            font.loadFromFile(file.toPath());
+
+            String rawFileName = file.getName().substring(0, file.getName().lastIndexOf('.'));
+            fonts.put(rawFileName, font);
+
+            Debug.print("Loaded font: " + rawFileName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public Sound getSound(String name) {
-        return sounds.get(name);
+        // checks if sound is in the sounds list
+        if(sounds.containsKey(name))
+            return sounds.get(name);
+        else
+            System.err.println("Invalid sound: " + name);
+            return null;
+    }
+
+    public Font getFont(String name) {
+        // checks if the font is in the fonts list
+        if(fonts.containsKey(name))
+            return fonts.get(name);
+        else
+            System.err.println("Invalid font: " + name);
+            return null;
     }
 
     public Texture getTextures(String name) {
-        return textures.get(name);
+        // checks if texture is in textures list
+        if(textures.containsKey(name))
+            return textures.get(name);
+        else
+            System.err.println("Invalid texture: " + name);
+            return null;
+    }
+
+    public ArrayList<Texture> getAnimations(String animationName) {
+        // checks if the animation is in the animation list
+        if(animations.containsKey(animationName))
+            return animations.get(animationName);
+        else
+            System.err.println("Invalid animation: " + animationName);
+            return null;
     }
 }

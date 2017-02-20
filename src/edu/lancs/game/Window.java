@@ -136,4 +136,8 @@ public class Window extends RenderWindow {
     public ResourceManager getResourceManager() {
         return resourceManager;
     }
+
+    public InputHandler getInputHandler() {
+        return inputHandler;
+    }
 }

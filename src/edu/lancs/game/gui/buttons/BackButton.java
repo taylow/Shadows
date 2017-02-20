@@ -11,9 +11,9 @@ public class BackButton extends Button {
     private Window window;
 
     public BackButton(Window window, Scene parentScene, float xPos, float yPos) {
-        super(window, parentScene, xPos, yPos, 128, 128);
-        setDefaultTexture(window.getResourceManager().getTextures("back_arrow"));
-        setSelectTexture(window.getResourceManager().getTextures("back_arrow"));
+        super(window, parentScene, xPos, yPos, MENU_BUTTON_WIDTH / 2, MENU_BUTTON_HEIGHT / 2);
+        setDefaultTexture(window.getResourceManager().getTextures("back_default"));
+        setSelectTexture(window.getResourceManager().getTextures("back_hover"));
     }
 
     @Override
@@ -25,6 +25,6 @@ public class BackButton extends Button {
 
     @Override
     public void mouseOver() {
-
+        getWindow().getResourceManager().getSound("menu_click").play();
     }
 }
