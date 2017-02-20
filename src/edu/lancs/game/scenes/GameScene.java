@@ -31,8 +31,6 @@ public class GameScene extends Scene {
         switch (event.type) {
             case KEY_PRESSED:
                 player.moveRight(); //TODO: Very basic player movement
-
-                System.out.println("TEST");
                 break;
             case KEY_RELEASED:
                 player.setState(Player.State.IDLE);

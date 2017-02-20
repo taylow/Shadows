@@ -1,5 +1,6 @@
 package edu.lancs.game.entity;
 
+import edu.lancs.game.Debug;
 import edu.lancs.game.Window;
 import org.jsfml.graphics.Texture;
 
@@ -75,7 +76,7 @@ public class Player extends Entity {
     public void moveRight() {
         move(PLAYER_BASE_MOVEMENT, 0f);
         if(state != RUNNING)
-            state = RUNNING;
+            setState(RUNNING);
     }
 
     /***
@@ -99,5 +100,6 @@ public class Player extends Entity {
     public void setState(State state) {
         this.state = state;
         frame = 0; // resets frame as some states have more frames
+        Debug.print("Player state: " + state);
     }
 }
