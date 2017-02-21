@@ -26,11 +26,11 @@ public class GameScene extends Scene {
         super(window);
         setMusic("game_music");
         decorations = new ArrayList<>();
-        hud = new HUD(getWindow());
         player = new Player(getWindow(), "idle_knight");
+        hud = new HUD(getWindow(), player);
 
         // currently only has one level TODO: add a 2D level array
-        level = new Level(getWindow(), 4, 4, 0, "green_stone");
+        level = new Level(getWindow(), 7, 5, 0, "green_stone");
 
         // test floor, will be removed.
         decorations.add(new Decoration(getWindow(), "menu_wood_background", 0, 0, getWindow().getWidth(), getWindow().getHeight()));
@@ -52,6 +52,9 @@ public class GameScene extends Scene {
         window.draw(player);
 
         // draws the HUD
+        hud.update();
+        hud.getHearts().forEach(window::draw);
+        window.draw(hud.getScoreText());
         //hud.getTexts().forEach(window::draw);
     }
 
@@ -60,12 +63,8 @@ public class GameScene extends Scene {
         switch (event.type) {
             case KEY_PRESSED:
             case KEY_RELEASED:
-                getWindow().getInputHandler().processInputs(event.asKeyEvent().key);
-                //player.moveRight(); //TODO: Very basic player movement
+                getWindow().getInputHandler().processInputs(event.asKeyEvent().key); // updates the InputHandler as to which key was pressed/released
                 break;
-            /*case KEY_RELEASED:
-                player.setState(Player.State.IDLE);
-                break;*/
         }
     }
 }

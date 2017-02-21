@@ -21,11 +21,15 @@ public class Constants {
     public static final int TITLE_BANNER_HEIGHT = 200;
 
     /*Player Constants*/
-    public static final int PLAYER_STARTING_X = 128;
-    public static final int PLAYER_STARTING_Y = 128;
+    public static final int PLAYER_STARTING_X = 285;
+    public static final int PLAYER_STARTING_Y = 285;
     public static final float PLAYER_BASE_MOVEMENT = 5;
+    public static final int PLAYER_STARTING_HEALTH = 10; // (this/2 is the number of hearts on the HUD)
 
     /*Map Constants*/
     public static final int MAP_TILE_WIDTH = 114;
     public static final int MAP_TILE_HEIGHT = 114;
+
+    /*HUD Constants*/
+    public static final int HUD_HEART_DIMENSION = 30;
 }

@@ -12,6 +12,14 @@ import static edu.lancs.game.entity.Player.State.*;
 
 public class Player extends Entity {
 
+    // actual player variables
+    private int health;
+    private int hearts; // different to health as this is the amount they can have (health / hearts)
+    private int score;
+
+    private int testHealth = -1; // TODO: Remove once finished with HUD testing
+
+    // the entity variables
     private InputHandler inputHandler;
 
     private ArrayList<Texture> idleAnimation;
@@ -30,11 +38,19 @@ public class Player extends Entity {
 
     public Player(Window window, String textureName) {
         super(window, textureName, PLAYER_STARTING_X, PLAYER_STARTING_Y, true);
+        health = PLAYER_STARTING_HEALTH;
+        hearts = PLAYER_STARTING_HEALTH;
+        score = 0;
+
         inputHandler = getWindow().getInputHandler();
+
+        // load animations
         idleAnimation = getWindow().getResourceManager().getAnimations("idle_knight");
         runAnimation = getWindow().getResourceManager().getAnimations("run_knight");
         attackAnimation = getWindow().getResourceManager().getAnimations("attack_knight");
         deathAnimation = getWindow().getResourceManager().getAnimations("dead_knight");
+
+        // set state to IDLE as the player has just been created
         setState(IDLE);
     }
 
@@ -44,6 +60,15 @@ public class Player extends Entity {
 
     @Override
     public void update() {
+        // test HUD system (HUD TEST TODO: REMOVE THIS ONCe HUD TESTING IS FINISHED)
+        health += testHealth;
+        if(health == 0)
+            testHealth = 1;
+        else if(health == hearts)
+            testHealth = -1;
+        score++;
+
+
         handleMovement();
         nextFrame();
     }
@@ -151,5 +176,17 @@ public class Player extends Entity {
      */
     public void attack() {
         setState(ATTACKING);
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public int getHearts() {
+        return hearts;
     }
 }

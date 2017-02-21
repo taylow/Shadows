@@ -2,31 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df7e5be-326c-48a9-947d-b0eec08caa13" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/lancs/game/generation/Tile.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/scenes/TestScene.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/corners/green_stone_corner_NE.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/corners/green_stone_corner_NW.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/corners/green_stone_corner_SE.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/corners/green_stone_corner_SW.png" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/corners/green_stone_wall_NE_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/corners/green_stone_wall_NW_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/corners/green_stone_wall_SE_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/wall/corners/green_stone_wall_SW_1.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Constants.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Constants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/InputHandler.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/InputHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/ResourceManager.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/ResourceManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/entity/Entity.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/entity/Entity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/gui/buttons/MenuButton$1.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/gui/buttons/MenuButton$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/gui/buttons/MenuButton$Type.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/gui/buttons/MenuButton$Type.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/gui/buttons/MenuButton.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/gui/buttons/MenuButton.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/cobble/green_stone_floor_1.png" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/cobble/green_stone_floor_1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/cobble/green_stone_floor_5.png" afterPath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/floor/cobble/green_stone_floor_5.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/ResourceManager.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/ResourceManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/entity/Entity.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/entity/Entity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/MenuButton.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/MenuButton.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/TestScene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/TutorialScene.java" />
     </list>
     <ignored path="SCC210 - OOP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,61 +37,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GameScene.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HUD.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Decoration.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/Decoration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="70" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="70" />
+            <state relative-caret-position="153">
+              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Level.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state relative-caret-position="221">
+              <caret line="13" column="33" selection-start-line="8" selection-start-column="8" selection-end-line="13" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3296#3297#0" expanded="true" />
-                <element signature="e#3324#3325#0" expanded="true" />
-                <element signature="e#3356#3357#0" expanded="true" />
-                <element signature="e#3387#3388#0" expanded="true" />
-                <element signature="e#3420#3421#0" expanded="true" />
-                <element signature="e#3449#3450#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Tile.java">
+      <file leaf-file-name="GameScene.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="83" selection-start-line="20" selection-start-column="83" selection-end-line="20" selection-end-column="83" />
+            <state relative-caret-position="507">
+              <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -117,9 +74,50 @@
       <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+            <state relative-caret-position="408">
+              <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="67" column="28" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#5088#5089#0" expanded="true" />
+                <element signature="e#5117#5118#0" expanded="true" />
+                <element signature="e#5146#5147#0" expanded="true" />
+                <element signature="e#5174#5175#0" expanded="true" />
+                <element signature="e#5204#5205#0" expanded="true" />
+                <element signature="e#5233#5234#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TutorialScene.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/TutorialScene.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="27" column="160" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="160" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HUD.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="334">
+              <caret line="43" column="99" selection-start-line="43" selection-start-column="99" selection-end-line="43" selection-end-column="99" />
+              <folding>
+                <element signature="e#2529#2530#0" expanded="true" />
+                <element signature="e#2561#2562#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -157,7 +155,6 @@
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/OptionsScene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/Decoration.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/Inputtable.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/Main.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/Debug.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/Button.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/behaviour/AIBehaviour.java" />
@@ -172,7 +169,6 @@
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/BackButton.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/TestScene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/MiniMap.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/Scene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/MenuButton.java" />
@@ -181,11 +177,13 @@
         <option value="$PROJECT_DIR$/src/edu/lancs/game/ResourceManager.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Entity.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Tile.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/Main.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" />
       </list>
     </option>
   </component>
@@ -754,7 +752,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487567196351</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Lots of stuff added:&#10;Level generation, proper animations, proper movement, etc">
+      <created>1487658443650</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1487658443650</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -836,7 +841,8 @@
     <MESSAGE value="Basic Player loading" />
     <MESSAGE value="Basic animation loading added" />
     <MESSAGE value="Added VERY basic movement" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added VERY basic movement" />
+    <MESSAGE value="Lots of stuff added:&#10;Level generation, proper animations, proper movement, etc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lots of stuff added:&#10;Level generation, proper animations, proper movement, etc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -892,16 +898,6 @@
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/OptionsScene.java" />
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/Decoration.java" />
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/Inputtable.java" />
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Debug.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1020,16 +1016,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/TutorialScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="27" column="74" selection-start-line="27" selection-start-column="74" selection-end-line="27" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Window.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="640">
@@ -1093,41 +1079,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="47" column="20" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/Scene.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Tile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="83" selection-start-line="20" selection-start-column="83" selection-end-line="20" selection-end-column="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1147,28 +1105,83 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Tile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="83" selection-start-line="20" selection-start-column="83" selection-end-line="20" selection-end-column="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/TutorialScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="27" column="160" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="160" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="33" selection-start-line="8" selection-start-column="8" selection-end-line="13" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/Decoration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="70" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="70" />
+        <state relative-caret-position="153">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="334">
+          <caret line="43" column="99" selection-start-line="43" selection-start-column="99" selection-end-line="43" selection-end-column="99" />
+          <folding>
+            <element signature="e#2529#2530#0" expanded="true" />
+            <element signature="e#2561#2562#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="507">
+          <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="67" column="28" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5088#5089#0" expanded="true" />
+            <element signature="e#5117#5118#0" expanded="true" />
+            <element signature="e#5146#5147#0" expanded="true" />
+            <element signature="e#5174#5175#0" expanded="true" />
+            <element signature="e#5204#5205#0" expanded="true" />
+            <element signature="e#5233#5234#0" expanded="true" />
           </folding>
         </state>
       </provider>
