@@ -4,8 +4,7 @@ import edu.lancs.game.Debug;
 import edu.lancs.game.Window;
 import edu.lancs.game.scenes.GameScene;
 import edu.lancs.game.scenes.Scene;
-import edu.lancs.game.scenes.TestScene;
-import org.jsfml.audio.Sound;
+import edu.lancs.game.scenes.TutorialScene;
 
 import java.io.IOException;
 import java.net.URI;
@@ -78,9 +77,10 @@ public class MenuButton extends Button {
 
             case TUTORIAL:
                 Debug.print("[Button] Level Editor ");
-                TestScene testScene = new TestScene(getWindow(), getParentScene());
-                int testSceneIndex = getWindow().addScene(testScene);
-                testScene.activate();
+                //FIXME: This technically adds the as a new scene every time. Could be fixed by having the BackButton delete the TutorialScene from Window
+                TutorialScene tutorialScene = new TutorialScene(getWindow(), getParentScene());
+                int testSceneIndex = getWindow().addScene(tutorialScene);
+                tutorialScene.activate();
                 getWindow().setCurrentScene(testSceneIndex);
                 getParentScene().deactivate();
                 break;

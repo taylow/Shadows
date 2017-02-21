@@ -131,8 +131,9 @@ public class ResourceManager {
                 try {
                     image.loadFromFile(file.toPath());
 
-                    //TODO: Add masking (if needed)
-                    //image.createMaskFromColor(Color.BLACK);
+                    //TODO: Add proper masking colours if needed (works for the animations we currently have)
+                    Color maskColour = new Color( 3, 2, 1 );
+                    image.createMaskFromColor(maskColour, 0);
 
                     Texture texture = new Texture();
                     texture.loadFromImage(image);

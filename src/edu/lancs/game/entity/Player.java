@@ -1,6 +1,7 @@
 package edu.lancs.game.entity;
 
 import edu.lancs.game.Debug;
+import edu.lancs.game.InputHandler;
 import edu.lancs.game.Window;
 import org.jsfml.graphics.Texture;
 
@@ -11,27 +12,30 @@ import static edu.lancs.game.entity.Player.State.*;
 
 public class Player extends Entity {
 
-    private ArrayList<Texture> currentAnimation;
+    private InputHandler inputHandler;
+
     private ArrayList<Texture> idleAnimation;
     private ArrayList<Texture> runAnimation;
     private ArrayList<Texture> attackAnimation;
     private ArrayList<Texture> deathAnimation;
 
-    private int frame;
     private State state;
 
+    /***
+     * States for the players animation/actions
+     */
     public enum State {
         IDLE, RUNNING, ATTACKING, DYING
     }
 
     public Player(Window window, String textureName) {
-        super(window, textureName, PLAYER_STARTING_X, PLAYER_STARTING_Y, PLAYER_WIDTH, PLAYER_HEIGHT);
-        frame = 0;
-        state = IDLE;
+        super(window, textureName, PLAYER_STARTING_X, PLAYER_STARTING_Y, true);
+        inputHandler = getWindow().getInputHandler();
         idleAnimation = getWindow().getResourceManager().getAnimations("idle_knight");
         runAnimation = getWindow().getResourceManager().getAnimations("run_knight");
         attackAnimation = getWindow().getResourceManager().getAnimations("attack_knight");
         deathAnimation = getWindow().getResourceManager().getAnimations("dead_knight");
+        setState(IDLE);
     }
 
     @Override
@@ -40,27 +44,31 @@ public class Player extends Entity {
 
     @Override
     public void update() {
-        switch (state) {
-            case IDLE:
-                currentAnimation = idleAnimation;
-                break;
+        handleMovement();
+        nextFrame();
+    }
 
-            case RUNNING:
-                currentAnimation = runAnimation;
-                break;
-
-            case ATTACKING:
-                currentAnimation = attackAnimation;
-                break;
-
-            case DYING:
-                currentAnimation = deathAnimation;
-                break;
+    /***
+     * Checks if directional keys are bing pressed and moves the character in that direction is so.
+     * Support for diagonal movement is present as each if condition is on its own line.
+     */
+    public void handleMovement() {
+        if(inputHandler.isMoveing() && !inputHandler.isSpaceKeyPressed()) {
+            if (inputHandler.iswKeyPressed())
+                moveUp();
+            if (inputHandler.isaKeyPressed())
+                moveLeft();
+            if (inputHandler.issKeyPressed())
+                moveDown();
+            if (inputHandler.isdKeyPressed())
+                moveRight();
+        } else if(inputHandler.isSpaceKeyPressed()) {
+            if(getState() != ATTACKING)
+                attack();
+        } else {
+            if(getState() != IDLE)
+               setState(IDLE);
         }
-        setTexture(currentAnimation.get(frame));
-        frame++;
-        if(frame >= currentAnimation.size())
-            frame = 0;
     }
 
     /***
@@ -68,6 +76,9 @@ public class Player extends Entity {
      */
     public void moveLeft() {
         move(-PLAYER_BASE_MOVEMENT, 0f);
+        setScale(-1.f, 1.f); // flip the sprite to face right
+        if(state != RUNNING)
+            setState(RUNNING);
     }
 
     /***
@@ -75,6 +86,7 @@ public class Player extends Entity {
      */
     public void moveRight() {
         move(PLAYER_BASE_MOVEMENT, 0f);
+        setScale(1.f, 1.f); // flip the sprite to face left
         if(state != RUNNING)
             setState(RUNNING);
     }
@@ -84,6 +96,8 @@ public class Player extends Entity {
      */
     public void moveUp() {
         move(0f, -PLAYER_BASE_MOVEMENT);
+        if(state != RUNNING)
+            setState(RUNNING);
     }
 
     /***
@@ -91,15 +105,51 @@ public class Player extends Entity {
      */
     public void moveDown() {
         move(0f, PLAYER_BASE_MOVEMENT);
+        if(state != RUNNING)
+            setState(RUNNING);
     }
 
     /***
-     * Sets the current state of the Player
-     * @param state - Current state of the Playerdddd
+     * Sets the current state of the Player and changes the animation accordingly.
+     *
+     * @param state - Current state of the Player
      */
     public void setState(State state) {
         this.state = state;
-        frame = 0; // resets frame as some states have more frames
+        switch (state) {
+            case IDLE:
+                setAnimation(idleAnimation);
+                break;
+
+            case RUNNING:
+                setAnimation(runAnimation);
+                break;
+
+            case ATTACKING:
+                setAnimation(attackAnimation);
+                break;
+
+            case DYING:
+                setAnimation(deathAnimation);
+                break;
+        }
         Debug.print("Player state: " + state);
+    }
+
+    /***
+     * Returns the current State of the Player.
+     *
+     * @return - Current State of the Player
+     */
+    public State getState() {
+        return state;
+    }
+
+    /***
+     * Performs an attack and sets the Players state to ATTACKING.
+     * TODO: Add hit detection in here. Should check the current frame syncs up with the hit blow.
+     */
+    public void attack() {
+        setState(ATTACKING);
     }
 }

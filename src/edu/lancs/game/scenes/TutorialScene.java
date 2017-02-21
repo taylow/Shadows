@@ -12,12 +12,12 @@ import java.util.ArrayList;
 
 import static edu.lancs.game.Constants.*;
 
-public class TestScene extends Scene {
+public class TutorialScene extends Scene {
 
     private ArrayList<Decoration> decorations;
     private ArrayList<Button> buttons;
 
-    public TestScene(Window window, Scene returnScene) {
+    public TutorialScene(Window window, Scene returnScene) {
         super(window);
         setTitle("Tutorial");
         setBackgroundColour(Color.CYAN);
