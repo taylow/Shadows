@@ -2,16 +2,16 @@ package edu.lancs.game.scenes;
 
 import edu.lancs.game.Window;
 import edu.lancs.game.entity.Player;
+import edu.lancs.game.generation.Floor;
 import edu.lancs.game.generation.Level;
 import edu.lancs.game.generation.Tile;
 import edu.lancs.game.gui.HUD;
 import org.jsfml.graphics.Color;
-import org.jsfml.system.Clock;
+import org.jsfml.graphics.FloatRect;
 import org.jsfml.window.event.Event;
 
 public class GameScene extends Scene {
 
-    public Clock tick;
     private HUD hud;
     private Player player;
     private Level level;
@@ -40,6 +40,11 @@ public class GameScene extends Scene {
         for (Tile[] tileRow : level.getTiles()) {
             for (Tile tile : tileRow) {
                 window.draw(tile);
+
+                //FIXME: Some basic collision detection
+                if(!(tile instanceof Floor))
+                    if(tile.getGlobalBounds().intersection(new FloatRect(player.getPosition().x, player.getPosition().y, 1, 1)) != null)
+                        player.setColliding(true);
             }
         }
 

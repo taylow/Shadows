@@ -10,7 +10,7 @@ public class Door extends Tile {
     //TODO: Add a key system
 
     public Door(Window window, String name, Direction direction, int number, int positionX, int positionY, int destinationRow, int destinationColumn) {
-        super(window, name, direction, number, positionX, positionY);
+        super(window, name, direction, number, positionX, positionY, true); // create a collidable tile
         this.destinationRow = destinationRow;
         this.destinationColumn = destinationColumn;
         isLocked = true;

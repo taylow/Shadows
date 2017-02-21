@@ -3,7 +3,10 @@ package edu.lancs.game.entity;
 import edu.lancs.game.Debug;
 import edu.lancs.game.InputHandler;
 import edu.lancs.game.Window;
+import org.jsfml.graphics.FloatRect;
+import org.jsfml.graphics.Sprite;
 import org.jsfml.graphics.Texture;
+import org.jsfml.system.Vector2f;
 
 import java.util.ArrayList;
 
@@ -17,7 +20,10 @@ public class Player extends Entity {
     private int hearts; // different to health as this is the amount they can have (health / hearts)
     private int score;
 
+    private Vector2f velocity;
+
     private int testHealth = -1; // TODO: Remove once finished with HUD testing
+    private boolean isColliding = false; //TODO: REMOVE THIS ONCE FINISHED TESTING/FIXING COLLISION
 
     // the entity variables
     private InputHandler inputHandler;
@@ -35,6 +41,7 @@ public class Player extends Entity {
         health = PLAYER_STARTING_HEALTH;
         hearts = PLAYER_STARTING_HEALTH; //FIXME: fix it so odd numbers don't cause issues
         score = 0;
+        velocity = new Vector2f(0, 0);
 
         inputHandler = getWindow().getInputHandler();
 
@@ -90,8 +97,9 @@ public class Player extends Entity {
             if (getState() != ATTACKING)
                 attack();
         } else {
-            if (getState() != IDLE)
+            if (getState() != IDLE) {
                 setState(IDLE);
+            }
         }
     }
 
@@ -99,7 +107,9 @@ public class Player extends Entity {
      * Moves the player left by PLAYER_BASE_MOVEMENT
      */
     public void moveLeft() {
-        move(-PLAYER_BASE_MOVEMENT, 0f);
+        velocity = new Vector2f(-PLAYER_BASE_MOVEMENT, 0);
+        if(!isColliding)
+            move(velocity);
         setScale(-1.f, 1.f); // flip the sprite to face right
         if (state != RUNNING)
             setState(RUNNING);
@@ -109,7 +119,9 @@ public class Player extends Entity {
      * Moves the player right by PLAYER_BASE_MOVEMENT
      */
     public void moveRight() {
-        move(PLAYER_BASE_MOVEMENT, 0f);
+        velocity = new Vector2f(PLAYER_BASE_MOVEMENT, 0);
+        if(!isColliding)
+            move(velocity);
         setScale(1.f, 1.f); // flip the sprite to face left
         if (state != RUNNING)
             setState(RUNNING);
@@ -119,7 +131,9 @@ public class Player extends Entity {
      * Moves the player up by PLAYER_BASE_MOVEMENT
      */
     public void moveUp() {
-        move(0f, -PLAYER_BASE_MOVEMENT);
+        velocity = new Vector2f(0, -PLAYER_BASE_MOVEMENT);
+        if(!isColliding)
+            move(velocity);
         if (state != RUNNING)
             setState(RUNNING);
     }
@@ -128,7 +142,9 @@ public class Player extends Entity {
      * Moves the player down by PLAYER_BASE_MOVEMENT
      */
     public void moveDown() {
-        move(0f, PLAYER_BASE_MOVEMENT);
+        velocity = new Vector2f(0, PLAYER_BASE_MOVEMENT);
+        if(!isColliding)
+            move(velocity);
         if (state != RUNNING)
             setState(RUNNING);
     }
@@ -167,6 +183,16 @@ public class Player extends Entity {
                 break;
         }
         Debug.print("Player state: " + state);
+    }
+
+    /***
+     * Checks whether or not the Player is colliding with a Sprite.
+     *
+     * @param sprite - Sprite the player is checking against
+     * @return - Whether or not it is colliding
+     */
+    public boolean checkCollision(Sprite sprite) {
+        return (getGlobalBounds().intersection(new FloatRect(sprite.getPosition().x, sprite.getPosition().x, 1, 1)) != null);
     }
 
     /***
@@ -209,5 +235,23 @@ public class Player extends Entity {
      */
     public enum State {
         IDLE, RUNNING, ATTACKING, DYING
+    }
+
+    /***
+     * Sets whether or not the Player is colliding currently.
+     *
+     * @param colliding - Whether or not the Player is currently colliding
+     */
+    public void setColliding(boolean colliding) {
+        isColliding = colliding;
+    }
+
+    /***
+     * Returns whether or not the Player is colliding currently.
+     *
+     * @return - Whether or not the Player is currently colliding
+     */
+    public boolean isColliding() {
+        return isColliding;
     }
 }

@@ -11,12 +11,14 @@ import static edu.lancs.game.generation.Tile.Direction.NONE;
 
 public class Tile extends Sprite {
 
-    public Tile(Window window, String name, Direction direction, int number, int positionX, int positionY) {
+    private boolean canCollide;
+
+    public Tile(Window window, String name, Direction direction, int number, int positionX, int positionY, boolean canCollide) {
         String textureName = name + "_" + (direction == NONE ? "" : direction + "_") + number;
         Debug.print(textureName);
         setTexture(window.getResourceManager().getTextures(textureName)); // loads the tile with the set naming sceme
         setPosition(new Vector2f(positionX * MAP_TILE_WIDTH, positionY * MAP_TILE_HEIGHT));
-        //setOrigin(Vector2f.div(new Vector2f(getTexture().getSize()), 2)); // sets the origin to the centre
+        this.canCollide = canCollide;
         //TODO: add functionality into here such as door, etc (or extend this into a door)
     }
 
@@ -25,5 +27,23 @@ public class Tile extends Sprite {
      */
     public enum Direction {
         N, NE, E, SE, S, SW, W, NW, NONE
+    }
+
+    /***
+     * Sets whether or not Entities can collide with this tile.
+     *
+     * @param canCollide - Whether Entities can collide with this Tile
+     */
+    public void setCanCollide(boolean canCollide) {
+        this.canCollide = canCollide;
+    }
+
+    /***
+     * Returns whether or not Entities can collide with this Tile.
+     *
+     * @return - Whether or not Entities can collide with this Tile
+     */
+    public boolean isCanCollide() {
+        return canCollide;
     }
 }

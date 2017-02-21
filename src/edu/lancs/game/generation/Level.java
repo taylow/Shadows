@@ -2,6 +2,8 @@ package edu.lancs.game.generation;
 
 import edu.lancs.game.Window;
 
+import java.util.Random;
+
 import static edu.lancs.game.generation.Tile.Direction.*;
 
 public class Level {
@@ -35,19 +37,23 @@ public class Level {
 
     /***
      * Generates a rectangle room using a texture name by filling the tiles array with the correct time based on where they are.
+     * TODO: Need to add more randomisation.
+     * TODO: This functionality could be passed into the Tile/Door itself to prevent this much code, but this works perfectly fine.
      *
      * @param name - The name of the texture (e.g. green_stone)
      */
     public void generateTiles(String name) {
+        Random random = new Random();
+
         // north side
         for (int column = 0; column < width; column++) {
             // first piece (NW corner)
             if (column == 0)
-                tiles[0][column] = new Tile(getWindow(), textureName + "_wall", NW, 1, column, 0);
+                tiles[0][column] = new Wall(getWindow(), textureName + "_wall", NW, 1, column, 0);
 
             // last piece (NE corner)
             else if (column == width - 1)
-                tiles[0][column] = new Tile(getWindow(), textureName + "_wall", NE, 1, column, 0);
+                tiles[0][column] = new Wall(getWindow(), textureName + "_wall", NE, 1, column, 0);
 
             // if it's the middle, add a door
             else if(column == (width - 1) / 2)
@@ -55,7 +61,7 @@ public class Level {
 
             // middle piece (N wall)
             else
-                tiles[0][column] = new Tile(getWindow(), textureName + "_wall", N, 1, column, 0);
+                tiles[0][column] = new Wall(getWindow(), textureName + "_wall", N, random.nextInt(5) + 1, column, 0);
         }
 
         // middle section
@@ -66,18 +72,18 @@ public class Level {
                     if(row == (height - 1) / 2)
                         tiles[row][column] = new Door(getWindow(), textureName + "_door_round_closed", W, 1, column, row, 0, 0);
                 else
-                    tiles[row][column] = new Tile(getWindow(), textureName + "_wall", W, 1, column, row);
+                    tiles[row][column] = new Wall(getWindow(), textureName + "_wall", W, random.nextInt(2) + 1, column, row);
 
                 // last piece (E wall)
                 else if (column + 1 == width)
                     if(row == (height - 1) / 2)
                         tiles[row][column] = new Door(getWindow(), textureName + "_door_round_closed", E, 1, column, row, 0, 0);
                 else
-                    tiles[row][column] = new Tile(getWindow(), textureName + "_wall", E, 1, column, row);
+                    tiles[row][column] = new Wall(getWindow(), textureName + "_wall", E, random.nextInt(2) + 1, column, row);
 
                     // middle piece (floor tile)
                 else
-                    tiles[row][column] = new Tile(getWindow(), textureName + "_floor", NONE, 1, column, row);
+                    tiles[row][column] = new Floor(getWindow(), textureName + "_floor", NONE, random.nextInt(7) + 1, column, row);
             }
         }
 
@@ -85,11 +91,11 @@ public class Level {
         for (int column = 0; column < width; column++) {
             // first piece (SW corner)
             if (column == 0)
-                tiles[height - 1][column] = new Tile(getWindow(), textureName + "_wall", SW, 1, column, height - 1);
+                tiles[height - 1][column] = new Wall(getWindow(), textureName + "_wall", SW, 1, column, height - 1);
 
                 // last piece (SE corner)
             else if (column + 1 == width)
-                tiles[height - 1][column] = new Tile(getWindow(), textureName + "_wall", SE, 1, column, height - 1);
+                tiles[height - 1][column] = new Wall(getWindow(), textureName + "_wall", SE, 1, column, height - 1);
 
                 // if it's the middle, add a door
             else if(column == (width - 1) / 2)
@@ -97,7 +103,7 @@ public class Level {
 
                 // middle piece (S wall)
             else
-                tiles[height - 1][column] = new Tile(getWindow(), textureName + "_wall", S, 1, column, height - 1);
+                tiles[height - 1][column] = new Wall(getWindow(), textureName + "_wall", S, random.nextInt(2) + 1, column, height - 1);
         }
     }
 
