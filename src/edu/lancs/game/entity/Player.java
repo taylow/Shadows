@@ -47,6 +47,7 @@ public class Player extends Entity {
 
         // load animations
         idleAnimation = getWindow().getResourceManager().getAnimations("idle_knight");
+
         runAnimation = getWindow().getResourceManager().getAnimations("run_knight");
         attackAnimation = getWindow().getResourceManager().getAnimations("attack_knight");
         deathAnimation = getWindow().getResourceManager().getAnimations("dead_knight");
@@ -74,8 +75,6 @@ public class Player extends Entity {
         else if (health == hearts)
             testHealth = -1;
         score++;
-
-
 
         handleMovement();
         nextFrame();
