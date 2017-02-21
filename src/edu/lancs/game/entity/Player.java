@@ -6,6 +6,7 @@ import edu.lancs.game.Window;
 import org.jsfml.graphics.FloatRect;
 import org.jsfml.graphics.Sprite;
 import org.jsfml.graphics.Texture;
+import org.jsfml.graphics.View;
 import org.jsfml.system.Vector2f;
 
 import java.util.ArrayList;

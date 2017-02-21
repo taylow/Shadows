@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df7e5be-326c-48a9-947d-b0eec08caa13" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/lancs/game/generation/Floor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/lancs/game/generation/Wall.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/generation/Door.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/generation/Door.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/generation/Tile.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/generation/Tile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" />
     </list>
     <ignored path="SCC210 - OOP.iws" />
@@ -48,8 +44,8 @@
       <file leaf-file-name="GameScene.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="56" column="33" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
+            <state relative-caret-position="487">
+              <caret line="56" column="36" selection-start-line="52" selection-start-column="8" selection-end-line="56" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,15 +68,25 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="242" column="46" selection-start-line="242" selection-start-column="46" selection-end-line="242" selection-end-column="46" />
+            <state relative-caret-position="255">
+              <caret line="95" column="28" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6920#6921#0" expanded="true" />
-                <element signature="e#6959#6960#0" expanded="true" />
-                <element signature="e#7150#7151#0" expanded="true" />
-                <element signature="e#7184#7185#0" expanded="true" />
+                <element signature="e#6952#6953#0" expanded="true" />
+                <element signature="e#6991#6992#0" expanded="true" />
+                <element signature="e#7182#7183#0" expanded="true" />
+                <element signature="e#7216#7217#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HUD.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="343">
+              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -132,7 +138,6 @@
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/BackButton.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/MenuButton.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/Decoration.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/MiniMap.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/TutorialScene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" />
@@ -148,6 +153,7 @@
         <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Floor.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Door.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" />
       </list>
@@ -773,7 +779,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487667710223</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added basic collision that currently just freezes the character to the point where he collided. This needs some sort of bounce back to prevent the character being locked">
+      <created>1487671435745</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1487671435745</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -859,7 +872,8 @@
     <MESSAGE value="Added fully working HUD (Only health and score at the minute, but powerups will be added when needed)" />
     <MESSAGE value="Fully commented the entire project, everything should be easy to follow. If not, ask me what specific things do." />
     <MESSAGE value="Added a basic Doo system. Currently just set to a standard door." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a basic Doo system. Currently just set to a standard door." />
+    <MESSAGE value="Added basic collision that currently just freezes the character to the point where he collided. This needs some sort of bounce back to prevent the character being locked" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added basic collision that currently just freezes the character to the point where he collided. This needs some sort of bounce back to prevent the character being locked" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1018,14 +1032,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1197,24 +1203,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="242" column="46" selection-start-line="242" selection-start-column="46" selection-end-line="242" selection-end-column="46" />
+        <state relative-caret-position="255">
+          <caret line="95" column="28" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6920#6921#0" expanded="true" />
-            <element signature="e#6959#6960#0" expanded="true" />
-            <element signature="e#7150#7151#0" expanded="true" />
-            <element signature="e#7184#7185#0" expanded="true" />
+            <element signature="e#6952#6953#0" expanded="true" />
+            <element signature="e#6991#6992#0" expanded="true" />
+            <element signature="e#7182#7183#0" expanded="true" />
+            <element signature="e#7216#7217#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="56" column="33" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
+        <state relative-caret-position="487">
+          <caret line="56" column="36" selection-start-line="52" selection-start-column="8" selection-end-line="56" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

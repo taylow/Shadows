@@ -8,6 +8,7 @@ import edu.lancs.game.generation.Tile;
 import edu.lancs.game.gui.HUD;
 import org.jsfml.graphics.Color;
 import org.jsfml.graphics.FloatRect;
+import org.jsfml.graphics.View;
 import org.jsfml.window.event.Event;
 
 public class GameScene extends Scene {
@@ -41,12 +42,19 @@ public class GameScene extends Scene {
             for (Tile tile : tileRow) {
                 window.draw(tile);
 
-                //FIXME: Some basic collision detection
+                //FIXME: Some basic collision detection, worst way possible, needs changing (DON'T USE instanceOf, this was a last resort test)
                 if(!(tile instanceof Floor))
                     if(tile.getGlobalBounds().intersection(new FloatRect(player.getPosition().x, player.getPosition().y, 1, 1)) != null)
                         player.setColliding(true);
             }
         }
+
+
+        /*// FIXME: View works, but should really be done another way. Also, HUD doesn't draw to correct view
+        View view = (View) getWindow().getDefaultView();
+        view.setCenter(player.getPosition());
+        //view.move(velocity);
+        getWindow().setView(view);*/
 
         // draws the player
         player.update();
