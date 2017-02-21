@@ -18,8 +18,6 @@ public class HUD {
     private ArrayList<Decoration> hearts;
 
     private ArrayList<Text> texts;
-    private Decoration healthBar;
-    private Decoration armour;
     private Text scoreText;
 
     public HUD(Window window, Player player) {
@@ -27,13 +25,13 @@ public class HUD {
         this.player = player;
 
         decorations = new ArrayList<>();
+        texts = new ArrayList<>();
         hearts = new ArrayList<>();
 
         scoreText = new Text("000000", getWindow().getResourceManager().getFont("BLKCHCRY"));
         scoreText.setPosition(getWindow().getWidth() - 150, 10);
         scoreText.setColor(Color.YELLOW);
-
-        //texts.add(scoreText);
+        texts.add(scoreText); // adds this text to the ArrayList of texts (means for multiple texts with one one draw)
     }
 
     /***
@@ -49,37 +47,51 @@ public class HUD {
      */
     private void updateHealth() {
         hearts = new ArrayList<>();
-        int fullHearts = (int) Math.floor(player.getHealth() / 2);
-        int halfHearts = player.getHealth() % 2;
-        int emptyHearts = (player.getHearts() - player.getHealth()) / 2;
+        int fullHearts = (int) Math.floor(player.getHealth() / 2); // number of full hearts
+        int halfHearts = player.getHealth() % 2; // should either equal 1 or 0 as it would turn into empty/full
+        int emptyHearts = (player.getHearts() - player.getHealth()) / 2; // number of empty hearts
 
-        for(int heart = 0; heart < fullHearts; heart++)
+        // draw full hearts
+        for (int heart = 0; heart < fullHearts; heart++)
             hearts.add(new Decoration(window, "heart_full", 20 + (heart * (HUD_HEART_DIMENSION + 5)), 20, HUD_HEART_DIMENSION, HUD_HEART_DIMENSION));
 
-        if(halfHearts == 1)
+        // draw half heart
+        if (halfHearts == 1)
             hearts.add(new Decoration(window, "heart_half", 20 + (fullHearts * (HUD_HEART_DIMENSION + 5)), 20, HUD_HEART_DIMENSION, HUD_HEART_DIMENSION));
 
-        for(int heart = 0; heart < emptyHearts; heart++)
+        // draw empty hearts
+        for (int heart = 0; heart < emptyHearts; heart++)
             hearts.add(new Decoration(window, "heart_empty", 20 + ((fullHearts + halfHearts + heart) * (HUD_HEART_DIMENSION + 5)), 20, HUD_HEART_DIMENSION, HUD_HEART_DIMENSION));
     }
 
+    /***
+     * Returns all Decorations used in the HUD, excluding hearts.
+     *
+     * @return - All Decorations used in the HUD
+     */
     public ArrayList<Decoration> getDecorations() {
         return decorations;
     }
 
+    /***
+     * Returns the ArrayList of hearts
+     *
+     * @return - Hearts for he health bar
+     */
     public ArrayList<Decoration> getHearts() {
         return hearts;
     }
 
+    /***
+     * Returns all texts used in the HUD.
+     *
+     * @return - All text in the HUD
+     */
     public ArrayList<Text> getTexts() {
         return texts;
     }
 
     public Window getWindow() {
         return window;
-    }
-
-    public Text getScoreText() {
-        return scoreText;
     }
 }

@@ -40,59 +40,60 @@ public class Level {
      */
     public void generateTiles(String name) {
         // north side
-        for(int column = 0; column < width; column++) {
+        for (int column = 0; column < width; column++) {
             // first piece (NW corner)
-            if(column == 0)
+            if (column == 0)
                 tiles[0][column] = new Tile(getWindow(), textureName + "_wall", NW, 1, column, 0);
 
-            // last piece (NE corner)
-            else if(column == width - 1)
+                // last piece (NE corner)
+            else if (column == width - 1)
                 tiles[0][column] = new Tile(getWindow(), textureName + "_wall", NE, 1, column, 0);
 
-            // middle piece (N wall)
+                // middle piece (N wall)
             else
                 tiles[0][column] = new Tile(getWindow(), textureName + "_wall", N, 1, column, 0);
         }
 
         // middle section
-        for(int column = 0; column < width; column++) {
-            for(int row = 1; row < height - 1; row++) {
+        for (int column = 0; column < width; column++) {
+            for (int row = 1; row < height - 1; row++) {
                 // first piece (W wall)
-                if(column == 0)
+                if (column == 0)
                     tiles[row][column] = new Tile(getWindow(), textureName + "_wall", W, 1, column, row);
 
-                // last piece (E wall)
-                else if(column + 1 == width)
+                    // last piece (E wall)
+                else if (column + 1 == width)
                     tiles[row][column] = new Tile(getWindow(), textureName + "_wall", E, 1, column, row);
 
-                // middle piece (floor tile)
+                    // middle piece (floor tile)
                 else
                     tiles[row][column] = new Tile(getWindow(), textureName + "_floor", NONE, 1, column, row);
             }
         }
 
         // south side
-        for(int column = 0; column < width; column++) {
+        for (int column = 0; column < width; column++) {
             // first piece (SW corner)
-            if(column == 0)
+            if (column == 0)
                 tiles[height - 1][column] = new Tile(getWindow(), textureName + "_wall", SW, 1, column, height - 1);
 
-            // last piece (SE corner)
-            else if(column + 1 == width)
+                // last piece (SE corner)
+            else if (column + 1 == width)
                 tiles[height - 1][column] = new Tile(getWindow(), textureName + "_wall", SE, 1, column, height - 1);
 
-            // middle piece (S wall)
+                // middle piece (S wall)
             else
                 tiles[height - 1][column] = new Tile(getWindow(), textureName + "_wall", S, 1, column, height - 1);
         }
     }
 
+    /***
+     * Returns the whole level in a 2D array of Tiles (sprites) that can be drawn to a Scene.
+     *
+     * @return - 2D array of Tiles that makes up the level
+     */
     public Tile[][] getTiles() {
         return tiles;
-    }
-
-    public Tile[] testTile() {
-        return tiles[0];
     }
 
     public Window getWindow() {

@@ -10,23 +10,19 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import static edu.lancs.game.Constants.*;
+import static edu.lancs.game.Constants.MENU_BUTTON_HEIGHT;
+import static edu.lancs.game.Constants.MENU_BUTTON_WIDTH;
 
 public class MenuButton extends Button {
 
-    public enum Type {
-        NEW_GAME, HIGH_SCORES, TUTORIAL, EXIT
-    }
-
-    private Window window;
-
     private Type type;
-
 
     public MenuButton(Window window, Scene parentScene, String text, Type type, float xPos, float yPos) {
         super(window, parentScene, xPos, yPos, MENU_BUTTON_WIDTH, MENU_BUTTON_HEIGHT);
         setText(text);
         this.type = type;
+
+        // chooses what textures to use based on what type of button it is (multi-function button)
         switch (this.type) {
             case NEW_GAME:
                 setDefaultTexture(window.getResourceManager().getTextures("new_game_default"));
@@ -50,33 +46,44 @@ public class MenuButton extends Button {
         }
     }
 
+    /***
+     * As this is a multi-function button, this performs an action based off what type of button it is.
+     */
     @Override
     public void click() {
         switch (type) {
             case NEW_GAME:
                 Debug.print("[Button] New Game");
+
+                // creates the GameScene for the users to play
                 GameScene gameScene = new GameScene(getWindow());
                 int gameSceneIndex = getWindow().addScene(gameScene);
                 gameScene.activate();
-                if(getParentScene().getMusic() != null)
+
+                // if there is music, stop said music
+                if (getParentScene().getMusic() != null)
                     getParentScene().getMusic().stop();
+
+                // deactivate current scene (should be menu at this point)
                 getWindow().setCurrentScene(gameSceneIndex);
                 getParentScene().deactivate();
                 break;
 
             case HIGH_SCORES:
                 Debug.print("[Button] High Scores ");
+
+                // opens the users browser to the high scores page (live web-based high scores)
                 try {
-                    java.awt.Desktop.getDesktop().browse(new URI("http://protaytoe.uk/highscores"));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (URISyntaxException e) {
+                    java.awt.Desktop.getDesktop().browse(new URI("http://protaytoe.uk/highscores")); // open this URL
+                } catch (IOException | URISyntaxException e) {
                     e.printStackTrace();
                 }
                 break;
 
             case TUTORIAL:
                 Debug.print("[Button] Level Editor ");
+
+                // adds the tutorial scene an sets it to the active scene
                 //FIXME: This technically adds the as a new scene every time. Could be fixed by having the BackButton delete the TutorialScene from Window
                 TutorialScene tutorialScene = new TutorialScene(getWindow(), getParentScene());
                 int testSceneIndex = getWindow().addScene(tutorialScene);
@@ -94,6 +101,10 @@ public class MenuButton extends Button {
 
     @Override
     public void mouseOver() {
-        getWindow().getResourceManager().getSound("menu_click").play();
+        getWindow().getResourceManager().getSound("menu_click").play(); // plays the menu click sound upon mouseover
+    }
+
+    public enum Type {
+        NEW_GAME, HIGH_SCORES, TUTORIAL, EXIT
     }
 }

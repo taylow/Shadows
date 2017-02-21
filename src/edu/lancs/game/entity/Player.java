@@ -29,17 +29,11 @@ public class Player extends Entity {
 
     private State state;
 
-    /***
-     * States for the players animation/actions
-     */
-    public enum State {
-        IDLE, RUNNING, ATTACKING, DYING
-    }
-
-    public Player(Window window, String textureName) {
-        super(window, textureName, PLAYER_STARTING_X, PLAYER_STARTING_Y, true);
+    public Player(Window window) {
+        super(window, "idle_knight", PLAYER_STARTING_X, PLAYER_STARTING_Y, true);
+        // initialise player stats (health, score, etc)
         health = PLAYER_STARTING_HEALTH;
-        hearts = PLAYER_STARTING_HEALTH;
+        hearts = PLAYER_STARTING_HEALTH; //FIXME: fix it so odd numbers don't cause issues
         score = 0;
 
         inputHandler = getWindow().getInputHandler();
@@ -54,20 +48,25 @@ public class Player extends Entity {
         setState(IDLE);
     }
 
+    /***
+     * Special actions should be performed in here.
+     */
     @Override
     public void performAction() {
     }
 
+    /***
+     * This updates the players variables every iteration.
+     */
     @Override
     public void update() {
-        // test HUD system (HUD TEST TODO: REMOVE THIS ONCe HUD TESTING IS FINISHED)
+        // test HUD system (HUD TEST TODO: REMOVE THIS ONCE HUD TESTING IS FINISHED)
         health += testHealth;
-        if(health == 0)
+        if (health == 0)
             testHealth = 1;
-        else if(health == hearts)
+        else if (health == hearts)
             testHealth = -1;
         score++;
-
 
         handleMovement();
         nextFrame();
@@ -78,7 +77,7 @@ public class Player extends Entity {
      * Support for diagonal movement is present as each if condition is on its own line.
      */
     public void handleMovement() {
-        if(inputHandler.isMoveing() && !inputHandler.isSpaceKeyPressed()) {
+        if (inputHandler.isMoveing() && !inputHandler.isSpaceKeyPressed()) {
             if (inputHandler.iswKeyPressed())
                 moveUp();
             if (inputHandler.isaKeyPressed())
@@ -87,12 +86,12 @@ public class Player extends Entity {
                 moveDown();
             if (inputHandler.isdKeyPressed())
                 moveRight();
-        } else if(inputHandler.isSpaceKeyPressed()) {
-            if(getState() != ATTACKING)
+        } else if (inputHandler.isSpaceKeyPressed()) {
+            if (getState() != ATTACKING)
                 attack();
         } else {
-            if(getState() != IDLE)
-               setState(IDLE);
+            if (getState() != IDLE)
+                setState(IDLE);
         }
     }
 
@@ -102,7 +101,7 @@ public class Player extends Entity {
     public void moveLeft() {
         move(-PLAYER_BASE_MOVEMENT, 0f);
         setScale(-1.f, 1.f); // flip the sprite to face right
-        if(state != RUNNING)
+        if (state != RUNNING)
             setState(RUNNING);
     }
 
@@ -112,7 +111,7 @@ public class Player extends Entity {
     public void moveRight() {
         move(PLAYER_BASE_MOVEMENT, 0f);
         setScale(1.f, 1.f); // flip the sprite to face left
-        if(state != RUNNING)
+        if (state != RUNNING)
             setState(RUNNING);
     }
 
@@ -121,7 +120,7 @@ public class Player extends Entity {
      */
     public void moveUp() {
         move(0f, -PLAYER_BASE_MOVEMENT);
-        if(state != RUNNING)
+        if (state != RUNNING)
             setState(RUNNING);
     }
 
@@ -130,8 +129,17 @@ public class Player extends Entity {
      */
     public void moveDown() {
         move(0f, PLAYER_BASE_MOVEMENT);
-        if(state != RUNNING)
+        if (state != RUNNING)
             setState(RUNNING);
+    }
+
+    /***
+     * Returns the current State of the Player.
+     *
+     * @return - Current State of the Player
+     */
+    public State getState() {
+        return state;
     }
 
     /***
@@ -162,15 +170,6 @@ public class Player extends Entity {
     }
 
     /***
-     * Returns the current State of the Player.
-     *
-     * @return - Current State of the Player
-     */
-    public State getState() {
-        return state;
-    }
-
-    /***
      * Performs an attack and sets the Players state to ATTACKING.
      * TODO: Add hit detection in here. Should check the current frame syncs up with the hit blow.
      */
@@ -178,15 +177,37 @@ public class Player extends Entity {
         setState(ATTACKING);
     }
 
+    /***
+     * Returns the players health.
+     *
+     * @return - Players health
+     */
     public int getHealth() {
         return health;
     }
 
+    /***
+     * Returns the players score.
+     *
+     * @return - Players score
+     */
     public int getScore() {
         return score;
     }
 
+    /***
+     * Returns the players hearts.
+     *
+     * @return - Players hearts
+     */
     public int getHearts() {
         return hearts;
+    }
+
+    /***
+     * States for the players animation/actions
+     */
+    public enum State {
+        IDLE, RUNNING, ATTACKING, DYING
     }
 }

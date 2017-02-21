@@ -46,11 +46,9 @@ public abstract class Scene {
                         window.close();
                         System.exit(0); // closes the system
                         break;
-                    /*case KEY_PRESSED:
-                        getWindow().getInputHandler().processInputs(event.asKeyEvent().key);
-                        break;*/ //TODO: Fix InputHandler
                     case MOUSE_MOVED:
-                        mousePosition = event.asMouseEvent().position; // updates mouse position on current scene
+                        mousePosition = event.asMouseEvent().position; // updates mouse position on current scene TODO: finish the InputHandler part
+                        getWindow().getInputHandler().updateMouseMovement(event);
                     default:
                         executeEvent(event); // any other action that isn't listed here will be handled in executeEvent() in the sub class
                         break;
@@ -152,6 +150,15 @@ public abstract class Scene {
     }
 
     /***
+     * Returns the current background music.
+     *
+     * @return - Current background music
+     */
+    public Sound getMusic() {
+        return music;
+    }
+
+    /***
      * Sets the background music to a Sound
      *
      * @param music - Music to be played in the background
@@ -160,14 +167,5 @@ public abstract class Scene {
         this.music = getWindow().getResourceManager().getSound(music);
         this.music.setLoop(true);
         this.music.play();
-    }
-
-    /***
-     * Returns the current background music.
-     *
-     * @return - Current background music
-     */
-    public Sound getMusic() {
-        return music;
     }
 }

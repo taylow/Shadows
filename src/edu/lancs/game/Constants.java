@@ -12,7 +12,8 @@ public class Constants {
     public static final String RESOURCE_PATH = "resources/";
 
     /*Debug Constants*/
-    public static final boolean DEBUG = true;
+    public static final boolean DEBUG_MESSAGES = true;
+    public static final boolean DEBUG_ERRORS = true;
 
     /*Menu Constants*/
     public static final int MENU_BUTTON_WIDTH = 254;

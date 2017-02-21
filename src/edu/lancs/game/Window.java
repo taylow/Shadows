@@ -7,7 +7,7 @@ import org.jsfml.window.WindowStyle;
 
 import java.util.ArrayList;
 
-import static edu.lancs.game.Constants.*;
+import static edu.lancs.game.Constants.RESOURCE_PATH;
 
 public class Window extends RenderWindow {
     private int width;
@@ -32,8 +32,8 @@ public class Window extends RenderWindow {
         this.width = width;
         this.height = height;
 
-        this.resourceManager = new ResourceManager(RESOURCE_PATH);
-        this.inputHandler = new InputHandler(this);
+        this.resourceManager = new ResourceManager(RESOURCE_PATH); // load all resources
+        this.inputHandler = new InputHandler(this); // add an InputHandler with the Window as the focus
 
         this.scenes = new ArrayList<>();
 
@@ -43,8 +43,8 @@ public class Window extends RenderWindow {
         else
             this.create(new VideoMode(width, height), title, WindowStyle.DEFAULT);
 
-        this.setFramerateLimit(frameRate);
-        this.setCurrentScene(0);
+        this.setFramerateLimit(frameRate); // set the frame rate
+        this.setCurrentScene(0); // first scene to be loaded
     }
 
     /***
@@ -53,7 +53,7 @@ public class Window extends RenderWindow {
      */
     public void drawActiveScene() {
         while (true) {
-            Debug.print("Drawing current scene " + currentScene);
+            Debug.print("Drawing scene: " + currentScene + " - " + getCurrentScene().getClass().getName());
             scenes.get(currentScene).display();
         }
     }
@@ -108,23 +108,6 @@ public class Window extends RenderWindow {
     }
 
     /***
-     * Deactivates old scenes and activates the one at an index.
-     *
-     * @param currentScene - Scene to be activated
-     */
-    public void setCurrentScene(int currentScene) {
-        // checks if there are actually scenes to work with
-        if(scenes.size() != 0) {
-            if (scenes.get(getCurrentSceneIndex()).isActive())
-                Debug.print("Deactivating scene " + getCurrentSceneIndex());
-                scenes.get(getCurrentSceneIndex()).deactivate(); // deactivates old scene if it's active
-
-            this.currentScene = currentScene; // sets current scene index
-            scenes.get(getCurrentSceneIndex()).activate(); // activates current scene
-        }
-    }
-
-    /***
      * Returns the Scene that is currently activated.
      *
      * @return - Currently activated Scene
@@ -133,10 +116,37 @@ public class Window extends RenderWindow {
         return scenes.get(getCurrentSceneIndex());
     }
 
+    /***
+     * Deactivates old scenes and activates the one at an index.
+     *
+     * @param currentScene - Scene to be activated
+     */
+    public void setCurrentScene(int currentScene) {
+        // checks if there are actually scenes to work with
+        if (scenes.size() != 0) {
+            if (scenes.get(getCurrentSceneIndex()).isActive())
+                Debug.print("Deactivating scene " + getCurrentSceneIndex());
+            scenes.get(getCurrentSceneIndex()).deactivate(); // deactivates old scene if it's active
+
+            this.currentScene = currentScene; // sets current scene index
+            scenes.get(getCurrentSceneIndex()).activate(); // activates current scene
+        }
+    }
+
+    /***
+     * Provides Scenes with the ResourceManager to use resources from.
+     *
+     * @return - ResourceManager full of Resources
+     */
     public ResourceManager getResourceManager() {
         return resourceManager;
     }
 
+    /***
+     * Provides Scenes with the InputHandler.
+     *
+     * @return - InputHandler for the Window
+     */
     public InputHandler getInputHandler() {
         return inputHandler;
     }

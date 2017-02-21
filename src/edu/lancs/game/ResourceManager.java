@@ -23,51 +23,48 @@ public class ResourceManager {
         loadResources(filePath);
     }
 
+    /***
+     * Loads all resources by providing the resource path plus the sub paths.
+     * Note: Resource file should follow strict order. You can add any resource
+     * just by adding the file, but do not change the directories.
+     *
+     * @param filePath - The resource path.
+     */
     public void loadResources(String filePath) {
-        loadtextures(filePath);
-        loadSprites(filePath + "sprites/game");
+        loadTextures(filePath + "sprites/game");
         loadAnimations(filePath + "animations");
         loadSounds(filePath + "sounds");
         loadFonts(filePath + "misc/fonts");
     }
 
     /***
-     * Loads textures from a specific file path.
+     * Loads all textures from a specific file path by recursively running until an actual texture is found.
      *
      * @param filePath - Location of textures
      */
-    private void loadtextures(String filePath) {
-        //TODO: load textures here
-    }
-
-    /***
-     * Loads sprites from a specific file path.
-     *
-     * @param filePath - Location of sprites
-     */
-    private void loadSprites(String filePath) {
+    private void loadTextures(String filePath) {
         File directory = new File(filePath);
         File[] directoryListing = directory.listFiles();
         if (directoryListing != null) {
             for (File file : directoryListing) {
-                if(file.isDirectory()) {
-                    loadSprites(file.getPath());
+                if (file.isDirectory()) {
+                    loadTextures(file.getPath());
                 } else {
-                    loadSprite(file.getPath());
+                    loadTexture(file.getPath());
                 }
             }
         } else {
-            System.err.println("Sound " + directory.getPath() + " could not be loaded");
+            Debug.error("Texture " + directory.getPath() + " could not be loaded");
         }
     }
 
     /***
-     * Loads a single sprite into the sprites ArrayList using the filename (without extension) as
+     * Loads a single texture into the textures ArrayList using the filename (without extension) as
      * its HashMap name.
      *
-     * @param filePath - File to the specific sprite
+     * @param filePath - File to the specific texture
      */
-    private void loadSprite(String filePath) {
+    private void loadTexture(String filePath) {
         File file = new File(filePath);
         try {
             Image image = new Image();
@@ -83,10 +80,8 @@ public class ResourceManager {
             String rawFileName = file.getName().substring(0, file.getName().lastIndexOf('.'));
             textures.put(rawFileName, texture);
 
-            Debug.print("Loaded sprite: " + rawFileName);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (TextureCreationException e) {
+            Debug.print("Loaded texture: " + rawFileName);
+        } catch (IOException | TextureCreationException e) {
             e.printStackTrace();
         }
     }
@@ -101,7 +96,7 @@ public class ResourceManager {
         File[] directoryListing = directory.listFiles();
         if (directoryListing != null) {
             for (File file : directoryListing) {
-                if(file.isDirectory()) {
+                if (file.isDirectory()) {
                     loadAnimations(file.getPath());
                 } else {
                     String rawFileName = file.getParentFile().getName();
@@ -111,7 +106,7 @@ public class ResourceManager {
                 }
             }
         } else {
-            System.err.println("Animation " + directory.getPath() + " could not be loaded");
+            Debug.error("Animation " + directory.getPath() + " could not be loaded");
         }
     }
 
@@ -132,7 +127,7 @@ public class ResourceManager {
                     image.loadFromFile(file.toPath());
 
                     //TODO: Add proper masking colours if needed (works for the animations we currently have)
-                    Color maskColour = new Color( 3, 2, 1 );
+                    Color maskColour = new Color(3, 2, 1);
                     image.createMaskFromColor(maskColour, 0);
 
                     Texture texture = new Texture();
@@ -143,14 +138,12 @@ public class ResourceManager {
 
                     String rawFileName = file.getName().substring(0, file.getName().lastIndexOf('.'));
                     Debug.print("Loaded animation frame: " + rawFileName);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (TextureCreationException e) {
+                } catch (IOException | TextureCreationException e) {
                     e.printStackTrace();
                 }
             }
         } else {
-            System.err.println("Animation " + directory.getPath() + " could not be loaded");
+            Debug.error("Animation " + directory.getPath() + " could not be loaded");
         }
         return animationTextures;
     }
@@ -165,14 +158,14 @@ public class ResourceManager {
         File[] directoryListing = directory.listFiles();
         if (directoryListing != null) {
             for (File file : directoryListing) {
-                if(file.isDirectory()) {
+                if (file.isDirectory()) {
                     loadSounds(file.getPath());
                 } else {
                     loadSound(file.getPath());
                 }
             }
         } else {
-            System.err.println("Sound " + directory.getPath() + " could not be loaded");
+            Debug.error("Sound " + directory.getPath() + " could not be loaded");
         }
     }
 
@@ -209,14 +202,14 @@ public class ResourceManager {
         File[] directoryListing = directory.listFiles();
         if (directoryListing != null) {
             for (File file : directoryListing) {
-                if(file.isDirectory()) {
+                if (file.isDirectory()) {
                     loadFonts(file.getPath());
                 } else {
                     loadFont(file.getPath());
                 }
             }
         } else {
-            System.err.println("Font " + directory.getPath() + " could not be loaded");
+            Debug.error("Font " + directory.getPath() + " could not be loaded");
         }
     }
 
@@ -243,37 +236,37 @@ public class ResourceManager {
 
     public Sound getSound(String name) {
         // checks if sound is in the sounds list
-        if(sounds.containsKey(name))
+        if (sounds.containsKey(name))
             return sounds.get(name);
         else
-            System.err.println("Invalid sound: " + name);
-            return null;
+            Debug.error("Invalid sound: " + name);
+        return null;
     }
 
     public Font getFont(String name) {
         // checks if the font is in the fonts list
-        if(fonts.containsKey(name))
+        if (fonts.containsKey(name))
             return fonts.get(name);
         else
-            System.err.println("Invalid font: " + name);
-            return null;
+            Debug.error("Invalid font: " + name);
+        return null;
     }
 
     public Texture getTextures(String name) {
         // checks if texture is in textures list
-        if(textures.containsKey(name))
+        if (textures.containsKey(name))
             return textures.get(name);
         else
-            System.err.println("Invalid texture: " + name);
-            return null;
+            Debug.error("Invalid texture: " + name);
+        return null;
     }
 
     public ArrayList<Texture> getAnimations(String animationName) {
         // checks if the animation is in the animation list
-        if(animations.containsKey(animationName))
+        if (animations.containsKey(animationName))
             return animations.get(animationName);
         else
-            System.err.println("Invalid animation: " + animationName);
-            return null;
+            Debug.error("Invalid animation: " + animationName);
+        return null;
     }
 }
