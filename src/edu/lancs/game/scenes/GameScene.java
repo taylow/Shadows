@@ -27,7 +27,7 @@ public class GameScene extends Scene {
         hud = new HUD(getWindow(), player); // creates a HUD and passes Window and the player just created into it for variables
 
         // currently only has one level TODO: add a 2D level array
-        level = new Level(getWindow(), 7, 5, 0, "green_stone"); // generates a level 7x5 with 0 complexity and using textures "green_stone"
+        level = new Level(getWindow(), 15, 10, 0, "green_stone"); // generates a level 7x5 with 0 complexity and using textures "green_stone"
     }
 
     /***
@@ -50,11 +50,12 @@ public class GameScene extends Scene {
         }
 
 
-        /*// FIXME: View works, but should really be done another way. Also, HUD doesn't draw to correct view
+        // FIXME: View works, but should really be done another way. Also, HUD doesn't draw to correct view
+
         View view = (View) getWindow().getDefaultView();
         view.setCenter(player.getPosition());
         //view.move(velocity);
-        getWindow().setView(view);*/
+        getWindow().setView(view);
 
         // draws the player
         player.update();
