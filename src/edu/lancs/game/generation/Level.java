@@ -45,11 +45,15 @@ public class Level {
             if (column == 0)
                 tiles[0][column] = new Tile(getWindow(), textureName + "_wall", NW, 1, column, 0);
 
-                // last piece (NE corner)
+            // last piece (NE corner)
             else if (column == width - 1)
                 tiles[0][column] = new Tile(getWindow(), textureName + "_wall", NE, 1, column, 0);
 
-                // middle piece (N wall)
+            // if it's the middle, add a door
+            else if(column == (width - 1) / 2)
+                tiles[0][column] = new Door(getWindow(), textureName + "_door_round_closed", N, 1, column, 0, 0, 0);
+
+            // middle piece (N wall)
             else
                 tiles[0][column] = new Tile(getWindow(), textureName + "_wall", N, 1, column, 0);
         }
@@ -59,10 +63,16 @@ public class Level {
             for (int row = 1; row < height - 1; row++) {
                 // first piece (W wall)
                 if (column == 0)
+                    if(row == (height - 1) / 2)
+                        tiles[row][column] = new Door(getWindow(), textureName + "_door_round_closed", W, 1, column, row, 0, 0);
+                else
                     tiles[row][column] = new Tile(getWindow(), textureName + "_wall", W, 1, column, row);
 
-                    // last piece (E wall)
+                // last piece (E wall)
                 else if (column + 1 == width)
+                    if(row == (height - 1) / 2)
+                        tiles[row][column] = new Door(getWindow(), textureName + "_door_round_closed", E, 1, column, row, 0, 0);
+                else
                     tiles[row][column] = new Tile(getWindow(), textureName + "_wall", E, 1, column, row);
 
                     // middle piece (floor tile)
@@ -80,6 +90,10 @@ public class Level {
                 // last piece (SE corner)
             else if (column + 1 == width)
                 tiles[height - 1][column] = new Tile(getWindow(), textureName + "_wall", SE, 1, column, height - 1);
+
+                // if it's the middle, add a door
+            else if(column == (width - 1) / 2)
+                tiles[height - 1][column] = new Door(getWindow(), textureName + "_door_round_closed", S, 1, column, height - 1, 0, 0);
 
                 // middle piece (S wall)
             else
