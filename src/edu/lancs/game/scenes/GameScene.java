@@ -123,6 +123,7 @@ public class GameScene extends Scene {
                         currentLevel = levels[destinationRow][destinationColumn]; // change the level
                         currentLevel.discoverLevel(); // discover (minimap)
                         currentLevel.setCurrentLevel(true); // set the current level
+                        player.resetCollision();
                         teleport = true;
                     }
                 }

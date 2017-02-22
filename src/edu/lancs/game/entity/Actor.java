@@ -278,8 +278,23 @@ public abstract class Actor extends Entity {
         isCollidingUp = collidingUp;
     }
 
+    /***
+     * Sets whether or not the Player is currently colliding down.
+     *
+     * @param collidingDown - Whether or not the Player is currently colliding down
+     */
     public void setCollidingDown(boolean collidingDown) {
         isCollidingDown = collidingDown;
+    }
+
+    /***
+     * Resets all collision to false.
+     */
+    public void resetCollision() {
+        isCollidingUp = false;
+        isCollidingDown = false;
+        isCollidingLeft = false;
+        isCollidingRight = false;
     }
 
     /***
