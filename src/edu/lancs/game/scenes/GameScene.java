@@ -1,6 +1,7 @@
 package edu.lancs.game.scenes;
 
 import edu.lancs.game.Window;
+import edu.lancs.game.entity.Chest;
 import edu.lancs.game.entity.Enemy;
 import edu.lancs.game.entity.Player;
 import edu.lancs.game.generation.Floor;
@@ -14,12 +15,17 @@ import org.jsfml.window.event.Event;
 
 import java.util.Random;
 
+import static edu.lancs.game.Constants.GAME_LEVEL_HEIGHT;
+import static edu.lancs.game.Constants.GAME_LEVEL_WIDTH;
+
 public class GameScene extends Scene {
 
     private HUD hud;
     private Player player;
     private Enemy enemy;
-    private Level level;
+    private Level[][] levels;
+    private Level currentLevel;
+    private Chest chest;
 
     public GameScene(Window window) {
         super(window);
@@ -33,7 +39,16 @@ public class GameScene extends Scene {
 
         // currently only has one level TODO: add a 2D level array
         Random random = new Random();
-        level = new Level(getWindow(), random.nextInt(10) + 5, random.nextInt(10) + 5, 0, "green_stone"); // generates a level 7x5 with 0 complexity and using textures "green_stone"
+
+        levels = new Level[GAME_LEVEL_WIDTH][GAME_LEVEL_HEIGHT];
+
+        chest = new Chest(getWindow(), 200, 200);
+
+        for(int column = 0; column < GAME_LEVEL_WIDTH; column++)
+            for(int row = 0; row < GAME_LEVEL_HEIGHT; row++)
+                levels[column][row] = new Level(getWindow(), random.nextInt(10) + 5, random.nextInt(10) + 5, 0, "green_stone"); // generates a level 7x5 with 0 complexity and using textures "green_stone"
+
+        currentLevel = levels[0][0]; // TODO: Randomise where the player starts and finishes
     }
 
     /***
@@ -44,22 +59,29 @@ public class GameScene extends Scene {
     @Override
     public void draw(Window window) {
         // draws the level tiles
-        for (Tile[] tileRow : level.getTiles()) {
+        for (Tile[] tileRow : currentLevel.getTiles()) {
             for (Tile tile : tileRow) {
                 window.draw(tile);
 
                 //FIXME: Some basic collision detection, worst way possible, needs changing (DON'T USE instanceOf, this was a last resort test)
-                if(!(tile instanceof Floor))
-                    if(tile.getGlobalBounds().intersection(new FloatRect(player.getPosition().x, player.getPosition().y, 1, 1)) != null)
+                if (!(tile instanceof Floor))
+                    if (tile.getGlobalBounds().intersection(new FloatRect(player.getPosition().x, player.getPosition().y, 1, 1)) != null)
                         player.setColliding(true);
             }
         }
+
+        Random random = new Random();
+        //FIXME: This is to test the levels... Remove when done
+        //currentLevel = levels[random.nextInt(5)][random.nextInt(5)];
+
 
         // FIXME: View works, but should really be done another way. Also, HUD doesn't draw to correct view
         View view = (View) getWindow().getDefaultView();
         view.setCenter(player.getPosition());
         //view.move(velocity);
         getWindow().setView(view);
+
+        window.draw(chest);
 
         // draws the enemy //TODO: enemies should be stored in the level, so do that
         enemy.setTargetActor(player);

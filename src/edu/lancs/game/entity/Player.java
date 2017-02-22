@@ -1,18 +1,11 @@
 package edu.lancs.game.entity;
 
-import edu.lancs.game.Debug;
 import edu.lancs.game.InputHandler;
 import edu.lancs.game.Window;
-import org.jsfml.graphics.FloatRect;
-import org.jsfml.graphics.Sprite;
-import org.jsfml.graphics.Texture;
-import org.jsfml.graphics.View;
-import org.jsfml.system.Vector2f;
-
-import java.util.ArrayList;
 
 import static edu.lancs.game.Constants.*;
-import static edu.lancs.game.entity.Actor.State.*;
+import static edu.lancs.game.entity.Actor.State.ATTACKING;
+import static edu.lancs.game.entity.Actor.State.IDLE;
 
 public class Player extends Actor {
 

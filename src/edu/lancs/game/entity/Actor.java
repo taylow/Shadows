@@ -10,7 +10,7 @@ import org.jsfml.system.Vector2f;
 
 import java.util.ArrayList;
 
-import static edu.lancs.game.Constants.*;
+import static edu.lancs.game.Constants.PLAYER_BASE_MOVEMENT;
 import static edu.lancs.game.entity.Actor.State.*;
 
 public abstract class Actor extends Entity {
@@ -74,7 +74,7 @@ public abstract class Actor extends Entity {
      */
     public void moveLeft() {
         velocity = new Vector2f(-PLAYER_BASE_MOVEMENT, 0);
-        if(!isColliding)
+        if (!isColliding)
             move(velocity);
         setScale(-1.f, 1.f); // flip the sprite to face right
         if (state != RUNNING)
@@ -86,7 +86,7 @@ public abstract class Actor extends Entity {
      */
     public void moveRight() {
         velocity = new Vector2f(PLAYER_BASE_MOVEMENT, 0);
-        if(!isColliding)
+        if (!isColliding)
             move(velocity);
         setScale(1.f, 1.f); // flip the sprite to face left
         if (state != RUNNING)
@@ -98,7 +98,7 @@ public abstract class Actor extends Entity {
      */
     public void moveUp() {
         velocity = new Vector2f(0, -PLAYER_BASE_MOVEMENT);
-        if(!isColliding)
+        if (!isColliding)
             move(velocity);
         if (state != RUNNING)
             setState(RUNNING);
@@ -109,7 +109,7 @@ public abstract class Actor extends Entity {
      */
     public void moveDown() {
         velocity = new Vector2f(0, PLAYER_BASE_MOVEMENT);
-        if(!isColliding)
+        if (!isColliding)
             move(velocity);
         if (state != RUNNING)
             setState(RUNNING);
@@ -152,21 +152,21 @@ public abstract class Actor extends Entity {
     }
 
     /***
-     * Sets the velocity of the Actor for it to move.
-     *
-     * @param velocity - Velocity of where to move the Actor
-     */
-    public void setVelocity(Vector2f velocity) {
-        this.velocity = velocity;
-    }
-
-    /***
      * Returns the current velocity of the character.
      *
      * @return - Current velocity of the character
      */
     public Vector2f getVelocity() {
         return velocity;
+    }
+
+    /***
+     * Sets the velocity of the Actor for it to move.
+     *
+     * @param velocity - Velocity of where to move the Actor
+     */
+    public void setVelocity(Vector2f velocity) {
+        this.velocity = velocity;
     }
 
     /***
@@ -202,7 +202,7 @@ public abstract class Actor extends Entity {
      * @param health - Current health
      */
     public void setHealth(int health) {
-        if(health <= hearts && health >= 0)
+        if (health <= hearts && health >= 0)
             this.health = health;
         else
             this.health = 0; //FIXME: Here I just basically say, if you set the health wrong, kill the character (i.e. setting it to -1 will go to 0)
@@ -218,10 +218,12 @@ public abstract class Actor extends Entity {
     }
 
     /***
-     * States for the players animation/actions
+     * Returns whether or not the Player is colliding currently.
+     *
+     * @return - Whether or not the Player is currently colliding
      */
-    public enum State {
-        IDLE, RUNNING, ATTACKING, DYING
+    public boolean isColliding() {
+        return isColliding;
     }
 
     /***
@@ -234,11 +236,9 @@ public abstract class Actor extends Entity {
     }
 
     /***
-     * Returns whether or not the Player is colliding currently.
-     *
-     * @return - Whether or not the Player is currently colliding
+     * States for the players animation/actions
      */
-    public boolean isColliding() {
-        return isColliding;
+    public enum State {
+        IDLE, RUNNING, ATTACKING, DYING
     }
 }

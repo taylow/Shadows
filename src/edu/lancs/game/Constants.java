@@ -8,6 +8,9 @@ public class Constants {
     public static final int GAME_FRAME_RATE = 60;
     public static final boolean GAME_FULLSCREEN = false;
 
+    public static final int GAME_LEVEL_WIDTH = 10;
+    public static final int GAME_LEVEL_HEIGHT = 10;
+
     /*Path Constants*/
     public static final String RESOURCE_PATH = "resources/";
 

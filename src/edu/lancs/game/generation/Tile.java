@@ -1,8 +1,6 @@
 package edu.lancs.game.generation;
 
-import edu.lancs.game.Debug;
 import edu.lancs.game.Window;
-import org.jsfml.graphics.Color;
 import org.jsfml.graphics.Sprite;
 import org.jsfml.system.Vector2f;
 
@@ -38,10 +36,12 @@ public abstract class Tile extends Sprite {
     }
 
     /***
-     * Direction of the tile texture (none = floor tile)
+     * Returns whether or not Entities can collide with this Tile.
+     *
+     * @return - Whether or not Entities can collide with this Tile
      */
-    public enum Direction {
-        N, NE, E, SE, S, SW, W, NW, NONE
+    public boolean isCanCollide() {
+        return canCollide;
     }
 
     /***
@@ -51,15 +51,6 @@ public abstract class Tile extends Sprite {
      */
     public void setCanCollide(boolean canCollide) {
         this.canCollide = canCollide;
-    }
-
-    /***
-     * Returns whether or not Entities can collide with this Tile.
-     *
-     * @return - Whether or not Entities can collide with this Tile
-     */
-    public boolean isCanCollide() {
-        return canCollide;
     }
 
     /***
@@ -105,5 +96,12 @@ public abstract class Tile extends Sprite {
 
     public Window getWindow() {
         return window;
+    }
+
+    /***
+     * Direction of the tile texture (none = floor tile)
+     */
+    public enum Direction {
+        N, NE, E, SE, S, SW, W, NW, NONE
     }
 }

@@ -3,16 +3,10 @@ package edu.lancs.game.entity;
 import edu.lancs.game.InputHandler;
 import edu.lancs.game.Window;
 import org.jsfml.graphics.Color;
-import org.jsfml.graphics.Texture;
 import org.jsfml.system.Vector2f;
 
-import java.util.ArrayList;
-import java.util.Random;
-
 import static edu.lancs.game.Constants.*;
-import static edu.lancs.game.entity.Actor.State.ATTACKING;
-import static edu.lancs.game.entity.Actor.State.IDLE;
-import static edu.lancs.game.entity.Actor.State.RUNNING;
+import static edu.lancs.game.entity.Actor.State.*;
 
 public class Enemy extends Actor {
 
@@ -56,18 +50,18 @@ public class Enemy extends Actor {
      */
     public void handleMovement() {
 
-        if(targetActor != null) {
-            Vector2f diff = Vector2f.sub( targetActor.getPosition(), getPosition() );
-            setVelocity(Vector2f.div( diff, 130.0f ));
+        if (targetActor != null) {
+            Vector2f diff = Vector2f.sub(targetActor.getPosition(), getPosition());
+            setVelocity(Vector2f.div(diff, 130.0f));
 
-            if(diff.x < 0)
+            if (diff.x < 0)
                 setScale(-1.f, 1.f); // flip the sprite to face left
             else
                 setScale(1.f, 1.f); // flip the sprite to face right
 
-            if(Math.abs(diff.x) > 90 || Math.abs(diff.y) > 90) {
+            if (Math.abs(diff.x) > 90 || Math.abs(diff.y) > 90) {
                 move(getVelocity());
-                if(getState() != RUNNING)
+                if (getState() != RUNNING)
                     setState(RUNNING);
             } else {
                 if (getState() != ATTACKING)
