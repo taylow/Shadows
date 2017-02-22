@@ -12,6 +12,7 @@ public class InputHandler {
     private boolean sKeyPressed;
     private boolean dKeyPressed;
     private boolean spaceKeyPressed;
+    private boolean ctrlKeyPressed;
 
     private Vector2i mousePosition;
 
@@ -24,6 +25,7 @@ public class InputHandler {
         sKeyPressed = false;
         dKeyPressed = false;
         sKeyPressed = false;
+        ctrlKeyPressed = false;
 
         mousePosition = new Vector2i(1, 1);
     }
@@ -50,6 +52,10 @@ public class InputHandler {
 
             case SPACE:
                 spaceKeyPressed = Keyboard.isKeyPressed(key); // sets to space's press value
+                break;
+
+            case LCONTROL:
+                ctrlKeyPressed = Keyboard.isKeyPressed(key); // sets to ctrl's press value
                 break;
 
             case A:
@@ -114,12 +120,21 @@ public class InputHandler {
     }
 
     /***
-     * Returns whether or not the SPACe key is pressed.
+     * Returns whether or not the SPACE key is pressed.
      *
      * @return - SPACE keys pressed value
      */
     public boolean isSpaceKeyPressed() {
         return spaceKeyPressed;
+    }
+
+    /***
+     * Returns whether or not the LCONTROL key is pressed.
+     *
+     * @return - LCONTROL keys pressed value
+     */
+    public boolean isCtrlKeyPressed() {
+        return ctrlKeyPressed;
     }
 
     /***

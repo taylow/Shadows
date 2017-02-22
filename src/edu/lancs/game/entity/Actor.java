@@ -3,6 +3,7 @@ package edu.lancs.game.entity;
 import edu.lancs.game.Debug;
 import edu.lancs.game.InputHandler;
 import edu.lancs.game.Window;
+import org.jsfml.audio.Sound;
 import org.jsfml.graphics.FloatRect;
 import org.jsfml.graphics.Sprite;
 import org.jsfml.graphics.Texture;
@@ -22,7 +23,12 @@ public abstract class Actor extends Entity {
     private Vector2f velocity;
 
     private int testHealth = -1; // TODO: Remove once finished with HUD testing
-    private boolean isColliding = false; //TODO: REMOVE THIS ONCE FINISHED TESTING/FIXING COLLISION
+    private boolean isCollidingLeft = false;
+    private boolean isCollidingRight = false;
+    private boolean isCollidingUp = false;
+    private boolean isCollidingDown = false;
+
+    private Sound sound;
 
     // the entity variables
     private InputHandler inputHandler;
@@ -74,8 +80,10 @@ public abstract class Actor extends Entity {
      */
     public void moveLeft() {
         velocity = new Vector2f(-PLAYER_BASE_MOVEMENT, 0);
-        if (!isColliding)
+        if (!isCollidingLeft) {
             move(velocity);
+            setCollidingRight(false);
+        }
         setScale(-1.f, 1.f); // flip the sprite to face right
         if (state != RUNNING)
             setState(RUNNING);
@@ -86,8 +94,10 @@ public abstract class Actor extends Entity {
      */
     public void moveRight() {
         velocity = new Vector2f(PLAYER_BASE_MOVEMENT, 0);
-        if (!isColliding)
+        if (!isCollidingRight) {
             move(velocity);
+            setCollidingLeft(false);
+        }
         setScale(1.f, 1.f); // flip the sprite to face left
         if (state != RUNNING)
             setState(RUNNING);
@@ -98,8 +108,10 @@ public abstract class Actor extends Entity {
      */
     public void moveUp() {
         velocity = new Vector2f(0, -PLAYER_BASE_MOVEMENT);
-        if (!isColliding)
+        if (!isCollidingUp) {
             move(velocity);
+            setCollidingDown(false);
+        }
         if (state != RUNNING)
             setState(RUNNING);
     }
@@ -109,8 +121,10 @@ public abstract class Actor extends Entity {
      */
     public void moveDown() {
         velocity = new Vector2f(0, PLAYER_BASE_MOVEMENT);
-        if (!isColliding)
+        if (!isCollidingDown) {
             move(velocity);
+            setCollidingUp(false);
+        }
         if (state != RUNNING)
             setState(RUNNING);
     }
@@ -131,6 +145,11 @@ public abstract class Actor extends Entity {
      */
     public void setState(State state) {
         this.state = state;
+
+        // stops all sound when the state changes
+        if(sound != null)
+            sound.stop();
+
         switch (state) {
             case IDLE:
                 setAnimation(idleAnimation);
@@ -142,6 +161,12 @@ public abstract class Actor extends Entity {
 
             case ATTACKING:
                 setAnimation(attackAnimation);
+
+                // plays the sword sound on loop FIXME: Really temporary, needs to be improved. Could use the "knight" in the file name so each type has its own attack sound (knight_melee_attack.wav)
+                sound = new Sound(getWindow().getResourceManager().getSound("melee_sword"));
+                sound.setLoop(true);
+                sound.setPitch(0.8f);
+                sound.play();
                 break;
 
             case DYING:
@@ -223,16 +248,38 @@ public abstract class Actor extends Entity {
      * @return - Whether or not the Player is currently colliding
      */
     public boolean isColliding() {
-        return isColliding;
+        return isCollidingLeft || isCollidingRight || isCollidingUp || isCollidingDown;
     }
 
     /***
-     * Sets whether or not the Player is colliding currently.
+     * Sets whether or not the Player is currently colliding left.
      *
-     * @param colliding - Whether or not the Player is currently colliding
+     * @param collidingLeft - Whether or not the Player is currently colliding left
      */
-    public void setColliding(boolean colliding) {
-        isColliding = colliding;
+    public void setCollidingLeft(boolean collidingLeft) {
+        isCollidingLeft = collidingLeft;
+    }
+
+    /***
+     * Sets whether or not the Player is currently colliding right.
+     *
+     * @param collidingRight - Whether or not the Player is currently colliding right
+     */
+    public void setCollidingRight(boolean collidingRight) {
+        isCollidingRight = collidingRight;
+    }
+
+    /***
+     * Sets whether or not the Player is currently colliding up.
+     *
+     * @param collidingUp - Whether or not the Player is currently colliding up
+     */
+    public void setCollidingUp(boolean collidingUp) {
+        isCollidingUp = collidingUp;
+    }
+
+    public void setCollidingDown(boolean collidingDown) {
+        isCollidingDown = collidingDown;
     }
 
     /***

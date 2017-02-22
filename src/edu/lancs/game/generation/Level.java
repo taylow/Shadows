@@ -1,6 +1,7 @@
 package edu.lancs.game.generation;
 
 import edu.lancs.game.Window;
+import org.jsfml.graphics.Color;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -13,6 +14,9 @@ public class Level {
     private int height;
     private int complexity;
     private String textureName;
+    private int levelColumnPosition;
+    private int levelRowPosition;
+    private Color levelColour;
 
     private Tile[][] tiles;
 
@@ -28,12 +32,16 @@ public class Level {
      * @param complexity - Complexity of the level (0 = no enemies, enemies scale with complexity)
      * @param textureName - The name of the texture using the prefix NAME_DIRECTION_NUMBER
      */
-    public Level(Window window, int width, int height, int complexity, String textureName) {
+    public Level(Window window, int width, int height, int complexity, String textureName, Color levelColour, int levelColumnPosition, int levelRowPosition) {
         this.window = window;
         this.width = width;
         this.height = height;
         this.complexity = complexity;
         this.textureName = textureName;
+        this.levelColumnPosition = levelColumnPosition;
+        this.levelRowPosition = levelRowPosition;
+        this.levelColour = levelColour;
+
         tiles = new Tile[height][width];
         doors = new ArrayList<>();
         generateTiles(textureName);
@@ -53,22 +61,22 @@ public class Level {
         for (int column = 0; column < width; column++) {
             // first piece (NW corner)
             if (column == 0)
-                tiles[0][column] = new Wall(getWindow(), textureName + "_wall", NW, 1, column, 0);
+                tiles[0][column] = new Wall(getWindow(), textureName + "_wall", NW, 1, column, 0, levelColour);
 
                 // last piece (NE corner)
             else if (column == width - 1)
-                tiles[0][column] = new Wall(getWindow(), textureName + "_wall", NE, 1, column, 0);
+                tiles[0][column] = new Wall(getWindow(), textureName + "_wall", NE, 1, column, 0, levelColour);
 
                 // if it's the middle, add a door
             else if (column == (width - 1) / 2) {
-                Door door = new Door(getWindow(), textureName + "_door_round", N, 1, column, 0, 0, 0, false);
+                Door door = new Door(getWindow(), textureName + "_door_round", N, 1, column, 0, levelColumnPosition - 1, levelRowPosition, false, levelColour);
                 tiles[0][column] = door;
                 doors.add(door);
             }
 
             // middle piece (N wall)
             else
-                tiles[0][column] = new Wall(getWindow(), textureName + "_wall", N, random.nextInt(5) + 1, column, 0);
+                tiles[0][column] = new Wall(getWindow(), textureName + "_wall", N, random.nextInt(5) + 1, column, 0, levelColour);
         }
 
         // middle section
@@ -77,20 +85,20 @@ public class Level {
                 // first piece (W wall)
                 if (column == 0)
                     if (row == (height - 1) / 2)
-                        tiles[row][column] = new Door(getWindow(), textureName + "_door_round", W, 1, column, row, 0, 0, true);
+                        tiles[row][column] = new Door(getWindow(), textureName + "_door_round", W, 1, column, row, levelColumnPosition, levelRowPosition - 1, true, levelColour);
                     else
-                        tiles[row][column] = new Wall(getWindow(), textureName + "_wall", W, random.nextInt(2) + 1, column, row);
+                        tiles[row][column] = new Wall(getWindow(), textureName + "_wall", W, random.nextInt(2) + 1, column, row, levelColour);
 
                     // last piece (E wall)
                 else if (column + 1 == width)
                     if (row == (height - 1) / 2)
-                        tiles[row][column] = new Door(getWindow(), textureName + "_door_round", E, 1, column, row, 0, 0, true);
+                        tiles[row][column] = new Door(getWindow(), textureName + "_door_round", E, 1, column, row, levelColumnPosition, levelRowPosition + 1, true, levelColour);
                     else
-                        tiles[row][column] = new Wall(getWindow(), textureName + "_wall", E, random.nextInt(2) + 1, column, row);
+                        tiles[row][column] = new Wall(getWindow(), textureName + "_wall", E, random.nextInt(2) + 1, column, row, levelColour);
 
                     // middle piece (floor tile)
                 else
-                    tiles[row][column] = new Floor(getWindow(), textureName + "_floor", NONE, random.nextInt(7) + 1, column, row);
+                    tiles[row][column] = new Floor(getWindow(), textureName + "_floor", NONE, random.nextInt(7) + 1, column, row, levelColour);
             }
         }
 
@@ -98,19 +106,19 @@ public class Level {
         for (int column = 0; column < width; column++) {
             // first piece (SW corner)
             if (column == 0)
-                tiles[height - 1][column] = new Wall(getWindow(), textureName + "_wall", SW, 1, column, height - 1);
+                tiles[height - 1][column] = new Wall(getWindow(), textureName + "_wall", SW, 1, column, height - 1, levelColour);
 
                 // last piece (SE corner)
             else if (column + 1 == width)
-                tiles[height - 1][column] = new Wall(getWindow(), textureName + "_wall", SE, 1, column, height - 1);
+                tiles[height - 1][column] = new Wall(getWindow(), textureName + "_wall", SE, 1, column, height - 1, levelColour);
 
                 // if it's the middle, add a door
             else if (column == (width - 1) / 2)
-                tiles[height - 1][column] = new Door(getWindow(), textureName + "_door_round", S, 1, column, height - 1, 0, 0, true);
+                tiles[height - 1][column] = new Door(getWindow(), textureName + "_door_round", S, 1, column, height - 1, levelColumnPosition + 1, levelRowPosition, true, levelColour);
 
                 // middle piece (S wall)
             else
-                tiles[height - 1][column] = new Wall(getWindow(), textureName + "_wall", S, random.nextInt(2) + 1, column, height - 1);
+                tiles[height - 1][column] = new Wall(getWindow(), textureName + "_wall", S, random.nextInt(2) + 1, column, height - 1, levelColour);
         }
     }
 
@@ -134,5 +142,25 @@ public class Level {
 
     public Window getWindow() {
         return window;
+    }
+
+    public int getLevelColumnPosition() {
+        return levelColumnPosition;
+    }
+
+    public int getLevelRowPosition() {
+        return levelRowPosition;
+    }
+
+    public Color getLevelColour() {
+        return levelColour;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
     }
 }

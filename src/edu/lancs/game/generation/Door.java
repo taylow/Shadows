@@ -1,6 +1,7 @@
 package edu.lancs.game.generation;
 
 import edu.lancs.game.Window;
+import org.jsfml.graphics.Color;
 
 import static edu.lancs.game.generation.Tile.Direction.NONE;
 
@@ -11,8 +12,8 @@ public class Door extends Tile {
     private boolean isLocked;
     //TODO: Add a key system
 
-    public Door(Window window, String name, Direction direction, int number, int positionX, int positionY, int destinationRow, int destinationColumn, boolean isLocked) {
-        super(window, name + (isLocked ? "_closed" : "_open"), direction, number, positionX, positionY, true); // create a collidable tile
+    public Door(Window window, String name, Direction direction, int number, int positionX, int positionY, int destinationRow, int destinationColumn, boolean isLocked, Color color) {
+        super(window, name + (isLocked ? "_closed" : "_open"), direction, number, positionX, positionY, true, color); // create a collidable tile
         this.destinationRow = destinationRow;
         this.destinationColumn = destinationColumn;
         this.isLocked = isLocked;

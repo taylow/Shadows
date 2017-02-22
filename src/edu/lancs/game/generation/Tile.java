@@ -1,6 +1,7 @@
 package edu.lancs.game.generation;
 
 import edu.lancs.game.Window;
+import org.jsfml.graphics.Color;
 import org.jsfml.graphics.Sprite;
 import org.jsfml.system.Vector2f;
 
@@ -19,7 +20,7 @@ public abstract class Tile extends Sprite {
 
     private boolean canCollide;
 
-    public Tile(Window window, String name, Direction direction, int number, int positionX, int positionY, boolean canCollide) {
+    public Tile(Window window, String name, Direction direction, int number, int positionX, int positionY, boolean canCollide, Color colour) {
         String textureName = name + "_" + (direction == NONE ? "" : direction + "_") + number;
         setTexture(window.getResourceManager().getTextures(textureName)); // loads the tile with the set naming sceme
         setPosition(new Vector2f(positionX * MAP_TILE_WIDTH, positionY * MAP_TILE_HEIGHT));
@@ -30,9 +31,7 @@ public abstract class Tile extends Sprite {
         this.number = number;
         this.canCollide = canCollide;
 
-        //TODO: add this colour as a parameter
-        Random random = new Random();
-        //setColor(new Color(138, 82, 32));
+        setColor(colour);
     }
 
     /***

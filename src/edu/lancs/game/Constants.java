@@ -36,4 +36,7 @@ public class Constants {
 
     /*HUD Constants*/
     public static final int HUD_HEART_DIMENSION = 30;
+
+    /*Map Constants*/
+    public static final float MAP_TILE_SCALE = 1.5f;
 }

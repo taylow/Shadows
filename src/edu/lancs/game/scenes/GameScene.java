@@ -1,16 +1,17 @@
 package edu.lancs.game.scenes;
 
+import edu.lancs.game.InputHandler;
 import edu.lancs.game.Window;
 import edu.lancs.game.entity.Chest;
 import edu.lancs.game.entity.Enemy;
 import edu.lancs.game.entity.Player;
-import edu.lancs.game.generation.Floor;
-import edu.lancs.game.generation.Level;
-import edu.lancs.game.generation.Tile;
+import edu.lancs.game.generation.*;
 import edu.lancs.game.gui.HUD;
+import edu.lancs.game.gui.MiniMap;
 import org.jsfml.graphics.Color;
 import org.jsfml.graphics.FloatRect;
 import org.jsfml.graphics.View;
+import org.jsfml.system.Vector2f;
 import org.jsfml.window.event.Event;
 
 import java.util.Random;
@@ -21,6 +22,7 @@ import static edu.lancs.game.Constants.GAME_LEVEL_WIDTH;
 public class GameScene extends Scene {
 
     private HUD hud;
+    private MiniMap miniMap;
     private Player player;
     private Enemy enemy;
     private Level[][] levels;
@@ -46,9 +48,11 @@ public class GameScene extends Scene {
 
         for(int column = 0; column < GAME_LEVEL_WIDTH; column++)
             for(int row = 0; row < GAME_LEVEL_HEIGHT; row++)
-                levels[column][row] = new Level(getWindow(), random.nextInt(10) + 5, random.nextInt(10) + 5, 0, "green_stone"); // generates a level 7x5 with 0 complexity and using textures "green_stone"
+                levels[column][row] = new Level(getWindow(), random.nextInt(10) + 5, random.nextInt(10) + 5, 0, "green_stone", new Color(random.nextInt(254), random.nextInt(254), random.nextInt(254)), column, row); // generates a level 7x5 with 0 complexity and using textures "green_stone"
 
         currentLevel = levels[0][0]; // TODO: Randomise where the player starts and finishes
+
+        miniMap = new MiniMap(getWindow(), levels);
     }
 
     /***
@@ -63,10 +67,7 @@ public class GameScene extends Scene {
             for (Tile tile : tileRow) {
                 window.draw(tile);
 
-                //FIXME: Some basic collision detection, worst way possible, needs changing (DON'T USE instanceOf, this was a last resort test)
-                if (!(tile instanceof Floor))
-                    if (tile.getGlobalBounds().intersection(new FloatRect(player.getPosition().x, player.getPosition().y, 1, 1)) != null)
-                        player.setColliding(true);
+                tileCollision(tile);
             }
         }
 
@@ -97,6 +98,62 @@ public class GameScene extends Scene {
         hud.getDecorations().forEach(window::draw);
         hud.getHearts().forEach(window::draw);
         hud.getTexts().forEach(window::draw);
+
+        // display the minimap if the control key is pressed
+        if(getWindow().getInputHandler().isCtrlKeyPressed()) {
+            // draw the minimap
+            miniMap.updateMap();
+            miniMap.getMapTiles().forEach(window::draw);
+        }
+    }
+
+    /***
+     * VERY VERY VERY bad collision and level teleportation FIXME: NEEDS TO BE LOOKED AT AND COMPLETELY REWRITTEN
+     * @param tile
+     */
+    private void tileCollision(Tile tile) {
+        //FIXME: Some basic collision detection, worst way possible, needs changing (DON'T USE instanceOf, this was a last resort test)
+        if (!(tile instanceof Floor)) {
+            Tile.Direction direction = tile.getDirection();
+            if (tile.getGlobalBounds().intersection(new FloatRect(player.getPosition().x, player.getPosition().y, 1, 1)) != null) {
+                if(tile instanceof Door) {
+                    int destinationColumn = ((Door) tile).getDestinationColumn();
+                    int destinationRow = ((Door) tile).getDestinationRow();
+                    if((destinationColumn >= 0 && destinationColumn < GAME_LEVEL_WIDTH) && (destinationRow >= 0 && destinationRow < GAME_LEVEL_HEIGHT))
+                        currentLevel = levels[((Door) tile).getDestinationColumn()][((Door) tile).getDestinationColumn()];
+                }
+                switch (direction) {
+                    case N:
+                        player.setCollidingUp(true);
+                        break;
+                    case E:
+                        player.setCollidingRight(true);
+                        break;
+                    case S:
+                        player.setCollidingDown(true);
+                        break;
+                    case W:
+                        player.setCollidingLeft(true);
+                        break;
+                    case NW:
+                        player.setCollidingUp(true);
+                        player.setCollidingLeft(true);
+                        break;
+                    case NE:
+                        player.setCollidingUp(true);
+                        player.setCollidingRight(true);
+                        break;
+                    case SW:
+                        player.setCollidingDown(true);
+                        player.setCollidingLeft(true);
+                        break;
+                    case SE:
+                        player.setCollidingDown(true);
+                        player.setCollidingRight(true);
+                        break;
+                }
+            }
+        }
     }
 
     /***
