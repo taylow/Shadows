@@ -24,30 +24,39 @@ public class MiniMap {
         this.levels = levels;
     }
 
+    /***
+     * Draws the map using the level array by creating X and Y amount of RectangleShapes with the level colour.
+     * Only draws Rectangles for the levels that have isDiscovered set to true.
+     */
     public void updateMap() {
         int levelXoffset = 0;
         int levelYoffset = 0;
         mapTiles = new ArrayList<>();
 
-        for(int column = 0; column < levels.length; column++) {
-            for(int row = 0; row < levels[column].length; row++) {
+        for(int row = 0; row < levels.length; row++) {
+            for(int column = 0; column < levels[row].length; column++) {
                 RectangleShape rectangleShape = new RectangleShape();
 
-                System.out.println(getWindow().getView().getCenter().x);
-
-                rectangleShape.setSize(new Vector2f(levels[column][row].getWidth() * MAP_TILE_SCALE, levels[column][row].getHeight() * MAP_TILE_SCALE));
-                rectangleShape.setFillColor(new Color(levels[column][row].getLevelColour(), 110));
+                rectangleShape.setSize(new Vector2f(levels[row][column].getWidth() * MAP_TILE_SCALE, levels[row][column].getHeight() * MAP_TILE_SCALE));
+                if(levels[row][column].isDiscovered())
+                    rectangleShape.setFillColor(new Color(levels[row][column].getLevelColour(), 110));
+                else
+                    rectangleShape.setFillColor(new Color(levels[row][column].getLevelColour(), 0));
 
                 // draws the rectangle at the centre of teh screen, using the offsets
-                rectangleShape.setPosition(getWindow().getView().getCenter().x + (levelXoffset * MAP_TILE_SCALE) - 100,
-                        getWindow().getView().getCenter().y + (levelYoffset * MAP_TILE_SCALE) - 100);
+                rectangleShape.setPosition(getWindow().getView().getCenter().x + (levelYoffset * MAP_TILE_SCALE) - 100,
+                        getWindow().getView().getCenter().y + (levelXoffset * MAP_TILE_SCALE) - 100);
 
                 mapTiles.add(rectangleShape);
 
-                levelXoffset += levels[column][row].getWidth() + 10;
+                if(levels[row][column].isCurrentLevel()) {
+                    rectangleShape.setOutlineColor(Color.RED);
+                    rectangleShape.setOutlineThickness(2);
+                }
 
+                levelXoffset += levels[row][column].getWidth() + 10;
             }
-            levelYoffset += levels[column][0].getHeight() + 10;
+            levelYoffset += levels[row][0].getHeight() + 10;
             levelXoffset = 0;
         }
     }

@@ -1,5 +1,6 @@
 package edu.lancs.game.scenes;
 
+import edu.lancs.game.Debug;
 import edu.lancs.game.InputHandler;
 import edu.lancs.game.Window;
 import edu.lancs.game.entity.Chest;
@@ -16,8 +17,7 @@ import org.jsfml.window.event.Event;
 
 import java.util.Random;
 
-import static edu.lancs.game.Constants.GAME_LEVEL_HEIGHT;
-import static edu.lancs.game.Constants.GAME_LEVEL_WIDTH;
+import static edu.lancs.game.Constants.*;
 
 public class GameScene extends Scene {
 
@@ -48,9 +48,10 @@ public class GameScene extends Scene {
 
         for(int column = 0; column < GAME_LEVEL_WIDTH; column++)
             for(int row = 0; row < GAME_LEVEL_HEIGHT; row++)
-                levels[column][row] = new Level(getWindow(), random.nextInt(10) + 5, random.nextInt(10) + 5, 0, "green_stone", new Color(random.nextInt(254), random.nextInt(254), random.nextInt(254)), column, row); // generates a level 7x5 with 0 complexity and using textures "green_stone"
+                levels[column][row] = new Level(getWindow(), random.nextInt(10) + 5, random.nextInt(10) + 5, 0, "green_stone", new Color(random.nextInt(192 + 1 - 64) + 64, random.nextInt(128 + 1 - 64) + 64, random.nextInt(64 + 1) + 10), column, row); // generates a level 7x5 with 0 complexity and using textures "green_stone"
 
         currentLevel = levels[0][0]; // TODO: Randomise where the player starts and finishes
+        currentLevel.discoverLevel();
 
         miniMap = new MiniMap(getWindow(), levels);
     }
@@ -71,18 +72,13 @@ public class GameScene extends Scene {
             }
         }
 
-        Random random = new Random();
-        //FIXME: This is to test the levels... Remove when done
-        //currentLevel = levels[random.nextInt(5)][random.nextInt(5)];
 
-
-        // FIXME: View works, but should really be done another way. Also, HUD doesn't draw to correct view
+        // FIXME: View works, but maybe should really be done another way
         View view = (View) getWindow().getDefaultView();
         view.setCenter(player.getPosition());
-        //view.move(velocity);
         getWindow().setView(view);
 
-        window.draw(chest);
+        window.draw(chest); //FIXME: Just a text chest, remove once chest ransomisation is added
 
         // draws the enemy //TODO: enemies should be stored in the level, so do that
         enemy.setTargetActor(player);
@@ -114,26 +110,50 @@ public class GameScene extends Scene {
     private void tileCollision(Tile tile) {
         //FIXME: Some basic collision detection, worst way possible, needs changing (DON'T USE instanceOf, this was a last resort test)
         if (!(tile instanceof Floor)) {
+            boolean teleport = false; //FIXME: Quick fix, should be rewritten
             Tile.Direction direction = tile.getDirection();
             if (tile.getGlobalBounds().intersection(new FloatRect(player.getPosition().x, player.getPosition().y, 1, 1)) != null) {
                 if(tile instanceof Door) {
                     int destinationColumn = ((Door) tile).getDestinationColumn();
                     int destinationRow = ((Door) tile).getDestinationRow();
-                    if((destinationColumn >= 0 && destinationColumn < GAME_LEVEL_WIDTH) && (destinationRow >= 0 && destinationRow < GAME_LEVEL_HEIGHT))
-                        currentLevel = levels[((Door) tile).getDestinationColumn()][((Door) tile).getDestinationColumn()];
+
+                    Debug.print("Teleporting to room: " + destinationRow + ", " + destinationColumn);
+                    if((destinationColumn >= 0 && destinationColumn < GAME_LEVEL_WIDTH) && (destinationRow >= 0 && destinationRow < GAME_LEVEL_HEIGHT)) {
+                        currentLevel.setCurrentLevel(false); // set the level loaded to not be the current level
+                        currentLevel = levels[destinationRow][destinationColumn]; // change the level
+                        currentLevel.discoverLevel(); // discover (minimap)
+                        currentLevel.setCurrentLevel(true); // set the current level
+                        teleport = true;
+                    }
                 }
                 switch (direction) {
                     case N:
-                        player.setCollidingUp(true);
+                        if(teleport)
+                            player.setPosition(currentLevel.getDoor(Tile.Direction.S).getPosition().x + MAP_TILE_WIDTH / 2,
+                                    currentLevel.getDoor(Tile.Direction.S).getPosition().y - 100 + MAP_TILE_HEIGHT / 2);
+                        else
+                            player.setCollidingUp(true);
                         break;
                     case E:
-                        player.setCollidingRight(true);
+                        if(teleport)
+                            player.setPosition(currentLevel.getDoor(Tile.Direction.W).getPosition().x + 100 + MAP_TILE_WIDTH / 2,
+                                    currentLevel.getDoor(Tile.Direction.W).getPosition().y + MAP_TILE_HEIGHT / 2);
+                        else
+                            player.setCollidingRight(true);
                         break;
                     case S:
-                        player.setCollidingDown(true);
+                        if(teleport)
+                            player.setPosition(currentLevel.getDoor(Tile.Direction.N).getPosition().x + MAP_TILE_WIDTH / 2,
+                                    currentLevel.getDoor(Tile.Direction.N).getPosition().y + 100 + MAP_TILE_HEIGHT / 2);
+                        else
+                            player.setCollidingDown(true);
                         break;
                     case W:
-                        player.setCollidingLeft(true);
+                        if(teleport)
+                            player.setPosition(currentLevel.getDoor(Tile.Direction.E).getPosition().x - 100 + MAP_TILE_WIDTH / 2,
+                                    currentLevel.getDoor(Tile.Direction.E).getPosition().y + MAP_TILE_HEIGHT / 2);
+                        else
+                            player.setCollidingLeft(true);
                         break;
                     case NW:
                         player.setCollidingUp(true);

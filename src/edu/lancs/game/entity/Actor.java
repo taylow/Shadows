@@ -173,7 +173,7 @@ public abstract class Actor extends Entity {
                 setAnimation(deathAnimation);
                 break;
         }
-        Debug.print("Player state: " + state);
+        //Debug.print("Actor state: " + state);
     }
 
     /***

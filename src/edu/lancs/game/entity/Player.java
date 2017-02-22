@@ -36,14 +36,6 @@ public class Player extends Actor {
      */
     @Override
     public void update() {
-        // test HUD system (HUD TEST TODO: REMOVE THIS ONCE HUD TESTING IS FINISHED)
-        setHealth(getHealth() + testHealth);
-        if (getHealth() == 0)
-            testHealth = 1;
-        else if (getHealth() == getHearts())
-            testHealth = -1;
-        score++;
-
         handleMovement();
         nextFrame();
     }
