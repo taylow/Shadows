@@ -1,11 +1,14 @@
 package edu.lancs.game.generation;
 
 import edu.lancs.game.Window;
+import edu.lancs.game.entity.Enemy;
 import org.jsfml.graphics.Color;
 
 import java.util.ArrayList;
 import java.util.Random;
 
+import static edu.lancs.game.Constants.MAP_TILE_HEIGHT;
+import static edu.lancs.game.Constants.MAP_TILE_WIDTH;
 import static edu.lancs.game.generation.Tile.Direction.*;
 
 public class Level {
@@ -21,6 +24,7 @@ public class Level {
     private boolean isCurrentLevel;
 
     private Tile[][] tiles;
+    private ArrayList<Enemy> enemies;
 
     private Door northDoor;
     private Door eastDoor;
@@ -50,7 +54,10 @@ public class Level {
         isCurrentLevel = false;
 
         tiles = new Tile[height][width];
+        enemies = new ArrayList<>();
+
         generateTiles(textureName);
+        generateEnemies(complexity);
     }
 
     /***
@@ -62,7 +69,7 @@ public class Level {
      */
     public void generateTiles(String name) {
         Random random = new Random();
-
+        //FIXME: For soem reason, when generating smaller room sizes, the doors teleport you to odd places. Maybe update player position before loading next room?
         // north side
         for (int column = 0; column < width; column++) {
             // first piece (NW corner)
@@ -134,6 +141,26 @@ public class Level {
     }
 
     /***
+     * Populates the ArrayList of Enemies with a random amount of Enemies and types for a given room.
+     */
+    public void generateEnemies(int complexity) {
+        //TODO: This just basically generates a room with complexity x amount of Enemies. Needs writing so that it is balanced.
+        Random random = new Random();
+        for(int enemyIndex = 0; enemyIndex < complexity; enemyIndex++) {
+            int randomX = (random.nextInt(width - 2) + 1) * MAP_TILE_WIDTH + (MAP_TILE_WIDTH / 2);
+            int randomY = (random.nextInt(height - 2) + 1) * MAP_TILE_HEIGHT + (MAP_TILE_HEIGHT / 2);
+
+            int randomHealth = random.nextInt(4);
+            enemies.add(new Enemy(getWindow(), randomX, randomY, randomHealth));
+        }
+    }
+
+    public void unloadLevel() {
+        for(Enemy enemy : enemies)
+            enemy.setTargetActor(null);
+    }
+
+    /***
      * Returns the whole level in a 2D array of Tiles (sprites) that can be drawn to a Scene.
      *
      * @return - 2D array of Tiles that makes up the level
@@ -201,5 +228,9 @@ public class Level {
             default:
                 return null;
         }
+    }
+
+    public ArrayList<Enemy> getEnemies() {
+        return enemies;
     }
 }

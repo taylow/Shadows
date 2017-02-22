@@ -39,4 +39,8 @@ public class Constants {
 
     /*Map Constants*/
     public static final float MAP_TILE_SCALE = 1.5f;
+
+    /*Lighting Constants*/
+    public static final int LIGHTING_TILE_WIDTH = 40;
+    public static final int LIGHTING_TILE_HEIGHT = 40;
 }

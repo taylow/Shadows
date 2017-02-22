@@ -13,15 +13,13 @@ public class Enemy extends Actor {
     // actual player variables
     private int score;
 
-    private int testHealth = -1; // TODO: Remove once finished with HUD testing
-
     // the entity variables
     private InputHandler inputHandler;
 
     private Actor targetActor;
 
-    public Enemy(Window window) {
-        super(window, "knight", PLAYER_STARTING_X, PLAYER_STARTING_Y, true, PLAYER_STARTING_HEALTH, PLAYER_STARTING_HEALTH);
+    public Enemy(Window window, int positionX, int positionY, int health) {
+        super(window, "knight", positionX, positionY, true, health, health);
         // initialise player stats (health, score, etc)
         score = 0;
         inputHandler = getWindow().getInputHandler();

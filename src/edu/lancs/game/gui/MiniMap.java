@@ -31,7 +31,7 @@ public class MiniMap {
      */
     public void updateMap() {
         //TODO: I need to comment this. It was done at 5AM after no sleep
-        //FIXME: Also, a re-write/improvement would be nice. It works, just could be slightly more efficient
+        //FIXME: Also, a re-write/improvement would be nice. It works, just could be slightly more efficient and so the tiles are inline with each door
         int levelXoffset = 0;
         int levelYoffset = 0;
         mapTiles = new ArrayList<>();

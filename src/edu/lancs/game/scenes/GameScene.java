@@ -8,6 +8,7 @@ import edu.lancs.game.entity.Enemy;
 import edu.lancs.game.entity.Player;
 import edu.lancs.game.generation.*;
 import edu.lancs.game.gui.HUD;
+import edu.lancs.game.gui.Lighting;
 import edu.lancs.game.gui.MiniMap;
 import org.jsfml.graphics.Color;
 import org.jsfml.graphics.FloatRect;
@@ -23,11 +24,14 @@ public class GameScene extends Scene {
 
     private HUD hud;
     private MiniMap miniMap;
+    private Lighting lighting;
     private Player player;
     private Enemy enemy;
     private Level[][] levels;
     private Level currentLevel;
     private Chest chest;
+    private int lightingRadius;
+    private int lightingChange; //FIXME: This is a temporary variable to flicker the lighting, needs changing
 
     public GameScene(Window window) {
         super(window);
@@ -36,7 +40,6 @@ public class GameScene extends Scene {
         setBackgroundColour(Color.BLACK);
 
         player = new Player(getWindow()); // creates a Player and passes the Window into it
-        enemy = new Enemy(getWindow()); // creates a Player and passes the Window into it
         hud = new HUD(getWindow(), player); // creates a HUD and passes Window and the player just created into it for variables
 
         // currently only has one level TODO: add a 2D level array
@@ -48,12 +51,14 @@ public class GameScene extends Scene {
 
         for(int column = 0; column < GAME_LEVEL_WIDTH; column++)
             for(int row = 0; row < GAME_LEVEL_HEIGHT; row++)
-                levels[column][row] = new Level(getWindow(), random.nextInt(10) + 5, random.nextInt(10) + 5, 0, "green_stone", new Color(random.nextInt(192 + 1 - 64) + 64, random.nextInt(128 + 1 - 64) + 64, random.nextInt(64 + 1) + 10), column, row); // generates a level 7x5 with 0 complexity and using textures "green_stone"
+                //FIXME: Make this a little less parameter heavy
+                levels[column][row] = new Level(getWindow(), random.nextInt(10) + 5, random.nextInt(10) + 5, random.nextInt(5), "green_stone", new Color(random.nextInt(192 + 1 - 64) + 64, random.nextInt(128 + 1 - 64) + 64, random.nextInt(64 + 1) + 10), column, row); // generates a level 7x5 with 0 complexity and using textures "green_stone"
 
         currentLevel = levels[0][0]; // TODO: Randomise where the player starts and finishes
         currentLevel.discoverLevel();
 
         miniMap = new MiniMap(getWindow(), levels);
+        lighting = new Lighting(getWindow(), player);
     }
 
     /***
@@ -63,11 +68,11 @@ public class GameScene extends Scene {
      */
     @Override
     public void draw(Window window) {
+        player.update();
         // draws the level tiles
         for (Tile[] tileRow : currentLevel.getTiles()) {
             for (Tile tile : tileRow) {
                 window.draw(tile);
-
                 tileCollision(tile);
             }
         }
@@ -80,14 +85,27 @@ public class GameScene extends Scene {
 
         window.draw(chest); //FIXME: Just a text chest, remove once chest ransomisation is added
 
-        // draws the enemy //TODO: enemies should be stored in the level, so do that
-        enemy.setTargetActor(player);
-        enemy.update();
-        window.draw(enemy);
+        // draws the enemies
+        for(Enemy enemy : currentLevel.getEnemies()) {
+            enemy.setTargetActor(player);
+            enemy.update();
+            window.draw(enemy);
+        }
 
         // draws the player
-        player.update();
         window.draw(player);
+
+        // draw the lighting
+        //FIXME: this is just some really bad light flicker. Needs changing to smoother lighting and not using some incrementing value;
+        if(lightingRadius == 0)
+            lightingChange = 1;
+        else if(lightingRadius == 10)
+            lightingChange = -1;
+
+        lightingRadius += lightingChange;
+
+        lighting.generateLighting(100 + lightingRadius);
+        lighting.getLighting().forEach(window::draw);
 
         // draws the HUD
         hud.update();
@@ -120,6 +138,7 @@ public class GameScene extends Scene {
                     Debug.print("Teleporting to room: " + destinationRow + ", " + destinationColumn);
                     if((destinationColumn >= 0 && destinationColumn < GAME_LEVEL_WIDTH) && (destinationRow >= 0 && destinationRow < GAME_LEVEL_HEIGHT)) {
                         currentLevel.setCurrentLevel(false); // set the level loaded to not be the current level
+                        currentLevel.unloadLevel();
                         currentLevel = levels[destinationRow][destinationColumn]; // change the level
                         currentLevel.discoverLevel(); // discover (minimap)
                         currentLevel.setCurrentLevel(true); // set the current level

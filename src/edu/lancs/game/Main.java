@@ -2,6 +2,8 @@ package edu.lancs.game;
 
 import edu.lancs.game.scenes.MenuScene;
 
+import java.util.Random;
+
 import static edu.lancs.game.Constants.*;
 
 public class Main {
