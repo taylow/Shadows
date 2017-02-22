@@ -1,13 +1,250 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5df7e5be-326c-48a9-947d-b0eec08caa13" name="Default" comment="">
+    <list default="true" id="5df7e5be-326c-48a9-947d-b0eec08caa13" name="Default" comment="Added Ana">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OLD/Player.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/lancs/game/entity/Actor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/lancs/game/entity/Enemy.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_00.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_02.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_03.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_04.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_05.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_06.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_07.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_08.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_09.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_17.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_21.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_22.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_23.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_24.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_25.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_27.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_28.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_29.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_30.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_31.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_33.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_34.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_35.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_37.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_38.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack_knight/Armature-Attack_39.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_00.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_02.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_03.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_04.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_05.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_06.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_07.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_08.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_09.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_17.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_21.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_22.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_23.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_24.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_25.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_27.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_28.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_29.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_30.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_31.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_33.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_34.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_35.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_37.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_38.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_39.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_41.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_42.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_43.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_44.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_45.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_46.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_47.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_48.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_49.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_51.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_52.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_53.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_54.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_55.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_56.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_57.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_58.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_59.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_61.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead_knight/Armature-Dead_62.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_00.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_02.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_03.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_04.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_05.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_06.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_07.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_08.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_09.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_17.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_21.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_22.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_23.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_24.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_25.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_27.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_28.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_29.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_30.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_31.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_33.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_34.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_35.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_37.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_38.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_39.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_41.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_42.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_43.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_44.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_45.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_46.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_47.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_48.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_49.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_51.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_52.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_53.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_54.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_55.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_56.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_57.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_58.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_59.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_61.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_62.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_63.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_64.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_65.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_66.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_67.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_68.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_69.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_70.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_71.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_72.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_73.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle_knight/Armature-Idle_74.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_00.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_02.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_03.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_04.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_05.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_06.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_07.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_08.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_09.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_17.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_21.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_22.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_23.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_24.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_25.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_27.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_28.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_29.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_30.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_31.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_33.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_34.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_35.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_37.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_38.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_39.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_41.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_42.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_43.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_44.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_45.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_46.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_47.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_48.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run_knight/Armature-Run_49.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Constants.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Constants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/InputHandler.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/InputHandler.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Main.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/generation/Door.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/generation/Door.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/generation/Floor.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/generation/Floor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/generation/Tile.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/generation/Tile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/generation/Wall.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/generation/Wall.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" />
     </list>
     <ignored path="SCC210 - OOP.iws" />
@@ -33,12 +270,115 @@
     <favorites_list name="SCC210 - OOP" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameScene.java" pinned="false" current-in-tab="true">
+    <leaf>
+      <file leaf-file-name="Wall.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Wall.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Tile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2527#2528#0" expanded="true" />
+                <element signature="e#2559#2560#0" expanded="true" />
+                <element signature="e#2920#2921#0" expanded="true" />
+                <element signature="e#2949#2950#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Level.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2142">
+              <caret line="128" column="34" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#5065#5066#0" expanded="true" />
+                <element signature="e#5093#5094#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Actor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Actor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4729#4730#0" expanded="true" />
+                <element signature="e#4769#4770#0" expanded="true" />
+                <element signature="e#4935#4936#0" expanded="true" />
+                <element signature="e#4966#4967#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Entity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Entity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="32" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-126">
+              <caret line="27" column="29" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Enemy.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Enemy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+              <folding>
+                <element signature="e#2772#2773#0" expanded="true" />
+                <element signature="e#2818#2819#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="31" column="49" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameScene.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="53" column="11" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+            <state relative-caret-position="476">
+              <caret line="35" column="85" selection-start-line="35" selection-start-column="85" selection-end-line="35" selection-end-column="85" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,7 +429,6 @@
         <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/behaviour/PlayerStateBehaviour.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/TestScene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/Button.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Entity.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/BackButton.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/MenuButton.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/Decoration.java" />
@@ -97,20 +436,23 @@
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/TutorialScene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/Debug.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/Main.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/ResourceManager.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/Scene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/Window.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Floor.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Door.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Tile.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Wall.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Floor.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Door.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Entity.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Actor.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Tile.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Enemy.java" />
       </list>
     </option>
   </component>
@@ -152,32 +494,34 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DungeonCrawler" />
+              <option name="myItemId" value="SCC210 - OOP" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DungeonCrawler" />
+              <option name="myItemId" value="SCC210 - OOP" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DungeonCrawler" />
+              <option name="myItemId" value="SCC210 - OOP" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DungeonCrawler" />
+              <option name="myItemId" value="SCC210 - OOP" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DungeonCrawler" />
+              <option name="myItemId" value="SCC210 - OOP" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -191,11 +535,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DungeonCrawler" />
+              <option name="myItemId" value="SCC210 - OOP" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DungeonCrawler" />
+              <option name="myItemId" value="SCC210 - OOP" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -213,11 +557,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DungeonCrawler" />
+              <option name="myItemId" value="SCC210 - OOP" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DungeonCrawler" />
+              <option name="myItemId" value="SCC210 - OOP" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -235,11 +579,37 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DungeonCrawler" />
+              <option name="myItemId" value="SCC210 - OOP" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DungeonCrawler" />
+              <option name="myItemId" value="SCC210 - OOP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="buttons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SCC210 - OOP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SCC210 - OOP" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -257,11 +627,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DungeonCrawler" />
+              <option name="myItemId" value="SCC210 - OOP" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DungeonCrawler" />
+              <option name="myItemId" value="SCC210 - OOP" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -277,10 +647,22 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SCC210 - OOP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SCC210 - OOP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OLD" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -290,7 +672,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.44712645" />
-    <property name="last_opened_file_path" value="H:/210/SCC-210/jsfml.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aMaze-master/aMaze-master" />
     <property name="SearchEverywhereHistoryKey" value="System.out.println&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
@@ -298,12 +680,14 @@
       <recent name="D:\Users\Taylor\Desktop\SCC210 - OOP\OLD" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.lancs.game.entity" />
       <recent name="edu.lancs.game.generation" />
       <recent name="edu.lancs.game.scenes" />
       <recent name="edu.lancs.game" />
       <recent name="edu.lancs.game.gui" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\Taylor\Desktop\SCC210 - OOP\OLD" />
       <recent name="D:\Users\Taylor\Desktop\SCC210 - OOP\resources" />
       <recent name="D:\Users\Taylor\Desktop\SCC210 - OOP\src\edu\lancs\game\entity" />
     </key>
@@ -403,43 +787,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="ErlangApplicationRunConfiguration" factoryName="Erlang Application" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="debugOptions">
-        <ErlangDebugOptions>
-          <option name="autoUpdateModulesNotToInterpret" value="true" />
-          <option name="modulesNotToInterpret">
-            <set />
-          </option>
-        </ErlangDebugOptions>
-      </option>
-      <option name="erlFlags" value="" />
-      <option name="moduleAndFunction" value="" />
-      <option name="params" value="" />
-      <option name="useTestCodePath" value="false" />
-      <option name="workDirectory" />
-      <module />
-      <method />
-    </configuration>
-    <configuration default="true" type="ErlangUnitRunConfigurationType" factoryName="Erlang Eunit" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="debugOptions">
-        <ErlangDebugOptions>
-          <option name="autoUpdateModulesNotToInterpret" value="true" />
-          <option name="modulesNotToInterpret">
-            <set />
-          </option>
-        </ErlangDebugOptions>
-      </option>
-      <option name="workDirectory" />
-      <module />
-      <option name="functionNames">
-        <set />
-      </option>
-      <option name="kind" value="MODULE" />
-      <option name="moduleNames">
-        <set />
-      </option>
       <method />
     </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
@@ -544,12 +891,6 @@
       <option name="workingDirectory" />
       <option name="isAlternativeJrePathEnabled" value="false" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="RebarEunitRunConfigurationType" factoryName="Erlang Rebar Eunit" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="command" value="eunit" />
-      <option name="skipDependencies" value="true" />
-      <module />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -765,37 +1106,37 @@
       <option name="project" value="LOCAL" />
       <updated>1487672602611</updated>
     </task>
-    <task id="LOCAL-00019" summary="Changed colour lols">
-      <created>1487685808338</created>
+    <task id="LOCAL-00019" summary="Final commit before setting off to uni. I didn't really change anything, but it's just in case.">
+      <created>1487672751845</created>
       <option name="number" value="00019" />
       <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
-      <updated>1487685808338</updated>
+      <updated>1487672751845</updated>
     </task>
     <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1858" height="1022" extended-state="0" />
+    <frame x="-8" y="-8" width="1858" height="1022" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32785088" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267671" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19517544" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19582851" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908458" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25027144" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2502781" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39802632" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3986095" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -820,7 +1161,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3986095" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792583" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267671" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -860,8 +1201,8 @@
     <MESSAGE value="Added a basic Doo system. Currently just set to a standard door." />
     <MESSAGE value="Added basic collision that currently just freezes the character to the point where he collided. This needs some sort of bounce back to prevent the character being locked" />
     <MESSAGE value="Added view movement (camera moves where player does). It's currently commented out as the HUD doesn't move with the view, but I'll sort this out." />
-    <MESSAGE value="Changed colour lols" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed colour lols" />
+    <MESSAGE value="Final commit before setting off to uni. I didn't really change anything, but it's just in case." />
+    <option name="LAST_COMMIT_MESSAGE" value="Final commit before setting off to uni. I didn't really change anything, but it's just in case." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -874,9 +1215,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/sprites/Images/HUD/barBorder.png" />
-    <entry file="file://$PROJECT_DIR$/resources/sprites/Images/HUD/healthbar.png" />
-    <entry file="file://$PROJECT_DIR$/resources/sprites/Images/HUD/healthRed.png" />
     <entry file="file://$PROJECT_DIR$/resources/sprites/Images/HUD/healthGreen.png" />
     <entry file="file://$PROJECT_DIR$/OLD/ResourceManager.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -904,7 +1242,13 @@
         <state />
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../jsfml-test-Dec02_2013/jsfml.jar!/org/jsfml/window/Window.class" />
+    <entry file="jar://$PROJECT_DIR$/../jsfml-test-Dec02_2013/jsfml.jar!/org/jsfml/window/Window.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="166" column="26" selection-start-line="166" selection-start-column="26" selection-end-line="166" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/OptionsScene.java" />
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/Decoration.java" />
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/Inputtable.java" />
@@ -964,15 +1308,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/lang/Override.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/lang/Override.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/TutorialScene.java" />
-    <entry file="jar://$PROJECT_DIR$/../jsfml-test-Dec02_2013/jsfml.jar!/org/jsfml/graphics/Text.class" />
-    <entry file="jar://$PROJECT_DIR$/../jsfml-test-Dec02_2013/jsfml.jar!/org/jsfml/graphics/Sprite.class" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/util/ArrayList.java" />
+    <entry file="jar://$PROJECT_DIR$/../jsfml-test-Dec02_2013/jsfml.jar!/org/jsfml/graphics/Text.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../jsfml-test-Dec02_2013/jsfml.jar!/org/jsfml/graphics/Sprite.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="575" column="19" selection-start-line="575" selection-start-column="19" selection-end-line="575" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/Button.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
           <caret line="89" column="6" selection-start-line="89" selection-start-column="6" selection-end-line="89" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -980,6 +1350,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="27" column="72" selection-start-line="27" selection-start-column="72" selection-end-line="27" selection-end-column="116" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -987,6 +1358,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -994,6 +1366,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1020,8 +1393,16 @@
         <state relative-caret-position="323">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Vec2f.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1030,14 +1411,14 @@
         <state relative-caret-position="368">
           <caret line="130" column="56" selection-start-line="130" selection-start-column="56" selection-end-line="130" selection-end-column="56" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/Scene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="0">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
@@ -1059,88 +1440,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Floor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="106" selection-start-line="7" selection-start-column="106" selection-end-line="7" selection-end-column="106" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
+        <state relative-caret-position="343">
           <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Vec2f.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="425">
+          <caret line="58" column="15" selection-start-line="58" selection-start-column="15" selection-end-line="58" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/ResourceManager.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Floor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="119" column="65" selection-start-line="119" selection-start-column="65" selection-end-line="119" selection-end-column="65" />
+        <state relative-caret-position="204">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Door.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="12" column="103" selection-start-line="12" selection-start-column="103" selection-end-line="12" selection-end-column="103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Tile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+        <state relative-caret-position="85">
+          <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1149,28 +1478,113 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Wall.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="101" selection-start-line="7" selection-start-column="101" selection-end-line="7" selection-end-column="101" />
+        <state relative-caret-position="204">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java">
+    <entry file="file://$PROJECT_DIR$/OLD/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="55" column="33" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-126">
+          <caret line="27" column="29" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="53" column="11" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+        <state relative-caret-position="442">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Actor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4729#4730#0" expanded="true" />
+            <element signature="e#4769#4770#0" expanded="true" />
+            <element signature="e#4935#4936#0" expanded="true" />
+            <element signature="e#4966#4967#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/ResourceManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="83" column="60" selection-start-line="83" selection-start-column="60" selection-end-line="83" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2142">
+          <caret line="128" column="34" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5065#5066#0" expanded="true" />
+            <element signature="e#5093#5094#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Tile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2527#2528#0" expanded="true" />
+            <element signature="e#2559#2560#0" expanded="true" />
+            <element signature="e#2920#2921#0" expanded="true" />
+            <element signature="e#2949#2950#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="49" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="35" column="85" selection-start-line="35" selection-start-column="85" selection-end-line="35" selection-end-column="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Enemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+          <folding>
+            <element signature="e#2772#2773#0" expanded="true" />
+            <element signature="e#2818#2819#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1252,7 +1666,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>jsfml1</last-edited>
+          <last-edited>com.github.sworisbreathing.sfmf4j:sfmf4j-commonsio:1.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -1,20 +1,20 @@
 package edu.lancs.game.entity;
 
-import edu.lancs.game.Debug;
 import edu.lancs.game.InputHandler;
 import edu.lancs.game.Window;
-import org.jsfml.graphics.FloatRect;
-import org.jsfml.graphics.Sprite;
+import org.jsfml.graphics.Color;
 import org.jsfml.graphics.Texture;
-import org.jsfml.graphics.View;
 import org.jsfml.system.Vector2f;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import static edu.lancs.game.Constants.*;
-import static edu.lancs.game.entity.Actor.State.*;
+import static edu.lancs.game.entity.Actor.State.ATTACKING;
+import static edu.lancs.game.entity.Actor.State.IDLE;
+import static edu.lancs.game.entity.Actor.State.RUNNING;
 
-public class Player extends Actor {
+public class Enemy extends Actor {
 
     // actual player variables
     private int score;
@@ -24,11 +24,14 @@ public class Player extends Actor {
     // the entity variables
     private InputHandler inputHandler;
 
-    public Player(Window window) {
+    private Actor targetActor;
+
+    public Enemy(Window window) {
         super(window, "knight", PLAYER_STARTING_X, PLAYER_STARTING_Y, true, PLAYER_STARTING_HEALTH, PLAYER_STARTING_HEALTH);
         // initialise player stats (health, score, etc)
         score = 0;
         inputHandler = getWindow().getInputHandler();
+        setColor(new Color(180, 180, 180)); //TODO: You can add a colour overlay to reuse textures
     }
 
     /***
@@ -43,14 +46,6 @@ public class Player extends Actor {
      */
     @Override
     public void update() {
-        // test HUD system (HUD TEST TODO: REMOVE THIS ONCE HUD TESTING IS FINISHED)
-        setHealth(getHealth() + testHealth);
-        if (getHealth() == 0)
-            testHealth = 1;
-        else if (getHealth() == getHearts())
-            testHealth = -1;
-        score++;
-
         handleMovement();
         nextFrame();
     }
@@ -60,18 +55,24 @@ public class Player extends Actor {
      * Support for diagonal movement is present as each if condition is on its own line.
      */
     public void handleMovement() {
-        if (inputHandler.isMoveing() && !inputHandler.isSpaceKeyPressed()) {
-            if (inputHandler.iswKeyPressed())
-                moveUp();
-            if (inputHandler.isaKeyPressed())
-                moveLeft();
-            if (inputHandler.issKeyPressed())
-                moveDown();
-            if (inputHandler.isdKeyPressed())
-                moveRight();
-        } else if (inputHandler.isSpaceKeyPressed()) {
-            if (getState() != ATTACKING)
-                attack();
+
+        if(targetActor != null) {
+            Vector2f diff = Vector2f.sub( targetActor.getPosition(), getPosition() );
+            setVelocity(Vector2f.div( diff, 130.0f ));
+
+            if(diff.x < 0)
+                setScale(-1.f, 1.f); // flip the sprite to face left
+            else
+                setScale(1.f, 1.f); // flip the sprite to face right
+
+            if(Math.abs(diff.x) > 90 || Math.abs(diff.y) > 90) {
+                move(getVelocity());
+                if(getState() != RUNNING)
+                    setState(RUNNING);
+            } else {
+                if (getState() != ATTACKING)
+                    attack();
+            }
         } else {
             if (getState() != IDLE) {
                 setState(IDLE);
@@ -86,5 +87,14 @@ public class Player extends Actor {
      */
     public int getScore() {
         return score;
+    }
+
+    /***
+     * Sets the target actor for the enemy to attack.
+     *
+     * @param targetActor - Enemy the target will attack
+     */
+    public void setTargetActor(Actor targetActor) {
+        this.targetActor = targetActor;
     }
 }

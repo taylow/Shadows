@@ -1,6 +1,7 @@
 package edu.lancs.game.scenes;
 
 import edu.lancs.game.Window;
+import edu.lancs.game.entity.Enemy;
 import edu.lancs.game.entity.Player;
 import edu.lancs.game.generation.Floor;
 import edu.lancs.game.generation.Level;
@@ -11,10 +12,13 @@ import org.jsfml.graphics.FloatRect;
 import org.jsfml.graphics.View;
 import org.jsfml.window.event.Event;
 
+import java.util.Random;
+
 public class GameScene extends Scene {
 
     private HUD hud;
     private Player player;
+    private Enemy enemy;
     private Level level;
 
     public GameScene(Window window) {
@@ -24,10 +28,12 @@ public class GameScene extends Scene {
         setBackgroundColour(Color.BLACK);
 
         player = new Player(getWindow()); // creates a Player and passes the Window into it
+        enemy = new Enemy(getWindow()); // creates a Player and passes the Window into it
         hud = new HUD(getWindow(), player); // creates a HUD and passes Window and the player just created into it for variables
 
         // currently only has one level TODO: add a 2D level array
-        level = new Level(getWindow(), 7, 5, 0, "green_stone"); // generates a level 7x5 with 0 complexity and using textures "green_stone"
+        Random random = new Random();
+        level = new Level(getWindow(), random.nextInt(10) + 5, random.nextInt(10) + 5, 0, "green_stone"); // generates a level 7x5 with 0 complexity and using textures "green_stone"
     }
 
     /***
@@ -49,12 +55,16 @@ public class GameScene extends Scene {
             }
         }
 
-
         // FIXME: View works, but should really be done another way. Also, HUD doesn't draw to correct view
         View view = (View) getWindow().getDefaultView();
         view.setCenter(player.getPosition());
         //view.move(velocity);
         getWindow().setView(view);
+
+        // draws the enemy //TODO: enemies should be stored in the level, so do that
+        enemy.setTargetActor(player);
+        enemy.update();
+        window.draw(enemy);
 
         // draws the player
         player.update();

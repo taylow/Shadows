@@ -2,6 +2,7 @@ package edu.lancs.game.generation;
 
 import edu.lancs.game.Window;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import static edu.lancs.game.generation.Tile.Direction.*;
@@ -14,6 +15,8 @@ public class Level {
     private String textureName;
 
     private Tile[][] tiles;
+
+    private ArrayList<Door> doors; // 0 = N, 1 = E, 2 = S, 3 = W
 
     private Window window;
 
@@ -32,6 +35,7 @@ public class Level {
         this.complexity = complexity;
         this.textureName = textureName;
         tiles = new Tile[height][width];
+        doors = new ArrayList<>();
         generateTiles(textureName);
     }
 
@@ -56,8 +60,11 @@ public class Level {
                 tiles[0][column] = new Wall(getWindow(), textureName + "_wall", NE, 1, column, 0);
 
             // if it's the middle, add a door
-            else if(column == (width - 1) / 2)
-                tiles[0][column] = new Door(getWindow(), textureName + "_door_round_closed", N, 1, column, 0, 0, 0);
+            else if(column == (width - 1) / 2) {
+                Door door = new Door(getWindow(), textureName + "_door_round", N, 1, column, 0, 0, 0, false);
+                tiles[0][column] = door;
+                doors.add(door);
+            }
 
             // middle piece (N wall)
             else
@@ -70,14 +77,14 @@ public class Level {
                 // first piece (W wall)
                 if (column == 0)
                     if(row == (height - 1) / 2)
-                        tiles[row][column] = new Door(getWindow(), textureName + "_door_round_closed", W, 1, column, row, 0, 0);
+                        tiles[row][column] = new Door(getWindow(), textureName + "_door_round", W, 1, column, row, 0, 0, true);
                 else
                     tiles[row][column] = new Wall(getWindow(), textureName + "_wall", W, random.nextInt(2) + 1, column, row);
 
                 // last piece (E wall)
                 else if (column + 1 == width)
                     if(row == (height - 1) / 2)
-                        tiles[row][column] = new Door(getWindow(), textureName + "_door_round_closed", E, 1, column, row, 0, 0);
+                        tiles[row][column] = new Door(getWindow(), textureName + "_door_round", E, 1, column, row, 0, 0, true);
                 else
                     tiles[row][column] = new Wall(getWindow(), textureName + "_wall", E, random.nextInt(2) + 1, column, row);
 
@@ -99,7 +106,7 @@ public class Level {
 
                 // if it's the middle, add a door
             else if(column == (width - 1) / 2)
-                tiles[height - 1][column] = new Door(getWindow(), textureName + "_door_round_closed", S, 1, column, height - 1, 0, 0);
+                tiles[height - 1][column] = new Door(getWindow(), textureName + "_door_round", S, 1, column, height - 1, 0, 0, true);
 
                 // middle piece (S wall)
             else
@@ -114,6 +121,15 @@ public class Level {
      */
     public Tile[][] getTiles() {
         return tiles;
+    }
+
+    /***
+     * Returns an ArrayList of Doors in the room.
+     *
+     * @return - Doors in the room
+     */
+    public ArrayList<Door> getDoors() {
+        return doors;
     }
 
     public Window getWindow() {

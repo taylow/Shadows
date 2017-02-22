@@ -40,10 +40,6 @@ public class InputHandler {
                 wKeyPressed = Keyboard.isKeyPressed(key); // sets to W's press value
                 break;
 
-            case A:
-                aKeyPressed = Keyboard.isKeyPressed(key); // sets to A's press value
-                break;
-
             case S:
                 sKeyPressed = Keyboard.isKeyPressed(key); // sets to S's press value
                 break;
@@ -55,6 +51,20 @@ public class InputHandler {
             case SPACE:
                 spaceKeyPressed = Keyboard.isKeyPressed(key); // sets to space's press value
                 break;
+
+            case A:
+                aKeyPressed = Keyboard.isKeyPressed(key); // sets to A's press value
+                break; //TODO: You would need to remove this break as A is in the Konami Code
+
+            // konami code easter egg
+            case UP:
+            case DOWN:
+            case LEFT:
+            case RIGHT:
+            case B:
+                //TODO: Enter Konami Code easter egg here
+                break;
+
         }
     }
 
