@@ -7,9 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="jsfml" level="project" />
     <orderEntry type="library" name="com.github.sworisbreathing.sfmf4j:sfmf4j-commonsio:1.0" level="project" />
-    <orderEntry type="library" name="jsfml1" level="project" />
     <orderEntry type="library" name="jsfml2" level="project" />
+    <orderEntry type="library" name="jsfml" level="project" />
   </component>
 </module>
