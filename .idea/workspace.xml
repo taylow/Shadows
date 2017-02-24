@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df7e5be-326c-48a9-947d-b0eec08caa13" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jsfml1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Constants.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Debug.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/InputHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Main.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/ResourceManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Window.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/entity/Entity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/gui/buttons/Button.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/gui/buttons/MenuButton$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/gui/buttons/MenuButton$Type.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/gui/buttons/MenuButton.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/scenes/MenuScene$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/scenes/MenuScene.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/scenes/Scene$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/scenes/Scene.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jsfml.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jsfml.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SCC210 - OOP.iml" afterPath="$PROJECT_DIR$/SCC210 - OOP.iml" />
     </list>
     <ignored path="SCC210 - OOP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -745,7 +727,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487805553280</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Added lighting, fixed MiniMap, added random Enemies in rooms, etc.">
+      <created>1487943713603</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1487943713603</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
