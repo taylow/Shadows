@@ -11,8 +11,8 @@ public class SplashScreen {
         window = new JWindow();
         try {
             //TODO: Could definitely be improved. Change of image maybe? I don't know. This one looks indie though
-            window.getContentPane().add(new JLabel("", new ImageIcon(new URL("https://im.ezgif.com/tmp/ezgif-1-a7e3c408d8.gif")), SwingConstants.CENTER));
-            window.setBounds(0, 0, 800, 600);
+            window.getContentPane().add(new JLabel("", new ImageIcon(new URL("http://www.rawdlc.com/wp-content/uploads/2013/08/load-screen-1.gif")), SwingConstants.CENTER));
+            window.setBounds(0, 0, 700, 450);
             window.setLocationRelativeTo(null);
             window.setVisible(true);
             window.setAlwaysOnTop(true);
