@@ -1,5 +1,6 @@
 package edu.lancs.game.entity;
 
+import edu.lancs.game.Debug;
 import edu.lancs.game.InputHandler;
 import edu.lancs.game.Window;
 
@@ -11,8 +12,7 @@ public class Player extends Actor {
 
     // actual player variables
     private int score;
-
-    private int testHealth = -1; // TODO: Remove once finished with HUD testing
+    private int batteryLevel;
 
     // the entity variables
     private InputHandler inputHandler;
@@ -21,6 +21,7 @@ public class Player extends Actor {
         super(window, "knight", PLAYER_STARTING_X, PLAYER_STARTING_Y, true, PLAYER_STARTING_HEALTH, PLAYER_STARTING_HEALTH);
         // initialise player stats (health, score, etc)
         score = 0;
+        batteryLevel = 0;
         inputHandler = getWindow().getInputHandler();
     }
 
@@ -48,12 +49,16 @@ public class Player extends Actor {
         if (inputHandler.isMoveing() && !inputHandler.isSpaceKeyPressed()) {
             if (inputHandler.iswKeyPressed())
                 moveUp();
-            if (inputHandler.isaKeyPressed())
+            if (inputHandler.isaKeyPressed()) {
                 moveLeft();
+                setBatteryLevel(batteryLevel + 1);
+            }
             if (inputHandler.issKeyPressed())
                 moveDown();
-            if (inputHandler.isdKeyPressed())
+            if (inputHandler.isdKeyPressed()) {
                 moveRight();
+                setBatteryLevel(batteryLevel - 1);
+            }
         } else if (inputHandler.isSpaceKeyPressed()) {
             if (getState() != ATTACKING)
                 attack();
@@ -71,5 +76,21 @@ public class Player extends Actor {
      */
     public int getScore() {
         return score;
+    }
+
+    /***
+     * Returns the battery level of the player for the player's light source.
+     *
+     * @return - Light source battery level
+     */
+    public int getBatteryLevel() {
+        return batteryLevel;
+    }
+
+    public void setBatteryLevel(int batteryLevel) {
+        if(batteryLevel >= 0 && batteryLevel <= 100)
+            this.batteryLevel = batteryLevel;
+        else
+            Debug.error("Invalid battery level (" + batteryLevel + ") should be between 0% and 100%");
     }
 }

@@ -5,7 +5,7 @@ public class Constants {
     public static final String GAME_TITLE = "Dungeon Crawler";
     public static final int GAME_WIDTH = 1280;
     public static final int GAME_HEIGHT = 720;
-    public static final int GAME_FRAME_RATE = 60;
+    public static final int GAME_FRAME_RATE = 120;
     public static final boolean GAME_FULLSCREEN = false;
 
     public static final int GAME_LEVEL_WIDTH = 10;
@@ -31,8 +31,8 @@ public class Constants {
     public static final int PLAYER_STARTING_HEALTH = 10; // (this/2 is the number of hearts on the HUD) FIXME: Odd numbers may cause issues
 
     /*Map Constants*/
-    public static final int MAP_TILE_WIDTH = 116;
-    public static final int MAP_TILE_HEIGHT = 116;
+    public static final int MAP_TILE_WIDTH = 114;
+    public static final int MAP_TILE_HEIGHT = 114;
 
     /*HUD Constants*/
     public static final int HUD_HEART_DIMENSION = 30;

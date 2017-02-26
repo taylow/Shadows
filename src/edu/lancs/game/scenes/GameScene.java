@@ -31,7 +31,6 @@ public class GameScene extends Scene {
     private Level currentLevel;
     private Chest chest;
     private int lightingRadius;
-    private int lightingChange; //FIXME: This is a temporary variable to flicker the lighting, needs changing
 
     public GameScene(Window window) {
         super(window);
@@ -96,15 +95,7 @@ public class GameScene extends Scene {
         window.draw(player);
 
         // draw the lighting
-        //FIXME: this is just some really bad light flicker. Needs changing to smoother lighting and not using some incrementing value;
-        if(lightingRadius == 0)
-            lightingChange = 1;
-        else if(lightingRadius == 10)
-            lightingChange = -1;
-
-        lightingRadius += lightingChange;
-
-        lighting.generateLighting(100 + lightingRadius);
+        lighting.generateLighting(100 + player.getBatteryLevel());
         lighting.getLighting().forEach(window::draw);
 
         // draws the HUD
