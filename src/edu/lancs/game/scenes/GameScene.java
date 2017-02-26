@@ -29,6 +29,7 @@ public class GameScene extends Scene {
     private Enemy enemy;
     private Level[][] levels;
     private Level currentLevel;
+    private Level bossLevel;
     private Chest chest;
     private int lightingRadius;
 
@@ -53,8 +54,9 @@ public class GameScene extends Scene {
                 //FIXME: Make this a little less parameter heavy
                 levels[column][row] = new Level(getWindow(), random.nextInt(10) + 5, random.nextInt(10) + 5, random.nextInt(5), "green_stone", new Color(random.nextInt(192 + 1 - 64) + 64, random.nextInt(128 + 1 - 64) + 64, random.nextInt(64 + 1) + 10), column, row); // generates a level 7x5 with 0 complexity and using textures "green_stone"
 
-        currentLevel = levels[0][0]; // TODO: Randomise where the player starts and finishes
+        currentLevel = levels[random.nextInt(10)][random.nextInt(10)]; // TODO: Randomise where the player starts and finishes
         currentLevel.discoverLevel();
+        bossLevel = levels[random.nextInt(10)][random.nextInt(10)];
 
         miniMap = new MiniMap(getWindow(), levels);
         lighting = new Lighting(getWindow(), player);
