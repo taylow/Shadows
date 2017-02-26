@@ -11,6 +11,8 @@ public class Player extends Actor {
 
     // actual player variables
     private int score;
+    private int gold;
+    private int health
 
     private int testHealth = -1; // TODO: Remove once finished with HUD testing
 
@@ -21,6 +23,7 @@ public class Player extends Actor {
         super(window, "knight", PLAYER_STARTING_X, PLAYER_STARTING_Y, true, PLAYER_STARTING_HEALTH, PLAYER_STARTING_HEALTH);
         // initialise player stats (health, score, etc)
         score = 0;
+        gold = 0;
         inputHandler = getWindow().getInputHandler();
     }
 
@@ -72,4 +75,12 @@ public class Player extends Actor {
     public int getScore() {
         return score;
     }
+    public void setGold(int i){
+        gold = i;
+    }
+    public void setHealth(int i){
+        health = i;
+    }
+    public int getGold(){return gold;}
+    public  int getHealth(){return health;}
 }
