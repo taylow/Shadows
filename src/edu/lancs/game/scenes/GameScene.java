@@ -56,7 +56,7 @@ public class GameScene extends Scene {
 
         currentLevel = levels[random.nextInt(10)][random.nextInt(10)]; // TODO: Randomise where the player starts and finishes
         currentLevel.discoverLevel();
-
+        bossLevel = levels[random.nextInt(10)][random.nextInt(10)];
 
         miniMap = new MiniMap(getWindow(), levels);
         lighting = new Lighting(getWindow(), player);

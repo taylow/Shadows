@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5df7e5be-326c-48a9-947d-b0eec08caa13" name="Default" comment="">
+    <list default="true" id="5df7e5be-326c-48a9-947d-b0eec08caa13" name="Default" comment="Added Rnado">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" />
     </list>
@@ -33,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="291">
-              <caret line="58" column="8" lean-forward="false" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+              <caret line="58" column="67" lean-forward="false" selection-start-line="58" selection-start-column="67" selection-end-line="58" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -864,7 +864,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488144869772</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Added Random Starting Point">
+      <created>1488144895975</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1488144895975</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -950,7 +957,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changes menu sound" />
     <MESSAGE value="Basic Player loading" />
     <MESSAGE value="Basic animation loading added" />
     <MESSAGE value="Added VERY basic movement" />
@@ -975,7 +981,8 @@
     <MESSAGE value="Loot Math Added: TODO Integration" />
     <MESSAGE value="Randomised starting point" />
     <MESSAGE value="Added Random Boss Room" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Random Boss Room" />
+    <MESSAGE value="Added Random Starting Point" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Random Starting Point" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1284,7 +1291,7 @@
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
-          <caret line="58" column="8" lean-forward="false" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+          <caret line="58" column="67" lean-forward="false" selection-start-line="58" selection-start-column="67" selection-end-line="58" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
