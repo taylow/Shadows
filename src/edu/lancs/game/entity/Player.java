@@ -13,6 +13,8 @@ public class Player extends Actor {
     // actual player variables
     private int score;
     private int batteryLevel;
+    private int gold;
+    private int health;
 
     // the entity variables
     private InputHandler inputHandler;
@@ -76,6 +78,18 @@ public class Player extends Actor {
      */
     public int getScore() {
         return score;
+    }
+    public int getHealth() {
+        return health;
+    }
+    public int getGold() {
+        return gold;
+    }
+    public void setGold(int i) {
+         gold = i;
+    }
+    public void setHealth(int i) {
+        health = i;
     }
 
     /***
