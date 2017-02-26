@@ -3,6 +3,8 @@ package edu.lancs.game;
 import org.jsfml.system.Vector2i;
 import org.jsfml.window.Keyboard;
 import org.jsfml.window.event.Event;
+import org.jsfml.window.event.JoystickEvent;
+import org.jsfml.window.event.JoystickMoveEvent;
 
 public class InputHandler {
 
@@ -71,6 +73,17 @@ public class InputHandler {
                 //TODO: Enter Konami Code easter egg here
                 break;
 
+        }
+    }
+
+    public void processInputs(JoystickMoveEvent event) {
+        switch (event.joyAxis) {
+            case X:
+                System.out.println("event = " + event);
+                break;
+            case Y:
+                System.out.println("event = " + event);
+                break;
         }
     }
 
