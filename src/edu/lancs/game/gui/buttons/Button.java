@@ -11,10 +11,12 @@ public abstract class Button extends RectangleShape {
     private Scene parentScene;
 
     private boolean isSelected;
+    private boolean isDisabled;
     private boolean hasExited;
 
     private Texture defaultTexture;
     private Texture selectTexture;
+    private Texture disabledTexture;
 
     private String text;
 
@@ -22,7 +24,7 @@ public abstract class Button extends RectangleShape {
         this.window = window;
         this.parentScene = parentScene;
         this.isSelected = false;
-        this.isSelected = true;
+        this.isDisabled = false;
 
         setSize(new Vector2f(width, height));
         setPosition(new Vector2f(xPos, yPos));
@@ -58,6 +60,15 @@ public abstract class Button extends RectangleShape {
     }
 
     /***
+     * Sets the disabled texture (the one that will be used when the button is disabled).
+     *
+     * @param disabledTexture - Texture to be used when disabled
+     */
+    public void setDisabledTexture(Texture disabledTexture) {
+        this.disabledTexture = disabledTexture;
+    }
+
+    /***
      * Returns whether or not the button is selected.
      *
      * @return - Button select state (hover)
@@ -73,7 +84,9 @@ public abstract class Button extends RectangleShape {
      */
     public void setSelected(boolean selected) {
         isSelected = selected;
-        if (isSelected) {
+        if(isDisabled) {
+            setTexture(disabledTexture);
+        } else if (isSelected) {
             setTexture(selectTexture); // switches the texture to the hover/selected one
             if (hasExited) {
                 hasExited = false;
@@ -116,5 +129,18 @@ public abstract class Button extends RectangleShape {
 
     public Window getWindow() {
         return window;
+    }
+
+    public void setDisabled(boolean disabled) {
+        isDisabled = disabled;
+        if(disabled) {
+            setTexture(disabledTexture);
+        } else {
+            setTexture(defaultTexture);
+        }
+    }
+
+    public boolean isDisabled() {
+        return isDisabled;
     }
 }

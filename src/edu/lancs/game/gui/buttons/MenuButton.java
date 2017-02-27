@@ -29,6 +29,13 @@ public class MenuButton extends Button {
                 setSelectTexture(window.getResourceManager().getTextures("new_game_hover"));
                 break;
 
+            case RESUME_GAME:
+                setDefaultTexture(window.getResourceManager().getTextures("resume_disabled"));
+                setSelectTexture(window.getResourceManager().getTextures("resume_hover"));
+                setDisabledTexture(window.getResourceManager().getTextures("resume_disabled"));
+                setDisabled(true);
+                break;
+
             case HIGH_SCORES:
                 setDefaultTexture(window.getResourceManager().getTextures("high_scores_default"));
                 setSelectTexture(window.getResourceManager().getTextures("high_scores_hover"));
@@ -51,51 +58,57 @@ public class MenuButton extends Button {
      */
     @Override
     public void click() {
-        switch (type) {
-            case NEW_GAME:
-                Debug.print("[Button] New Game");
+        if(!isDisabled()) {
+            switch (type) {
+                case NEW_GAME:
+                    Debug.print("[Button] New Game");
 
-                // creates the GameScene for the users to play
-                GameScene gameScene = new GameScene(getWindow());
-                int gameSceneIndex = getWindow().addScene(gameScene);
-                gameScene.activate();
+                    // creates the GameScene for the users to play
+                    GameScene gameScene = new GameScene(getWindow());
+                    int gameSceneIndex = getWindow().addScene(gameScene);
+                    gameScene.activate();
 
-                // if there is music, stop said music
-                if (getParentScene().getMusic() != null)
-                    getParentScene().getMusic().stop();
+                    // if there is music, stop said music
+                    if (getParentScene().getMusic() != null)
+                        getParentScene().getMusic().stop();
 
-                // deactivate current scene (should be menu at this point)
-                getWindow().setCurrentScene(gameSceneIndex);
-                getParentScene().deactivate();
-                break;
+                    // deactivate current scene (should be menu at this point)
+                    getWindow().setCurrentScene(gameSceneIndex);
+                    getParentScene().deactivate();
+                    break;
 
-            case HIGH_SCORES:
-                Debug.print("[Button] High Scores ");
+                case RESUME_GAME:
+                    System.out.println("TEST MEME");
+                    break;
 
-                // opens the users browser to the high scores page (live web-based high scores)
-                try {
-                    java.awt.Desktop.getDesktop().browse(new URI("http://protaytoe.uk/highscores")); // open this URL
-                } catch (IOException | URISyntaxException e) {
-                    e.printStackTrace();
-                }
-                break;
+                case HIGH_SCORES:
+                    Debug.print("[Button] High Scores ");
 
-            case TUTORIAL:
-                Debug.print("[Button] Level Editor ");
+                    // opens the users browser to the high scores page (live web-based high scores)
+                    try {
+                        java.awt.Desktop.getDesktop().browse(new URI("http://protaytoe.uk/highscores")); // open this URL
+                    } catch (IOException | URISyntaxException e) {
+                        e.printStackTrace();
+                    }
+                    break;
 
-                // adds the tutorial scene an sets it to the active scene
-                //FIXME: This technically adds the as a new scene every time. Could be fixed by having the BackButton delete the TutorialScene from Window
-                TutorialScene tutorialScene = new TutorialScene(getWindow(), getParentScene());
-                int testSceneIndex = getWindow().addScene(tutorialScene);
-                tutorialScene.activate();
-                getWindow().setCurrentScene(testSceneIndex);
-                getParentScene().deactivate();
-                break;
+                case TUTORIAL:
+                    Debug.print("[Button] Level Editor ");
 
-            case EXIT:
-                Debug.print("[Button] Exit");
-                System.exit(0);
-                break;
+                    // adds the tutorial scene an sets it to the active scene
+                    //FIXME: This technically adds the as a new scene every time. Could be fixed by having the BackButton delete the TutorialScene from Window
+                    TutorialScene tutorialScene = new TutorialScene(getWindow(), getParentScene());
+                    int testSceneIndex = getWindow().addScene(tutorialScene);
+                    tutorialScene.activate();
+                    getWindow().setCurrentScene(testSceneIndex);
+                    getParentScene().deactivate();
+                    break;
+
+                case EXIT:
+                    Debug.print("[Button] Exit");
+                    System.exit(0);
+                    break;
+            }
         }
     }
 
@@ -105,6 +118,6 @@ public class MenuButton extends Button {
     }
 
     public enum Type {
-        NEW_GAME, HIGH_SCORES, TUTORIAL, EXIT
+        NEW_GAME, RESUME_GAME, HIGH_SCORES, TUTORIAL, EXIT
     }
 }

@@ -10,7 +10,7 @@ import org.jsfml.system.Vector2i;
 
 import java.util.ArrayList;
 
-import static edu.lancs.game.Constants.MAP_TILE_SCALE;
+import static edu.lancs.game.Constants.*;
 
 public class MiniMap {
 
@@ -32,28 +32,32 @@ public class MiniMap {
     public void updateMap() {
         //TODO: I need to comment this. It was done at 5AM after no sleep
         //FIXME: Also, a re-write/improvement would be nice. It works, just could be slightly more efficient and so the tiles are inline with each door
-        int levelXoffset = 0;
-        int levelYoffset = 0;
         mapTiles = new ArrayList<>();
 
         RectangleShape background = new RectangleShape();
         background.setFillColor(new Color(Color.BLACK, 128));
         mapTiles.add(background);
 
+        // creates background square for MiniMap in centre of screen
+        background.setSize(new Vector2f(ROOM_WIDTH_MAX * GAME_LEVEL_WIDTH * MAP_TILE_SCALE, ROOM_HEIGHT_MAX * GAME_LEVEL_HEIGHT * MAP_TILE_SCALE));
+        background.setOrigin(background.getSize().x / 2, background.getSize().y / 2);
+        background.setPosition(getWindow().getView().getCenter().x, getWindow().getView().getCenter().y);
+
         for(int row = 0; row < levels.length; row++) {
             for(int column = 0; column < levels[row].length; column++) {
                 RectangleShape rectangleShape = new RectangleShape();
-
                 rectangleShape.setSize(new Vector2f(levels[row][column].getWidth() * MAP_TILE_SCALE, levels[row][column].getHeight() * MAP_TILE_SCALE));
+
                 if(levels[row][column].isDiscovered())
                     rectangleShape.setFillColor(new Color(levels[row][column].getLevelColour(), 110));
                 else
                     rectangleShape.setFillColor(new Color(levels[row][column].getLevelColour(), 0));
 
                 rectangleShape.setOrigin((levels[row][column].getWidth() * MAP_TILE_SCALE) / 2, (levels[row][column].getHeight() * MAP_TILE_SCALE) / 2);
-                // draws the rectangle at the centre of teh screen, using the offsets
-                rectangleShape.setPosition(getWindow().getView().getCenter().x + (levelYoffset * MAP_TILE_SCALE) - 100 * MAP_TILE_SCALE,
-                        getWindow().getView().getCenter().y + (levelXoffset * MAP_TILE_SCALE) - 100 * MAP_TILE_SCALE);
+
+                // FIXME: Probably the most inefficient maths ever here... Should be redone to use minimal calculations.
+                rectangleShape.setPosition((getWindow().getView().getCenter().x + (levels[row][column].getLevelColumnPosition() * ROOM_WIDTH_MAX) * MAP_TILE_SCALE) - background.getSize().x / 2 + (GAME_LEVEL_WIDTH * MAP_TILE_SCALE) / 2,
+                        (getWindow().getView().getCenter().y + (levels[row][column].getLevelRowPosition() * ROOM_HEIGHT_MAX) * MAP_TILE_SCALE) - background.getSize().y / 2 + (GAME_LEVEL_HEIGHT * MAP_TILE_SCALE) / 2);
 
                 mapTiles.add(rectangleShape);
 
@@ -61,16 +65,10 @@ public class MiniMap {
                     rectangleShape.setOutlineColor(Color.RED);
                     rectangleShape.setOutlineThickness(2);
                 }
-
-                levelXoffset += levels[row][column].getWidth() + 10;
             }
-            levelYoffset += levels[row][0].getHeight() + 10;
-            levelXoffset = 0;
         }
-        background.setSize(new Vector2f(250 * MAP_TILE_SCALE, 250 * MAP_TILE_SCALE));
-        background.setPosition(getWindow().getView().getCenter().x - (250 * MAP_TILE_SCALE) / 2,
-                getWindow().getView().getCenter().y - (250 * MAP_TILE_SCALE) / 2);
-
+        // make background slightly bigger than the drawing space
+        background.setScale(1.1f, 1.1f);
     }
 
     public ArrayList<RectangleShape> getMapTiles() {

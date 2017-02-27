@@ -6,9 +6,12 @@ import org.jsfml.graphics.Color;
 import org.jsfml.system.Vector2i;
 import org.jsfml.window.event.Event;
 
+import java.io.Serializable;
+
 import static edu.lancs.game.Constants.GAME_TITLE;
 
 public abstract class Scene {
+
     private Window window;
 
     // scene information

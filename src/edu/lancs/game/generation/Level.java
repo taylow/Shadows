@@ -7,6 +7,7 @@ import org.jsfml.graphics.Color;
 import java.util.ArrayList;
 import java.util.Random;
 
+import static edu.lancs.game.Constants.GAME_LEVEL_WIDTH;
 import static edu.lancs.game.Constants.MAP_TILE_HEIGHT;
 import static edu.lancs.game.Constants.MAP_TILE_WIDTH;
 import static edu.lancs.game.generation.Tile.Direction.*;
@@ -80,8 +81,8 @@ public class Level {
             else if (column == width - 1)
                 tiles[0][column] = new Wall(getWindow(), textureName + "_wall", NE, 1, column, 0, levelColour);
 
-                // if it's the middle, add a door
-            else if (column == (width - 1) / 2) {
+                // if it's the middle and is not the top room, add a door
+            else if (column == (width - 1) / 2 && levelRowPosition != 0) {
                 northDoor = new Door(getWindow(), textureName + "_door_round", N, 1, column, 0, levelRowPosition - 1, levelColumnPosition, false, levelColour);
                 tiles[0][column] = northDoor;
             }
@@ -96,7 +97,7 @@ public class Level {
             for (int row = 1; row < height - 1; row++) {
                 // first piece (W wall)
                 if (column == 0)
-                    if (row == (height - 1) / 2) {
+                    if (row == (height - 1) / 2 && levelColumnPosition != 0) {
                         westDoor = new Door(getWindow(), textureName + "_door_round", W, 1, column, row, levelRowPosition, levelColumnPosition - 1, true, levelColour);
                         tiles[row][column] = westDoor;
                     } else {
@@ -105,7 +106,7 @@ public class Level {
 
                     // last piece (E wall)
                 else if (column + 1 == width)
-                    if (row == (height - 1) / 2) {
+                    if (row == (height - 1) / 2 && levelColumnPosition != GAME_LEVEL_WIDTH - 1) {
                         eastDoor = new Door(getWindow(), textureName + "_door_round", E, 1, column, row, levelRowPosition, levelColumnPosition + 1, true, levelColour);
                         tiles[row][column] = eastDoor;
                     } else {
@@ -129,7 +130,7 @@ public class Level {
                 tiles[height - 1][column] = new Wall(getWindow(), textureName + "_wall", SE, 1, column, height - 1, levelColour);
 
                 // if it's the middle, add a door
-            else if (column == (width - 1) / 2) {
+            else if (column == (width - 1) / 2 && levelRowPosition != GAME_LEVEL_WIDTH - 1) {
                 southDoor = new Door(getWindow(), textureName + "_door_round", S, 1, column, height - 1, levelRowPosition + 1, levelColumnPosition, true, levelColour);
                 tiles[height - 1][column] = southDoor;
 

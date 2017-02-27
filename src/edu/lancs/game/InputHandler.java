@@ -3,8 +3,15 @@ package edu.lancs.game;
 import org.jsfml.system.Vector2i;
 import org.jsfml.window.Keyboard;
 import org.jsfml.window.event.Event;
+import org.jsfml.window.event.JoystickButtonEvent;
 import org.jsfml.window.event.JoystickEvent;
 import org.jsfml.window.event.JoystickMoveEvent;
+
+import static edu.lancs.game.Constants.*;
+import static org.jsfml.window.Joystick.Axis.X;
+import static org.jsfml.window.Joystick.Axis.Y;
+import static org.jsfml.window.event.Event.Type.JOYSTICK_BUTTON_PRESSED;
+import static org.jsfml.window.event.Event.Type.JOYSTICK_BUTTON_RELEASED;
 
 public class InputHandler {
 
@@ -76,13 +83,65 @@ public class InputHandler {
         }
     }
 
+    /***
+     * Processes Joystick axis and maps them to keyboard buttons.
+     *
+     * @param event - JoystickMoveEvent
+     */
     public void processInputs(JoystickMoveEvent event) {
-        switch (event.joyAxis) {
+        switch(event.joyAxis) {
             case X:
-                System.out.println("event = " + event);
+                if (event.position < -JOYSTICK_DEADZONE_X)
+                    aKeyPressed = true;
+                else
+                    aKeyPressed = false;
+
+                if (event.position > JOYSTICK_DEADZONE_X)
+                    dKeyPressed = true;
+                else
+                    dKeyPressed = false;
+
                 break;
+
             case Y:
-                System.out.println("event = " + event);
+                if(event.position < -JOYSTICK_DEADZONE_Y)
+                    wKeyPressed = true;
+                else
+                    wKeyPressed = false;
+
+                if(event.position > JOYSTICK_DEADZONE_Y)
+                    sKeyPressed = true;
+                else
+                    sKeyPressed = false;
+
+                break;
+        }
+    }
+
+    /***
+     * Processes Joystick buttons and maps them to keyboard buttons.
+     * A = 0
+     * B = 1
+     * X = 2
+     * Y = 3
+     * LB = 4
+     * RB = 5
+     * BACK = 6
+     * START = 7
+     * L_AXIS_3 = 8
+     * R_AXIS_3 = 9
+     *
+     * @param event - JoystickButtonEvent
+     */
+    public void processInputs(JoystickButtonEvent event) {
+        System.out.println(event.type);
+        switch(event.button) {
+            case ATTACK_BUTTON:
+                spaceKeyPressed = event.type == JOYSTICK_BUTTON_PRESSED;
+                break;
+
+            case MINIMAP_BUTTON:
+                ctrlKeyPressed = event.type == JOYSTICK_BUTTON_PRESSED;
                 break;
         }
     }

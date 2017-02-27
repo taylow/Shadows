@@ -14,7 +14,6 @@ public class Player extends Actor {
     private int score;
     private int batteryLevel;
     private int gold;
-    private int health;
 
     // the entity variables
     private InputHandler inputHandler;
@@ -23,7 +22,7 @@ public class Player extends Actor {
         super(window, "knight", PLAYER_STARTING_X, PLAYER_STARTING_Y, true, PLAYER_STARTING_HEALTH, PLAYER_STARTING_HEALTH);
         // initialise player stats (health, score, etc)
         score = 0;
-        batteryLevel = 0;
+        batteryLevel = 100;
         inputHandler = getWindow().getInputHandler();
     }
 
@@ -53,13 +52,13 @@ public class Player extends Actor {
                 moveUp();
             if (inputHandler.isaKeyPressed()) {
                 moveLeft();
-                setBatteryLevel(batteryLevel + 1);
+                //setBatteryLevel(batteryLevel + 1); //TODO: Just to test the battery. This will increment with the pickups
             }
             if (inputHandler.issKeyPressed())
                 moveDown();
             if (inputHandler.isdKeyPressed()) {
                 moveRight();
-                setBatteryLevel(batteryLevel - 1);
+                //setBatteryLevel(batteryLevel - 1); //TODO: Just to test the battery. This will decrement with the game time
             }
         } else if (inputHandler.isSpaceKeyPressed()) {
             if (getState() != ATTACKING)
@@ -79,17 +78,13 @@ public class Player extends Actor {
     public int getScore() {
         return score;
     }
-    public int getHealth() {
-        return health;
-    }
+
     public int getGold() {
         return gold;
     }
-    public void setGold(int i) {
-         gold = i;
-    }
-    public void setHealth(int i) {
-        health = i;
+
+    public void setGold(int gold) {
+        this.gold = gold;
     }
 
     /***

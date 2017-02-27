@@ -1,6 +1,7 @@
 package edu.lancs.game;
 
 import edu.lancs.game.scenes.Scene;
+import org.jsfml.graphics.Image;
 import org.jsfml.graphics.RenderWindow;
 import org.jsfml.window.VideoMode;
 import org.jsfml.window.WindowStyle;
@@ -36,6 +37,8 @@ public class Window extends RenderWindow {
         this.inputHandler = new InputHandler(this); // add an InputHandler with the Window as the focus
 
         this.scenes = new ArrayList<>();
+
+        this.setIcon(resourceManager.getTextures("game_icon").copyToImage());
 
         // sets the game to full screen or default
         if (isFullscreen)

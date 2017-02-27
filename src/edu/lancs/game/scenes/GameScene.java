@@ -1,7 +1,6 @@
 package edu.lancs.game.scenes;
 
 import edu.lancs.game.Debug;
-import edu.lancs.game.InputHandler;
 import edu.lancs.game.Window;
 import edu.lancs.game.entity.Chest;
 import edu.lancs.game.entity.Enemy;
@@ -13,25 +12,22 @@ import edu.lancs.game.gui.MiniMap;
 import org.jsfml.graphics.Color;
 import org.jsfml.graphics.FloatRect;
 import org.jsfml.graphics.View;
-import org.jsfml.system.Vector2f;
 import org.jsfml.window.event.Event;
 
+import java.io.*;
 import java.util.Random;
 
 import static edu.lancs.game.Constants.*;
 
 public class GameScene extends Scene {
-
     private HUD hud;
     private MiniMap miniMap;
     private Lighting lighting;
     private Player player;
-    private Enemy enemy;
     private Level[][] levels;
     private Level currentLevel;
     private Level bossLevel;
     private Chest chest;
-    private int lightingRadius;
 
     public GameScene(Window window) {
         super(window);
@@ -45,21 +41,21 @@ public class GameScene extends Scene {
         // currently only has one level TODO: add a 2D level array
         Random random = new Random();
 
-        levels = new Level[GAME_LEVEL_WIDTH][GAME_LEVEL_HEIGHT];
+        levels = new Level[GAME_LEVEL_WIDTH][GAME_LEVEL_HEIGHT]; // creates a 2D array to fill with levels
 
         chest = new Chest(getWindow(), 200, 200);
 
         for(int column = 0; column < GAME_LEVEL_WIDTH; column++)
             for(int row = 0; row < GAME_LEVEL_HEIGHT; row++)
                 //FIXME: Make this a little less parameter heavy
-                levels[column][row] = new Level(getWindow(), random.nextInt(10) + 5, random.nextInt(10) + 5, random.nextInt(5), "green_stone", new Color(random.nextInt(192 + 1 - 64) + 64, random.nextInt(128 + 1 - 64) + 64, random.nextInt(64 + 1) + 10), column, row); // generates a level 7x5 with 0 complexity and using textures "green_stone"
+                levels[column][row] = new Level(getWindow(), random.nextInt(ROOM_WIDTH_MAX + 1 - ROOM_WIDTH_MIN) + ROOM_WIDTH_MIN, random.nextInt(ROOM_HEIGHT_MAX + 1 - ROOM_HEIGHT_MIN) + ROOM_HEIGHT_MIN, random.nextInt(5), "green_stone", new Color(random.nextInt(192 + 1 - 64) + 64, random.nextInt(128 + 1 - 64) + 64, random.nextInt(64 + 1) + 10), column, row); // generates a level 7x5 with 0 complexity and using textures "green_stone"
 
-        currentLevel = levels[random.nextInt(10)][random.nextInt(10)]; // TODO: Randomise where the player starts and finishes
+        currentLevel = levels[random.nextInt(GAME_LEVEL_WIDTH)][random.nextInt(GAME_LEVEL_HEIGHT)]; // randomises the starting level
         currentLevel.discoverLevel();
-        bossLevel = levels[random.nextInt(10)][random.nextInt(10)];
+        bossLevel = levels[random.nextInt(GAME_LEVEL_WIDTH)][random.nextInt(GAME_LEVEL_HEIGHT)]; // randomises the boss level
 
-        miniMap = new MiniMap(getWindow(), levels);
-        lighting = new Lighting(getWindow(), player);
+        miniMap = new MiniMap(getWindow(), levels); // creates the minimap
+        lighting = new Lighting(getWindow(), player); // created the lighting instance
     }
 
     /***
@@ -200,6 +196,15 @@ public class GameScene extends Scene {
             case KEY_PRESSED:
             case KEY_RELEASED:
                 getWindow().getInputHandler().processInputs(event.asKeyEvent().key); // updates the InputHandler as to which key was pressed/released
+                break;
+
+            case JOYSTICK_MOVED:
+                getWindow().getInputHandler().processInputs(event.asJoystickMoveEvent());
+                break;
+
+            case JOYSTICK_BUTTON_PRESSED:
+            case JOYSTICK_BUTTON_RELEASED:
+                getWindow().getInputHandler().processInputs(event.asJoystickButtonEvent());
                 break;
         }
     }

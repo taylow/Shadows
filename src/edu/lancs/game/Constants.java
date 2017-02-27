@@ -5,7 +5,7 @@ public class Constants {
     public static final String GAME_TITLE = "Dungeon Crawler";
     public static final int GAME_WIDTH = 1280;
     public static final int GAME_HEIGHT = 720;
-    public static final int GAME_FRAME_RATE = 120;
+    public static final int GAME_FRAME_RATE = 60;
     public static final boolean GAME_FULLSCREEN = false;
 
     public static final int GAME_LEVEL_WIDTH = 10;
@@ -29,18 +29,30 @@ public class Constants {
     public static final int PLAYER_STARTING_Y = 285;
     public static final float PLAYER_BASE_MOVEMENT = 5;
     public static final int PLAYER_STARTING_HEALTH = 10; // (this/2 is the number of hearts on the HUD) FIXME: Odd numbers may cause issues
+    public static final float PLAYER_SCALE_WIDTH = 1.0f;
+    public static final float PLAYER_SCALE_HEIGHT = 1.0f;
 
     /*Map Constants*/
     public static final int MAP_TILE_WIDTH = 114;
     public static final int MAP_TILE_HEIGHT = 114;
+    public static final float MAP_TILE_SCALE = 2f;
 
     /*HUD Constants*/
     public static final int HUD_HEART_DIMENSION = 30;
 
-    /*Map Constants*/
-    public static final float MAP_TILE_SCALE = 1.5f;
-
     /*Lighting Constants*/
     public static final int LIGHTING_TILE_WIDTH = 40;
     public static final int LIGHTING_TILE_HEIGHT = 40;
+
+    /*Room Constants*/
+    public static final int ROOM_WIDTH_MIN = 5;
+    public static final int ROOM_WIDTH_MAX = 10;
+    public static final int ROOM_HEIGHT_MIN = 5;
+    public static final int ROOM_HEIGHT_MAX = 10;
+
+    /*Joystick Mapping Constants (look in InputHandler to find values)*/
+    public static final int JOYSTICK_DEADZONE_X = 25;
+    public static final int JOYSTICK_DEADZONE_Y = 25;
+    public static final int ATTACK_BUTTON = 0;
+    public static final int MINIMAP_BUTTON = 1;
 }
