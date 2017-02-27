@@ -19,7 +19,7 @@ public class Player extends Actor {
     private InputHandler inputHandler;
 
     public Player(Window window) {
-        super(window, "knight", PLAYER_STARTING_X, PLAYER_STARTING_Y, true, PLAYER_STARTING_HEALTH, PLAYER_STARTING_HEALTH, PLAYER_WEAPON_DAMAGE);
+        super(window, "knight", PLAYER_STARTING_X, PLAYER_STARTING_Y, true, PLAYER_STARTING_HEALTH, PLAYER_STARTING_HEALTH, PLAYER_WEAPON_DAMAGE, PLAYER_BASE_MOVEMENT);
         // initialise player stats (health, score, etc)
         score = 0;
         batteryLevel = 100;
@@ -77,6 +77,15 @@ public class Player extends Actor {
      */
     public int getScore() {
         return score;
+    }
+
+    /***
+     * Adds a score onto the Players score.
+     *
+     * @param score - Score to add
+     */
+    public void addScore(int score) {
+        this.score += score;
     }
 
     public int getGold() {

@@ -15,22 +15,29 @@ public class HighscoresUpdater implements Runnable {
     private String name;
     private int score;
     private int time;
+    private boolean hasUpdated;
 
     public HighscoresUpdater(String name, int score, int time) {
         this.name = name;
         this.score = score;
         this.time = time;
+        hasUpdated = false;
     }
 
     @Override
-    public void run() {
-        updateHighscores(name, score, time);
+    public synchronized void run() {
+        synchronized (this) {
+            if (!hasUpdated) {
+                updateHighscores(name, score, time);
+                hasUpdated = true;
+            }
+        }
     }
 
     /***
      * Sends a GET request to the HighScores server using game information (Score, time, name).
      */
-    public void updateHighscores(String name, int score, int time) {
+    public synchronized void updateHighscores(String name, int score, int time) {
         try {
             String url = HIGHSCORES_URL.replace("X", name).replace("Y", Integer.toString(score)).replace("Z", Integer.toString(time));
 
@@ -54,7 +61,6 @@ public class HighscoresUpdater implements Runnable {
             in.close();
 
             Debug.print("High scores server returned: " + response);
-
         } catch (ProtocolException e) {
             e.printStackTrace();
         } catch (MalformedURLException e) {

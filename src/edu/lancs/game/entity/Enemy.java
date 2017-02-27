@@ -19,7 +19,7 @@ public class Enemy extends Actor {
     private Actor targetActor;
 
     public Enemy(Window window, int positionX, int positionY, int health, Color recolour) {
-        super(window, "knight", positionX, positionY, true, health, health, ENEMY_WEAPON_DAMAGE);
+        super(window, "knight", positionX, positionY, true, health, health, ENEMY_WEAPON_DAMAGE, ENEMY_BASE_MOVEMENT);
         // initialise player stats (health, score, etc)
         score = 0;
         inputHandler = getWindow().getInputHandler();
@@ -96,7 +96,6 @@ public class Enemy extends Actor {
     public void handleDeath() {
         if(getHealth() == 0 && getState() != DYING) {
             setState(DYING);
-            System.out.println("DYING");
         }
 
         // if the dying animation is on the last frame

@@ -38,7 +38,8 @@ public class Constants {
 
     /*Enemy Constants*/
     public static final int ENEMY_WEAPON_DAMAGE = 1;
-    public static final float ENEMY_BASE_MOVEMENT = 5;
+    public static final int ENEMY_DEFAULT_SCORE = 100;
+    public static final float ENEMY_BASE_MOVEMENT = 1;
     public static final int ENEMY_STARTING_HEALTH_MIN = 1;
     public static final int ENEMY_STARTING_HEALTH_MAX = 5;
 

@@ -112,7 +112,6 @@ public class GameScene extends Scene {
                 if (player.getState() == Actor.State.ATTACKING && player.getFrame() == ACTOR_ATTACK_FRAME) {
                     if (player.canAttackReach(enemy)) {
                         enemy.damage(player.getWeaponDamage());
-                        System.out.println("Enemy health = " + enemy.getHealth());
                     }
                 }
 
@@ -127,6 +126,7 @@ public class GameScene extends Scene {
                     gameOver();
 
             } else {
+                player.addScore(ENEMY_DEFAULT_SCORE + enemy.getHearts() * 10);
                 currentLevel.getEnemies().remove(enemyId);
                 enemyId--;
             }

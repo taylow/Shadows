@@ -82,7 +82,8 @@ public class MenuButton extends Button {
                     break;
 
                 case RESUME_GAME:
-                    System.out.println("TEST MEME");
+                    // TODO: Add loading here
+                    System.out.println("RESUME GAME");
                     break;
 
                 case PLAY_GAME:

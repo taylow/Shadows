@@ -140,6 +140,7 @@ public class Window extends RenderWindow {
                 MenuScene menuScene = (MenuScene) getScene(0);
                 scenes.clear();
                 scenes.add(menuScene);
+                inputHandler = new InputHandler(this);
             }
         }
     }

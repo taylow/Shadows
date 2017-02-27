@@ -134,7 +134,6 @@ public class InputHandler {
      * @param event - JoystickButtonEvent
      */
     public void processInputs(JoystickButtonEvent event) {
-        System.out.println(event.type);
         switch(event.button) {
             case ATTACK_BUTTON:
                 spaceKeyPressed = event.type == JOYSTICK_BUTTON_PRESSED;

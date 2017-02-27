@@ -21,6 +21,7 @@ public abstract class Actor extends Entity {
     private int hearts; // different to health as this is the amount they can have (health / hearts)
     private int weaponDamage;
     private boolean isDead;
+    private float speed;
 
     private Vector2f velocity;
 
@@ -41,12 +42,13 @@ public abstract class Actor extends Entity {
 
     private State state;
 
-    public Actor(Window window, String actorName, float xPos, float yPos, boolean isAnimated, int maxHealth, int currentHealth, int weaponDamage) {
+    public Actor(Window window, String actorName, float xPos, float yPos, boolean isAnimated, int maxHealth, int currentHealth, int weaponDamage, float speed) {
         super(window, actorName + "_idle", xPos, yPos, isAnimated);
         // initialise player stats (health, score, etc)
         health = currentHealth;
         hearts = maxHealth;
         isDead = false;
+        this.speed = speed;
         this.weaponDamage = weaponDamage;
         velocity = new Vector2f(0, 0);
 
@@ -82,7 +84,7 @@ public abstract class Actor extends Entity {
      * Moves the player left by PLAYER_BASE_MOVEMENT
      */
     public void moveLeft() {
-        velocity = new Vector2f(-PLAYER_BASE_MOVEMENT, 0);
+        velocity = new Vector2f(-speed, 0);
         if (!isCollidingLeft) {
             move(velocity);
             setCollidingRight(false);
@@ -96,7 +98,7 @@ public abstract class Actor extends Entity {
      * Moves the player right by PLAYER_BASE_MOVEMENT
      */
     public void moveRight() {
-        velocity = new Vector2f(PLAYER_BASE_MOVEMENT, 0);
+        velocity = new Vector2f(speed, 0);
         if (!isCollidingRight) {
             move(velocity);
             setCollidingLeft(false);
@@ -110,7 +112,7 @@ public abstract class Actor extends Entity {
      * Moves the player up by PLAYER_BASE_MOVEMENT
      */
     public void moveUp() {
-        velocity = new Vector2f(0, -PLAYER_BASE_MOVEMENT);
+        velocity = new Vector2f(0, -speed);
         if (!isCollidingUp) {
             move(velocity);
             setCollidingDown(false);
@@ -123,7 +125,7 @@ public abstract class Actor extends Entity {
      * Moves the player down by PLAYER_BASE_MOVEMENT
      */
     public void moveDown() {
-        velocity = new Vector2f(0, PLAYER_BASE_MOVEMENT);
+        velocity = new Vector2f(0, speed);
         if (!isCollidingDown) {
             move(velocity);
             setCollidingUp(false);
