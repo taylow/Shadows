@@ -62,8 +62,13 @@ public class MiniMap {
                 mapTiles.add(rectangleShape);
 
                 if(levels[row][column].isCurrentLevel()) {
-                    rectangleShape.setOutlineColor(Color.RED);
-                    rectangleShape.setOutlineThickness(2);
+                    if(levels[row][column].isBossLevel()) {
+                        rectangleShape.setOutlineColor(Color.YELLOW);
+                        rectangleShape.setOutlineThickness(2);
+                    } else {
+                        rectangleShape.setOutlineColor(Color.RED);
+                        rectangleShape.setOutlineThickness(2);
+                    }
                 }
             }
         }

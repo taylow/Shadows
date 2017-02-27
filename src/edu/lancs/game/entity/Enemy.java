@@ -18,12 +18,12 @@ public class Enemy extends Actor {
 
     private Actor targetActor;
 
-    public Enemy(Window window, int positionX, int positionY, int health) {
+    public Enemy(Window window, int positionX, int positionY, int health, Color recolour) {
         super(window, "knight", positionX, positionY, true, health, health, ENEMY_WEAPON_DAMAGE);
         // initialise player stats (health, score, etc)
         score = 0;
         inputHandler = getWindow().getInputHandler();
-        setColor(new Color(180, 180, 180)); //TODO: You can add a colour overlay to reuse textures
+        setColor(recolour);
     }
 
     /***

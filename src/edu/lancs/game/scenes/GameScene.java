@@ -62,7 +62,9 @@ public class GameScene extends Scene {
 
         currentLevel = levels[random.nextInt(GAME_LEVEL_WIDTH)][random.nextInt(GAME_LEVEL_HEIGHT)]; // randomises the starting level
         currentLevel.discoverLevel();
+
         bossLevel = levels[random.nextInt(GAME_LEVEL_WIDTH)][random.nextInt(GAME_LEVEL_HEIGHT)]; // randomises the boss level
+        bossLevel.setBossLevel(true);
 
         miniMap = new MiniMap(getWindow(), levels); // creates the minimap
         lighting = new Lighting(getWindow(), player); // created the lighting instance

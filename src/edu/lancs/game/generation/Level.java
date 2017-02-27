@@ -23,6 +23,7 @@ public class Level {
     private Color levelColour;
     private boolean isDiscovered;
     private boolean isCurrentLevel;
+    private boolean isBossLevel;
 
     private Tile[][] tiles;
     private ArrayList<Enemy> enemies;
@@ -55,6 +56,7 @@ public class Level {
         this.levelColour = levelColour;
         isDiscovered = false;
         isCurrentLevel = false;
+        isBossLevel = false;
 
         tiles = new Tile[height][width];
         enemies = new ArrayList<>();
@@ -159,7 +161,7 @@ public class Level {
             int randomY = (random.nextInt(height - 2) + 1) * MAP_TILE_HEIGHT + (MAP_TILE_HEIGHT / 2);
 
             int randomHealth = random.nextInt(4) + 2;
-            enemies.add(new Enemy(getWindow(), randomX, randomY, randomHealth));
+            enemies.add(new Enemy(getWindow(), randomX, randomY, randomHealth, new Color(10, random.nextInt(128 + 1 - 64) + 64, 10)));
         }
     }
 
@@ -244,5 +246,13 @@ public class Level {
 
     public ArrayList<Door> getDoors() {
         return doors;
+    }
+
+    public void setBossLevel(boolean bossLevel) {
+        isBossLevel = bossLevel;
+    }
+
+    public boolean isBossLevel() {
+        return isBossLevel;
     }
 }
