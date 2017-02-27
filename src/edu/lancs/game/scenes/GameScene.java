@@ -16,11 +16,6 @@ import org.jsfml.graphics.FloatRect;
 import org.jsfml.graphics.View;
 import org.jsfml.window.event.Event;
 
-import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.net.URL;
 import java.util.Random;
 
 import static edu.lancs.game.Constants.*;
@@ -62,6 +57,7 @@ public class GameScene extends Scene {
 
         currentLevel = levels[random.nextInt(GAME_LEVEL_WIDTH)][random.nextInt(GAME_LEVEL_HEIGHT)]; // randomises the starting level
         currentLevel.discoverLevel();
+        currentLevel.getEnemies().clear();
 
         bossLevel = levels[random.nextInt(GAME_LEVEL_WIDTH)][random.nextInt(GAME_LEVEL_HEIGHT)]; // randomises the boss level
         bossLevel.setBossLevel(true);
@@ -261,7 +257,7 @@ public class GameScene extends Scene {
     }
 
     public void gameOver() {
-        HighscoresUpdater highscoresUpdater = new HighscoresUpdater(username, player.getScore(), 1000);
+        HighscoresUpdater highscoresUpdater = new HighscoresUpdater(username, player.getScore(), player.getTimeAlive());
         Thread highScoresThread = new Thread(highscoresUpdater);
         highScoresThread.start();
 

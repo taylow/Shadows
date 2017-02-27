@@ -23,6 +23,7 @@ public class HUD {
 
     private ArrayList<Text> texts;
     private Text scoreText;
+    private Text timeText;
 
     public HUD(Window window, Player player) {
         this.window = window;
@@ -38,6 +39,11 @@ public class HUD {
         scoreText.setPosition(getWindow().getWidth() - 150, 10); // TODO: Sorta redundant now and I have updatePositions
         scoreText.setColor(Color.YELLOW);
         texts.add(scoreText); // adds this text to the ArrayList of texts (means for multiple texts with one one draw)
+
+        timeText = new Text("000000", getWindow().getResourceManager().getFont("BLKCHCRY"));
+        timeText.setPosition(getWindow().getWidth() / 2 - 15, 10); // TODO: Sorta redundant now and I have updatePositions
+        timeText.setColor(Color.YELLOW);
+        texts.add(timeText); // adds this text to the ArrayList of texts (means for multiple texts with one one draw)
     }
 
     /***
@@ -47,6 +53,7 @@ public class HUD {
         updatePositions();
         updateHealth();
         scoreText.setString(String.format("%06d", player.getScore())); // updates the players score
+        timeText.setString(String.format("%06d", player.getTimeAlive())); // updates the players score
     }
 
     /***
@@ -56,6 +63,7 @@ public class HUD {
         offsetX = getWindow().getView().getCenter().x - (getWindow().getView().getSize().x / 2);
         offsetY = getWindow().getView().getCenter().y - (getWindow().getView().getSize().y / 2);
         scoreText.setPosition(offsetX + getWindow().getWidth() - 150, offsetY + 10);
+        timeText.setPosition(offsetX + getWindow().getWidth() / 2 - 15, offsetY + 10);
     }
 
     /***

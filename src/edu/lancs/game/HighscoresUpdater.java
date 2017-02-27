@@ -14,10 +14,10 @@ import static edu.lancs.game.Constants.HIGHSCORES_USER_AGENT;
 public class HighscoresUpdater implements Runnable {
     private String name;
     private int score;
-    private int time;
+    private long time;
     private boolean hasUpdated;
 
-    public HighscoresUpdater(String name, int score, int time) {
+    public HighscoresUpdater(String name, int score, long time) {
         this.name = name;
         this.score = score;
         this.time = time;
@@ -37,9 +37,9 @@ public class HighscoresUpdater implements Runnable {
     /***
      * Sends a GET request to the HighScores server using game information (Score, time, name).
      */
-    public synchronized void updateHighscores(String name, int score, int time) {
+    public synchronized void updateHighscores(String name, int score, long time) {
         try {
-            String url = HIGHSCORES_URL.replace("X", name).replace("Y", Integer.toString(score)).replace("Z", Integer.toString(time));
+            String url = HIGHSCORES_URL.replace("X", name).replace("Y", Integer.toString(score)).replace("Z", Long.toString(time));
 
             URL obj = new URL(url);
             HttpURLConnection con = (HttpURLConnection) obj.openConnection();

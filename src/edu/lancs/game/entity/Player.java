@@ -15,6 +15,9 @@ public class Player extends Actor {
     private int batteryLevel;
     private int gold;
 
+    private long startTime;
+    private long currentTime;
+
     // the entity variables
     private InputHandler inputHandler;
 
@@ -24,6 +27,8 @@ public class Player extends Actor {
         score = 0;
         batteryLevel = 100;
         inputHandler = getWindow().getInputHandler();
+        startTime = System.currentTimeMillis();
+        currentTime = startTime;
     }
 
     /***
@@ -40,6 +45,7 @@ public class Player extends Actor {
     public void update() {
         handleMovement();
         nextFrame();
+        currentTime = System.currentTimeMillis() - startTime;
     }
 
     /***
@@ -110,5 +116,9 @@ public class Player extends Actor {
             this.batteryLevel = batteryLevel;
         else
             Debug.error("Invalid battery level (" + batteryLevel + ") should be between 0% and 100%");
+    }
+
+    public long getTimeAlive() {
+        return currentTime / 1000;
     }
 }
