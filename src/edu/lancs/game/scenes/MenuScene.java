@@ -35,7 +35,7 @@ public class MenuScene extends Scene {
         buttons.add(new MenuButton(window, this, "High Scores", HIGH_SCORES, getWindow().getWidth() / 2 - (MENU_BUTTON_WIDTH / 2), 250 + MENU_BUTTON_HEIGHT * 2.2f));
         buttons.add(new MenuButton(window, this, "Tutorial", TUTORIAL, getWindow().getWidth() / 2 - (MENU_BUTTON_WIDTH / 2), 250 + MENU_BUTTON_HEIGHT * 3.3f));
         buttons.add(new MenuButton(window, this, "Quit", EXIT, getWindow().getWidth() / 2 - (MENU_BUTTON_WIDTH / 2), 250 + MENU_BUTTON_HEIGHT * 4.4f));
-        decorations.add(new Decoration(window, "menu_wood_background", 0, 0, getWindow().getWidth(), getWindow().getHeight()));
+        decorations.add(new Decoration(window, "menu_dungeon_background", 0, 0, getWindow().getWidth(), getWindow().getHeight()));
         decorations.add(new Decoration(window, "menu_scroll", getWindow().getWidth() / 2 - ((TITLE_BANNER_WIDTH + 200) / 2), 10, TITLE_BANNER_WIDTH + 200, TITLE_BANNER_HEIGHT + 30));
         decorations.add(new Decoration(window, "title_banner", getWindow().getWidth() / 2 - (TITLE_BANNER_WIDTH / 2), 20, TITLE_BANNER_WIDTH, TITLE_BANNER_HEIGHT));
     }
