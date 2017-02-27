@@ -2,6 +2,7 @@ package edu.lancs.game.scenes;
 
 import edu.lancs.game.Debug;
 import edu.lancs.game.Window;
+import edu.lancs.game.entity.Actor;
 import edu.lancs.game.entity.Chest;
 import edu.lancs.game.entity.Enemy;
 import edu.lancs.game.entity.Player;
@@ -15,11 +16,17 @@ import org.jsfml.graphics.View;
 import org.jsfml.window.event.Event;
 
 import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 import java.util.Random;
 
 import static edu.lancs.game.Constants.*;
 
 public class GameScene extends Scene {
+    private String username;
+
     private HUD hud;
     private MiniMap miniMap;
     private Lighting lighting;
@@ -29,11 +36,13 @@ public class GameScene extends Scene {
     private Level bossLevel;
     private Chest chest;
 
-    public GameScene(Window window) {
+    public GameScene(Window window, String username) {
         super(window);
         setTitle("Do Not Die");
         setMusic("game_music");
         setBackgroundColour(Color.BLACK);
+
+        this.username = username;
 
         player = new Player(getWindow()); // creates a Player and passes the Window into it
         hud = new HUD(getWindow(), player); // creates a HUD and passes Window and the player just created into it for variables
@@ -76,17 +85,48 @@ public class GameScene extends Scene {
 
 
         // FIXME: View works, but maybe should really be done another way
-        View view = (View) getWindow().getDefaultView();
+        View view = (View) getWindow().getView();
         view.setCenter(player.getPosition());
         getWindow().setView(view);
 
         window.draw(chest); //FIXME: Just a text chest, remove once chest ransomisation is added
 
         // draws the enemies
-        for(Enemy enemy : currentLevel.getEnemies()) {
-            enemy.setTargetActor(player);
-            enemy.update();
-            window.draw(enemy);
+        //FIXME: This should be done every time an enemy dies, not every cycle.
+        if(currentLevel.getEnemies().size() == 0) {
+            currentLevel.getDoors().forEach(Door::unlock);
+        }
+
+        //enemies.stream().filter(Actor::isDead).forEach(enemy -> enemies.remove(enemy)); // remove any dead enemies FIXME: Could be done more efficiently
+        for(int enemyId = 0; enemyId < currentLevel.getEnemies().size(); enemyId++) {
+            Enemy enemy = currentLevel.getEnemies().get(enemyId);
+            if(!enemy.isDead()) {
+                enemy.setTargetActor(player);
+                enemy.update();
+                window.draw(enemy);
+
+                // enemy hit detection FIXME: Poor attempt, I know. It works and meets criteria
+                if (player.getState() == Actor.State.ATTACKING && player.getFrame() == 20) {
+                    if (player.canAttackReach(enemy)) {
+                        enemy.damage(player.getWeaponDamage());
+                        System.out.println("Enemy health = " + enemy.getHealth());
+                    }
+                }
+
+                // player hit detection FIXME: Poor attempt, I know. It works and meets criteria
+                if (enemy.getState() == Actor.State.ATTACKING && enemy.getFrame() == 20) {
+                    if (enemy.canAttackReach(player)) {
+                        player.damage(enemy.getWeaponDamage());
+                    }
+                }
+
+                if(player.getHealth() == 0)
+                    gameOver();
+
+            } else {
+                currentLevel.getEnemies().remove(enemyId);
+                enemyId--;
+            }
         }
 
         // draws the player
@@ -121,19 +161,7 @@ public class GameScene extends Scene {
             Tile.Direction direction = tile.getDirection();
             if (tile.getGlobalBounds().intersection(new FloatRect(player.getPosition().x, player.getPosition().y, 1, 1)) != null) {
                 if(tile instanceof Door) {
-                    int destinationColumn = ((Door) tile).getDestinationColumn();
-                    int destinationRow = ((Door) tile).getDestinationRow();
-
-                    Debug.print("Teleporting to room: " + destinationRow + ", " + destinationColumn);
-                    if((destinationColumn >= 0 && destinationColumn < GAME_LEVEL_WIDTH) && (destinationRow >= 0 && destinationRow < GAME_LEVEL_HEIGHT)) {
-                        currentLevel.setCurrentLevel(false); // set the level loaded to not be the current level
-                        currentLevel.unloadLevel();
-                        currentLevel = levels[destinationRow][destinationColumn]; // change the level
-                        currentLevel.discoverLevel(); // discover (minimap)
-                        currentLevel.setCurrentLevel(true); // set the current level
-                        player.resetCollision();
-                        teleport = true;
-                    }
+                    teleport = useDoor((Door) tile);
                 }
                 switch (direction) {
                     case N:
@@ -185,6 +213,26 @@ public class GameScene extends Scene {
         }
     }
 
+    public boolean useDoor(Door door) {
+        int destinationColumn = door.getDestinationColumn();
+        int destinationRow = door.getDestinationRow();
+
+        // if the door is in bounds of the level array
+        if((destinationColumn >= 0 && destinationColumn < GAME_LEVEL_WIDTH) && (destinationRow >= 0 && destinationRow < GAME_LEVEL_HEIGHT)) {
+            if (!door.isLocked()) {
+                Debug.print("Teleporting to room: " + destinationRow + ", " + destinationColumn);
+                currentLevel.setCurrentLevel(false); // set the level loaded to not be the current level
+                currentLevel.unloadLevel();
+                currentLevel = levels[destinationRow][destinationColumn]; // change the level
+                currentLevel.discoverLevel(); // discover (minimap)
+                currentLevel.setCurrentLevel(true); // set the current level
+                player.resetCollision();
+                return true;
+            }
+        }
+        return false;
+    }
+
     /***
      * Window events happening while the GameScene is loaded are pushed to the InputHandler.
      *
@@ -206,6 +254,57 @@ public class GameScene extends Scene {
             case JOYSTICK_BUTTON_RELEASED:
                 getWindow().getInputHandler().processInputs(event.asJoystickButtonEvent());
                 break;
+        }
+    }
+
+    public void gameOver() {
+        updateHighscores();
+        GameOverScene gameOverScene = new GameOverScene(getWindow(), getWindow().getScene(0));
+        int gameOverSceneIndex = getWindow().addScene(gameOverScene);
+        gameOverScene.activate();
+        getWindow().setCurrentScene(gameOverSceneIndex);
+        getWindow().setView(new View(new FloatRect(0.0f, 0.0f, getWindow().getSize().x, getWindow().getSize().y)));
+        this.deactivate();
+    }
+
+    /***
+     * Sends a GET request to the HighScores server using game information (Score, time, name).
+     */
+    public void updateHighscores() {
+        try {
+            String url = HIGHSCORES_URL.replace("X", username).replace("Y", Integer.toString(player.getScore())).replace("Z", "1000");
+
+            URL obj = new URL(url);
+            HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+
+            // optional default is GET
+            con.setRequestMethod("GET");
+
+            //add request header
+            con.setRequestProperty("User-Agent", HIGHSCORES_USER_AGENT);
+
+            int responseCode = con.getResponseCode();
+            System.out.println("\nSending 'GET' request to URL : " + url);
+            System.out.println("Response Code : " + responseCode);
+
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()));
+            String inputLine;
+            StringBuffer response = new StringBuffer();
+
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+            in.close();
+
+            Debug.print("High scores server returned: " + response);
+
+        } catch (ProtocolException e) {
+            e.printStackTrace();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

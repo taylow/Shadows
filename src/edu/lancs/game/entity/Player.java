@@ -19,7 +19,7 @@ public class Player extends Actor {
     private InputHandler inputHandler;
 
     public Player(Window window) {
-        super(window, "knight", PLAYER_STARTING_X, PLAYER_STARTING_Y, true, PLAYER_STARTING_HEALTH, PLAYER_STARTING_HEALTH);
+        super(window, "knight", PLAYER_STARTING_X, PLAYER_STARTING_Y, true, PLAYER_STARTING_HEALTH, PLAYER_STARTING_HEALTH, PLAYER_WEAPON_DAMAGE);
         // initialise player stats (health, score, etc)
         score = 0;
         batteryLevel = 100;

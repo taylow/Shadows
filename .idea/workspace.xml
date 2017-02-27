@@ -1,21 +1,249 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5df7e5be-326c-48a9-947d-b0eec08caa13" name="Default" comment="Added xbox controller support, fixed the MiniMap to display the tiles directly next to one-another, etc.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Constants.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Window.class" />
+    <list default="true" id="5df7e5be-326c-48a9-947d-b0eec08caa13" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameOverScene.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/UserNameScene.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_00.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_02.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_03.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_04.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_05.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_06.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_07.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_08.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_09.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_17.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_21.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_22.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_23.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_24.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_25.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_27.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_28.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_29.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_30.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_31.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_33.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_34.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_35.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_37.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_38.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/attack/Armature-Attack_39.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_00.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_02.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_03.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_04.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_05.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_06.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_07.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_08.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_09.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_17.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_21.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_22.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_23.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_24.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_25.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_27.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_28.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_29.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_30.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_31.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_33.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_34.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_35.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_37.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_38.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_39.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_41.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_42.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_43.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_44.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_45.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_46.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_47.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_48.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_49.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_51.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_52.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_53.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_54.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_55.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_56.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_57.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_58.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_59.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_61.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_62.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_00.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_02.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_03.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_04.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_05.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_06.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_07.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_08.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_09.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_17.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_21.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_22.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_23.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_24.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_25.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_27.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_28.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_29.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_30.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_31.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_33.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_34.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_35.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_37.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_38.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_39.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_41.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_42.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_43.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_44.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_45.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_46.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_47.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_48.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_49.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_51.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_52.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_53.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_54.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_55.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_56.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_57.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_58.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_59.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_61.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_62.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_63.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_64.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_65.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_66.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_67.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_68.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_69.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_70.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_71.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_72.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_73.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/idle/Armature-Idle_74.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_00.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_02.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_03.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_04.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_05.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_06.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_07.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_08.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_09.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_17.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_21.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_22.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_23.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_24.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_25.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_27.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_28.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_29.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_30.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_31.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_33.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_34.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_35.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_37.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_38.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_39.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_41.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_42.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_43.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_44.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_45.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_46.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_47.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_48.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/animations/knight/run/Armature-Run_49.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/sprites/game/tiles/green/stone/door/round/green_stone_door_round_open_S.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Constants.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Constants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Window.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Window.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/Window.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/Window.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/entity/Actor.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/entity/Actor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/entity/Enemy.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/entity/Enemy.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/gui/MiniMap.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/gui/MiniMap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/Button.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/Button.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/MenuButton.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/MenuButton.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/Scene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/Scene.java" />
     </list>
     <ignored path="SCC210 - OOP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,11 +269,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameScene.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameScene.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="193" column="43" selection-start-line="193" selection-start-column="43" selection-end-line="193" selection-end-column="43" />
+            <state relative-caret-position="403">
+              <caret line="298" column="0" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,41 +281,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java">
+      <file leaf-file-name="UserNameScene.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/UserNameScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="93" column="7" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
+            <state relative-caret-position="368">
+              <caret line="92" column="21" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Level.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java">
+      <file leaf-file-name="GameOverScene.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameOverScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="108" column="75" selection-start-line="108" selection-start-column="75" selection-end-line="108" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="37" column="48" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InputHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="101" column="40" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
+            <state relative-caret-position="113">
+              <caret line="28" column="154" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="154" />
               <folding />
             </state>
           </provider>
@@ -122,8 +330,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/App.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/ResourceManager.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/gui/Button.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/DungeonCrawler.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/Button.java" />
@@ -151,9 +357,7 @@
         <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Wall.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Floor.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Door.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Actor.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/Main.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Enemy.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/Lighting.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/Decoration.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/SplashScreen.java" />
@@ -162,17 +366,21 @@
         <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Loot.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/Button.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/MenuButton.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/Window.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Tile.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Entity.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/Scene.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/MiniMap.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Actor.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Enemy.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameOverScene.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/Window.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/MenuButton.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/UserNameScene.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" />
       </list>
     </option>
   </component>
@@ -384,9 +592,10 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\woodcoct\IdeaProjects\DungeonCrawler" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Users\Taylor\Desktop\SCC210 - OOP\OLD" />
+      <recent name="D:\Users\Taylor\Desktop\SCC210 - OOP\resources" />
+      <recent name="D:\Users\Taylor\Desktop\SCC210 - OOP\src\edu\lancs\game\entity" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="edu.lancs.game.scenes" />
@@ -395,10 +604,9 @@
       <recent name="edu.lancs.game.generation" />
       <recent name="edu.lancs.game" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\woodcoct\IdeaProjects\DungeonCrawler" />
       <recent name="D:\Users\Taylor\Desktop\SCC210 - OOP\OLD" />
-      <recent name="D:\Users\Taylor\Desktop\SCC210 - OOP\resources" />
-      <recent name="D:\Users\Taylor\Desktop\SCC210 - OOP\src\edu\lancs\game\entity" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -956,7 +1164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488144895975</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Added xbox controller support, fixed the MiniMap to display the tiles directly next to one-another, removed doors from the edge of the game, etc.">
+      <created>1488167936656</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1488167936656</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1046,7 +1261,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Basic Player loading" />
     <MESSAGE value="Basic animation loading added" />
     <MESSAGE value="Added VERY basic movement" />
     <MESSAGE value="Lots of stuff added:&#10;Level generation, proper animations, proper movement, etc" />
@@ -1071,7 +1285,8 @@
     <MESSAGE value="Randomised starting point" />
     <MESSAGE value="Added Random Boss Room" />
     <MESSAGE value="Added Random Starting Point" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Random Starting Point" />
+    <MESSAGE value="Added xbox controller support, fixed the MiniMap to display the tiles directly next to one-another, removed doors from the edge of the game, etc." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added xbox controller support, fixed the MiniMap to display the tiles directly next to one-another, removed doors from the edge of the game, etc." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1084,18 +1299,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/lang/Override.java" />
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/TutorialScene.java" />
-    <entry file="jar://E:/jsfml-test-Dec02_2013/jsfml.jar!/org/jsfml/graphics/Text.class" />
-    <entry file="jar://E:/jsfml-test-Dec02_2013/jsfml.jar!/org/jsfml/graphics/Sprite.class" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/util/ArrayList.java" />
-    <entry file="file://$PROJECT_DIR$/OLD/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/ResourceManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1122,13 +1325,6 @@
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/lang/Thread.java" />
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Enemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="29" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/Lighting.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -1239,14 +1435,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Door.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="148" selection-start-line="14" selection-start-column="148" selection-end-line="14" selection-end-column="148" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Wall.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1271,14 +1459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Window.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Tile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1298,22 +1478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/MenuButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="65" column="63" selection-start-line="65" selection-start-column="63" selection-end-line="65" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1330,40 +1494,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Actor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="292" column="30" selection-start-line="292" selection-start-column="16" selection-end-line="292" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="101" column="40" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="193" column="43" selection-start-line="193" selection-start-column="43" selection-end-line="193" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="37" column="48" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/MiniMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="443">
@@ -1372,19 +1502,165 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="93" column="7" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
+        <state relative-caret-position="572">
+          <caret line="101" column="40" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLD/AIBehaviour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="32" column="53" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLD/ColliderBehaviour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLD/PlayerShootBehaviour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Door.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="45" column="7" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="108" column="75" selection-start-line="108" selection-start-column="75" selection-end-line="108" selection-end-column="75" />
+        <state relative-caret-position="419">
+          <caret line="241" column="8" selection-start-line="241" selection-start-column="8" selection-end-line="241" selection-end-column="8" />
+          <folding>
+            <element signature="e#9037#9038#0" expanded="true" />
+            <element signature="e#9067#9068#0" expanded="true" />
+            <element signature="e#9108#9109#0" expanded="true" />
+            <element signature="e#9136#9137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Actor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="302" column="8" selection-start-line="302" selection-start-column="8" selection-end-line="302" selection-end-column="8" />
+          <folding>
+            <element signature="e#6496#6497#0" expanded="true" />
+            <element signature="e#6531#6532#0" expanded="true" />
+            <element signature="e#9496#9497#0" expanded="true" />
+            <element signature="e#9538#9539#0" expanded="true" />
+            <element signature="e#9591#9592#0" expanded="true" />
+            <element signature="e#9628#9629#0" expanded="true" />
+            <element signature="e#9682#9683#0" expanded="true" />
+            <element signature="e#9720#9721#0" expanded="true" />
+            <element signature="e#9772#9773#0" expanded="true" />
+            <element signature="e#9808#9809#0" expanded="true" />
+            <element signature="e#9859#9860#0" expanded="true" />
+            <element signature="e#9894#9895#0" expanded="true" />
+            <element signature="e#9935#9936#0" expanded="true" />
+            <element signature="e#9964#9965#0" expanded="true" />
+            <element signature="e#9995#9996#0" expanded="true" />
+            <element signature="e#10024#10025#0" expanded="true" />
+            <element signature="e#10060#10061#0" expanded="true" />
+            <element signature="e#10095#10096#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Enemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/jsfml.jar!/org/jsfml/graphics/RenderWindow.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="119" column="17" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="141" column="38" selection-start-line="141" selection-start-column="38" selection-end-line="141" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="67" column="110" selection-start-line="67" selection-start-column="110" selection-end-line="67" selection-end-column="110" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/MenuButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="89" column="78" selection-start-line="89" selection-start-column="78" selection-end-line="89" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="131" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameOverScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="28" column="154" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="154" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/UserNameScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="92" column="21" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="298" column="0" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

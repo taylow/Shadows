@@ -1,5 +1,6 @@
 package edu.lancs.game;
 
+import edu.lancs.game.scenes.MenuScene;
 import edu.lancs.game.scenes.Scene;
 import org.jsfml.graphics.Image;
 import org.jsfml.graphics.RenderWindow;
@@ -133,6 +134,13 @@ public class Window extends RenderWindow {
 
             this.currentScene = currentScene; // sets current scene index
             scenes.get(getCurrentSceneIndex()).activate(); // activates current scene
+
+            // deletes all other scenes when the menu scene is drawn (prevents memory leaks)
+            if(currentScene == 0) {
+                MenuScene menuScene = (MenuScene) getScene(0);
+                scenes.clear();
+                scenes.add(menuScene);
+            }
         }
     }
 

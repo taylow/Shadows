@@ -25,12 +25,19 @@ public class Constants {
     public static final int TITLE_BANNER_HEIGHT = 200;
 
     /*Player Constants*/
+    public static final int PLAYER_WEAPON_DAMAGE = 2;
     public static final int PLAYER_STARTING_X = 285;
     public static final int PLAYER_STARTING_Y = 285;
     public static final float PLAYER_BASE_MOVEMENT = 5;
     public static final int PLAYER_STARTING_HEALTH = 10; // (this/2 is the number of hearts on the HUD) FIXME: Odd numbers may cause issues
     public static final float PLAYER_SCALE_WIDTH = 1.0f;
     public static final float PLAYER_SCALE_HEIGHT = 1.0f;
+
+    /*Enemy Constants*/
+    public static final int ENEMY_WEAPON_DAMAGE = 1;
+    public static final float ENEMY_BASE_MOVEMENT = 5;
+    public static final int ENEMY_STARTING_HEALTH_MIN = 1;
+    public static final int ENEMY_STARTING_HEALTH_MAX = 5;
 
     /*Map Constants*/
     public static final int MAP_TILE_WIDTH = 114;
@@ -55,4 +62,8 @@ public class Constants {
     public static final int JOYSTICK_DEADZONE_Y = 25;
     public static final int ATTACK_BUTTON = 0;
     public static final int MINIMAP_BUTTON = 1;
+
+    /*Highscores Constants*/
+    public static final String HIGHSCORES_USER_AGENT = "Mozilla/5.0";
+    public static final String HIGHSCORES_URL = "https://protaytoe.uk/highscores/post.php?name=X&score=Y&time=Z";
 }

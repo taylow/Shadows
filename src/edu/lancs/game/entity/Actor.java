@@ -19,10 +19,11 @@ public abstract class Actor extends Entity {
     // actual player variables
     private int health;
     private int hearts; // different to health as this is the amount they can have (health / hearts)
+    private int weaponDamage;
+    private boolean isDead;
 
     private Vector2f velocity;
 
-    private int testHealth = -1; // TODO: Remove once finished with HUD testing
     private boolean isCollidingLeft = false;
     private boolean isCollidingRight = false;
     private boolean isCollidingUp = false;
@@ -40,11 +41,13 @@ public abstract class Actor extends Entity {
 
     private State state;
 
-    public Actor(Window window, String actorName, float xPos, float yPos, boolean isAnimated, int maxHealth, int currentHealth) {
+    public Actor(Window window, String actorName, float xPos, float yPos, boolean isAnimated, int maxHealth, int currentHealth, int weaponDamage) {
         super(window, actorName + "_idle", xPos, yPos, isAnimated);
         // initialise player stats (health, score, etc)
         health = currentHealth;
         hearts = maxHealth;
+        isDead = false;
+        this.weaponDamage = weaponDamage;
         velocity = new Vector2f(0, 0);
 
         // load animations
@@ -298,9 +301,52 @@ public abstract class Actor extends Entity {
     }
 
     /***
+     * Returns whether or not the Actor is in range of an attack of another Actor.
+     *
+     * @param actor - Actor you are trying to attack
+     * @return - Whether or not you can attack that actor
+     */
+    public boolean canAttackReach(Actor actor) {
+        Vector2f diff = Vector2f.sub(actor.getPosition(), this.getPosition());
+        return ((Math.abs(diff.y) > 0 && Math.abs(diff.y) < 40) && (Math.abs(diff.x) > 30 && Math.abs(diff.x) < 100));
+    }
+
+    /***
      * States for the players animation/actions
      */
     public enum State {
         IDLE, RUNNING, ATTACKING, DYING
+    }
+
+    public void damage(int damage) {
+        setHealth(health - damage);
+    }
+
+    public ArrayList<Texture> getDeathAnimation() {
+        return deathAnimation;
+    }
+
+    public ArrayList<Texture> getAttackAnimation() {
+        return attackAnimation;
+    }
+
+    public ArrayList<Texture> getIdleAnimation() {
+        return idleAnimation;
+    }
+
+    public ArrayList<Texture> getRunAnimation() {
+        return runAnimation;
+    }
+
+    public void setDead(boolean dead) {
+        isDead = dead;
+    }
+
+    public boolean isDead() {
+        return isDead;
+    }
+
+    public int getWeaponDamage() {
+        return weaponDamage;
     }
 }

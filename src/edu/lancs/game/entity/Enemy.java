@@ -19,7 +19,7 @@ public class Enemy extends Actor {
     private Actor targetActor;
 
     public Enemy(Window window, int positionX, int positionY, int health) {
-        super(window, "knight", positionX, positionY, true, health, health);
+        super(window, "knight", positionX, positionY, true, health, health, ENEMY_WEAPON_DAMAGE);
         // initialise player stats (health, score, etc)
         score = 0;
         inputHandler = getWindow().getInputHandler();
@@ -38,6 +38,7 @@ public class Enemy extends Actor {
      */
     @Override
     public void update() {
+        handleDeath();
         handleMovement();
         nextFrame();
     }
@@ -48,26 +49,28 @@ public class Enemy extends Actor {
      */
     public void handleMovement() {
 
-        if (targetActor != null) {
-            Vector2f diff = Vector2f.sub(targetActor.getPosition(), getPosition());
-            setVelocity(Vector2f.div(diff, 130.0f));
+        if(getState() != DYING) {
+            if (targetActor != null) {
+                Vector2f diff = Vector2f.sub(targetActor.getPosition(), getPosition());
+                setVelocity(Vector2f.div(diff, 130.0f));
 
-            if (diff.x < 0)
-                setScale(-1.f, 1.f); // flip the sprite to face left
-            else
-                setScale(1.f, 1.f); // flip the sprite to face right
+                if (diff.x < 0)
+                    setScale(-1.f, 1.f); // flip the sprite to face left
+                else
+                    setScale(1.f, 1.f); // flip the sprite to face right
 
-            if (Math.abs(diff.x) > 90 || Math.abs(diff.y) > 90) {
-                move(getVelocity());
-                if (getState() != RUNNING)
-                    setState(RUNNING);
+                if (Math.abs(diff.x) > 90 || Math.abs(diff.y) > 90) {
+                    move(getVelocity());
+                    if (getState() != RUNNING)
+                        setState(RUNNING);
+                } else {
+                    if (getState() != ATTACKING)
+                        attack();
+                }
             } else {
-                if (getState() != ATTACKING)
-                    attack();
-            }
-        } else {
-            if (getState() != IDLE) {
-                setState(IDLE);
+                if (getState() != IDLE) {
+                    setState(IDLE);
+                }
             }
         }
     }
@@ -88,5 +91,16 @@ public class Enemy extends Actor {
      */
     public void setTargetActor(Actor targetActor) {
         this.targetActor = targetActor;
+    }
+
+    public void handleDeath() {
+        if(getHealth() == 0 && getState() != DYING) {
+            setState(DYING);
+            System.out.println("DYING");
+        }
+
+        // if the dying animation is on the last frame
+        if(getState() == DYING && getFrame() == getAnimation().size() - 2)
+            setDead(true); // set to dead
     }
 }

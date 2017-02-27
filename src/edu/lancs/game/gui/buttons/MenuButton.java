@@ -5,6 +5,7 @@ import edu.lancs.game.Window;
 import edu.lancs.game.scenes.GameScene;
 import edu.lancs.game.scenes.Scene;
 import edu.lancs.game.scenes.TutorialScene;
+import edu.lancs.game.scenes.UserNameScene;
 
 import java.io.IOException;
 import java.net.URI;
@@ -30,9 +31,16 @@ public class MenuButton extends Button {
                 break;
 
             case RESUME_GAME:
-                setDefaultTexture(window.getResourceManager().getTextures("resume_disabled"));
+                setDefaultTexture(window.getResourceManager().getTextures("resume_default"));
                 setSelectTexture(window.getResourceManager().getTextures("resume_hover"));
                 setDisabledTexture(window.getResourceManager().getTextures("resume_disabled"));
+                setDisabled(true);
+                break;
+
+            case PLAY_GAME:
+                setDefaultTexture(window.getResourceManager().getTextures("play_default"));
+                setSelectTexture(window.getResourceManager().getTextures("play_hover"));
+                setDisabledTexture(window.getResourceManager().getTextures("play_disabled"));
                 setDisabled(true);
                 break;
 
@@ -64,7 +72,22 @@ public class MenuButton extends Button {
                     Debug.print("[Button] New Game");
 
                     // creates the GameScene for the users to play
-                    GameScene gameScene = new GameScene(getWindow());
+                    UserNameScene userNameScene = new UserNameScene(getWindow(), getWindow().getScene(0));
+                    int userNameSceneIndex = getWindow().addScene(userNameScene);
+                    userNameScene.activate();
+
+                    // deactivate current scene (should be menu at this point)
+                    getWindow().setCurrentScene(userNameSceneIndex);
+                    getParentScene().deactivate();
+                    break;
+
+                case RESUME_GAME:
+                    System.out.println("TEST MEME");
+                    break;
+
+                case PLAY_GAME:
+                    // creates the GameScene for the users to play
+                    GameScene gameScene = new GameScene(getWindow(), getText());
                     int gameSceneIndex = getWindow().addScene(gameScene);
                     gameScene.activate();
 
@@ -75,10 +98,6 @@ public class MenuButton extends Button {
                     // deactivate current scene (should be menu at this point)
                     getWindow().setCurrentScene(gameSceneIndex);
                     getParentScene().deactivate();
-                    break;
-
-                case RESUME_GAME:
-                    System.out.println("TEST MEME");
                     break;
 
                 case HIGH_SCORES:
@@ -118,6 +137,6 @@ public class MenuButton extends Button {
     }
 
     public enum Type {
-        NEW_GAME, RESUME_GAME, HIGH_SCORES, TUTORIAL, EXIT
+        NEW_GAME, RESUME_GAME, PLAY_GAME, HIGH_SCORES, TUTORIAL, EXIT
     }
 }
