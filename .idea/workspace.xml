@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5df7e5be-326c-48a9-947d-b0eec08caa13" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/entity/Pickup.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/entity/Pickup.java" />
     </list>
     <ignored path="SCC210 - OOP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1089,7 +1088,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488216184263</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="New Coin Added">
+      <created>1488216448772</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1488216448772</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1179,7 +1185,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed the HUD elements positions not following the View. Also added a basic Chest for others to finish the functionality. Also added multi-level generation." />
     <MESSAGE value="Added level colouring, MiniMap (LCONTROL to open) updated the Actor and added the minimap button to the InputHandler." />
     <MESSAGE value="Current progress. Level grid generation, basic AI, working doors, working collision, random coloured rooms, working MiniMap (hold control to view), working combat sounds, and much more." />
     <MESSAGE value="Added a MiniMap black backdrop as you couldn't really see the map properly before. Also fixed a collision issue when you were colliding while entering a door (could freeze the player).&#10;Going to bed now, 11AM lecture in 4 hours." />
@@ -1204,7 +1209,8 @@
     <MESSAGE value="Fixed the setOrigin of the Actor" />
     <MESSAGE value="-" />
     <MESSAGE value="Speed Icon is Correct Format" />
-    <option name="LAST_COMMIT_MESSAGE" value="Speed Icon is Correct Format" />
+    <MESSAGE value="New Coin Added" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Coin Added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
