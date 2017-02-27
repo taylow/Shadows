@@ -39,7 +39,7 @@ public class HighscoresUpdater implements Runnable {
      */
     public synchronized void updateHighscores(String name, int score, long time) {
         try {
-            String url = HIGHSCORES_URL.replace("X", name).replace("Y", Integer.toString(score)).replace("Z", Long.toString(time));
+            String url = HIGHSCORES_URL.replace("#", name).replace("~", Integer.toString(score)).replace("@", Long.toString(time));
 
             URL obj = new URL(url);
             HttpURLConnection con = (HttpURLConnection) obj.openConnection();

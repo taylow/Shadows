@@ -69,5 +69,5 @@ public class Constants {
 
     /*Highscores Constants*/
     public static final String HIGHSCORES_USER_AGENT = "Mozilla/5.0";
-    public static final String HIGHSCORES_URL = "https://protaytoe.uk/highscores/post.php?name=X&score=Y&time=Z";
+    public static final String HIGHSCORES_URL = "https://protaytoe.uk/highscores/post.php?name=#&score=~&time=@";
 }

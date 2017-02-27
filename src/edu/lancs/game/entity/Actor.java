@@ -158,15 +158,17 @@ public abstract class Actor extends Entity {
         switch (state) {
             case IDLE:
                 setAnimation(idleAnimation);
+                setOrigin(42, 91);
                 break;
 
             case RUNNING:
                 setAnimation(runAnimation);
+                setOrigin(49, 98);
                 break;
 
             case ATTACKING:
                 setAnimation(attackAnimation);
-
+                setOrigin(50, 94);
                 // plays the sword sound on loop FIXME: Really temporary, needs to be improved. Could use the "knight" in the file name so each type has its own attack sound (knight_melee_attack.wav)
                 sound = new Sound(getWindow().getResourceManager().getSound("melee_sword"));
                 sound.setLoop(true);
@@ -176,6 +178,7 @@ public abstract class Actor extends Entity {
 
             case DYING:
                 setAnimation(deathAnimation);
+                setOrigin(138, 94);
                 break;
         }
         //Debug.print("Actor state: " + state);
