@@ -1,5 +1,6 @@
 package edu.lancs.game.scenes;
 
+import edu.lancs.game.Debug;
 import edu.lancs.game.Window;
 import edu.lancs.game.gui.Decoration;
 import edu.lancs.game.gui.buttons.BackButton;
@@ -8,8 +9,17 @@ import org.jsfml.graphics.Color;
 import org.jsfml.graphics.FloatRect;
 import org.jsfml.window.event.Event;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 import java.util.ArrayList;
 
+import static edu.lancs.game.Constants.HIGHSCORES_URL;
+import static edu.lancs.game.Constants.HIGHSCORES_USER_AGENT;
 import static edu.lancs.game.Constants.MENU_BUTTON_HEIGHT;
 
 public class GameOverScene extends Scene {

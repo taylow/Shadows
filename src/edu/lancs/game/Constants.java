@@ -24,6 +24,9 @@ public class Constants {
     public static final int TITLE_BANNER_WIDTH = 600;
     public static final int TITLE_BANNER_HEIGHT = 200;
 
+    /*Actor Constants*/
+    public static final int ACTOR_ATTACK_FRAME = 20; // frame where the damage is dealt
+
     /*Player Constants*/
     public static final int PLAYER_WEAPON_DAMAGE = 2;
     public static final int PLAYER_STARTING_X = 285;

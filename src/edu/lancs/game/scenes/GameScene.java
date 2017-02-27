@@ -1,6 +1,7 @@
 package edu.lancs.game.scenes;
 
 import edu.lancs.game.Debug;
+import edu.lancs.game.HighscoresUpdater;
 import edu.lancs.game.Window;
 import edu.lancs.game.entity.Actor;
 import edu.lancs.game.entity.Chest;
@@ -106,7 +107,7 @@ public class GameScene extends Scene {
                 window.draw(enemy);
 
                 // enemy hit detection FIXME: Poor attempt, I know. It works and meets criteria
-                if (player.getState() == Actor.State.ATTACKING && player.getFrame() == 20) {
+                if (player.getState() == Actor.State.ATTACKING && player.getFrame() == ACTOR_ATTACK_FRAME) {
                     if (player.canAttackReach(enemy)) {
                         enemy.damage(player.getWeaponDamage());
                         System.out.println("Enemy health = " + enemy.getHealth());
@@ -114,7 +115,7 @@ public class GameScene extends Scene {
                 }
 
                 // player hit detection FIXME: Poor attempt, I know. It works and meets criteria
-                if (enemy.getState() == Actor.State.ATTACKING && enemy.getFrame() == 20) {
+                if (enemy.getState() == Actor.State.ATTACKING && enemy.getFrame() == ACTOR_ATTACK_FRAME) {
                     if (enemy.canAttackReach(player)) {
                         player.damage(enemy.getWeaponDamage());
                     }
@@ -258,53 +259,15 @@ public class GameScene extends Scene {
     }
 
     public void gameOver() {
-        updateHighscores();
+        HighscoresUpdater highscoresUpdater = new HighscoresUpdater(username, player.getScore(), 1000);
+        Thread highScoresThread = new Thread(highscoresUpdater);
+        highScoresThread.start();
+
         GameOverScene gameOverScene = new GameOverScene(getWindow(), getWindow().getScene(0));
         int gameOverSceneIndex = getWindow().addScene(gameOverScene);
         gameOverScene.activate();
         getWindow().setCurrentScene(gameOverSceneIndex);
         getWindow().setView(new View(new FloatRect(0.0f, 0.0f, getWindow().getSize().x, getWindow().getSize().y)));
         this.deactivate();
-    }
-
-    /***
-     * Sends a GET request to the HighScores server using game information (Score, time, name).
-     */
-    public void updateHighscores() {
-        try {
-            String url = HIGHSCORES_URL.replace("X", username).replace("Y", Integer.toString(player.getScore())).replace("Z", "1000");
-
-            URL obj = new URL(url);
-            HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-
-            // optional default is GET
-            con.setRequestMethod("GET");
-
-            //add request header
-            con.setRequestProperty("User-Agent", HIGHSCORES_USER_AGENT);
-
-            int responseCode = con.getResponseCode();
-            System.out.println("\nSending 'GET' request to URL : " + url);
-            System.out.println("Response Code : " + responseCode);
-
-            BufferedReader in = new BufferedReader(
-                    new InputStreamReader(con.getInputStream()));
-            String inputLine;
-            StringBuffer response = new StringBuffer();
-
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
-            }
-            in.close();
-
-            Debug.print("High scores server returned: " + response);
-
-        } catch (ProtocolException e) {
-            e.printStackTrace();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }
