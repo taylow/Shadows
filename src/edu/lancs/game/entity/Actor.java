@@ -1,5 +1,6 @@
 package edu.lancs.game.entity;
 
+import edu.lancs.game.Constants;
 import edu.lancs.game.Debug;
 import edu.lancs.game.InputHandler;
 import edu.lancs.game.Window;
@@ -242,6 +243,18 @@ public abstract class Actor extends Entity {
                 this.health = hearts;
         } else {
             this.health = 0;
+        }
+    }
+
+    public float getSpeed(){
+        return Constants.PLAYER_BASE_MOVEMENT;
+    }
+
+    public void setSpeed(float speed){
+        if (speed >= 0 ){
+            this.speed = speed;
+        }else{
+            this.speed = 0;
         }
     }
 

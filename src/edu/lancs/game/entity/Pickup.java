@@ -1,11 +1,14 @@
 package edu.lancs.game.entity;
 
+import edu.lancs.game.Constants;
 import edu.lancs.game.Window;
+
+import java.util.ConcurrentModificationException;
 
 public class Pickup extends Entity {
 
     public enum Type {
-        HEALTH, BATTERY, COINS
+        HEALTH, BATTERY, COINS, SPEED
     }
 
     private boolean isUsed;
@@ -28,6 +31,10 @@ public class Pickup extends Entity {
 
             case COINS:
                 setTexture(getWindow().getResourceManager().getTextures("coin"));
+                break;
+
+            case SPEED:
+                setTexture(getWindow().getResourceManager().getTextures("boost_speed"));
                 break;
         }
     }
@@ -60,6 +67,11 @@ public class Pickup extends Entity {
 
             case COINS:
                 player.addScore(1000);
+                setUsed(true);
+                break;
+
+            case SPEED:
+                player.setSpeed(Constants.PLAYER_BASE_MOVEMENT + (float) 1.05);
                 setUsed(true);
                 break;
         }
