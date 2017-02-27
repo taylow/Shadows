@@ -32,6 +32,7 @@ public class GameScene extends Scene {
     public GameScene(Window window, String username) {
         super(window);
         setTitle("Do Not Die");
+        stopMusic("menu_music");
         setMusic("game_music");
         setBackgroundColour(Color.BLACK);
 
