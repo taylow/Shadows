@@ -1,6 +1,7 @@
 package edu.lancs.game;
 
 import javax.swing.*;
+import java.awt.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -10,13 +11,13 @@ public class SplashScreen {
     public SplashScreen() {
         window = new JWindow();
         try {
-            //TODO: Could definitely be improved. Change of image maybe? I don't know. This one looks indie though
-            window.getContentPane().add(new JLabel("", new ImageIcon(new URL("http://www.rawdlc.com/wp-content/uploads/2013/08/load-screen-1.gif")), SwingConstants.CENTER));
-            window.setBounds(0, 0, 700, 450);
+            ImageIcon icon = new ImageIcon("resources/misc/misc/loading.gif");
+            window.getContentPane().add(new JLabel("", icon, SwingConstants.CENTER));
+            window.setBounds(0, 0, 600, 400);
             window.setLocationRelativeTo(null);
             window.setVisible(true);
             window.setAlwaysOnTop(true);
-        } catch (MalformedURLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
