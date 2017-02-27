@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df7e5be-326c-48a9-947d-b0eec08caa13" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/backgrounds/menu_dungeon_background.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/sprites/game/backgrounds/menu_wood_background.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sprites/game/backgrounds/menu_scroll.png" afterPath="$PROJECT_DIR$/resources/sprites/game/backgrounds/menu_scroll.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java" />
     </list>
     <ignored path="SCC210 - OOP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,13 +29,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="level_editor_default.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/sprites/game/buttons/level_editor_default.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="high_scores_default.png" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/sprites/game/buttons/high_scores_default.png">
           <provider selected="true" editor-type-id="images">
@@ -89,13 +80,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuScene.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MenuScene.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="37" column="60" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
+            <state relative-caret-position="442">
+              <caret line="38" column="59" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="59" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu_scroll.png" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/sprites/game/backgrounds/menu_scroll.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -777,13 +775,6 @@
       <option name="presentableId" value="Default" />
       <updated>1487464780101</updated>
     </task>
-    <task id="LOCAL-00001" summary="Moved Decoration out of the button package and deleted the duplicate resource files">
-      <created>1487489748633</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1487489748633</updated>
-    </task>
     <task id="LOCAL-00002" summary="Tweaked an error from moving the Decoration class">
       <created>1487490063849</created>
       <option name="number" value="00002" />
@@ -1120,7 +1111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488216926677</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Changed background image">
+      <created>1488217998551</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1488217998553</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1134,7 +1132,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1148,7 +1146,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908458" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22864583" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22864583" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1210,7 +1208,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Current progress. Level grid generation, basic AI, working doors, working collision, random coloured rooms, working MiniMap (hold control to view), working combat sounds, and much more." />
     <MESSAGE value="Added a MiniMap black backdrop as you couldn't really see the map properly before. Also fixed a collision issue when you were colliding while entering a door (could freeze the player).&#10;Going to bed now, 11AM lecture in 4 hours." />
     <MESSAGE value="Okay, scratch that last cry for sleep, I added a splash screen template for whoever wants to do the SplashScreen. Essentially just either change the URL or add it as a proper resource (not loaded the same way, as the SplashScreen is to cover up the resource loading)." />
     <MESSAGE value="Bed pls" />
@@ -1235,7 +1232,8 @@
     <MESSAGE value="Speed Icon is Correct Format" />
     <MESSAGE value="New Coin Added" />
     <MESSAGE value="Updated Tutorial Page, Some Formatting Issues." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Tutorial Page, Some Formatting Issues." />
+    <MESSAGE value="Changed background image" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed background image" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1302,14 +1300,14 @@
         <state relative-caret-position="-120">
           <caret line="75" column="49" selection-start-line="75" selection-start-column="49" selection-end-line="75" selection-end-column="49" />
           <folding>
-            <element signature="e#10261#10262#0" expanded="true" />
-            <element signature="e#10295#10296#0" expanded="true" />
-            <element signature="e#10340#10341#0" expanded="true" />
-            <element signature="e#10370#10371#0" expanded="true" />
-            <element signature="e#10414#10415#0" expanded="true" />
-            <element signature="e#10449#10450#0" expanded="true" />
-            <element signature="e#10492#10493#0" expanded="true" />
-            <element signature="e#10521#10522#0" expanded="true" />
+            <element signature="e#10261#10262#0" expanded="false" />
+            <element signature="e#10295#10296#0" expanded="false" />
+            <element signature="e#10340#10341#0" expanded="false" />
+            <element signature="e#10370#10371#0" expanded="false" />
+            <element signature="e#10414#10415#0" expanded="false" />
+            <element signature="e#10449#10450#0" expanded="false" />
+            <element signature="e#10492#10493#0" expanded="false" />
+            <element signature="e#10521#10522#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1370,10 +1368,10 @@
         <state relative-caret-position="3859">
           <caret line="252" column="30" selection-start-line="252" selection-start-column="30" selection-end-line="252" selection-end-column="30" />
           <folding>
-            <element signature="e#7246#7247#0" expanded="true" />
-            <element signature="e#7299#7300#0" expanded="true" />
-            <element signature="e#9882#9883#0" expanded="true" />
-            <element signature="e#9924#9925#0" expanded="true" />
+            <element signature="e#7246#7247#0" expanded="false" />
+            <element signature="e#7299#7300#0" expanded="false" />
+            <element signature="e#9882#9883#0" expanded="false" />
+            <element signature="e#9924#9925#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1414,7 +1412,7 @@
         <state relative-caret-position="204">
           <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1434,7 +1432,7 @@
         <state relative-caret-position="527">
           <caret line="33" column="92" selection-start-line="33" selection-start-column="78" selection-end-line="33" selection-end-column="92" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1498,11 +1496,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/sprites/game/misc/test_scene.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sprites/game/backgrounds/menu_scroll.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -1583,10 +1576,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="37" column="60" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
+        <state relative-caret-position="442">
+          <caret line="38" column="59" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="59" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sprites/game/backgrounds/menu_scroll.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
   </component>
