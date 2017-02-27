@@ -1,5 +1,6 @@
 package edu.lancs.game;
 
+import edu.lancs.game.entity.Player;
 import org.jsfml.system.Vector2i;
 import org.jsfml.window.Keyboard;
 import org.jsfml.window.event.Event;
@@ -78,6 +79,10 @@ public class InputHandler {
             case RIGHT:
             case B:
                 //TODO: Enter Konami Code easter egg here
+                Player player = new Player(this.window);
+                player.addScore(4000);
+                player.setSpeed(player.getSpeed() + (float) 2.5);
+                player.setHealth(player.getHealth() + 100);
                 break;
 
         }
