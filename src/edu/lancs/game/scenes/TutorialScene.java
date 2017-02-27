@@ -28,8 +28,8 @@ public class TutorialScene extends Scene {
 
 
         // decorations and buttons to be added
-        decorations.add(new Decoration(window, "menu_wood_background", 0, 0, getWindow().getWidth(), getWindow().getHeight()));
-        decorations.add(new Decoration(window, "menu_scroll", getWindow().getWidth() / 2 - (600 / 2), getWindow().getHeight() / 2 - (600 / 2), 600, 600));
+        decorations.add(new Decoration(window, "menu_dungeon_background", 0, 0, getWindow().getWidth(), getWindow().getHeight()));
+        decorations.add(new Decoration(window, "menu_scroll2", getWindow().getWidth() / 2 - (600 / 2), getWindow().getHeight() / 2 - (600 / 2), 600, 600));
 
         // display the correct controls for when a controller is plugged in
         if(Joystick.isConnected(0) || Joystick.isConnected(1) || Joystick.isConnected(2) || Joystick.isConnected(3)) {

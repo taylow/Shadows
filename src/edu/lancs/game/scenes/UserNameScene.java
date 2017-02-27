@@ -37,7 +37,7 @@ public class UserNameScene extends Scene {
         decorations = new ArrayList<>();
 
         // decorations and buttons to be added
-        decorations.add(new Decoration(window, "menu_wood_background", 0, 0, getWindow().getWidth(), getWindow().getHeight()));
+        decorations.add(new Decoration(window, "menu_dungeon_background", 0, 0, getWindow().getWidth(), getWindow().getHeight()));
         decorations.add(new Decoration(window, "username_entry", getWindow().getWidth() / 2 - (901 / 2), getWindow().getHeight() / 2 - (164 / 2), 901, 164));
         buttons.add(new MenuButton(window, this, "New Game", PLAY_GAME, getWindow().getWidth() / 2 - (MENU_BUTTON_WIDTH / 2), getWindow().getHeight() / 2 - (164 / 2) + 200));
         buttons.add(new BackButton(window, returnScene, 20, getWindow().getHeight() - (MENU_BUTTON_HEIGHT / 2) - 20));

@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df7e5be-326c-48a9-947d-b0eec08caa13" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sprites/game/backgrounds/menu_scroll.png" afterPath="$PROJECT_DIR$/resources/sprites/game/backgrounds/menu_scroll.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/TutorialScene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/TutorialScene.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/UserNameScene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/UserNameScene.java" />
     </list>
     <ignored path="SCC210 - OOP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,20 +30,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="high_scores_default.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/sprites/game/buttons/high_scores_default.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="back_default.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/sprites/game/buttons/back_default.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="menu_dungeon_background.png" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/sprites/game/backgrounds/menu_dungeon_background.png">
           <provider selected="true" editor-type-id="images">
@@ -53,8 +40,18 @@
       <file leaf-file-name="GameScene.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="731">
               <caret line="58" column="126" selection-start-line="58" selection-start-column="126" selection-end-line="58" selection-end-column="126" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserNameScene.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/UserNameScene.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -90,15 +87,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu_scroll.png" pinned="false" current-in-tab="true">
+      <file leaf-file-name="menu_scroll.png" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/sprites/game/backgrounds/menu_scroll.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="coin2.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/sprites/game/pickups/coin2.png">
+      <file leaf-file-name="TutorialScene.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/TutorialScene.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu_scroll2.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/sprites/game/backgrounds/menu_scroll2.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
@@ -170,10 +177,8 @@
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/Button.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Tile.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/Scene.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/UserNameScene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameOverScene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/MiniMap.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/TutorialScene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Entity.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/Window.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java" />
@@ -191,6 +196,8 @@
         <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Actor.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Pickup.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/MenuScene.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/TutorialScene.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/UserNameScene.java" />
       </list>
     </option>
   </component>
@@ -775,13 +782,6 @@
       <option name="presentableId" value="Default" />
       <updated>1487464780101</updated>
     </task>
-    <task id="LOCAL-00002" summary="Tweaked an error from moving the Decoration class">
-      <created>1487490063849</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1487490063849</updated>
-    </task>
     <task id="LOCAL-00003" summary="Changed a few things around. Added a background.">
       <created>1487492986987</created>
       <option name="number" value="00003" />
@@ -1118,7 +1118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488217998553</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Changed Scroll image">
+      <created>1488218362890</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1488218362890</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1208,7 +1215,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added a MiniMap black backdrop as you couldn't really see the map properly before. Also fixed a collision issue when you were colliding while entering a door (could freeze the player).&#10;Going to bed now, 11AM lecture in 4 hours." />
     <MESSAGE value="Okay, scratch that last cry for sleep, I added a splash screen template for whoever wants to do the SplashScreen. Essentially just either change the URL or add it as a proper resource (not loaded the same way, as the SplashScreen is to cover up the resource loading)." />
     <MESSAGE value="Bed pls" />
     <MESSAGE value="Added lighting, fixed MiniMap, added random Enemies in rooms, etc." />
@@ -1233,7 +1239,8 @@
     <MESSAGE value="New Coin Added" />
     <MESSAGE value="Updated Tutorial Page, Some Formatting Issues." />
     <MESSAGE value="Changed background image" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed background image" />
+    <MESSAGE value="Changed Scroll image" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed Scroll image" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1246,29 +1253,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Enemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="97" column="28" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/SplashScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/HighscoresUpdater.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -1566,10 +1550,20 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
+    <entry file="file://$PROJECT_DIR$/resources/sprites/game/backgrounds/menu_scroll2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sprites/game/backgrounds/menu_scroll.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/TutorialScene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="58" column="126" selection-start-line="58" selection-start-column="126" selection-end-line="58" selection-end-column="126" />
+        <state relative-caret-position="255">
+          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -1582,9 +1576,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sprites/game/backgrounds/menu_scroll.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="58" column="126" selection-start-line="58" selection-start-column="126" selection-end-line="58" selection-end-column="126" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/UserNameScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
