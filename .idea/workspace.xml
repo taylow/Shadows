@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df7e5be-326c-48a9-947d-b0eec08caa13" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Constants.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Constants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sprites/game/pickups/boost_speed.png" afterPath="$PROJECT_DIR$/resources/sprites/game/pickups/boost_speed.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SCC210 - OOP.iws" />
@@ -52,20 +54,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="214">
               <caret line="34" column="45" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="50" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="boost_speed.png" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/sprites/game/pickups/boost_speed.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -1067,7 +1062,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488215492324</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="-">
+      <created>1488215836943</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1488215836943</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1195,7 +1197,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_07.png" />
     <entry file="file://$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_28.png" />
     <entry file="file://$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_02.png" />
     <entry file="file://$PROJECT_DIR$/resources/animations/knight/dead/Armature-Dead_00.png" />
@@ -1533,17 +1534,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sprites/game/pickups/boost_speedOld.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sprites/game/pickups/boost_speed.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
           <caret line="34" column="45" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="50" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sprites/game/pickups/boost_speed.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
   </component>
