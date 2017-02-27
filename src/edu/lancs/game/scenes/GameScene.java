@@ -3,10 +3,7 @@ package edu.lancs.game.scenes;
 import edu.lancs.game.Debug;
 import edu.lancs.game.HighscoresUpdater;
 import edu.lancs.game.Window;
-import edu.lancs.game.entity.Actor;
-import edu.lancs.game.entity.Chest;
-import edu.lancs.game.entity.Enemy;
-import edu.lancs.game.entity.Player;
+import edu.lancs.game.entity.*;
 import edu.lancs.game.generation.*;
 import edu.lancs.game.gui.HUD;
 import edu.lancs.game.gui.Lighting;
@@ -58,6 +55,8 @@ public class GameScene extends Scene {
         currentLevel = levels[random.nextInt(GAME_LEVEL_WIDTH)][random.nextInt(GAME_LEVEL_HEIGHT)]; // randomises the starting level
         currentLevel.discoverLevel();
         currentLevel.getEnemies().clear();
+        currentLevel.addPickup(new Pickup(getWindow(), (int)player.getPosition().x + 200, (int)player.getPosition().y + 200, 0));
+        currentLevel.addPickup(new Pickup(getWindow(), (int)player.getPosition().x + 100, (int)player.getPosition().y + 100, 1));
 
         bossLevel = levels[random.nextInt(GAME_LEVEL_WIDTH)][random.nextInt(GAME_LEVEL_HEIGHT)]; // randomises the boss level
         bossLevel.setBossLevel(true);
@@ -88,7 +87,25 @@ public class GameScene extends Scene {
         view.setCenter(player.getPosition());
         getWindow().setView(view);
 
-        window.draw(chest); //FIXME: Just a text chest, remove once chest ransomisation is added
+        for(Chest chest : currentLevel.getChests()) {
+            window.draw(chest);
+            if(player.getGlobalBounds().intersection(new FloatRect(chest.getPosition().x, chest.getPosition().y, 10, 10)) != null) {
+                if(!chest.isOpen())
+                    currentLevel.addPickup(chest.open());
+            }
+        }
+
+        for(int pickupId = 0; pickupId < currentLevel.getPickups().size(); pickupId++) {
+            Pickup pickup = currentLevel.getPickups().get(pickupId);
+            window.draw(pickup);
+            if(player.getGlobalBounds().intersection(new FloatRect(pickup.getPosition().x, pickup.getPosition().y, 10, 10)) != null) {
+                pickup.givePerk(player);
+                if(pickup.isUsed()) {
+                    currentLevel.getPickups().remove(pickup);
+                    pickupId--;
+                }
+            }
+        }
 
         // draws the enemies
         //FIXME: This should be done every time an enemy dies, not every cycle.
@@ -123,6 +140,7 @@ public class GameScene extends Scene {
 
             } else {
                 player.addScore(ENEMY_DEFAULT_SCORE + enemy.getHearts() * 10);
+
                 currentLevel.getEnemies().remove(enemyId);
                 enemyId--;
             }

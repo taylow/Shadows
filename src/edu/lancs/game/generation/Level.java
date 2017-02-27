@@ -1,15 +1,16 @@
 package edu.lancs.game.generation;
 
 import edu.lancs.game.Window;
+import edu.lancs.game.entity.Actor;
+import edu.lancs.game.entity.Chest;
 import edu.lancs.game.entity.Enemy;
+import edu.lancs.game.entity.Pickup;
 import org.jsfml.graphics.Color;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-import static edu.lancs.game.Constants.GAME_LEVEL_WIDTH;
-import static edu.lancs.game.Constants.MAP_TILE_HEIGHT;
-import static edu.lancs.game.Constants.MAP_TILE_WIDTH;
+import static edu.lancs.game.Constants.*;
 import static edu.lancs.game.generation.Tile.Direction.*;
 
 public class Level {
@@ -27,6 +28,8 @@ public class Level {
 
     private Tile[][] tiles;
     private ArrayList<Enemy> enemies;
+    private ArrayList<Pickup> pickups;
+    private ArrayList<Chest> chests;
 
     private Door northDoor;
     private Door eastDoor;
@@ -61,9 +64,12 @@ public class Level {
         tiles = new Tile[height][width];
         enemies = new ArrayList<>();
         doors = new ArrayList<>();
+        pickups = new ArrayList<>();
+        chests = new ArrayList<>();
 
         generateTiles(textureName);
         generateEnemies(complexity);
+        generateChests();
     }
 
     /***
@@ -160,14 +166,30 @@ public class Level {
             int randomX = (random.nextInt(width - 2) + 1) * MAP_TILE_WIDTH + (MAP_TILE_WIDTH / 2);
             int randomY = (random.nextInt(height - 2) + 1) * MAP_TILE_HEIGHT + (MAP_TILE_HEIGHT / 2);
 
-            int randomHealth = random.nextInt(4) + 2;
+            int randomHealth = random.nextInt(ENEMY_STARTING_HEALTH_MAX + 1 - ENEMY_STARTING_HEALTH_MIN) + ENEMY_STARTING_HEALTH_MIN;
             enemies.add(new Enemy(getWindow(), randomX, randomY, randomHealth, new Color(10, random.nextInt(128 + 1 - 64) + 64, 10)));
         }
     }
 
+    /***
+     * Populates the ArrayList of Chests with a random amount of Chests and types for a given room.
+     */
+    public void generateChests() {
+        //TODO: Balance
+        Random random = new Random();
+        for(int chestIndex = 0; chestIndex < complexity; chestIndex++) {
+            int randomX = (random.nextInt(width - 2) + 1) * MAP_TILE_WIDTH + (MAP_TILE_WIDTH / 2);
+            int randomY = (random.nextInt(height - 2) + 1) * MAP_TILE_HEIGHT + (MAP_TILE_HEIGHT / 2);
+
+            chests.add(new Chest(getWindow(), randomX, randomY));
+        }
+    }
+
     public void unloadLevel() {
-        for(Enemy enemy : enemies)
+        for(Enemy enemy : enemies) {
             enemy.setTargetActor(null);
+            enemy.setState(Actor.State.IDLE); // stops audio
+        }
     }
 
     /***
@@ -254,5 +276,17 @@ public class Level {
 
     public boolean isBossLevel() {
         return isBossLevel;
+    }
+
+    public ArrayList<Pickup> getPickups() {
+        return pickups;
+    }
+
+    public void addPickup(Pickup pickup) {
+        pickups.add(pickup);
+    }
+
+    public ArrayList<Chest> getChests() {
+        return chests;
     }
 }

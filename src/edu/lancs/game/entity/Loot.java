@@ -19,22 +19,22 @@ public class Loot {
             return random.nextInt(20 - 5 + 1) + 5;
         }
 
-        public void chanceOfTreasure(Player p){
+        public void chanceOfTreasure(Player player){
             Random ran = new Random();
             int n = ran.nextInt(2);
             int gold = giveGold();
             int health = giveHealth();
             //System.out.println(n);
             if(n == 1){
-                p.setGold(p.getGold() + gold);
+                player.setGold(player.getGold() + gold);
                 System.out.print("You have found a bag with "+gold+" gold!");
             }else{
-                int test = (p.getHealth() + health);
+                int test = (player.getHealth() + health);
                 if(test >= 100){
-                    p.setHealth(100);
+                    player.setHealth(100);
                     System.out.print("You have found an HP Potion, your health is full!");
                 }else{
-                    p.setHealth(p.getHealth() + health);
+                    player.setHealth(player.getHealth() + health);
                     System.out.print("You have found an HP Potion, it restored "+health+" health!");
                 }
             }

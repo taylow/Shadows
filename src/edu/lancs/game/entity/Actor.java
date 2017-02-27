@@ -235,10 +235,14 @@ public abstract class Actor extends Entity {
      * @param health - Current health
      */
     public void setHealth(int health) {
-        if (health <= hearts && health >= 0)
-            this.health = health;
-        else
-            this.health = 0; //FIXME: Here I just basically say, if you set the health wrong, kill the character (i.e. setting it to -1 will go to 0)
+        if (health >= 0) {
+            if(health <= hearts)
+                this.health = health;
+            else
+                this.health = hearts;
+        } else {
+            this.health = 0;
+        }
     }
 
     /***
