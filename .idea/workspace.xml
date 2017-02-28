@@ -39,7 +39,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Chest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Chest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Chest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="493">
@@ -79,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Actor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Actor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Actor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="349" column="21" selection-start-line="349" selection-start-column="21" selection-end-line="349" selection-end-column="21" />
+            <state relative-caret-position="464">
+              <caret line="350" column="78" selection-start-line="350" selection-start-column="78" selection-end-line="350" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -874,13 +874,6 @@
       <option name="presentableId" value="Default" />
       <updated>1487464780101</updated>
     </task>
-    <task id="LOCAL-00014" summary="Added fully working HUD (Only health and score at the minute, but powerups will be added when needed)">
-      <created>1487661677744</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1487661677744</updated>
-    </task>
     <task id="LOCAL-00015" summary="Fully commented the entire project, everything should be easy to follow. If not, ask me what specific things do.">
       <created>1487666161918</created>
       <option name="number" value="00015" />
@@ -1217,7 +1210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488290482847</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Added sound when being hit TODO need  health bar and hitmarker image">
+      <created>1488292328287</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1488292328287</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1307,7 +1307,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Random Starting Point" />
     <MESSAGE value="Added xbox controller support, fixed the MiniMap to display the tiles directly next to one-another, removed doors from the edge of the game, etc." />
     <MESSAGE value="Added combat (to and from Enemy/Player), added Enemy deaths, added Player death, added GameOver Scene (posts highscores to website), added name input scene, added working doors upon empty room." />
     <MESSAGE value="Threaded the HighScoreUpdater to prevent lag while adding highscore to the database." />
@@ -1332,7 +1331,8 @@
     <MESSAGE value="Merged mine with Shez's" />
     <MESSAGE value="Resources added" />
     <MESSAGE value="Basic Hit Detection Added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic Hit Detection Added" />
+    <MESSAGE value="Added sound when being hit TODO need  health bar and hitmarker image" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added sound when being hit TODO need  health bar and hitmarker image" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1633,18 +1633,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Chest.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Actor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+        <state relative-caret-position="464">
+          <caret line="350" column="78" selection-start-line="350" selection-start-column="78" selection-end-line="350" selection-end-column="78" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Actor.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Chest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="349" column="21" selection-start-line="349" selection-start-column="21" selection-end-line="349" selection-end-column="21" />
+        <state relative-caret-position="493">
+          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
           <folding />
         </state>
       </provider>

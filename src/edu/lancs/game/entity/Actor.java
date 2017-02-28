@@ -348,7 +348,7 @@ public abstract class Actor extends Entity {
         setHealth(health - damage);
         sound = new Sound(getWindow().getResourceManager().getSound("hit_marker"));
         sound.play();
-        //setTexture(getWindow().getResourceManager().getTextures("hitmarker"));
+        setTexture(getWindow().getResourceManager().getTextures("hitmarker"));
 
     }
 
