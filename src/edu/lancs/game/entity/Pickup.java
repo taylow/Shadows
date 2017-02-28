@@ -8,7 +8,7 @@ import java.util.ConcurrentModificationException;
 public class Pickup extends Entity {
 
     public enum Type {
-        HEALTH, BATTERY, COINS, SPEED, COINS2
+        HEALTH, BATTERY, COINS, SPEED, COINS2, KEY
     }
 
     private boolean isUsed;
@@ -39,6 +39,10 @@ public class Pickup extends Entity {
 
             case COINS2:
                 setTexture(getWindow().getResourceManager().getTextures("coin2"));
+                break;
+
+            case KEY:
+                setTexture(getWindow().getResourceManager().getTextures("boss_door_key"));
                 break;
         }
     }
@@ -81,6 +85,11 @@ public class Pickup extends Entity {
 
             case SPEED:
                 player.setSpeed(Constants.PLAYER_BASE_MOVEMENT + (float) 0.5);
+                setUsed(true);
+                break;
+
+            case KEY:
+                player.addScore(1000);
                 setUsed(true);
                 break;
         }
