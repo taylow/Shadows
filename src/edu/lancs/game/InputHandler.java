@@ -159,7 +159,7 @@ public class InputHandler {
      * Returns whether or not the A key is pressed.
      *
      * @return - A keys pressed value
-     */
+a     */
     public boolean isaKeyPressed() {
         return aKeyPressed;
     }

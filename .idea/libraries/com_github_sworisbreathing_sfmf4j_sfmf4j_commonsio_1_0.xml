@@ -23,6 +23,9 @@
       <root url="jar://$MAVEN_REPOSITORY$/com/github/sworisbreathing/sfmf4j/sfmf4j-commonsio/1.0/sfmf4j-commonsio-1.0.jar!/" />
       <root url="jar://$MAVEN_REPOSITORY$/com/github/sworisbreathing/sfmf4j/sfmf4j-api/1.0/sfmf4j-api-1.0.jar!/" />
       <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.4/commons-io-2.4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/sworisbreathing/sfmf4j/sfmf4j-commonsio/1.0/sfmf4j-commonsio-1.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/sworisbreathing/sfmf4j/sfmf4j-api/1.0/sfmf4j-api-1.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.4/commons-io-2.4.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

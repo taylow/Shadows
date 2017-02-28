@@ -19,7 +19,7 @@ public class Enemy extends Actor {
     private Actor targetActor;
 
     public Enemy(Window window, int positionX, int positionY, int health, Color recolour) {
-        super(window, "robot", positionX, positionY, true, health, health, ENEMY_WEAPON_DAMAGE, ENEMY_BASE_MOVEMENT);
+        super(window, "knight", positionX, positionY, true, health, health, ENEMY_WEAPON_DAMAGE, ENEMY_BASE_MOVEMENT);
         // initialise player stats (health, score, etc)
         score = 0;
         inputHandler = getWindow().getInputHandler();

@@ -344,6 +344,7 @@ public abstract class Actor extends Entity {
 
     public void damage(int damage) {
         setHealth(health - damage);
+
     }
 
     public ArrayList<Texture> getDeathAnimation() {
