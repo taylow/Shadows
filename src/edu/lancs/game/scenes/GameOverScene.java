@@ -30,6 +30,7 @@ public class GameOverScene extends Scene {
     public GameOverScene(Window window, Scene returnScene) {
         super(window);
         setTitle("Tutorial");
+        stopMusic("game_music");
         setBackgroundColour(Color.CYAN);
 
         buttons = new ArrayList<>();
