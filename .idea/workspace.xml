@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df7e5be-326c-48a9-947d-b0eec08caa13" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/misc/misc/203_ALL_LECTURES_UP_TO_L12.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/pickups/coin_gold.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sprites/game/pickups/coin_silver.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SCC210 - OOP.iws" />
@@ -751,13 +748,6 @@
       <option name="presentableId" value="Default" />
       <updated>1487464780101</updated>
     </task>
-    <task id="LOCAL-00012" summary="Added VERY basic movement">
-      <created>1487567196351</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1487567196351</updated>
-    </task>
     <task id="LOCAL-00013" summary="Lots of stuff added:&#10;Level generation, proper animations, proper movement, etc">
       <created>1487658443650</created>
       <option name="number" value="00013" />
@@ -1094,7 +1084,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488288806733</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Resources added">
+      <created>1488289081921</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1488289081921</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1184,7 +1181,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Randomised starting point" />
     <MESSAGE value="Added Random Boss Room" />
     <MESSAGE value="Added Random Starting Point" />
     <MESSAGE value="Added xbox controller support, fixed the MiniMap to display the tiles directly next to one-another, removed doors from the edge of the game, etc." />
@@ -1209,7 +1205,8 @@
     <MESSAGE value="Pickup can now show in the HUD. TODO, Graphical HUD To represent this and also needs fully integrating to the game :D" />
     <MESSAGE value="Added Santa images including DragonBones FIle" />
     <MESSAGE value="Merged mine with Shez's" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merged mine with Shez's" />
+    <MESSAGE value="Resources added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resources added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
