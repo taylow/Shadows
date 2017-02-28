@@ -167,7 +167,7 @@ public class Level {
             int randomY = (random.nextInt(height - 2) + 1) * MAP_TILE_HEIGHT + (MAP_TILE_HEIGHT / 2);
 
             int randomHealth = random.nextInt(ENEMY_STARTING_HEALTH_MAX + 1 - ENEMY_STARTING_HEALTH_MIN) + ENEMY_STARTING_HEALTH_MIN;
-            enemies.add(new Enemy(getWindow(), randomX, randomY, randomHealth, new Color(10, random.nextInt(128 + 1 - 64) + 64, 10)));
+            enemies.add(new Enemy(getWindow(), randomX, randomY, randomHealth, new Color(10, random.nextInt(128 + 1 - 64) + random.nextInt(64), random.nextInt(10))));
         }
     }
 

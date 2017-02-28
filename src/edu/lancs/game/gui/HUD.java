@@ -4,7 +4,6 @@ import edu.lancs.game.Window;
 import edu.lancs.game.entity.Player;
 import org.jsfml.graphics.Color;
 import org.jsfml.graphics.Text;
-import org.jsfml.graphics.View;
 
 import java.util.ArrayList;
 
@@ -24,6 +23,7 @@ public class HUD {
     private ArrayList<Text> texts;
     private Text scoreText;
     private Text timeText;
+    private Text pickupText;
 
     public HUD(Window window, Player player) {
         this.window = window;
@@ -44,7 +44,13 @@ public class HUD {
         timeText.setPosition(getWindow().getWidth() / 2 - 15, 10); // TODO: Sorta redundant now and I have updatePositions
         timeText.setColor(Color.YELLOW);
         texts.add(timeText); // adds this text to the ArrayList of texts (means for multiple texts with one one draw)
+
+        pickupText = new Text ("000000", getWindow().getResourceManager().getFont("BLKCHCRY"));
+        pickupText.setPosition(getWindow().getWidth() / 2 - 75, 10);
+        pickupText.setColor(Color.BLUE);
+        texts.add(pickupText);
     }
+
 
     /***
      * Updates all the images based off new variables
