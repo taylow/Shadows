@@ -59,6 +59,7 @@ public class Enemy extends Actor {
                 else
                     setScale(1.f, 1.f); // flip the sprite to face right
 
+                //TODO: Add line of site so the Enemy is facing you
                 if (Math.abs(diff.x) > 90 || Math.abs(diff.y) > 90) {
                     move(getVelocity());
                     if (getState() != RUNNING)

@@ -32,7 +32,7 @@ public class GameScene extends Scene {
     public GameScene(Window window, String username) {
         super(window);
         setTitle("Do Not Die");
-        stopMusic("menu_music");
+        getWindow().getResourceManager().stopSound("menu_music");
         setMusic("game_music");
         setBackgroundColour(Color.BLACK);
 
@@ -56,8 +56,6 @@ public class GameScene extends Scene {
         currentLevel = levels[random.nextInt(GAME_LEVEL_WIDTH)][random.nextInt(GAME_LEVEL_HEIGHT)]; // randomises the starting level
         currentLevel.discoverLevel();
         currentLevel.getEnemies().clear();
-        currentLevel.addPickup(new Pickup(getWindow(), (int)player.getPosition().x + 200, (int)player.getPosition().y + 200, 0));
-        currentLevel.addPickup(new Pickup(getWindow(), (int)player.getPosition().x + 100, (int)player.getPosition().y + 100, 1));
 
         bossLevel = levels[random.nextInt(GAME_LEVEL_WIDTH)][random.nextInt(GAME_LEVEL_HEIGHT)]; // randomises the boss level
         bossLevel.setBossLevel(true);
@@ -155,8 +153,8 @@ public class GameScene extends Scene {
         window.draw(player);
 
         // draw the lighting
-        lighting.generateLighting(100 + player.getBatteryLevel());
-        lighting.getLighting().forEach(window::draw);
+        /*lighting.generateLighting(100 + player.getBatteryLevel());
+        lighting.getLighting().forEach(window::draw);*/
 
         // draws the HUD
         hud.update();

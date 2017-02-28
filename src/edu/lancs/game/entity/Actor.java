@@ -11,6 +11,7 @@ import org.jsfml.graphics.Texture;
 import org.jsfml.system.Vector2f;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import static edu.lancs.game.Constants.PLAYER_BASE_MOVEMENT;
 import static edu.lancs.game.entity.Actor.State.*;
@@ -168,12 +169,13 @@ public abstract class Actor extends Entity {
                 break;
 
             case ATTACKING:
+                Random random = new Random();
                 setAnimation(attackAnimation);
                 setOrigin(50, 94);
                 // plays the sword sound on loop FIXME: Really temporary, needs to be improved. Could use the "knight" in the file name so each type has its own attack sound (knight_melee_attack.wav)
                 sound = new Sound(getWindow().getResourceManager().getSound("melee_sword"));
                 sound.setLoop(true);
-                sound.setPitch(0.8f);
+                sound.setPitch(random.nextFloat() + 0.8f);
                 sound.play();
                 break;
 
@@ -247,7 +249,7 @@ public abstract class Actor extends Entity {
     }
 
     public float getSpeed(){
-        return Constants.PLAYER_BASE_MOVEMENT;
+        return speed;
     }
 
     public void setSpeed(float speed){

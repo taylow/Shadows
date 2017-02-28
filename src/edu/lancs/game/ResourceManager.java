@@ -269,4 +269,13 @@ public class ResourceManager {
             Debug.error("Invalid animation: " + animationName);
         return null;
     }
+
+    /***
+     * Stops the current instance of this sound.
+     *
+     * @param soundName - Sound to be stopped
+     */
+    public void stopSound(String soundName) {
+        getSound(soundName).stop();
+    }
 }

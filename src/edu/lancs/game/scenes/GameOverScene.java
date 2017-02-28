@@ -1,6 +1,5 @@
 package edu.lancs.game.scenes;
 
-import edu.lancs.game.Debug;
 import edu.lancs.game.Window;
 import edu.lancs.game.gui.Decoration;
 import edu.lancs.game.gui.buttons.BackButton;
@@ -8,18 +7,8 @@ import edu.lancs.game.gui.buttons.Button;
 import org.jsfml.graphics.Color;
 import org.jsfml.graphics.FloatRect;
 import org.jsfml.window.event.Event;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.net.URL;
 import java.util.ArrayList;
 
-import static edu.lancs.game.Constants.HIGHSCORES_URL;
-import static edu.lancs.game.Constants.HIGHSCORES_USER_AGENT;
 import static edu.lancs.game.Constants.MENU_BUTTON_HEIGHT;
 
 public class GameOverScene extends Scene {
@@ -29,8 +18,10 @@ public class GameOverScene extends Scene {
 
     public GameOverScene(Window window, Scene returnScene) {
         super(window);
-        setTitle("Tutorial");
-        stopMusic("game_music");
+        setTitle("Game Over!");
+        getWindow().getResourceManager().stopSound("game_music");
+        getWindow().getResourceManager().getSound("menu_music").play(); // TODO: Gameover sound, then menu sound
+
         setBackgroundColour(Color.CYAN);
 
         buttons = new ArrayList<>();

@@ -1,13 +1,10 @@
 package edu.lancs.game.scenes;
 
 import edu.lancs.game.Window;
-import javafx.scene.paint.Stop;
 import org.jsfml.audio.Sound;
 import org.jsfml.graphics.Color;
 import org.jsfml.system.Vector2i;
 import org.jsfml.window.event.Event;
-
-import java.io.Serializable;
 
 import static edu.lancs.game.Constants.GAME_TITLE;
 
@@ -171,10 +168,5 @@ public abstract class Scene {
         this.music = getWindow().getResourceManager().getSound(music);
         this.music.setLoop(true);
         this.music.play();
-    }
-
-    public void stopMusic(String music){
-        this.music = getWindow().getResourceManager().getSound(music);
-        this.music.stop();
     }
 }

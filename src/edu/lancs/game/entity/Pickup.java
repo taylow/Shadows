@@ -1,14 +1,13 @@
 package edu.lancs.game.entity;
 
-import edu.lancs.game.Constants;
 import edu.lancs.game.Window;
 
-import java.util.ConcurrentModificationException;
+import static edu.lancs.game.Constants.PLAYER_BASE_MOVEMENT;
 
 public class Pickup extends Entity {
 
     public enum Type {
-        HEALTH, BATTERY, COINS, SPEED, COINS2, KEY
+        HEALTH, BATTERY, SPEED, GOLD_COIN, SILVER_COIN, KEY
     }
 
     private boolean isUsed;
@@ -29,16 +28,16 @@ public class Pickup extends Entity {
                 setTexture(getWindow().getResourceManager().getTextures("battery"));
                 break;
 
-            case COINS:
-                setTexture(getWindow().getResourceManager().getTextures("coin"));
+            case GOLD_COIN:
+                setTexture(getWindow().getResourceManager().getTextures("coin_gold"));
                 break;
 
             case SPEED:
                 setTexture(getWindow().getResourceManager().getTextures("boost_speed"));
                 break;
 
-            case COINS2:
-                setTexture(getWindow().getResourceManager().getTextures("coin2"));
+            case SILVER_COIN:
+                setTexture(getWindow().getResourceManager().getTextures("coin_silver"));
                 break;
 
             case KEY:
@@ -68,23 +67,24 @@ public class Pickup extends Entity {
 
             case BATTERY:
                 if(player.getBatteryLevel() < 100) {
-                    player.setBatteryLevel(player.getBatteryLevel() + 25);
+                    player.setBatteryLevel(player.getBatteryLevel() + 100);
                     setUsed(true);
                 }
                 break;
 
-            case COINS:
+            case GOLD_COIN:
                 player.addScore(1000);
                 setUsed(true);
                 break;
 
-            case COINS2:
-                player.addScore(2000);
+            case SILVER_COIN:
+                player.addScore(500);
                 setUsed(true);
                 break;
 
             case SPEED:
-                player.setSpeed(Constants.PLAYER_BASE_MOVEMENT + (float) 0.5);
+                // FIXME: Not actually added setSpeed yet ;/
+                player.setSpeed(PLAYER_BASE_MOVEMENT + 1);
                 setUsed(true);
                 break;
 

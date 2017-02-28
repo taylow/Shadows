@@ -4,6 +4,7 @@ import edu.lancs.game.Window;
 import edu.lancs.game.entity.Pickup;
 import edu.lancs.game.entity.Player;
 import org.jsfml.graphics.Color;
+import org.jsfml.graphics.Sprite;
 import org.jsfml.graphics.Text;
 
 import java.util.ArrayList;

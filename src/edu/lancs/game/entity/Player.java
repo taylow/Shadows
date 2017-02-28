@@ -48,7 +48,7 @@ public class Player extends Actor {
         handleMovement();
         nextFrame();
         currentTime = (System.currentTimeMillis() - startTime) / 1000;
-        if(currentTime != lastUpdate) {
+        if(currentTime != lastUpdate && batteryLevel != 0) {
             setBatteryLevel(batteryLevel - 1);
             lastUpdate = currentTime;
         }
