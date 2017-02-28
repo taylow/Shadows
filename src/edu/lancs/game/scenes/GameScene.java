@@ -103,7 +103,11 @@ public class GameScene extends Scene {
                 pickup.givePerk(player);
                 if(pickup.isUsed()) {
                     currentLevel.getPickups().remove(pickup);
+                    HUD h = new HUD(this.getWindow(), this.player);
+                    h.getTexts();
+
                     pickupId--;
+
                 }
             }
         }

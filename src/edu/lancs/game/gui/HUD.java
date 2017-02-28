@@ -1,6 +1,7 @@
 package edu.lancs.game.gui;
 
 import edu.lancs.game.Window;
+import edu.lancs.game.entity.Pickup;
 import edu.lancs.game.entity.Player;
 import org.jsfml.graphics.Color;
 import org.jsfml.graphics.Text;
@@ -45,7 +46,7 @@ public class HUD {
         timeText.setColor(Color.YELLOW);
         texts.add(timeText); // adds this text to the ArrayList of texts (means for multiple texts with one one draw)
 
-        pickupText = new Text ("000000", getWindow().getResourceManager().getFont("BLKCHCRY"));
+        pickupText = new Text ("Picked Up " + Pickup.Type.HEALTH, getWindow().getResourceManager().getFont("BLKCHCRY"));
         pickupText.setPosition(getWindow().getWidth() / 2 - 75, 10);
         pickupText.setColor(Color.BLUE);
         texts.add(pickupText);
@@ -70,6 +71,8 @@ public class HUD {
         offsetY = getWindow().getView().getCenter().y - (getWindow().getView().getSize().y / 2);
         scoreText.setPosition(offsetX + getWindow().getWidth() - 150, offsetY + 10);
         timeText.setPosition(offsetX + getWindow().getWidth() / 2 - 15, offsetY + 10);
+        pickupText.setPosition(offsetX + getWindow().getWidth() / 2 - 600, offsetY + 50);
+
     }
 
     /***
