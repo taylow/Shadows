@@ -85,6 +85,8 @@ public class InputHandler {
                 player.setHealth(player.getHealth() + 100);
                 break;
 
+
+
         }
     }
 
