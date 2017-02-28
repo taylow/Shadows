@@ -174,10 +174,12 @@ public abstract class Actor extends Entity {
                 setOrigin(50, 94);
                 // plays the sword sound on loop FIXME: Really temporary, needs to be improved. Could use the "knight" in the file name so each type has its own attack sound (knight_melee_attack.wav)
                 sound = new Sound(getWindow().getResourceManager().getSound("melee_sword"));
-                sound.setLoop(true);
+                //sound.setLoop(true);
                 sound.setPitch(random.nextFloat() + 0.8f);
                 sound.play();
+
                 break;
+
 
             case DYING:
                 setAnimation(deathAnimation);
@@ -344,6 +346,9 @@ public abstract class Actor extends Entity {
 
     public void damage(int damage) {
         setHealth(health - damage);
+        sound = new Sound(getWindow().getResourceManager().getSound("hit_marker"));
+        sound.play();
+        //setTexture(getWindow().getResourceManager().getTextures("hitmarker"));
 
     }
 
