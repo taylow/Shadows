@@ -101,7 +101,8 @@ public class Pickup extends Entity {
 
             case TALISMAN:
                 random = new Random();
-                player.setRunePickups(player.getRunePickups() + random.nextInt(15) + 1);
+                player.setRunePickups(player.getRunePickups() + random.nextInt(15) + 1  );
+                break;
 
             case KEY:
                 player.addScore(1000);
