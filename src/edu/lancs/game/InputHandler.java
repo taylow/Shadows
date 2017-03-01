@@ -145,6 +145,10 @@ public class InputHandler {
             case MINIMAP_BUTTON:
                 ctrlKeyPressed = event.type == JOYSTICK_BUTTON_PRESSED;
                 break;
+
+            case MAGIC_BUTTON:
+                mouseClicked = event.type == JOYSTICK_BUTTON_PRESSED;
+                break;
         }
     }
 

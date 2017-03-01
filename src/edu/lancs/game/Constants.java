@@ -71,6 +71,7 @@ public class Constants {
     public static final int JOYSTICK_DEADZONE_Y = 25;
     public static final int ATTACK_BUTTON = 0;
     public static final int MINIMAP_BUTTON = 1;
+    public static final int MAGIC_BUTTON = 2;
 
     /*Highscores Constants*/
     public static final String HIGHSCORES_USER_AGENT = "Mozilla/5.0";
