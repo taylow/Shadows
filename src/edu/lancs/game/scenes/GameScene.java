@@ -1,5 +1,6 @@
 package edu.lancs.game.scenes;
 
+import edu.lancs.game.Constants;
 import edu.lancs.game.Debug;
 import edu.lancs.game.HighscoresUpdater;
 import edu.lancs.game.Window;
@@ -9,6 +10,7 @@ import edu.lancs.game.gui.HUD;
 import edu.lancs.game.gui.Lighting;
 import edu.lancs.game.gui.MiniMap;
 import org.jsfml.graphics.Color;
+import org.jsfml.graphics.Drawable;
 import org.jsfml.graphics.FloatRect;
 import org.jsfml.graphics.View;
 import org.jsfml.window.event.Event;
@@ -129,7 +131,9 @@ public class GameScene extends Scene {
             if(!enemy.isDead()) {
                 enemy.setTargetActor(player);
                 enemy.update();
+
                 window.draw(enemy);
+
 
                 // enemy hit detection FIXME: Poor attempt, I know. It works and meets criteria
                 if (player.getState() == Actor.State.ATTACKING && player.getFrame() == ACTOR_ATTACK_FRAME) {

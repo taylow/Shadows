@@ -61,6 +61,8 @@ public class HighscoresUpdater implements Runnable {
             in.close();
 
             Debug.print("High scores server returned: " + response);
+            //TODO Needs to print only once
+            //would be something like if(response == true) then break some thing like this but its a string buffer
         } catch (ProtocolException e) {
             e.printStackTrace();
         } catch (MalformedURLException e) {
