@@ -182,8 +182,8 @@ public class GameScene extends Scene {
         }
 
         // draw the lighting
-        /*lighting.generateLighting(100 + player.getBatteryLevel());
-        lighting.getLighting().forEach(window::draw);*/
+        lighting.generateLighting(100 + player.getBatteryLevel());
+        lighting.getLighting().forEach(window::draw);
 
         // draws the HUD
         hud.update();
@@ -215,8 +215,14 @@ public class GameScene extends Scene {
                 switch (direction) {
                     case N:
                         if(teleport)
-                            player.setPosition(currentLevel.getDoor(Tile.Direction.S).getPosition().x + MAP_TILE_WIDTH / 2,
-                                    currentLevel.getDoor(Tile.Direction.S).getPosition().y - 100 + MAP_TILE_HEIGHT / 2);
+                            if(currentLevel.getDoor(Tile.Direction.S) != null) {
+                                player.setPosition(currentLevel.getDoor(Tile.Direction.S).getPosition().x + MAP_TILE_WIDTH / 2,
+                                        currentLevel.getDoor(Tile.Direction.S).getPosition().y - 100 + MAP_TILE_HEIGHT / 2);
+                            } else {
+                                player.setPosition((currentLevel.getWidth() / 2) * (MAP_TILE_WIDTH - 1),
+                                        (currentLevel.getHeight() - 1) * (MAP_TILE_HEIGHT - 1));
+                                System.out.println("TEST");
+                            }
                         else
                             player.setCollidingUp(true);
                         break;
@@ -271,10 +277,10 @@ public class GameScene extends Scene {
             if (!door.isLocked()) {
                 level++;
                 Debug.print("Teleporting to room: " + destinationRow + ", " + destinationColumn + " Level: " + level);
+                generateRooms();
                 currentLevel.setCurrentLevel(false); // set the level loaded to not be the current level
                 currentLevel.unloadLevel();
-                generateRooms();
-                currentLevel = levels[destinationRow][destinationColumn]; // change the level
+                currentLevel = levels[currentLevel.getLevelColumnPosition()][currentLevel.getLevelRowPosition()]; // change the level
                 currentLevel.discoverLevel(); // discover (minimap)
                 currentLevel.setCurrentLevel(true); // set the current level
                 player.resetCollision();
@@ -385,7 +391,7 @@ public class GameScene extends Scene {
         if(player.getSound() != null)
             player.getSound().stop();
 
-        HighscoresUpdater highscoresUpdater = new HighscoresUpdater(username, player.getScore(), player.getTimeAlive());
+        HighscoresUpdater highscoresUpdater = new HighscoresUpdater(username, player.getScore(), player.getTimeAlive(), level, player.getKills());
         Thread highScoresThread = new Thread(highscoresUpdater);
         highScoresThread.start();
 

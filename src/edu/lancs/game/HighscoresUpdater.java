@@ -14,13 +14,17 @@ import static edu.lancs.game.Constants.HIGHSCORES_USER_AGENT;
 public class HighscoresUpdater implements Runnable {
     private String name;
     private int score;
+    private int level;
+    private int kills;
     private long time;
     private boolean hasUpdated;
 
-    public HighscoresUpdater(String name, int score, long time) {
+    public HighscoresUpdater(String name, int score, long time, int level, int kills) {
         this.name = name;
         this.score = score;
         this.time = time;
+        this.level = level;
+        this.kills = kills;
         hasUpdated = false;
     }
 
@@ -28,7 +32,7 @@ public class HighscoresUpdater implements Runnable {
     public synchronized void run() {
         synchronized (this) {
             if (!hasUpdated) {
-                updateHighscores(name, score, time);
+                updateHighscores(name, score, time, level, kills);
                 hasUpdated = true;
             }
         }
@@ -37,38 +41,41 @@ public class HighscoresUpdater implements Runnable {
     /***
      * Sends a GET request to the HighScores server using game information (Score, time, name).
      */
-    public synchronized void updateHighscores(String name, int score, long time) {
-        try {
-            String url = HIGHSCORES_URL.replace("#", name).replace("~", Integer.toString(score)).replace("@", Long.toString(time));
+    public synchronized void updateHighscores(String name, int score, long time, int level, int kills) {
+        synchronized (this) {
+            try {
+                if (!hasUpdated) {
+                    hasUpdated = true;
+                    String url = HIGHSCORES_URL.replace("#", name).replace("~", Integer.toString(score)).replace("@", Long.toString(time)).replace("*", Integer.toString(level)).replace("£", Integer.toString(kills));
 
-            URL obj = new URL(url);
-            HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+                    URL obj = new URL(url);
+                    HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
-            // optional default is GET
-            con.setRequestMethod("GET");
+                    // optional default is GET
+                    con.setRequestMethod("GET");
 
-            // add request header
-            con.setRequestProperty("User-Agent", HIGHSCORES_USER_AGENT);
+                    // add request header
+                    con.setRequestProperty("User-Agent", HIGHSCORES_USER_AGENT);
 
-            BufferedReader in = new BufferedReader(
-                    new InputStreamReader(con.getInputStream()));
-            String inputLine;
-            StringBuffer response = new StringBuffer();
+                    BufferedReader in = new BufferedReader(
+                            new InputStreamReader(con.getInputStream()));
+                    String inputLine;
+                    StringBuffer response = new StringBuffer();
 
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
+                    while ((inputLine = in.readLine()) != null) {
+                        response.append(inputLine);
+                    }
+                    in.close();
+
+                    Debug.print("High scores server returned: " + response);
+                }
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            in.close();
-
-            Debug.print("High scores server returned: " + response);
-            //TODO Needs to print only once
-            //would be something like if(response == true) then break some thing like this but its a string buffer
-        } catch (ProtocolException e) {
-            e.printStackTrace();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 }

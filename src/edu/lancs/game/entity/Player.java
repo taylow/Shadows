@@ -3,6 +3,7 @@ package edu.lancs.game.entity;
 import edu.lancs.game.InputHandler;
 import edu.lancs.game.Window;
 import org.jsfml.audio.Sound;
+import org.jsfml.system.Vector2f;
 
 import static edu.lancs.game.Constants.*;
 import static edu.lancs.game.entity.Actor.State.ATTACKING;
@@ -15,6 +16,7 @@ public class Player extends Actor {
     private int score;
     private int batteryLevel;
     private int gold;
+    private int kills;
 
     private long startTime;
     private long currentTime;
@@ -33,6 +35,7 @@ public class Player extends Actor {
         score = 0;
         batteryLevel = 100;
         speedBoostPickups = 0;
+        kills = 0;
         runePickups = PLAYER_STARTING_RUNES;
         inputHandler = getWindow().getInputHandler();
         startTime = System.currentTimeMillis();
@@ -104,7 +107,8 @@ public class Player extends Actor {
             setSound(new Sound(getWindow().getResourceManager().getSound("projectile")));
             getSound().setPitch(0.8f);
             getSound().play();
-            getProjectiles().add(new Projectile(getWindow(), getWindow().getInputHandler().getMousePosition(), getPosition(), PLAYER_MAGIC_DAMAGE, 10));
+            //getProjectiles().add(new Projectile(getWindow(), getWindow().getInputHandler().getMousePosition(), getPosition(), PLAYER_MAGIC_DAMAGE, 10));
+            getProjectiles().add(new Projectile(getWindow(), new Vector2f(getWindow().getView().getCenter().x - 300, getWindow().getView().getCenter().y), getPosition(), PLAYER_MAGIC_DAMAGE, 10));
             runePickups--;
         }
     }
@@ -181,5 +185,9 @@ public class Player extends Actor {
 
     public void setRunePickups(int runePickups) {
         this.runePickups = runePickups;
+    }
+
+    public int getKills() {
+        return kills;
     }
 }

@@ -34,7 +34,7 @@ public class Constants {
     public static final float PLAYER_BASE_MOVEMENT = 5;
     public static final int PLAYER_STARTING_HEALTH = 10; // (this/2 is the number of hearts on the HUD) FIXME: Odd numbers may cause issues
     public static final int PLAYER_MAGIC_DAMAGE = 10;
-    public static final int PLAYER_STARTING_RUNES = 5;
+    public static final int PLAYER_STARTING_RUNES = 5000;
     public static final float PLAYER_SCALE_WIDTH = 1.0f;
     public static final float PLAYER_SCALE_HEIGHT = 1.0f;
 
@@ -75,5 +75,5 @@ public class Constants {
 
     /*Highscores Constants*/
     public static final String HIGHSCORES_USER_AGENT = "Mozilla/5.0";
-    public static final String HIGHSCORES_URL = "https://protaytoe.uk/highscores/post.php?name=#&score=~&time=@";
+    public static final String HIGHSCORES_URL = "https://protaytoe.uk/highscores/post.php?name=#&score=~&time=@&level=*&kills=£";
 }
