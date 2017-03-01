@@ -1,7 +1,9 @@
 package edu.lancs.game.entity;
 
+import edu.lancs.game.Constants;
 import edu.lancs.game.InputHandler;
 import edu.lancs.game.Window;
+import org.jsfml.audio.Sound;
 import org.jsfml.graphics.Color;
 import org.jsfml.system.Vector2f;
 
@@ -31,6 +33,18 @@ public class Enemy extends Actor {
      */
     @Override
     public void performAction() {
+    }
+
+    @Override
+    public void range() {
+        setState(RANGING);
+        if(Constants.ENEMY_STARTING_RUNES > 0) {
+            setSound(new Sound(getWindow().getResourceManager().getSound("projectile")));
+            getSound().setPitch(0.8f);
+            getSound().play();
+            getProjectiles().add(new Projectile(getWindow(), getWindow().getInputHandler().getMousePosition(), getPosition(), PLAYER_MAGIC_DAMAGE, 10));
+            Constants.ENEMY_STARTING_RUNES--;
+        }
     }
 
     /***
