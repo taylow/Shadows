@@ -9,7 +9,7 @@ import static edu.lancs.game.Constants.PLAYER_BASE_MOVEMENT;
 public class Pickup extends Entity {
 
     public enum Type {
-        HEALTH, BATTERY, SPEED, GOLD_COIN, SILVER_COIN, RUNE, KEY // make sure key is at the end
+        HEALTH, BATTERY, SPEED, GOLD_COIN, SILVER_COIN, RUNE, KEY, TALISMAN // make sure key is at the end
     }
 
     private boolean isUsed;
@@ -34,6 +34,10 @@ public class Pickup extends Entity {
                 setTexture(getWindow().getResourceManager().getTextures("coin_gold"));
                 break;
 
+            case TALISMAN:
+                setTexture(getWindow().getResourceManager().getTextures("fire_talisman"));
+                break;
+
             case SPEED:
                 setTexture(getWindow().getResourceManager().getTextures("boost_speed"));
                 break;
@@ -49,6 +53,8 @@ public class Pickup extends Entity {
             case KEY:
                 setTexture(getWindow().getResourceManager().getTextures("boss_door_key"));
                 break;
+
+
         }
     }
 
@@ -93,10 +99,16 @@ public class Pickup extends Entity {
                 player.setRunePickups(player.getRunePickups() + random.nextInt(3) + 1);
                 break;
 
+            case TALISMAN:
+                random = new Random();
+                player.setRunePickups(player.getRunePickups() + random.nextInt(15) + 1);
+
             case KEY:
                 player.addScore(1000);
                 player.setHasBossKey(true);
                 break;
+
+
         }
         setUsed(true);
     }

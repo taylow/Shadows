@@ -118,6 +118,8 @@ public class InputHandler {
                     sKeyPressed = false;
 
                 break;
+
+
         }
     }
 
@@ -149,6 +151,8 @@ public class InputHandler {
             case MAGIC_BUTTON:
                 mouseClicked = event.type == JOYSTICK_BUTTON_PRESSED;
                 break;
+
+
         }
     }
 
