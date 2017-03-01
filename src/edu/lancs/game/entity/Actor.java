@@ -1,8 +1,5 @@
 package edu.lancs.game.entity;
 
-import edu.lancs.game.Constants;
-import edu.lancs.game.Debug;
-import edu.lancs.game.InputHandler;
 import edu.lancs.game.Window;
 import org.jsfml.audio.Sound;
 import org.jsfml.graphics.FloatRect;
@@ -13,7 +10,6 @@ import org.jsfml.system.Vector2f;
 import java.util.ArrayList;
 import java.util.Random;
 
-import static edu.lancs.game.Constants.PLAYER_BASE_MOVEMENT;
 import static edu.lancs.game.entity.Actor.State.*;
 
 public abstract class Actor extends Entity {
@@ -27,6 +23,8 @@ public abstract class Actor extends Entity {
 
     private Vector2f velocity;
 
+    private ArrayList<Projectile> projectiles;
+
     private boolean isCollidingLeft = false;
     private boolean isCollidingRight = false;
     private boolean isCollidingUp = false;
@@ -34,13 +32,11 @@ public abstract class Actor extends Entity {
 
     private Sound sound;
 
-    // the entity variables
-    private InputHandler inputHandler;
-
     private ArrayList<Texture> idleAnimation;
     private ArrayList<Texture> runAnimation;
     private ArrayList<Texture> attackAnimation;
     private ArrayList<Texture> deathAnimation;
+    private ArrayList<Texture> rangeAnimation;
 
     private State state;
 
@@ -53,12 +49,14 @@ public abstract class Actor extends Entity {
         this.speed = speed;
         this.weaponDamage = weaponDamage;
         velocity = new Vector2f(0, 0);
+        projectiles = new ArrayList<>();
 
         // load animations
         idleAnimation = getWindow().getResourceManager().getAnimations(actorName + "_idle");
         runAnimation = getWindow().getResourceManager().getAnimations(actorName + "_run");
         attackAnimation = getWindow().getResourceManager().getAnimations(actorName + "_melee");
         deathAnimation = getWindow().getResourceManager().getAnimations(actorName + "_dead");
+        rangeAnimation = getWindow().getResourceManager().getAnimations(actorName + "_melee");
 
         // set state to IDLE as the actor has just been created
         setState(IDLE);
@@ -179,6 +177,11 @@ public abstract class Actor extends Entity {
                 sound.play();
                 break;
 
+            case RANGING:
+                setAnimation(attackAnimation);
+                setOrigin(50, 94);
+                break;
+
             case DYING:
                 setAnimation(deathAnimation);
                 setOrigin(138, 94);
@@ -221,6 +224,15 @@ public abstract class Actor extends Entity {
      */
     public void attack() {
         setState(ATTACKING);
+    }
+
+
+    /***
+     * Performs a range attack and sets the Players state to RANGING.
+     */
+    public void range() {
+        setState(RANGING);
+        projectiles.add(new Projectile(getWindow(), getWindow().getInputHandler().getMousePosition(), getPosition(), 10, 10));
     }
 
     /***
@@ -339,7 +351,7 @@ public abstract class Actor extends Entity {
      * States for the players animation/actions
      */
     public enum State {
-        IDLE, RUNNING, ATTACKING, DYING
+        IDLE, RUNNING, ATTACKING, DYING, RANGING
     }
 
     public void damage(int damage) {
@@ -372,5 +384,17 @@ public abstract class Actor extends Entity {
 
     public int getWeaponDamage() {
         return weaponDamage;
+    }
+
+    public ArrayList<Projectile> getProjectiles() {
+        return projectiles;
+    }
+
+    public Sound getSound() {
+        return sound;
+    }
+
+    public void setSound(Sound sound) {
+        this.sound = sound;
     }
 }

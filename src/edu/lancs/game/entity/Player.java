@@ -1,12 +1,13 @@
 package edu.lancs.game.entity;
 
-import edu.lancs.game.Debug;
 import edu.lancs.game.InputHandler;
 import edu.lancs.game.Window;
+import org.jsfml.audio.Sound;
 
 import static edu.lancs.game.Constants.*;
 import static edu.lancs.game.entity.Actor.State.ATTACKING;
 import static edu.lancs.game.entity.Actor.State.IDLE;
+import static edu.lancs.game.entity.Actor.State.RANGING;
 
 public class Player extends Actor {
 
@@ -19,6 +20,10 @@ public class Player extends Actor {
     private long currentTime;
     private long lastUpdate;
 
+    private boolean hasBossKey;
+    private int speedBoostPickups;
+    private int runePickups;
+
     // the entity variables
     private InputHandler inputHandler;
 
@@ -26,11 +31,14 @@ public class Player extends Actor {
         super(window, "knight", PLAYER_STARTING_X, PLAYER_STARTING_Y, true, PLAYER_STARTING_HEALTH, PLAYER_STARTING_HEALTH, PLAYER_WEAPON_DAMAGE, PLAYER_BASE_MOVEMENT);
         // initialise player stats (health, score, etc)
         score = 0;
-        batteryLevel = 0;
+        batteryLevel = 100;
+        speedBoostPickups = 0;
+        runePickups = 100;
         inputHandler = getWindow().getInputHandler();
         startTime = System.currentTimeMillis();
         currentTime = startTime;
         lastUpdate = startTime;
+        hasBossKey = false;
     }
 
     /***
@@ -75,10 +83,29 @@ public class Player extends Actor {
         } else if (inputHandler.isSpaceKeyPressed()) {
             if (getState() != ATTACKING)
                 attack();
+        } else if (inputHandler.isMouseClicked()) {
+            if(getState() != RANGING) {
+                range();
+            }
         } else {
             if (getState() != IDLE) {
                 setState(IDLE);
             }
+        }
+    }
+
+    /***
+     * Performs a range attack and sets the Players state to RANGING.
+     */
+    @Override
+    public void range() {
+        setState(RANGING);
+        if(runePickups > 0) {
+            setSound(new Sound(getWindow().getResourceManager().getSound("projectile")));
+            getSound().setPitch(0.8f);
+            getSound().play();
+            getProjectiles().add(new Projectile(getWindow(), getWindow().getInputHandler().getMousePosition(), getPosition(), PLAYER_MAGIC_DAMAGE, 10));
+            runePickups--;
         }
     }
 
@@ -130,5 +157,29 @@ public class Player extends Actor {
 
     public long getTimeAlive() {
         return currentTime;
+    }
+
+    public boolean hasBossKey() {
+        return hasBossKey;
+    }
+
+    public void setHasBossKey(boolean hasBossKey) {
+        this.hasBossKey = hasBossKey;
+    }
+
+    public int getSpeedBoostPickups() {
+        return speedBoostPickups;
+    }
+
+    public void setSpeedBoostPickups(int speedBoostPickups) {
+        this.speedBoostPickups = speedBoostPickups;
+    }
+
+    public int getRunePickups() {
+        return runePickups;
+    }
+
+    public void setRunePickups(int runePickups) {
+        this.runePickups = runePickups;
     }
 }

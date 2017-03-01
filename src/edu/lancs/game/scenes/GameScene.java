@@ -28,6 +28,7 @@ public class GameScene extends Scene {
     private Level currentLevel;
     private Level bossLevel;
     private Chest chest;
+    private int level;
 
     public GameScene(Window window, String username) {
         super(window);
@@ -37,6 +38,7 @@ public class GameScene extends Scene {
         setBackgroundColour(Color.BLACK);
 
         this.username = username;
+        this.level = 1;
 
         player = new Player(getWindow()); // creates a Player and passes the Window into it
         hud = new HUD(getWindow(), player); // creates a HUD and passes Window and the player just created into it for variables
@@ -46,22 +48,20 @@ public class GameScene extends Scene {
 
         levels = new Level[GAME_LEVEL_WIDTH][GAME_LEVEL_HEIGHT]; // creates a 2D array to fill with levels
 
-        chest = new Chest(getWindow(), 200, 200);
+        generateRooms();
+        int startingLevelColumn = random.nextInt(GAME_LEVEL_WIDTH);
+        int startingLevelRow = random.nextInt(GAME_LEVEL_HEIGHT);
 
-        for(int column = 0; column < GAME_LEVEL_WIDTH; column++)
-            for(int row = 0; row < GAME_LEVEL_HEIGHT; row++)
-                //FIXME: Make this a little less parameter heavy
-                levels[column][row] = new Level(getWindow(), random.nextInt(ROOM_WIDTH_MAX + 1 - ROOM_WIDTH_MIN) + ROOM_WIDTH_MIN, random.nextInt(ROOM_HEIGHT_MAX + 1 - ROOM_HEIGHT_MIN) + ROOM_HEIGHT_MIN, random.nextInt(5), "green_stone", new Color(random.nextInt(192 + 1 - 64) + 64, random.nextInt(128 + 1 - 64) + 64, random.nextInt(64 + 1) + 10), column, row); // generates a level 7x5 with 0 complexity and using textures "green_stone"
+        currentLevel = levels[startingLevelRow][startingLevelColumn]; // randomises the starting level
 
-        currentLevel = levels[random.nextInt(GAME_LEVEL_WIDTH)][random.nextInt(GAME_LEVEL_HEIGHT)]; // randomises the starting level
         currentLevel.discoverLevel();
         currentLevel.getEnemies().clear();
 
-        bossLevel = levels[random.nextInt(GAME_LEVEL_WIDTH)][random.nextInt(GAME_LEVEL_HEIGHT)]; // randomises the boss level
-        bossLevel.setBossLevel(true);
-
         miniMap = new MiniMap(getWindow(), levels); // creates the minimap
         lighting = new Lighting(getWindow(), player); // created the lighting instance
+
+        System.out.println("Current level " + currentLevel.getLevelColumnPosition() + " - " + currentLevel.getLevelRowPosition());
+        System.out.println("Boss level " + bossLevel.getLevelColumnPosition() + " - " + bossLevel.getLevelRowPosition());
     }
 
     /***
@@ -113,7 +113,14 @@ public class GameScene extends Scene {
         // draws the enemies
         //FIXME: This should be done every time an enemy dies, not every cycle.
         if(currentLevel.getEnemies().size() == 0) {
-            currentLevel.getDoors().forEach(Door::unlock);
+            if(currentLevel.isBossLevel())
+                currentLevel.getLevelUpDoor().unlock();
+            else
+                for(Door door: currentLevel.getDoors()) {
+                    if (!door.requiresKey()) {
+                        door.unlock();
+                    }
+                }
         }
 
         //enemies.stream().filter(Actor::isDead).forEach(enemy -> enemies.remove(enemy)); // remove any dead enemies FIXME: Could be done more efficiently
@@ -151,6 +158,26 @@ public class GameScene extends Scene {
 
         // draws the player
         window.draw(player);
+
+        for(int projectileId = 0; projectileId < player.getProjectiles().size(); projectileId++) {
+            Projectile projectile =  player.getProjectiles().get(projectileId);
+            projectile.update();
+            window.draw(projectile);
+            for(Enemy enemy : currentLevel.getEnemies()) {
+                if (projectile.getGlobalBounds().intersection(new FloatRect(enemy.getPosition().x, enemy.getPosition().y, 20, 30)) != null) {
+                    enemy.damage(projectile.getDamage());
+                    player.getProjectiles().remove(projectile);
+                    projectileId--;
+                    System.out.println("Hit " + projectile.getDamage());
+                    System.out.println(enemy.getHealth() + "/" + enemy.getHearts());
+                    break;
+                }
+            }
+            if(projectile.hasArrived()) {
+                player.getProjectiles().remove(projectile); // remove projectile when it reaches the mouse position
+                projectileId--;
+            }
+        }
 
         // draw the lighting
         /*lighting.generateLighting(100 + player.getBatteryLevel());
@@ -238,7 +265,26 @@ public class GameScene extends Scene {
         int destinationRow = door.getDestinationRow();
 
         // if the door is in bounds of the level array
-        if((destinationColumn >= 0 && destinationColumn < GAME_LEVEL_WIDTH) && (destinationRow >= 0 && destinationRow < GAME_LEVEL_HEIGHT)) {
+        if(currentLevel.isBossLevel()) {
+            if (!door.isLocked()) {
+                level++;
+                Debug.print("Teleporting to room: " + destinationRow + ", " + destinationColumn + " Level: " + level);
+                currentLevel.setCurrentLevel(false); // set the level loaded to not be the current level
+                currentLevel.unloadLevel();
+                generateRooms();
+                currentLevel = levels[destinationRow][destinationColumn]; // change the level
+                currentLevel.discoverLevel(); // discover (minimap)
+                currentLevel.setCurrentLevel(true); // set the current level
+                player.resetCollision();
+                return true;
+            }
+        } else if((destinationColumn >= 0 && destinationColumn < GAME_LEVEL_WIDTH) && (destinationRow >= 0 && destinationRow < GAME_LEVEL_HEIGHT)) {
+            if (door.requiresKey()) {
+                if (player.hasBossKey()) {
+                    door.unlock();
+                    player.setHasBossKey(false);
+                }
+            }
             if (!door.isLocked()) {
                 Debug.print("Teleporting to room: " + destinationRow + ", " + destinationColumn);
                 currentLevel.setCurrentLevel(false); // set the level loaded to not be the current level
@@ -274,10 +320,66 @@ public class GameScene extends Scene {
             case JOYSTICK_BUTTON_RELEASED:
                 getWindow().getInputHandler().processInputs(event.asJoystickButtonEvent());
                 break;
+
+            case MOUSE_BUTTON_PRESSED:
+            case MOUSE_BUTTON_RELEASED:
+                getWindow().getInputHandler().processInputs(event.asMouseButtonEvent());
         }
     }
 
+    public void generateRooms() {
+        Random random = new Random();
+        for(int column = 0; column < GAME_LEVEL_WIDTH; column++)
+            for(int row = 0; row < GAME_LEVEL_HEIGHT; row++)
+                //FIXME: Make this a little less parameter heavy
+                levels[column][row] = new Level(getWindow(), random.nextInt(ROOM_WIDTH_MAX + 1 - ROOM_WIDTH_MIN) + ROOM_WIDTH_MIN, random.nextInt(ROOM_HEIGHT_MAX + 1 - ROOM_HEIGHT_MIN) + ROOM_HEIGHT_MIN, random.nextInt(5), "green_stone", new Color(random.nextInt(192 + 1 - 64) + 64, random.nextInt(128 + 1 - 64) + 64, random.nextInt(64 + 1) + 10), column, row); // generates a level 7x5 with 0 complexity and using textures "green_stone"
+
+        int bossLevelColumn = random.nextInt(GAME_LEVEL_WIDTH);
+        int bossLevelRow = random.nextInt(GAME_LEVEL_HEIGHT);
+
+        bossLevel = levels[bossLevelRow][bossLevelColumn]; // randomises the boss level
+        bossLevel.setBossLevel(true);
+        bossLevel.generateBossRoom();
+
+        if(bossLevelRow > 0) {
+            levels[bossLevelRow - 1][bossLevelColumn].getEastDoor().setTexture(getWindow().getResourceManager().getTextures("green_stone_door_square_closed_E_1"));
+            levels[bossLevelRow - 1][bossLevelColumn].getEastDoor().setRequiresKey(true);
+        }
+        if(bossLevelRow < GAME_LEVEL_WIDTH - 1) {
+            levels[bossLevelRow + 1][bossLevelColumn].getWestDoor().setTexture(getWindow().getResourceManager().getTextures("green_stone_door_square_closed_W_1"));
+            levels[bossLevelRow + 1][bossLevelColumn].getWestDoor().setRequiresKey(true);
+        }
+        if(bossLevelColumn > 0) {
+            levels[bossLevelRow][bossLevelColumn - 1].getSouthDoor().setTexture(getWindow().getResourceManager().getTextures("green_stone_door_square_closed_S_1"));
+            levels[bossLevelRow][bossLevelColumn - 1].getSouthDoor().setRequiresKey(true);
+        }
+        if(bossLevelColumn < GAME_LEVEL_HEIGHT - 1) {
+            levels[bossLevelRow][bossLevelColumn + 1].getNorthDoor().setTexture(getWindow().getResourceManager().getTextures("green_stone_door_square_closed_N_1"));
+            levels[bossLevelRow][bossLevelColumn + 1].getNorthDoor().setRequiresKey(true);
+        }
+        bossLevel.discoverLevel(); // TODO: Remove, resting purposes only
+
+        int bossKeyColumn = random.nextInt(GAME_LEVEL_WIDTH);
+        int bossKeyRow = random.nextInt(GAME_LEVEL_HEIGHT);
+
+        // make sure it's not in the boss room
+        while(bossKeyColumn == bossLevelColumn && bossKeyRow == bossLevelRow) {
+            bossKeyColumn = random.nextInt(GAME_LEVEL_WIDTH);
+            bossKeyRow = random.nextInt(GAME_LEVEL_HEIGHT);
+        }
+
+        int randomX = (random.nextInt(levels[bossKeyRow][bossKeyColumn].getWidth() - 2) + 1) * MAP_TILE_WIDTH + (MAP_TILE_WIDTH / 2);
+        int randomY = (random.nextInt(levels[bossKeyRow][bossKeyColumn].getHeight() - 2) + 1) * MAP_TILE_HEIGHT + (MAP_TILE_HEIGHT / 2);
+        levels[bossKeyRow][bossKeyColumn].getChests().add(new Chest(getWindow(), randomX, randomY, Pickup.Type.values().length - 1)); // put key in chest
+        levels[bossKeyRow][bossKeyColumn].discoverLevel();
+        System.out.println("Boss room key is at " + bossKeyColumn + " - " + bossKeyRow);
+    }
+
     public void gameOver() {
+        currentLevel.unloadLevel();
+        if(player.getSound() != null)
+            player.getSound().stop();
+
         HighscoresUpdater highscoresUpdater = new HighscoresUpdater(username, player.getScore(), player.getTimeAlive());
         Thread highScoresThread = new Thread(highscoresUpdater);
         highScoresThread.start();

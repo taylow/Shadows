@@ -2,12 +2,14 @@ package edu.lancs.game.entity;
 
 import edu.lancs.game.Window;
 
+import java.util.Random;
+
 import static edu.lancs.game.Constants.PLAYER_BASE_MOVEMENT;
 
 public class Pickup extends Entity {
 
     public enum Type {
-        HEALTH, BATTERY, SPEED, GOLD_COIN, SILVER_COIN, KEY
+        HEALTH, BATTERY, SPEED, GOLD_COIN, SILVER_COIN, RUNE, KEY // make sure key is at the end
     }
 
     private boolean isUsed;
@@ -40,6 +42,10 @@ public class Pickup extends Entity {
                 setTexture(getWindow().getResourceManager().getTextures("coin_silver"));
                 break;
 
+            case RUNE:
+                setTexture(getWindow().getResourceManager().getTextures("fire_rune"));
+                break;
+
             case KEY:
                 setTexture(getWindow().getResourceManager().getTextures("boss_door_key"));
                 break;
@@ -61,38 +67,38 @@ public class Pickup extends Entity {
             case HEALTH:
                 if(player.getHealth() < player.getHearts()) {
                     player.setHealth(player.getHealth() + 2);
-                    setUsed(true);
                 }
                 break;
 
             case BATTERY:
                 if(player.getBatteryLevel() < 100) {
                     player.setBatteryLevel(player.getBatteryLevel() + 100);
-                    setUsed(true);
                 }
                 break;
 
             case GOLD_COIN:
                 player.addScore(1000);
-                setUsed(true);
                 break;
 
             case SILVER_COIN:
                 player.addScore(500);
-                setUsed(true);
                 break;
 
             case SPEED:
-                // FIXME: Not actually added setSpeed yet ;/
-                player.setSpeed(PLAYER_BASE_MOVEMENT + 1);
-                setUsed(true);
+                player.setSpeedBoostPickups(player.getSpeedBoostPickups() + 1);
+                break;
+
+            case RUNE:
+                Random random = new Random();
+                player.setRunePickups(player.getRunePickups() + random.nextInt(10) + 1);
                 break;
 
             case KEY:
                 player.addScore(1000);
-                setUsed(true);
+                player.setHasBossKey(true);
                 break;
         }
+        setUsed(true);
     }
 
     public void setUsed(boolean used) {

@@ -35,6 +35,7 @@ public class Level {
     private Door eastDoor;
     private Door southDoor;
     private Door westDoor;
+    private Door levelUpDoor;
 
     private ArrayList<Door> doors;
 
@@ -67,7 +68,7 @@ public class Level {
         pickups = new ArrayList<>();
         chests = new ArrayList<>();
 
-        generateTiles(textureName);
+        generateTiles();
         generateEnemies(complexity);
         generateChests();
     }
@@ -76,10 +77,8 @@ public class Level {
      * Generates a rectangle room using a texture name by filling the tiles array with the correct time based on where they are.
      * TODO: Need to add more randomisation.
      * TODO: This functionality could be passed into the Tile/Door itself to prevent this much code, but this works perfectly fine.
-     *
-     * @param name - The name of the texture (e.g. green_stone)
      */
-    public void generateTiles(String name) {
+    public void generateTiles() {
         Random random = new Random();
         //FIXME: For soem reason, when generating smaller room sizes, the doors teleport you to odd places. Maybe update player position before loading next room?
         // north side
@@ -192,6 +191,30 @@ public class Level {
         }
     }
 
+    public void generateBossRoom() {
+        Random random = new Random();
+        width = GAME_LEVEL_WIDTH;
+        height = GAME_LEVEL_HEIGHT;
+        tiles = new Tile[height][width];
+        levelColour = new Color(random.nextInt(192 + 1 - 64) + 64, random.nextInt(64 + 1) + 10, random.nextInt(64 + 1) + 10);
+        generateTiles();
+        chests.clear();
+
+        enemies.clear();
+        enemies.add(new Enemy(getWindow(), GAME_LEVEL_WIDTH / 2 * 114, GAME_LEVEL_HEIGHT / 2 * 114, 100, Color.RED));
+
+        for(Door door : doors) {
+            door.setTexture(getWindow().getResourceManager().getTextures(textureName + "_door_round_closed_" + door.getDirection() + "_3"));
+        }
+
+        levelUpDoor = new Door(getWindow(), textureName + "_door_square", N, 1, 2, 0, levelRowPosition, levelColumnPosition, true, levelColour);
+        tiles[0][2] = levelUpDoor;
+
+        //TODO: Spawn some pickups
+        /*for(int x = 0; x < 10; x++)
+            pickups.add(new Pickup(getWindow(), 114 + 114 * x, 114, 0));*/
+    }
+
     /***
      * Returns the whole level in a 2D array of Tiles (sprites) that can be drawn to a Scene.
      *
@@ -288,5 +311,25 @@ public class Level {
 
     public ArrayList<Chest> getChests() {
         return chests;
+    }
+
+    public Door getLevelUpDoor() {
+        return levelUpDoor;
+    }
+
+    public Door getNorthDoor() {
+        return northDoor;
+    }
+
+    public Door getEastDoor() {
+        return eastDoor;
+    }
+
+    public Door getSouthDoor() {
+        return southDoor;
+    }
+
+    public Door getWestDoor() {
+        return westDoor;
     }
 }

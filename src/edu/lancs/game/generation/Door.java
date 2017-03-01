@@ -10,6 +10,7 @@ public class Door extends Tile {
     private int destinationRow;
     private int destinationColumn;
     private boolean isLocked;
+    private boolean requiresKey;
     //TODO: Add a key system
 
     public Door(Window window, String name, Direction direction, int number, int positionX, int positionY, int destinationColumn, int destinationRow, boolean isLocked, Color color) {
@@ -17,6 +18,7 @@ public class Door extends Tile {
         this.destinationRow = destinationRow;
         this.destinationColumn = destinationColumn;
         this.isLocked = isLocked;
+        requiresKey = false;
     }
 
     /***
@@ -69,5 +71,13 @@ public class Door extends Tile {
     @Override
     public void collide() {
 
+    }
+
+    public boolean requiresKey() {
+        return requiresKey;
+    }
+
+    public void setRequiresKey(boolean requiresKey) {
+        this.requiresKey = requiresKey;
     }
 }

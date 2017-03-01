@@ -9,7 +9,7 @@ import org.jsfml.graphics.Text;
 
 import java.util.ArrayList;
 
-import static edu.lancs.game.Constants.HUD_HEART_DIMENSION;
+import static edu.lancs.game.Constants.*;
 
 public class HUD {
 
@@ -26,6 +26,13 @@ public class HUD {
     private Text scoreText;
     private Text timeText;
     private Text pickupText;
+
+    private Text speedBoostText;
+    private Text runeText;
+
+    private Decoration[] pickupsBackground;
+    private Decoration[] storablePicksup;
+    private Text[] pickupAmountsText;
 
     public HUD(Window window, Player player) {
         this.window = window;
@@ -47,10 +54,36 @@ public class HUD {
         timeText.setColor(Color.YELLOW);
         texts.add(timeText); // adds this text to the ArrayList of texts (means for multiple texts with one one draw)
 
-        pickupText = new Text ("Picked Up " + Pickup.Type.HEALTH, getWindow().getResourceManager().getFont("BLKCHCRY"));
+        pickupsBackground = new Decoration[STORABLE_PICKUPS];
+        for(int x = 0; x < STORABLE_PICKUPS; x++) {
+            pickupsBackground[x] = new Decoration(getWindow(), "pickup_background", 20, GAME_HEIGHT - 60, 40, 40);
+            decorations.add(pickupsBackground[x]);
+        }
+
+        storablePicksup = new Decoration[STORABLE_PICKUPS];
+        storablePicksup[0] = new Decoration(getWindow(), "boost_speed", 20, GAME_HEIGHT - 60, 40, 40);
+        decorations.add(storablePicksup[0]);
+
+        storablePicksup[1] = new Decoration(getWindow(), "fire_rune", 20, GAME_HEIGHT - 60, 40, 40);
+        decorations.add(storablePicksup[1]);
+
+        storablePicksup[2] = new Decoration(getWindow(), "boss_door_key", 20, GAME_HEIGHT - 60, 40, 40);
+        decorations.add(storablePicksup[2]);
+
+        speedBoostText = new Text("0000", getWindow().getResourceManager().getFont("8-BIT"));
+        speedBoostText.setColor(Color.WHITE);
+        speedBoostText.setScale(0.3f, 0.3f);
+        texts.add(speedBoostText);
+
+        runeText = new Text("0000", getWindow().getResourceManager().getFont("8-BIT"));
+        runeText.setColor(Color.WHITE);
+        runeText.setScale(0.3f, 0.3f);
+        texts.add(runeText);
+
+        /*pickupText = new Text ("Picked Up " + Pickup.Type.HEALTH, getWindow().getResourceManager().getFont("BLKCHCRY"));
         pickupText.setPosition(getWindow().getWidth() / 2 - 75, 10);
         pickupText.setColor(Color.BLUE);
-        texts.add(pickupText);
+        texts.add(pickupText);*/
     }
 
 
@@ -62,6 +95,16 @@ public class HUD {
         updateHealth();
         scoreText.setString(String.format("%06d", player.getScore())); // updates the players score
         timeText.setString(String.format("%06d", player.getTimeAlive())); // updates the players score
+        speedBoostText.setString(String.format("%04d", player.getSpeedBoostPickups())); // updates the number of speed boosts the player has
+        runeText.setString(String.format("%04d", player.getRunePickups())); // updates the players score
+        for(int x = 0; x < STORABLE_PICKUPS; x++) {
+            pickupsBackground[x].setPosition(offsetX + getWindow().getWidth() / 2 - (GAME_WIDTH / 2) + 10 + (x * 50), offsetY + 60);
+            storablePicksup[x].setPosition(offsetX + getWindow().getWidth() / 2 - (GAME_WIDTH / 2) + 10 + (x * 50), offsetY + 60);
+        }
+        if(!player.hasBossKey())
+            storablePicksup[2].setFillColor(Color.TRANSPARENT);
+        else
+            storablePicksup[2].setFillColor(Color.BLACK);
     }
 
     /***
@@ -72,7 +115,9 @@ public class HUD {
         offsetY = getWindow().getView().getCenter().y - (getWindow().getView().getSize().y / 2);
         scoreText.setPosition(offsetX + getWindow().getWidth() - 150, offsetY + 10);
         timeText.setPosition(offsetX + getWindow().getWidth() / 2 - 15, offsetY + 10);
-        pickupText.setPosition(offsetX + getWindow().getWidth() / 2 - 600, offsetY + 50);
+        speedBoostText.setPosition(offsetX + getWindow().getWidth() / 2 - (GAME_WIDTH / 2) + 12, offsetY + 62);
+        runeText.setPosition(offsetX + getWindow().getWidth() / 2 - (GAME_WIDTH / 2) + 10 + 52, offsetY + 62);
+        /*pickupText.setPosition(offsetX + getWindow().getWidth() / 2 - 600, offsetY + 50);*/
 
     }
 

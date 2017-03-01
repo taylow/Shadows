@@ -2,18 +2,18 @@ package edu.lancs.game;
 
 import edu.lancs.game.entity.Player;
 import org.jsfml.audio.Sound;
+import org.jsfml.system.Vector2f;
 import org.jsfml.system.Vector2i;
 import org.jsfml.window.Keyboard;
-import org.jsfml.window.event.Event;
-import org.jsfml.window.event.JoystickButtonEvent;
-import org.jsfml.window.event.JoystickEvent;
-import org.jsfml.window.event.JoystickMoveEvent;
+import org.jsfml.window.Mouse;
+import org.jsfml.window.event.*;
 
 import static edu.lancs.game.Constants.*;
 import static org.jsfml.window.Joystick.Axis.X;
 import static org.jsfml.window.Joystick.Axis.Y;
 import static org.jsfml.window.event.Event.Type.JOYSTICK_BUTTON_PRESSED;
 import static org.jsfml.window.event.Event.Type.JOYSTICK_BUTTON_RELEASED;
+import static org.jsfml.window.event.Event.Type.MOUSE_LEFT;
 
 public class InputHandler {
 
@@ -24,8 +24,9 @@ public class InputHandler {
     private boolean dKeyPressed;
     private boolean spaceKeyPressed;
     private boolean ctrlKeyPressed;
+    private boolean mouseClicked;
 
-    private Vector2i mousePosition;
+    private Vector2f mousePosition;
 
     public InputHandler(Window window) {
         this.window = window;
@@ -37,8 +38,9 @@ public class InputHandler {
         dKeyPressed = false;
         sKeyPressed = false;
         ctrlKeyPressed = false;
+        mouseClicked = false;
 
-        mousePosition = new Vector2i(1, 1);
+        mousePosition = new Vector2f(1, 1);
     }
 
     /***
@@ -146,13 +148,27 @@ public class InputHandler {
         }
     }
 
+    public void processInputs(MouseButtonEvent event) {
+        switch(event.button) {
+            case LEFT:
+                mouseClicked = Mouse.isButtonPressed(Mouse.Button.LEFT);
+                System.out.println("Mouse X: " + (getMousePosition().x - GAME_WIDTH / 2));
+                System.out.println("Mouse Y: " + (getMousePosition().y - GAME_HEIGHT / 2));
+                /*System.out.println("Mouse X: " + getMousePosition().x);
+                System.out.println("Mouse Y: " + getMousePosition().y);
+                System.out.println("View X: " + getWindow().getView().getCenter().x);
+                System.out.println("View Y: " + getWindow().getView().getCenter().y);*/
+                break;
+        }
+    }
+
     /***
      * Updates the mouse position every time the mouse is moved.
      *
      * @param event - MouseEvent from the moving mouse
      */
     public void updateMouseMovement(Event event) {
-        mousePosition = event.asMouseEvent().position; // updates mouse position
+        mousePosition = new Vector2f(event.asMouseEvent().position); // updates mouse position
     }
 
     /***
@@ -218,12 +234,16 @@ public class InputHandler {
         return wKeyPressed || aKeyPressed || sKeyPressed || dKeyPressed;
     }
 
+    public boolean isMouseClicked() {
+        return mouseClicked;
+    }
+
     /***
      * Returns the current mouse position.
      *
      * @return - Current mouse position
      */
-    public Vector2i getMousePosition() {
+    public Vector2f getMousePosition() {
         return mousePosition;
     }
 
