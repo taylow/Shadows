@@ -31,7 +31,7 @@ public class MenuScene extends Scene {
 
         // buttons and decorations to be displayed in the MenuScene
         buttons.add(new MenuButton(window, this, "New Game", NEW_GAME, getWindow().getWidth() / 2 - (MENU_BUTTON_WIDTH / 2), 250));
-        buttons.add(new MenuButton(window, this, "Resume Game", RESUME_GAME, getWindow().getWidth() / 2 - (MENU_BUTTON_WIDTH / 2), 250 + MENU_BUTTON_HEIGHT * 1.1f));
+        buttons.add(new MenuButton(window, this, "Credits", CREDITS, getWindow().getWidth() / 2 - (MENU_BUTTON_WIDTH / 2), 250 + MENU_BUTTON_HEIGHT * 1.1f));
         buttons.add(new MenuButton(window, this, "High Scores", HIGH_SCORES, getWindow().getWidth() / 2 - (MENU_BUTTON_WIDTH / 2), 250 + MENU_BUTTON_HEIGHT * 2.2f));
         buttons.add(new MenuButton(window, this, "Tutorial", TUTORIAL, getWindow().getWidth() / 2 - (MENU_BUTTON_WIDTH / 2), 250 + MENU_BUTTON_HEIGHT * 3.3f));
         buttons.add(new MenuButton(window, this, "Quit", EXIT, getWindow().getWidth() / 2 - (MENU_BUTTON_WIDTH / 2), 250 + MENU_BUTTON_HEIGHT * 4.4f));

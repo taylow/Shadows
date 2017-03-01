@@ -2,10 +2,7 @@ package edu.lancs.game.gui.buttons;
 
 import edu.lancs.game.Debug;
 import edu.lancs.game.Window;
-import edu.lancs.game.scenes.GameScene;
-import edu.lancs.game.scenes.Scene;
-import edu.lancs.game.scenes.TutorialScene;
-import edu.lancs.game.scenes.UserNameScene;
+import edu.lancs.game.scenes.*;
 
 import java.io.IOException;
 import java.net.URI;
@@ -30,11 +27,9 @@ public class MenuButton extends Button {
                 setSelectTexture(window.getResourceManager().getTextures("new_game_hover"));
                 break;
 
-            case RESUME_GAME:
-                setDefaultTexture(window.getResourceManager().getTextures("resume_default"));
-                setSelectTexture(window.getResourceManager().getTextures("resume_hover"));
-                setDisabledTexture(window.getResourceManager().getTextures("resume_disabled"));
-                setDisabled(true);
+            case CREDITS:
+                setDefaultTexture(window.getResourceManager().getTextures("tutorial_default"));
+                setSelectTexture(window.getResourceManager().getTextures("tutorial_hover"));
                 break;
 
             case PLAY_GAME:
@@ -81,9 +76,14 @@ public class MenuButton extends Button {
                     getParentScene().deactivate();
                     break;
 
-                case RESUME_GAME:
+                case CREDITS:
                     // TODO: Add loading here
-                    System.out.println("RESUME GAME");
+                    Debug.print("[Button] Credits ");
+                    CreditScene creditScene = new CreditScene(getWindow(), getParentScene());
+                    int creditSceneIndex = getWindow().addScene(creditScene);
+                    creditScene.activate();
+                    getWindow().setCurrentScene(creditSceneIndex);
+                    getParentScene().deactivate();
                     break;
 
                 case PLAY_GAME:
@@ -138,6 +138,6 @@ public class MenuButton extends Button {
     }
 
     public enum Type {
-        NEW_GAME, RESUME_GAME, PLAY_GAME, HIGH_SCORES, TUTORIAL, EXIT
+        NEW_GAME, CREDITS, PLAY_GAME, HIGH_SCORES, TUTORIAL, EXIT
     }
 }
