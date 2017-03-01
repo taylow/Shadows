@@ -45,7 +45,7 @@ public class Constants {
     public static final int ENEMY_STARTING_HEALTH_MIN = 1;
     public static final int ENEMY_STARTING_HEALTH_MAX = 5;
     public static final int ENEMY_MAGIC_DAMAGE = 10;
-    public static int ENEMY_STARTING_RUNES = 15;
+    public static int ENEMY_STARTING_RUNES = 150;
 
     /*Map Constants*/
     public static final int MAP_TILE_WIDTH = 114;
