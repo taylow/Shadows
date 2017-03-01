@@ -33,7 +33,7 @@ public class Player extends Actor {
         score = 0;
         batteryLevel = 100;
         speedBoostPickups = 0;
-        runePickups = 100;
+        runePickups = PLAYER_STARTING_RUNES;
         inputHandler = getWindow().getInputHandler();
         startTime = System.currentTimeMillis();
         currentTime = startTime;

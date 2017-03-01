@@ -172,8 +172,6 @@ public class GameScene extends Scene {
                     enemy.damage(projectile.getDamage());
                     player.getProjectiles().remove(projectile);
                     projectileId--;
-                    System.out.println("Hit " + projectile.getDamage());
-                    System.out.println(enemy.getHealth() + "/" + enemy.getHearts());
                     break;
                 }
             }
@@ -290,7 +288,7 @@ public class GameScene extends Scene {
                 }
             }
             if (!door.isLocked()) {
-                Debug.print("Teleporting to room: " + destinationRow + ", " + destinationColumn);
+                Debug.print("Teleporting to room: " + destinationRow + ", " + destinationColumn + " Level: " + level);
                 currentLevel.setCurrentLevel(false); // set the level loaded to not be the current level
                 currentLevel.unloadLevel();
                 currentLevel = levels[destinationRow][destinationColumn]; // change the level
@@ -341,6 +339,8 @@ public class GameScene extends Scene {
         int bossLevelColumn = random.nextInt(GAME_LEVEL_WIDTH);
         int bossLevelRow = random.nextInt(GAME_LEVEL_HEIGHT);
 
+        Debug.print("Boss room is at " + bossLevelColumn + " - " + bossLevelRow);
+        
         bossLevel = levels[bossLevelRow][bossLevelColumn]; // randomises the boss level
         bossLevel.setBossLevel(true);
         bossLevel.generateBossRoom();
@@ -361,6 +361,7 @@ public class GameScene extends Scene {
             levels[bossLevelRow][bossLevelColumn + 1].getNorthDoor().setTexture(getWindow().getResourceManager().getTextures("green_stone_door_square_closed_N_1"));
             levels[bossLevelRow][bossLevelColumn + 1].getNorthDoor().setRequiresKey(true);
         }
+
         bossLevel.discoverLevel(); // TODO: Remove, resting purposes only
 
         int bossKeyColumn = random.nextInt(GAME_LEVEL_WIDTH);
@@ -375,8 +376,8 @@ public class GameScene extends Scene {
         int randomX = (random.nextInt(levels[bossKeyRow][bossKeyColumn].getWidth() - 2) + 1) * MAP_TILE_WIDTH + (MAP_TILE_WIDTH / 2);
         int randomY = (random.nextInt(levels[bossKeyRow][bossKeyColumn].getHeight() - 2) + 1) * MAP_TILE_HEIGHT + (MAP_TILE_HEIGHT / 2);
         levels[bossKeyRow][bossKeyColumn].getChests().add(new Chest(getWindow(), randomX, randomY, Pickup.Type.values().length - 1)); // put key in chest
-        levels[bossKeyRow][bossKeyColumn].discoverLevel();
-        System.out.println("Boss room key is at " + bossKeyColumn + " - " + bossKeyRow);
+        levels[bossKeyRow][bossKeyColumn].discoverLevel(); // TODO: Remove, resting purposes only
+        Debug.print("Boss room key is at " + bossKeyColumn + " - " + bossKeyRow);
     }
 
     public void gameOver() {

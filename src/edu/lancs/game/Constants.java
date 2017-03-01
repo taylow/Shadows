@@ -34,6 +34,7 @@ public class Constants {
     public static final float PLAYER_BASE_MOVEMENT = 5;
     public static final int PLAYER_STARTING_HEALTH = 10; // (this/2 is the number of hearts on the HUD) FIXME: Odd numbers may cause issues
     public static final int PLAYER_MAGIC_DAMAGE = 10;
+    public static final int PLAYER_STARTING_RUNES = 100;
     public static final float PLAYER_SCALE_WIDTH = 1.0f;
     public static final float PLAYER_SCALE_HEIGHT = 1.0f;
 
