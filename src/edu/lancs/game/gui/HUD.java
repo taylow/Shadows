@@ -70,14 +70,14 @@ public class HUD {
         storablePicksup[2] = new Decoration(getWindow(), "boss_door_key", 20, GAME_HEIGHT - 60, 40, 40);
         decorations.add(storablePicksup[2]);
 
-        speedBoostText = new Text("0000", getWindow().getResourceManager().getFont("ComicSans"));
+        speedBoostText = new Text("000", getWindow().getResourceManager().getFont("ComicSans"));
         speedBoostText.setColor(Color.WHITE);
-        speedBoostText.setScale(0.3f, 0.3f);
+        speedBoostText.setScale(0.4f, 0.4f);
         texts.add(speedBoostText);
 
-        runeText = new Text("0000", getWindow().getResourceManager().getFont("ComicSans"));
+        runeText = new Text("000", getWindow().getResourceManager().getFont("ComicSans"));
         runeText.setColor(Color.WHITE);
-        runeText.setScale(0.3f, 0.3f);
+        runeText.setScale(0.4f, 0.4f);
         texts.add(runeText);
 
         /*pickupText = new Text ("Picked Up " + Pickup.Type.HEALTH, getWindow().getResourceManager().getFont("BLKCHCRY"));

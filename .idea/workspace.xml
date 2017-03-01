@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5df7e5be-326c-48a9-947d-b0eec08caa13" name="Default" comment="Resources added">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_github_sworisbreathing_sfmf4j_sfmf4j_commonsio_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_github_sworisbreathing_sfmf4j_sfmf4j_commonsio_1_0.xml" />
+    <list default="true" id="5df7e5be-326c-48a9-947d-b0eec08caa13" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Constants.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Constants.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SCC210 - OOP.iml" afterPath="$PROJECT_DIR$/SCC210 - OOP.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/entity/Pickup.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/entity/Pickup.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java" />
     </list>
     <ignored path="SCC210 - OOP.iws" />
@@ -36,8 +33,8 @@
       <file leaf-file-name="HUD.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="72" column="93" selection-start-line="72" selection-start-column="93" selection-end-line="72" selection-end-column="93" />
+            <state relative-caret-position="306">
+              <caret line="80" column="28" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -819,13 +816,6 @@
       <option name="presentableId" value="Default" />
       <updated>1487464780101</updated>
     </task>
-    <task id="LOCAL-00014" summary="Added fully working HUD (Only health and score at the minute, but powerups will be added when needed)">
-      <created>1487661677744</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1487661677744</updated>
-    </task>
     <task id="LOCAL-00015" summary="Fully commented the entire project, everything should be easy to follow. If not, ask me what specific things do.">
       <created>1487666161918</created>
       <option name="number" value="00015" />
@@ -1162,7 +1152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488289274861</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="New Font Added For HUD, Reduced Number Of Starting Runes">
+      <created>1488369287690</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1488369287691</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1252,7 +1249,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Random Boss Room" />
     <MESSAGE value="Added Random Starting Point" />
     <MESSAGE value="Added xbox controller support, fixed the MiniMap to display the tiles directly next to one-another, removed doors from the edge of the game, etc." />
     <MESSAGE value="Added combat (to and from Enemy/Player), added Enemy deaths, added Player death, added GameOver Scene (posts highscores to website), added name input scene, added working doors upon empty room." />
@@ -1277,7 +1273,8 @@
     <MESSAGE value="Added Santa images including DragonBones FIle" />
     <MESSAGE value="Merged mine with Shez's" />
     <MESSAGE value="Resources added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resources added" />
+    <MESSAGE value="New Font Added For HUD, Reduced Number Of Starting Runes" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Font Added For HUD, Reduced Number Of Starting Runes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1690,8 +1687,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/gui/HUD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="72" column="93" selection-start-line="72" selection-start-column="93" selection-end-line="72" selection-end-column="93" />
+        <state relative-caret-position="306">
+          <caret line="80" column="28" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
           <folding />
         </state>
       </provider>
