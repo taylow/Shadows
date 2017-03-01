@@ -9,7 +9,7 @@ import static edu.lancs.game.Constants.PLAYER_BASE_MOVEMENT;
 public class Pickup extends Entity {
 
     public enum Type {
-        HEALTH, BATTERY, SPEED, GOLD_COIN, SILVER_COIN, RUNE, KEY, TALISMAN // make sure key is at the end
+        HEALTH, BATTERY, SPEED, GOLD_COIN, SILVER_COIN, RUNE, TALISMAN, KEY// make sure key is at the end
     }
 
     private boolean isUsed;
