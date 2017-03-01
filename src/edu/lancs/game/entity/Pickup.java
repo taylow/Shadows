@@ -90,7 +90,7 @@ public class Pickup extends Entity {
 
             case RUNE:
                 Random random = new Random();
-                player.setRunePickups(player.getRunePickups() + random.nextInt(10) + 1);
+                player.setRunePickups(player.getRunePickups() + random.nextInt(3) + 1);
                 break;
 
             case KEY:
