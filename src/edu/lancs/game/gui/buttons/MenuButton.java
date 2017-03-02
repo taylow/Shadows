@@ -28,14 +28,42 @@ public class MenuButton extends Button {
                 break;
 
             case CREDITS:
-                setDefaultTexture(window.getResourceManager().getTextures("tutorial_default"));
-                setSelectTexture(window.getResourceManager().getTextures("tutorial_hover"));
+                setDefaultTexture(window.getResourceManager().getTextures("credits_default"));
+                setSelectTexture(window.getResourceManager().getTextures("credits_hover"));
                 break;
 
             case PLAY_GAME:
                 setDefaultTexture(window.getResourceManager().getTextures("play_default"));
                 setSelectTexture(window.getResourceManager().getTextures("play_hover"));
                 setDisabledTexture(window.getResourceManager().getTextures("play_disabled"));
+                setDisabled(true);
+                break;
+
+            case EASY:
+                setDefaultTexture(window.getResourceManager().getTextures("easy_default"));
+                setSelectTexture(window.getResourceManager().getTextures("easy_hover"));
+                setDisabledTexture(window.getResourceManager().getTextures("easy_disabled"));
+                setDisabled(true);
+                break;
+
+            case MEDIUM:
+                setDefaultTexture(window.getResourceManager().getTextures("medium_default"));
+                setSelectTexture(window.getResourceManager().getTextures("medium_hover"));
+                setDisabledTexture(window.getResourceManager().getTextures("medium_disabled"));
+                setDisabled(true);
+                break;
+
+            case HARD:
+                setDefaultTexture(window.getResourceManager().getTextures("hard_default"));
+                setSelectTexture(window.getResourceManager().getTextures("hard_hover"));
+                setDisabledTexture(window.getResourceManager().getTextures("hard_disabled"));
+                setDisabled(true);
+                break;
+
+            case IMPOSSIBLE:
+                setDefaultTexture(window.getResourceManager().getTextures("impossible_default"));
+                setSelectTexture(window.getResourceManager().getTextures("impossible_hover"));
+                setDisabledTexture(window.getResourceManager().getTextures("impossible_disabled"));
                 setDisabled(true);
                 break;
 
@@ -78,7 +106,7 @@ public class MenuButton extends Button {
 
                 case CREDITS:
                     // TODO: Add loading here
-                    Debug.print("[Button] Credits ");
+                    Debug.print("[Button] Credits");
                     CreditScene creditScene = new CreditScene(getWindow(), getParentScene());
                     int creditSceneIndex = getWindow().addScene(creditScene);
                     creditScene.activate();
@@ -86,9 +114,33 @@ public class MenuButton extends Button {
                     getParentScene().deactivate();
                     break;
 
+                case EASY:
+                case MEDIUM:
+                case HARD:
+                case IMPOSSIBLE:
                 case PLAY_GAME:
+                    Debug.print("[Button] Play Game");
                     // creates the GameScene for the users to play
-                    GameScene gameScene = new GameScene(getWindow(), getText());
+                    GameScene gameScene;
+
+                    switch (type) {
+                        case EASY:
+                            gameScene = new GameScene(getWindow(), getText(), GameScene.GameMode.EASY);
+                            break;
+                        case MEDIUM:
+                            gameScene = new GameScene(getWindow(), getText(), GameScene.GameMode.MEDIUM);
+                            break;
+                        case HARD:
+                            gameScene = new GameScene(getWindow(), getText(), GameScene.GameMode.HARD);
+                            break;
+                        case IMPOSSIBLE:
+                            gameScene = new GameScene(getWindow(), getText(), GameScene.GameMode.IMPOSSIBLE);
+                            break;
+                        default:
+                            gameScene = new GameScene(getWindow(), getText(), GameScene.GameMode.IMPOSSIBLE);
+                            break;
+                    }
+
                     int gameSceneIndex = getWindow().addScene(gameScene);
                     gameScene.activate();
 
@@ -138,6 +190,6 @@ public class MenuButton extends Button {
     }
 
     public enum Type {
-        NEW_GAME, CREDITS, PLAY_GAME, HIGH_SCORES, TUTORIAL, EXIT
+        NEW_GAME, CREDITS, PLAY_GAME, EASY, MEDIUM, HARD, IMPOSSIBLE, HIGH_SCORES, TUTORIAL, EXIT
     }
 }

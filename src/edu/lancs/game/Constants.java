@@ -11,12 +11,17 @@ public class Constants {
     public static final int GAME_LEVEL_WIDTH = 10;
     public static final int GAME_LEVEL_HEIGHT = 10;
 
+    public static final int EASY_LEVEL_COUNT = 1;
+    public static final int MEDIUM_LEVEL_COUNT = 5;
+    public static final int HARD_LEVEL_COUNT = 10;
+
     /*Path Constants*/
     public static final String RESOURCE_PATH = "resources/";
 
     /*Debug Constants*/
     public static final boolean DEBUG_MESSAGES = true;
     public static final boolean DEBUG_ERRORS = true;
+    public static final boolean SHOW_SPECIAL_ROOMS = true;
 
     /*Menu Constants*/
     public static final int MENU_BUTTON_WIDTH = 254;
@@ -46,6 +51,7 @@ public class Constants {
     public static final int ENEMY_STARTING_HEALTH_MAX = 5;
     public static final int ENEMY_MAGIC_DAMAGE = 10;
     public static int ENEMY_STARTING_RUNES = 150;
+    public static int ENEMY_TRANSPARENCY = 80;
 
     /*Map Constants*/
     public static final int MAP_TILE_WIDTH = 114;

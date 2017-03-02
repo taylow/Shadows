@@ -12,22 +12,16 @@ public class Projectile extends Entity {
     private Vector2f destination;
     private boolean hasArrived;
 
-    /*public Projectile(Window window, Vector2f destination, Vector2f start, int damage, int speed) {
+    public Projectile(Window window, Vector2f destination, Vector2f start, int damage, int speed, boolean mouse) {
         super(window, "test", start.x, start.y, false);
         this.damage = damage;
         this.start = start;
         hasArrived = false;
         //FIXME: This only works for mouse position, needs fixing to work towards anywhere (enemy to player)
-        this.destination = new Vector2f((getWindow().getView().getCenter().x + (destination.x - GAME_WIDTH / 2)), (getWindow().getView().getCenter().y + (destination.y - GAME_HEIGHT / 2)));
-    }*/
-
-    public Projectile(Window window, Vector2f destination, Vector2f start, int damage, int speed) {
-        super(window, "test", start.x, start.y, false);
-        this.damage = damage;
-        this.start = start;
-        hasArrived = false;
-        //FIXME: This only works for mouse position, needs fixing to work towards anywhere (enemy to player)
-        this.destination = destination;
+        if(mouse)
+            this.destination = new Vector2f((getWindow().getView().getCenter().x + (destination.x - GAME_WIDTH / 2)), (getWindow().getView().getCenter().y + (destination.y - GAME_HEIGHT / 2)));
+        else
+            this.destination = destination;
     }
 
     @Override

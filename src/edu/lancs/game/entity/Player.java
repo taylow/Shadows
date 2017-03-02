@@ -88,7 +88,11 @@ public class Player extends Actor {
                 attack();
         } else if (inputHandler.isMouseClicked()) {
             if(getState() != RANGING) {
-                range();
+                range(true);
+            }
+        } else if (inputHandler.isTriggerPressed()) {
+            if(getState() != RANGING) {
+                range(false);
             }
         } else {
             if (getState() != IDLE) {
@@ -100,15 +104,16 @@ public class Player extends Actor {
     /***
      * Performs a range attack and sets the Players state to RANGING.
      */
-    @Override
-    public void range() {
+    public void range(boolean mouse) {
         setState(RANGING);
         if(runePickups > 0) {
             setSound(new Sound(getWindow().getResourceManager().getSound("projectile")));
             getSound().setPitch(0.8f);
             getSound().play();
-            //getProjectiles().add(new Projectile(getWindow(), getWindow().getInputHandler().getMousePosition(), getPosition(), PLAYER_MAGIC_DAMAGE, 10));
-            getProjectiles().add(new Projectile(getWindow(), new Vector2f(getWindow().getView().getCenter().x - 300, getWindow().getView().getCenter().y), getPosition(), PLAYER_MAGIC_DAMAGE, 10));
+            if(mouse)
+                getProjectiles().add(new Projectile(getWindow(), getWindow().getInputHandler().getMousePosition(), getPosition(), PLAYER_MAGIC_DAMAGE, 10, true));
+            else
+                getProjectiles().add(new Projectile(getWindow(), new Vector2f(getWindow().getView().getCenter().x + inputHandler.getrAxisX() * 5, getWindow().getView().getCenter().y + inputHandler.getrAxisY() * 5), getPosition(), PLAYER_MAGIC_DAMAGE, 10, false));
             runePickups--;
         }
     }

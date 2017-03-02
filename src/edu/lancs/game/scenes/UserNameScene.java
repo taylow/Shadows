@@ -15,8 +15,7 @@ import java.util.ArrayList;
 
 import static edu.lancs.game.Constants.MENU_BUTTON_HEIGHT;
 import static edu.lancs.game.Constants.MENU_BUTTON_WIDTH;
-import static edu.lancs.game.gui.buttons.MenuButton.Type.NEW_GAME;
-import static edu.lancs.game.gui.buttons.MenuButton.Type.PLAY_GAME;
+import static edu.lancs.game.gui.buttons.MenuButton.Type.*;
 
 public class UserNameScene extends Scene {
 
@@ -39,7 +38,11 @@ public class UserNameScene extends Scene {
         // decorations and buttons to be added
         decorations.add(new Decoration(window, "menu_dungeon_background", 0, 0, getWindow().getWidth(), getWindow().getHeight()));
         decorations.add(new Decoration(window, "username_entry", getWindow().getWidth() / 2 - (901 / 2), getWindow().getHeight() / 2 - (164 / 2), 901, 164));
-        buttons.add(new MenuButton(window, this, "New Game", PLAY_GAME, getWindow().getWidth() / 2 - (MENU_BUTTON_WIDTH / 2), getWindow().getHeight() / 2 - (164 / 2) + 200));
+        //buttons.add(new MenuButton(window, this, "New Game", PLAY_GAME, getWindow().getWidth() / 2- (MENU_BUTTON_WIDTH / 2), getWindow().getHeight() / 2 - (164 / 2) + 300));
+        buttons.add(new MenuButton(window, this, "New Game", EASY, (getWindow().getWidth() / 4) * 0.5f - (MENU_BUTTON_WIDTH / 2), getWindow().getHeight() / 2 - (164 / 2) + 200));
+        buttons.add(new MenuButton(window, this, "New Game", MEDIUM, (getWindow().getWidth() / 4) * 1.5f - (MENU_BUTTON_WIDTH / 2), getWindow().getHeight() / 2 - (164 / 2) + 200));
+        buttons.add(new MenuButton(window, this, "New Game", HARD, (getWindow().getWidth() / 4) * 2.5f - (MENU_BUTTON_WIDTH / 2), getWindow().getHeight() / 2 - (164 / 2) + 200));
+        buttons.add(new MenuButton(window, this, "New Game", IMPOSSIBLE, (getWindow().getWidth() / 4) * 3.5f - (MENU_BUTTON_WIDTH / 2), getWindow().getHeight() / 2 - (164 / 2) + 200));
         buttons.add(new BackButton(window, returnScene, 20, getWindow().getHeight() - (MENU_BUTTON_HEIGHT / 2) - 20));
         nameText = new Text(name, getWindow().getResourceManager().getFont("8-BIT"));
         nameText.setPosition(getWindow().getWidth() / 2 - (901 / 2) + 10, getWindow().getHeight() / 2 - (164 / 2) + 95);
@@ -98,10 +101,17 @@ public class UserNameScene extends Scene {
                         name = name.substring(0, name.length() - 1);
                 }
 
-                if(name.length() > 0)
+                if(name.length() > 0) {
                     buttons.get(0).setDisabled(false);
-                else
+                    buttons.get(1).setDisabled(false);
+                    buttons.get(2).setDisabled(false);
+                    buttons.get(3).setDisabled(false);
+                } else {
                     buttons.get(0).setDisabled(true);
+                    buttons.get(1).setDisabled(true);
+                    buttons.get(2).setDisabled(true);
+                    buttons.get(3).setDisabled(true);
+                }
 
                 nameText.setString(name);
                 break;

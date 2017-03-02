@@ -42,7 +42,7 @@ public class Enemy extends Actor {
             setSound(new Sound(getWindow().getResourceManager().getSound("projectile")));
             getSound().setPitch(0.8f);
             getSound().play();
-            getProjectiles().add(new Projectile(getWindow(), getWindow().getInputHandler().getMousePosition(), getPosition(), PLAYER_MAGIC_DAMAGE, 10));
+            getProjectiles().add(new Projectile(getWindow(), getWindow().getInputHandler().getMousePosition(), getPosition(), PLAYER_MAGIC_DAMAGE, 10, false));
             Constants.ENEMY_STARTING_RUNES--;
         }
     }

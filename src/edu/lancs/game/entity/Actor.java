@@ -232,7 +232,7 @@ public abstract class Actor extends Entity {
      */
     public void range() {
         setState(RANGING);
-        projectiles.add(new Projectile(getWindow(), getWindow().getInputHandler().getMousePosition(), getPosition(), 10, 10));
+        projectiles.add(new Projectile(getWindow(), getWindow().getInputHandler().getMousePosition(), getPosition(), 10, 10, true));
     }
 
     /***

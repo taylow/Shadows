@@ -25,8 +25,11 @@ public class InputHandler {
     private boolean spaceKeyPressed;
     private boolean ctrlKeyPressed;
     private boolean mouseClicked;
+    private boolean triggerPressed;
 
     private Vector2f mousePosition;
+    private float rAxisX;
+    private float rAxisY;
 
     public InputHandler(Window window) {
         this.window = window;
@@ -39,8 +42,11 @@ public class InputHandler {
         sKeyPressed = false;
         ctrlKeyPressed = false;
         mouseClicked = false;
+        triggerPressed = false;
 
         mousePosition = new Vector2f(1, 1);
+        rAxisX = 0f;
+        rAxisY = 0f;
     }
 
     /***
@@ -119,7 +125,20 @@ public class InputHandler {
 
                 break;
 
+            case R: // up and down
+                rAxisY = event.position;
+                break;
 
+            case U: // left and right
+                rAxisX = event.position;
+                break;
+
+            case Z:
+                if(event.asJoystickMoveEvent().position < -50)
+                    triggerPressed = true;
+                else
+                    triggerPressed = false;
+                break;
         }
     }
 
@@ -151,8 +170,6 @@ public class InputHandler {
             case MAGIC_BUTTON:
                 mouseClicked = event.type == JOYSTICK_BUTTON_PRESSED;
                 break;
-
-
         }
     }
 
@@ -160,12 +177,6 @@ public class InputHandler {
         switch(event.button) {
             case LEFT:
                 mouseClicked = Mouse.isButtonPressed(Mouse.Button.LEFT);
-                System.out.println("Mouse X: " + (getMousePosition().x - GAME_WIDTH / 2));
-                System.out.println("Mouse Y: " + (getMousePosition().y - GAME_HEIGHT / 2));
-                /*System.out.println("Mouse X: " + getMousePosition().x);
-                System.out.println("Mouse Y: " + getMousePosition().y);
-                System.out.println("View X: " + getWindow().getView().getCenter().x);
-                System.out.println("View Y: " + getWindow().getView().getCenter().y);*/
                 break;
         }
     }
@@ -246,6 +257,10 @@ a     */
         return mouseClicked;
     }
 
+    public boolean isTriggerPressed() {
+        return triggerPressed;
+    }
+
     /***
      * Returns the current mouse position.
      *
@@ -253,6 +268,14 @@ a     */
      */
     public Vector2f getMousePosition() {
         return mousePosition;
+    }
+
+    public float getrAxisX() {
+        return rAxisX;
+    }
+
+    public float getrAxisY() {
+        return rAxisY;
     }
 
     public Window getWindow() {

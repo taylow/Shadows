@@ -166,7 +166,7 @@ public class Level {
             int randomY = (random.nextInt(height - 2) + 1) * MAP_TILE_HEIGHT + (MAP_TILE_HEIGHT / 2);
 
             int randomHealth = random.nextInt(ENEMY_STARTING_HEALTH_MAX + 1 - ENEMY_STARTING_HEALTH_MIN) + ENEMY_STARTING_HEALTH_MIN;
-            enemies.add(new Enemy(getWindow(), randomX, randomY, randomHealth, new Color(10, random.nextInt(128 + 1 - 64) + random.nextInt(64), random.nextInt(10))));
+            enemies.add(new Enemy(getWindow(), randomX, randomY, randomHealth, new Color(0, 0, 0, ENEMY_TRANSPARENCY)));
         }
     }
 
@@ -201,7 +201,7 @@ public class Level {
         chests.clear();
 
         enemies.clear();
-        enemies.add(new Enemy(getWindow(), GAME_LEVEL_WIDTH / 2 * 114, GAME_LEVEL_HEIGHT / 2 * 114, 100, Color.RED));
+        enemies.add(new Enemy(getWindow(), GAME_LEVEL_WIDTH / 2 * 114, GAME_LEVEL_HEIGHT / 2 * 114, 100, new Color(10, 10, 10, 128)));
 
         for(Door door : doors) {
             door.setTexture(getWindow().getResourceManager().getTextures(textureName + "_door_round_closed_" + door.getDirection() + "_3"));
