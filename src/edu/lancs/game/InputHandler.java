@@ -104,7 +104,7 @@ public class InputHandler {
      * @param event - JoystickMoveEvent
      */
     public void processInputs(JoystickMoveEvent event) {
-        switch(event.joyAxis) {
+        switch (event.joyAxis) {
             case X:
                 if (event.position < -JOYSTICK_DEADZONE_X)
                     aKeyPressed = true;
@@ -119,12 +119,12 @@ public class InputHandler {
                 break;
 
             case Y:
-                if(event.position < -JOYSTICK_DEADZONE_Y)
+                if (event.position < -JOYSTICK_DEADZONE_Y)
                     wKeyPressed = true;
                 else
                     wKeyPressed = false;
 
-                if(event.position > JOYSTICK_DEADZONE_Y)
+                if (event.position > JOYSTICK_DEADZONE_Y)
                     sKeyPressed = true;
                 else
                     sKeyPressed = false;
@@ -135,12 +135,12 @@ public class InputHandler {
                 rAxisY = event.position;
                 break;
 
-            case U: // left and right
+            case Z: // left and right
                 rAxisX = event.position;
                 break;
 
-            case Z:
-                if(event.asJoystickMoveEvent().position < -50)
+            case U:
+                if (event.asJoystickMoveEvent().position > 90)
                     triggerPressed = true;
                 else
                     triggerPressed = false;
@@ -164,6 +164,7 @@ public class InputHandler {
      * @param event - JoystickButtonEvent
      */
     public void processInputs(JoystickButtonEvent event) {
+        System.out.println(event.asJoystickButtonEvent().button);
         switch(event.button) {
             case ATTACK_BUTTON:
                 spaceKeyPressed = event.type == JOYSTICK_BUTTON_PRESSED;

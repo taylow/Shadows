@@ -87,9 +87,9 @@ public class Constants {
     /*Joystick Mapping Constants (look in InputHandler to find values)*/
     public static final int JOYSTICK_DEADZONE_X = 25;
     public static final int JOYSTICK_DEADZONE_Y = 25;
-    public static final int ATTACK_BUTTON = 0; // A
+    public static final int ATTACK_BUTTON = 1; // A
     public static final int MINIMAP_BUTTON = 3; // Y
-    public static final int BOOST_BUTTON = 1; // B
+    public static final int BOOST_BUTTON = 2; // B
 
     /*Highscores Constants*/
     public static final String HIGHSCORES_USER_AGENT = "Mozilla/5.0";
