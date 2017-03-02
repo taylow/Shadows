@@ -453,7 +453,7 @@ public class GameScene extends Scene {
         highscoresUpdater.updateHighscores();
 
 
-        GameOverScene gameOverScene = new GameOverScene(getWindow(), getWindow().getScene(0));
+        GameOverScene gameOverScene = new GameOverScene(getWindow(), getWindow().getScene(0), player);
         int gameOverSceneIndex = getWindow().addScene(gameOverScene);
         gameOverScene.activate();
         getWindow().setCurrentScene(gameOverSceneIndex);
