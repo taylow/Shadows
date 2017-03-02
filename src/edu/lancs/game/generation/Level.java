@@ -6,6 +6,7 @@ import edu.lancs.game.entity.Chest;
 import edu.lancs.game.entity.Enemy;
 import edu.lancs.game.entity.Pickup;
 import org.jsfml.graphics.Color;
+import org.jsfml.system.Clock;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -39,6 +40,8 @@ public class Level {
 
     private ArrayList<Door> doors;
 
+    private Clock roomTine;
+
     private Window window;
 
     /***
@@ -61,6 +64,8 @@ public class Level {
         isDiscovered = false;
         isCurrentLevel = false;
         isBossLevel = false;
+
+        roomTine = new Clock();
 
         tiles = new Tile[height][width];
         enemies = new ArrayList<>();
@@ -202,6 +207,7 @@ public class Level {
 
         enemies.clear();
         enemies.add(new Enemy(getWindow(), GAME_LEVEL_WIDTH / 2 * 114, GAME_LEVEL_HEIGHT / 2 * 114, 100, new Color(10, 10, 10, 128)));
+        enemies.get(0).changeScale(BOSS_SCALE_WIDTH, BOSS_SCALE_HEIGHT);
 
         for(Door door : doors) {
             door.setTexture(getWindow().getResourceManager().getTextures(textureName + "_door_round_closed_" + door.getDirection() + "_3"));
@@ -261,6 +267,7 @@ public class Level {
     }
 
     public void setCurrentLevel(boolean currentLevel) {
+        roomTine.restart();
         isCurrentLevel = currentLevel;
     }
 
@@ -283,6 +290,10 @@ public class Level {
             default:
                 return null;
         }
+    }
+
+    public Clock getRoomTine() {
+        return roomTine;
     }
 
     public ArrayList<Enemy> getEnemies() {

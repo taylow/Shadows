@@ -24,6 +24,7 @@ public class InputHandler {
     private boolean dKeyPressed;
     private boolean spaceKeyPressed;
     private boolean ctrlKeyPressed;
+    private boolean shiftKeyPressed;
     private boolean mouseClicked;
     private boolean triggerPressed;
 
@@ -41,6 +42,7 @@ public class InputHandler {
         dKeyPressed = false;
         sKeyPressed = false;
         ctrlKeyPressed = false;
+        shiftKeyPressed = false;
         mouseClicked = false;
         triggerPressed = false;
 
@@ -75,6 +77,10 @@ public class InputHandler {
 
             case LCONTROL:
                 ctrlKeyPressed = Keyboard.isKeyPressed(key); // sets to ctrl's press value
+                break;
+
+            case LSHIFT:
+                shiftKeyPressed = Keyboard.isKeyPressed(key); // sets to shift's press value
                 break;
 
             case A:
@@ -166,10 +172,6 @@ public class InputHandler {
             case MINIMAP_BUTTON:
                 ctrlKeyPressed = event.type == JOYSTICK_BUTTON_PRESSED;
                 break;
-
-            case MAGIC_BUTTON:
-                mouseClicked = event.type == JOYSTICK_BUTTON_PRESSED;
-                break;
         }
     }
 
@@ -242,6 +244,15 @@ a     */
      */
     public boolean isCtrlKeyPressed() {
         return ctrlKeyPressed;
+    }
+
+    /***
+     * Returns whether or not the LSHIFT key is pressed.
+     *
+     * @return - LSHIFT keys pressed value
+     */
+    public boolean isShiftKeyPressed() {
+        return shiftKeyPressed;
     }
 
     /***

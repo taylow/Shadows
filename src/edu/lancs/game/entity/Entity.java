@@ -8,6 +8,8 @@ import org.jsfml.system.Vector2f;
 
 import java.util.ArrayList;
 
+import static edu.lancs.game.Constants.PLAYER_BOOST_MOVEMENT;
+
 public abstract class Entity extends Sprite {
     private Texture texture;
     private ArrayList<Texture> animation;
@@ -15,12 +17,16 @@ public abstract class Entity extends Sprite {
     private int frame;
     private Window window;
     private boolean isAnimated;
+    private float scaleX;
+    private float scaleY;
 
     public Entity(Window window, String textureName, float xPos, float yPos, boolean isAnimated) {
         this.window = window;
         this.frameClock = new Clock();
         this.animation = new ArrayList<>();
         this.isAnimated = isAnimated;
+        this.scaleX = 1;
+        this.scaleY = 1;
 
         if (isAnimated) {
             animation = window.getResourceManager().getAnimations(textureName); // loads the textureName as an animation
@@ -105,5 +111,19 @@ public abstract class Entity extends Sprite {
      */
     public Window getWindow() {
         return window;
+    }
+
+    public void changeScale(float scaleX, float scaleY) {
+        this.scaleX = scaleX;
+        this.scaleY = scaleY;
+        setScale(scaleX, scaleY);
+    }
+
+    public float getScaleX() {
+        return scaleX;
+    }
+
+    public float getScaleY() {
+        return scaleY;
     }
 }

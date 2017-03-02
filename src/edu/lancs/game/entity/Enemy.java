@@ -1,31 +1,35 @@
 package edu.lancs.game.entity;
 
-import edu.lancs.game.Constants;
-import edu.lancs.game.InputHandler;
 import edu.lancs.game.Window;
 import org.jsfml.audio.Sound;
 import org.jsfml.graphics.Color;
+import org.jsfml.system.Clock;
 import org.jsfml.system.Vector2f;
+
+import java.util.Random;
 
 import static edu.lancs.game.Constants.*;
 import static edu.lancs.game.entity.Actor.State.*;
 
 public class Enemy extends Actor {
 
-    // actual player variables
-    private int score;
+    private int runes;
+    private Clock timing;
 
-    // the entity variables
-    private InputHandler inputHandler;
+    private int magicCooldown;
+    private boolean canRange;
 
     private Actor targetActor;
 
     public Enemy(Window window, int positionX, int positionY, int health, Color recolour) {
         super(window, "knight", positionX, positionY, true, health, health, ENEMY_WEAPON_DAMAGE, ENEMY_BASE_MOVEMENT);
-        // initialise player stats (health, score, etc)
-        score = 0;
-        inputHandler = getWindow().getInputHandler();
         setColor(recolour);
+        Random random = new Random();
+        runes = random.nextInt(ENEMY_STARTING_RUNES);
+        timing = new Clock();
+        magicCooldown = random.nextInt(1000) + ENEMY_RANGE_COOLDOWN_TIME;
+        canRange = false;
+        changeScale(ENEMY_SCALE_WIDTH, ENEMY_SCALE_HEIGHT);
     }
 
     /***
@@ -38,12 +42,13 @@ public class Enemy extends Actor {
     @Override
     public void range() {
         setState(RANGING);
-        if(Constants.ENEMY_STARTING_RUNES > 0) {
-            setSound(new Sound(getWindow().getResourceManager().getSound("projectile")));
-            getSound().setPitch(0.8f);
+        if(runes > 0) {
+            setSound(new Sound(getWindow().getResourceManager().getSound("magic_fire")));
+            getSound().setPitch(1f);
             getSound().play();
-            getProjectiles().add(new Projectile(getWindow(), getWindow().getInputHandler().getMousePosition(), getPosition(), PLAYER_MAGIC_DAMAGE, 10, false));
-            Constants.ENEMY_STARTING_RUNES--;
+            Vector2f estimatedPosition = new Vector2f(targetActor.getPosition().x + (targetActor.getVelocity().x * ENEMY_RANGE_ACCURACY), targetActor.getPosition().y + (targetActor.getVelocity().y * ENEMY_RANGE_ACCURACY)); // increases the accuracy of enemies
+            getProjectiles().add(new Projectile(getWindow(), estimatedPosition, getPosition(), ENEMY_MAGIC_DAMAGE, 10, false));
+            runes--;
         }
     }
 
@@ -62,25 +67,33 @@ public class Enemy extends Actor {
      * Support for diagonal movement is present as each if condition is on its own line.
      */
     public void handleMovement() {
-
         if(getState() != DYING) {
-            if (targetActor != null) {
+            if(getState() == ATTACKING || getState() == RANGING) {
+                if (getFrame() == getAnimation().size() - 1) {
+                    setState(IDLE);
+                }
+            } else if (targetActor != null) {
                 Vector2f diff = Vector2f.sub(targetActor.getPosition(), getPosition());
                 setVelocity(Vector2f.div(diff, 130.0f));
 
                 if (diff.x < 0)
-                    setScale(-1.f, 1.f); // flip the sprite to face left
+                    setScale(-getScaleX(), getScaleY()); // flip the sprite to face left
                 else
-                    setScale(1.f, 1.f); // flip the sprite to face right
+                    setScale(getScaleX(), getScaleY()); // flip the sprite to face right
 
                 //TODO: Add line of site so the Enemy is facing you
-                if (Math.abs(diff.x) > 90 || Math.abs(diff.y) > 90) {
-                    move(getVelocity());
-                    if (getState() != RUNNING)
-                        setState(RUNNING);
+                if(timing.getElapsedTime().asMilliseconds() > magicCooldown && runes > 0 && canRange) {
+                    range();
+                    timing.restart();
                 } else {
-                    if (getState() != ATTACKING)
-                        attack();
+                    if (Math.abs(diff.x) > 90 || Math.abs(diff.y) > 90) {
+                        move(getVelocity());
+                        if (getState() != RUNNING)
+                            setState(RUNNING);
+                    } else {
+                        if (getState() != ATTACKING)
+                            attack();
+                    }
                 }
             } else {
                 if (getState() != IDLE) {
@@ -88,15 +101,6 @@ public class Enemy extends Actor {
                 }
             }
         }
-    }
-
-    /***
-     * Returns the players score.
-     *
-     * @return - Players score
-     */
-    public int getScore() {
-        return score;
     }
 
     /***
@@ -116,5 +120,17 @@ public class Enemy extends Actor {
         // if the dying animation is on the last frame
         if(getState() == DYING && getFrame() == getAnimation().size() - 2)
             setDead(true); // set to dead
+    }
+
+    public void setCanRange(boolean canRange) {
+        this.canRange = canRange;
+    }
+
+    public int getRuneCount() {
+        return runes;
+    }
+
+    public Pickup getRunes() {
+        return new Pickup(getWindow(), getPosition().x, getPosition().y, 5, runes);
     }
 }

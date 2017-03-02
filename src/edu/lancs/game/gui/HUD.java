@@ -4,8 +4,10 @@ import edu.lancs.game.Window;
 import edu.lancs.game.entity.Pickup;
 import edu.lancs.game.entity.Player;
 import org.jsfml.graphics.Color;
+import org.jsfml.graphics.RectangleShape;
 import org.jsfml.graphics.Sprite;
 import org.jsfml.graphics.Text;
+import org.jsfml.system.Vector2f;
 
 import java.util.ArrayList;
 
@@ -33,6 +35,12 @@ public class HUD {
     private Decoration[] pickupsBackground;
     private Decoration[] storablePicksup;
     private Text[] pickupAmountsText;
+
+    private Decoration[] boostsBackgrounds;
+    private Decoration[] boosts;
+
+    private RectangleShape batteryLevel;
+    private RectangleShape boostLevel;
 
     public HUD(Window window, Player player) {
         this.window = window;
@@ -80,6 +88,12 @@ public class HUD {
         runeText.setScale(0.4f, 0.4f);
         texts.add(runeText);
 
+        batteryLevel = new RectangleShape(new Vector2f(10, 10));
+        batteryLevel.setPosition(100, 100);
+
+        boostLevel = new RectangleShape(new Vector2f(10, 10));
+        boostLevel.setPosition(100, 200);
+
         /*pickupText = new Text ("Picked Up " + Pickup.Type.HEALTH, getWindow().getResourceManager().getFont("BLKCHCRY"));
         pickupText.setPosition(getWindow().getWidth() / 2 - 75, 10);
         pickupText.setColor(Color.BLUE);
@@ -105,6 +119,8 @@ public class HUD {
             storablePicksup[2].setFillColor(Color.TRANSPARENT);
         else
             storablePicksup[2].setFillColor(Color.BLACK);
+
+        batteryLevel.setPosition(offsetX + getWindow().getWidth() / 2 - (GAME_WIDTH / 2) + 10, offsetY + 120);
     }
 
     /***
@@ -168,6 +184,14 @@ public class HUD {
      */
     public ArrayList<Text> getTexts() {
         return texts;
+    }
+
+    public RectangleShape getBatteryLevel() {
+        return batteryLevel;
+    }
+
+    public RectangleShape getBoostLevel() {
+        return boostLevel;
     }
 
     public Window getWindow() {

@@ -22,6 +22,8 @@ public class Projectile extends Entity {
             this.destination = new Vector2f((getWindow().getView().getCenter().x + (destination.x - GAME_WIDTH / 2)), (getWindow().getView().getCenter().y + (destination.y - GAME_HEIGHT / 2)));
         else
             this.destination = destination;
+
+        setScale(0.7f, 0.7f);
     }
 
     @Override

@@ -13,18 +13,20 @@ import static edu.lancs.game.Constants.HIGHSCORES_USER_AGENT;
 
 public class HighscoresUpdater implements Runnable {
     private String name;
+    private String difficulty;
     private int score;
     private int level;
     private int kills;
     private long time;
     private boolean hasUpdated;
 
-    public HighscoresUpdater(String name, int score, long time, int level, int kills) {
+    public HighscoresUpdater(String name, int score, long time, int level, int kills, String difficulty) {
         this.name = name;
         this.score = score;
         this.time = time;
         this.level = level;
         this.kills = kills;
+        this.difficulty = difficulty;
         hasUpdated = false;
     }
 
@@ -32,7 +34,7 @@ public class HighscoresUpdater implements Runnable {
     public synchronized void run() {
         synchronized (this) {
             if (!hasUpdated) {
-                updateHighscores(name, score, time, level, kills);
+                updateHighscores(name, score, time, level, kills, difficulty);
                 hasUpdated = true;
             }
         }
@@ -41,12 +43,12 @@ public class HighscoresUpdater implements Runnable {
     /***
      * Sends a GET request to the HighScores server using game information (Score, time, name).
      */
-    public synchronized void updateHighscores(String name, int score, long time, int level, int kills) {
+    public synchronized void updateHighscores(String name, int score, long time, int level, int kills, String difficulty) {
         synchronized (this) {
             try {
                 if (!hasUpdated) {
                     hasUpdated = true;
-                    String url = HIGHSCORES_URL.replace("#", name).replace("~", Integer.toString(score)).replace("@", Long.toString(time)).replace("*", Integer.toString(level)).replace("£", Integer.toString(kills));
+                    String url = HIGHSCORES_URL.replace("#", name).replace("~", Integer.toString(score)).replace("@", Long.toString(time)).replace("*", Integer.toString(level)).replace("£", Integer.toString(kills)).replace("!", difficulty);
 
                     URL obj = new URL(url);
                     HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -69,13 +71,13 @@ public class HighscoresUpdater implements Runnable {
 
                     Debug.print("High scores server returned: " + response);
                 }
-            } catch (ProtocolException e) {
-                e.printStackTrace();
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void updateHighscores() {
+        updateHighscores(name, score, time, level, kills, difficulty);
     }
 }

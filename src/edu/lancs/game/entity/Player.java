@@ -1,8 +1,10 @@
 package edu.lancs.game.entity;
 
+import edu.lancs.game.Debug;
 import edu.lancs.game.InputHandler;
 import edu.lancs.game.Window;
 import org.jsfml.audio.Sound;
+import org.jsfml.system.Clock;
 import org.jsfml.system.Vector2f;
 
 import static edu.lancs.game.Constants.*;
@@ -19,8 +21,13 @@ public class Player extends Actor {
     private int kills;
 
     private long startTime;
-    private long currentTime;
+    private float currentTime;
     private long lastUpdate;
+
+    private Clock timer;
+    private Clock batteryReduction;
+    private Clock boostReduction;
+    private Clock cooldownTimer;
 
     private boolean hasBossKey;
     private int speedBoostPickups;
@@ -33,7 +40,7 @@ public class Player extends Actor {
         super(window, "knight", PLAYER_STARTING_X, PLAYER_STARTING_Y, true, PLAYER_STARTING_HEALTH, PLAYER_STARTING_HEALTH, PLAYER_WEAPON_DAMAGE, PLAYER_BASE_MOVEMENT);
         // initialise player stats (health, score, etc)
         score = 0;
-        batteryLevel = 100;
+        batteryLevel = PLAYER_STARTING_BATTERY;
         speedBoostPickups = 0;
         kills = 0;
         runePickups = PLAYER_STARTING_RUNES;
@@ -42,6 +49,13 @@ public class Player extends Actor {
         currentTime = startTime;
         lastUpdate = startTime;
         hasBossKey = false;
+
+        cooldownTimer = new Clock();
+        batteryReduction = new Clock();
+        boostReduction = new Clock();
+        timer = new Clock();
+
+        changeScale(PLAYER_SCALE_WIDTH, PLAYER_SCALE_HEIGHT);
     }
 
     /***
@@ -58,10 +72,17 @@ public class Player extends Actor {
     public void update() {
         handleMovement();
         nextFrame();
-        currentTime = (System.currentTimeMillis() - startTime) / 1000;
-        if(currentTime != lastUpdate && batteryLevel != 0) {
+        currentTime = timer.getElapsedTime().asSeconds();
+
+        // restart battery reduction timer and reduce battery
+        if(batteryReduction.getElapsedTime().asSeconds() > 1 && batteryLevel > 0) {
             setBatteryLevel(batteryLevel - 1);
-            lastUpdate = currentTime;
+            batteryReduction.restart();
+        }
+
+        if(boostReduction.getElapsedTime().asSeconds() > 1 && getBoost() > 0) {
+            setBoost(getBoost() - 0.1f);
+            boostReduction.restart();
         }
     }
 
@@ -70,7 +91,13 @@ public class Player extends Actor {
      * Support for diagonal movement is present as each if condition is on its own line.
      */
     public void handleMovement() {
-        if (inputHandler.isMoveing() && !inputHandler.isSpaceKeyPressed()) {
+        if(getState() == ATTACKING || getState() == RANGING) {
+            if (getFrame() == getAnimation().size() - 1) {
+                //System.out.println("TEST");
+                //range(true);
+                setState(IDLE);
+            }
+        } else if (inputHandler.isMoveing() && !inputHandler.isSpaceKeyPressed()) {
             if (inputHandler.iswKeyPressed())
                 moveUp();
             if (inputHandler.isaKeyPressed()) {
@@ -87,7 +114,7 @@ public class Player extends Actor {
             if (getState() != ATTACKING)
                 attack();
         } else if (inputHandler.isMouseClicked()) {
-            if(getState() != RANGING) {
+            if(getState() != RANGING && cooldownTimer.getElapsedTime().asMilliseconds() > PLAYER_MAGIC_COOLDOWN && runePickups > 0) {
                 range(true);
             }
         } else if (inputHandler.isTriggerPressed()) {
@@ -106,16 +133,15 @@ public class Player extends Actor {
      */
     public void range(boolean mouse) {
         setState(RANGING);
-        if(runePickups > 0) {
-            setSound(new Sound(getWindow().getResourceManager().getSound("projectile")));
-            getSound().setPitch(0.8f);
-            getSound().play();
-            if(mouse)
-                getProjectiles().add(new Projectile(getWindow(), getWindow().getInputHandler().getMousePosition(), getPosition(), PLAYER_MAGIC_DAMAGE, 10, true));
-            else
-                getProjectiles().add(new Projectile(getWindow(), new Vector2f(getWindow().getView().getCenter().x + inputHandler.getrAxisX() * 5, getWindow().getView().getCenter().y + inputHandler.getrAxisY() * 5), getPosition(), PLAYER_MAGIC_DAMAGE, 10, false));
-            runePickups--;
-        }
+        setSound(new Sound(getWindow().getResourceManager().getSound("magic_fire")));
+        getSound().setPitch(1f);
+        getSound().play();
+        if(mouse)
+            getProjectiles().add(new Projectile(getWindow(), getWindow().getInputHandler().getMousePosition(), getPosition(), PLAYER_MAGIC_DAMAGE, 10, true));
+        else
+            getProjectiles().add(new Projectile(getWindow(), new Vector2f(getWindow().getView().getCenter().x + inputHandler.getrAxisX() * 5, getWindow().getView().getCenter().y + inputHandler.getrAxisY() * 5), getPosition(), PLAYER_MAGIC_DAMAGE, 10, false));
+        runePickups--;
+        cooldownTimer.restart();
     }
 
     /***
@@ -165,7 +191,7 @@ public class Player extends Actor {
     }
 
     public long getTimeAlive() {
-        return currentTime;
+        return (long)currentTime;
     }
 
     public boolean hasBossKey() {
@@ -194,5 +220,15 @@ public class Player extends Actor {
 
     public int getKills() {
         return kills;
+    }
+
+    public void activateBoost() {
+        Debug.print("Activated boost");
+        setBoost(PLAYER_BOOST_MOVEMENT);
+        speedBoostPickups--;
+    }
+
+    public void addKill() {
+        this.kills++;
     }
 }

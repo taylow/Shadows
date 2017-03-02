@@ -2,7 +2,7 @@ package edu.lancs.game;
 
 public class Constants {
     /*Game Constants*/
-    public static final String GAME_TITLE = "Dungeon Crawler";
+    public static final String GAME_TITLE = "Shadows";
     public static final int GAME_WIDTH = 1280;
     public static final int GAME_HEIGHT = 720;
     public static final int GAME_FRAME_RATE = 60;
@@ -15,6 +15,8 @@ public class Constants {
     public static final int MEDIUM_LEVEL_COUNT = 5;
     public static final int HARD_LEVEL_COUNT = 10;
 
+    public static final int RANDOM_SOUNDS_TIME = 60000; // plays a random sound every minute
+
     /*Path Constants*/
     public static final String RESOURCE_PATH = "resources/";
 
@@ -26,8 +28,8 @@ public class Constants {
     /*Menu Constants*/
     public static final int MENU_BUTTON_WIDTH = 254;
     public static final int MENU_BUTTON_HEIGHT = 83;
-    public static final int TITLE_BANNER_WIDTH = 600;
-    public static final int TITLE_BANNER_HEIGHT = 200;
+    public static final int TITLE_BANNER_WIDTH = 551;
+    public static final int TITLE_BANNER_HEIGHT = 92;
 
     /*Actor Constants*/
     public static final int ACTOR_ATTACK_FRAME = 20; // frame where the damage is dealt
@@ -37,11 +39,14 @@ public class Constants {
     public static final int PLAYER_STARTING_X = 285;
     public static final int PLAYER_STARTING_Y = 285;
     public static final float PLAYER_BASE_MOVEMENT = 5;
+    public static final float PLAYER_BOOST_MOVEMENT = 2;
     public static final int PLAYER_STARTING_HEALTH = 10; // (this/2 is the number of hearts on the HUD) FIXME: Odd numbers may cause issues
     public static final int PLAYER_MAGIC_DAMAGE = 10;
+    public static final int PLAYER_STARTING_BATTERY = 100;
     public static final int PLAYER_STARTING_RUNES = 5000;
-    public static final float PLAYER_SCALE_WIDTH = 1.0f;
-    public static final float PLAYER_SCALE_HEIGHT = 1.0f;
+    public static final int PLAYER_MAGIC_COOLDOWN = 1000;
+    public static final float PLAYER_SCALE_WIDTH = 0.8f;
+    public static final float PLAYER_SCALE_HEIGHT = 0.8f;
 
     /*Enemy Constants*/
     public static final int ENEMY_WEAPON_DAMAGE = 1;
@@ -49,9 +54,16 @@ public class Constants {
     public static final float ENEMY_BASE_MOVEMENT = 1;
     public static final int ENEMY_STARTING_HEALTH_MIN = 1;
     public static final int ENEMY_STARTING_HEALTH_MAX = 5;
-    public static final int ENEMY_MAGIC_DAMAGE = 10;
-    public static int ENEMY_STARTING_RUNES = 150;
-    public static int ENEMY_TRANSPARENCY = 150;
+    public static final int ENEMY_MAGIC_DAMAGE = 1;
+    public static final int ENEMY_STARTING_RUNES = 5;
+    public static final int ENEMY_TRANSPARENCY = 100;
+    public static final float ENEMY_SCALE_WIDTH = 0.9f;
+    public static final float ENEMY_SCALE_HEIGHT = 0.9f;
+    public static final float BOSS_SCALE_WIDTH = 1.5f;
+    public static final float BOSS_SCALE_HEIGHT = 1.5f;
+    public static final int ENEMY_RANGE_DELAY_TIME = 2000;
+    public static final int ENEMY_RANGE_COOLDOWN_TIME = 5000;
+    public static final int ENEMY_RANGE_ACCURACY = 5;
 
     /*Map Constants*/
     public static final int MAP_TILE_WIDTH = 114;
@@ -77,9 +89,8 @@ public class Constants {
     public static final int JOYSTICK_DEADZONE_Y = 25;
     public static final int ATTACK_BUTTON = 0;
     public static final int MINIMAP_BUTTON = 1;
-    public static final int MAGIC_BUTTON = 2;
 
     /*Highscores Constants*/
     public static final String HIGHSCORES_USER_AGENT = "Mozilla/5.0";
-    public static final String HIGHSCORES_URL = "https://protaytoe.uk/highscores/post.php?name=#&score=~&time=@&level=*&kills=£";
+    public static final String HIGHSCORES_URL = "https://protaytoe.uk/highscores/post.php?name=#&score=~&time=@&level=*&kills=£&difficulty=!";
 }

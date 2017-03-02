@@ -2,6 +2,7 @@ package edu.lancs.game;
 
 import edu.lancs.game.scenes.MenuScene;
 import edu.lancs.game.scenes.Scene;
+import org.jsfml.audio.Sound;
 import org.jsfml.graphics.Image;
 import org.jsfml.graphics.RenderWindow;
 import org.jsfml.window.VideoMode;
@@ -14,6 +15,8 @@ import static edu.lancs.game.Constants.RESOURCE_PATH;
 public class Window extends RenderWindow {
     private int width;
     private int height;
+
+    private Sound sound;
 
     private ResourceManager resourceManager;
     private InputHandler inputHandler;
@@ -161,5 +164,13 @@ public class Window extends RenderWindow {
      */
     public InputHandler getInputHandler() {
         return inputHandler;
+    }
+
+    public void setSound(Sound sound) {
+        this.sound = sound;
+    }
+
+    public Sound getSound() {
+        return sound;
     }
 }

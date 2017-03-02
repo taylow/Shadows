@@ -10,6 +10,7 @@ import org.jsfml.system.Vector2f;
 import java.util.ArrayList;
 import java.util.Random;
 
+import static edu.lancs.game.Constants.PLAYER_BOOST_MOVEMENT;
 import static edu.lancs.game.entity.Actor.State.*;
 
 public abstract class Actor extends Entity {
@@ -20,6 +21,7 @@ public abstract class Actor extends Entity {
     private int weaponDamage;
     private boolean isDead;
     private float speed;
+    private float boost;
 
     private Vector2f velocity;
 
@@ -47,6 +49,7 @@ public abstract class Actor extends Entity {
         hearts = maxHealth;
         isDead = false;
         this.speed = speed;
+        this.boost = 0;
         this.weaponDamage = weaponDamage;
         velocity = new Vector2f(0, 0);
         projectiles = new ArrayList<>();
@@ -56,7 +59,7 @@ public abstract class Actor extends Entity {
         runAnimation = getWindow().getResourceManager().getAnimations(actorName + "_run");
         attackAnimation = getWindow().getResourceManager().getAnimations(actorName + "_melee");
         deathAnimation = getWindow().getResourceManager().getAnimations(actorName + "_dead");
-        rangeAnimation = getWindow().getResourceManager().getAnimations(actorName + "_melee");
+        rangeAnimation = getWindow().getResourceManager().getAnimations(actorName + "_magic");
 
         // set state to IDLE as the actor has just been created
         setState(IDLE);
@@ -84,12 +87,12 @@ public abstract class Actor extends Entity {
      * Moves the player left by PLAYER_BASE_MOVEMENT
      */
     public void moveLeft() {
-        velocity = new Vector2f(-speed, 0);
+        velocity = new Vector2f(-(speed + boost), 0);
         if (!isCollidingLeft) {
             move(velocity);
             setCollidingRight(false);
         }
-        setScale(-1.f, 1.f); // flip the sprite to face right
+        setScale(-getScaleX(), getScaleY()); // flip the sprite to face right
         if (state != RUNNING)
             setState(RUNNING);
     }
@@ -98,12 +101,12 @@ public abstract class Actor extends Entity {
      * Moves the player right by PLAYER_BASE_MOVEMENT
      */
     public void moveRight() {
-        velocity = new Vector2f(speed, 0);
+        velocity = new Vector2f(speed + boost, 0);
         if (!isCollidingRight) {
             move(velocity);
             setCollidingLeft(false);
         }
-        setScale(1.f, 1.f); // flip the sprite to face left
+        setScale(getScaleX(), getScaleY()); // flip the sprite to face left
         if (state != RUNNING)
             setState(RUNNING);
     }
@@ -112,7 +115,7 @@ public abstract class Actor extends Entity {
      * Moves the player up by PLAYER_BASE_MOVEMENT
      */
     public void moveUp() {
-        velocity = new Vector2f(0, -speed);
+        velocity = new Vector2f(0, -(speed + boost));
         if (!isCollidingUp) {
             move(velocity);
             setCollidingDown(false);
@@ -125,7 +128,7 @@ public abstract class Actor extends Entity {
      * Moves the player down by PLAYER_BASE_MOVEMENT
      */
     public void moveDown() {
-        velocity = new Vector2f(0, speed);
+        velocity = new Vector2f(0, speed + boost);
         if (!isCollidingDown) {
             move(velocity);
             setCollidingUp(false);
@@ -172,14 +175,14 @@ public abstract class Actor extends Entity {
                 setOrigin(50, 94);
                 // plays the sword sound on loop FIXME: Really temporary, needs to be improved. Could use the "knight" in the file name so each type has its own attack sound (knight_melee_attack.wav)
                 sound = new Sound(getWindow().getResourceManager().getSound("melee_sword"));
-                sound.setLoop(true);
+                //sound.setLoop(true);
                 sound.setPitch(random.nextFloat() + 0.8f);
                 sound.play();
                 break;
 
             case RANGING:
-                setAnimation(attackAnimation);
-                setOrigin(50, 94);
+                setAnimation(rangeAnimation);
+                setOrigin(57, 122);
                 break;
 
             case DYING:
@@ -396,5 +399,20 @@ public abstract class Actor extends Entity {
 
     public void setSound(Sound sound) {
         this.sound = sound;
+    }
+
+    public void setBoost(float boost) {
+        if(boost >= 0) {
+            if(boost <= PLAYER_BOOST_MOVEMENT)
+                this.boost = boost;
+            else
+                this.boost = PLAYER_BOOST_MOVEMENT;
+        } else {
+            this.boost = 0;
+        }
+    }
+
+    public float getBoost() {
+        return boost;
     }
 }

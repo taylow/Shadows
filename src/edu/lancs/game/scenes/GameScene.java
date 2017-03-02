@@ -9,10 +9,12 @@ import edu.lancs.game.generation.*;
 import edu.lancs.game.gui.HUD;
 import edu.lancs.game.gui.Lighting;
 import edu.lancs.game.gui.MiniMap;
+import org.jsfml.audio.Sound;
 import org.jsfml.graphics.Color;
 import org.jsfml.graphics.Drawable;
 import org.jsfml.graphics.FloatRect;
 import org.jsfml.graphics.View;
+import org.jsfml.system.Clock;
 import org.jsfml.window.event.Event;
 
 import java.util.Random;
@@ -32,6 +34,9 @@ public class GameScene extends Scene {
     private Chest chest;
     private int level;
     private GameMode gameMode;
+
+    private Clock randomSoundTimer;
+    private Sound randomSound;
 
     public GameScene(Window window, String username, GameMode gameMode) {
         super(window);
@@ -63,6 +68,9 @@ public class GameScene extends Scene {
         miniMap = new MiniMap(getWindow(), levels); // creates the minimap
         lighting = new Lighting(getWindow(), player); // created the lighting instance
 
+        randomSoundTimer = new Clock();
+        randomSound = new Sound();
+
         Debug.print("Starting game on " + gameMode + " mode");
         Debug.print("Current level " + currentLevel.getLevelColumnPosition() + " - " + currentLevel.getLevelRowPosition());
         Debug.print("Boss level " + bossLevel.getLevelColumnPosition() + " - " + bossLevel.getLevelRowPosition());
@@ -75,7 +83,6 @@ public class GameScene extends Scene {
      */
     @Override
     public void draw(Window window) {
-        draw:
         player.update();
         // draws the level tiles
         boolean teleported = false;
@@ -87,13 +94,12 @@ public class GameScene extends Scene {
             }
         }
 
-
-        // FIXME: View works, but maybe should really be done another way
         View view = (View) getWindow().getView();
         view.setCenter(player.getPosition());
         getWindow().setView(view);
 
         for(Chest chest : currentLevel.getChests()) {
+            chest.update();
             window.draw(chest);
             if(player.getGlobalBounds().intersection(new FloatRect(chest.getPosition().x, chest.getPosition().y, 10, 10)) != null) {
                 if(!chest.isOpen())
@@ -133,12 +139,29 @@ public class GameScene extends Scene {
         //enemies.stream().filter(Actor::isDead).forEach(enemy -> enemies.remove(enemy)); // remove any dead enemies FIXME: Could be done more efficiently
         for(int enemyId = 0; enemyId < currentLevel.getEnemies().size(); enemyId++) {
             Enemy enemy = currentLevel.getEnemies().get(enemyId);
+            if(currentLevel.getRoomTine().getElapsedTime().asMilliseconds() > ENEMY_RANGE_DELAY_TIME)
+                enemy.setCanRange(true);
             if(!enemy.isDead()) {
                 enemy.setTargetActor(player);
                 enemy.update();
 
                 window.draw(enemy);
 
+                for(int projectileId = 0; projectileId < enemy.getProjectiles().size(); projectileId++) {
+                    Projectile projectile =  enemy.getProjectiles().get(projectileId);
+                    projectile.update();
+                    window.draw(projectile);
+                    if (projectile.getGlobalBounds().intersection(new FloatRect(player.getPosition().x, player.getPosition().y, 20, 30)) != null) {
+                        player.damage(projectile.getDamage());
+                        enemy.getProjectiles().remove(projectile);
+                        projectileId--;
+                        break;
+                    }
+                    if(projectile.hasArrived()) {
+                        enemy.getProjectiles().remove(projectile); // remove projectile when it reaches the mouse position
+                        projectileId--;
+                    }
+                }
 
                 // enemy hit detection FIXME: Poor attempt, I know. It works and meets criteria
                 if (player.getState() == Actor.State.ATTACKING && player.getFrame() == ACTOR_ATTACK_FRAME) {
@@ -159,11 +182,15 @@ public class GameScene extends Scene {
 
             } else {
                 player.addScore(ENEMY_DEFAULT_SCORE + enemy.getHearts() * 10);
-
+                player.addKill();
+                if(enemy.getRuneCount() > 0)
+                    currentLevel.getPickups().add(enemy.getRunes());
                 currentLevel.getEnemies().remove(enemyId);
                 enemyId--;
             }
         }
+
+        Sound sound;
 
         // draws the player
         window.draw(player);
@@ -195,12 +222,27 @@ public class GameScene extends Scene {
         hud.getDecorations().forEach(window::draw);
         hud.getHearts().forEach(window::draw);
         hud.getTexts().forEach(window::draw);
+        //window.draw(hud.getBatteryLevel());
+        //window.draw(hud.getBoostLevel());
 
         // display the minimap if the control key is pressed
         if(getWindow().getInputHandler().isCtrlKeyPressed()) {
             // draw the minimap
             miniMap.updateMap();
             miniMap.getMapTiles().forEach(window::draw);
+        }
+
+        if(!(player.getBoost() > 0) && getWindow().getInputHandler().isShiftKeyPressed() && player.getSpeedBoostPickups() > 0) {
+            player.activateBoost();
+        }
+
+        if(randomSoundTimer.getElapsedTime().asMilliseconds() > RANDOM_SOUNDS_TIME) {
+            Random random = new Random();
+            String soundName = "scare_" + (random.nextInt(10) + 1);
+            Debug.print("Playing random sound " + soundName);
+            randomSound = getWindow().getResourceManager().getSound(soundName);
+            randomSound.play();
+            randomSoundTimer.restart();
         }
     }
 
@@ -226,7 +268,6 @@ public class GameScene extends Scene {
                             } else {
                                 player.setPosition((currentLevel.getWidth() / 2) * (MAP_TILE_WIDTH - 1),
                                         (currentLevel.getHeight() - 1) * (MAP_TILE_HEIGHT - 1));
-                                System.out.println("TEST");
                             }
                         else
                             player.setCollidingUp(true);
@@ -284,6 +325,7 @@ public class GameScene extends Scene {
                 if(gameMode != GameMode.IMPOSSIBLE && level == gameMode.LEVELS) {
                     gameComplete();
                 } else {
+                    setMusic("game_music");
                     level++;
                     Debug.print("Teleporting to room: " + destinationRow + ", " + destinationColumn + " Level: " + level);
                     generateRooms();
@@ -299,6 +341,7 @@ public class GameScene extends Scene {
         } else if((destinationColumn >= 0 && destinationColumn < GAME_LEVEL_WIDTH) && (destinationRow >= 0 && destinationRow < GAME_LEVEL_HEIGHT)) {
             if (door.requiresKey()) {
                 if (player.hasBossKey()) {
+                    setMusic("boss_music");
                     door.unlock();
                     player.setHasBossKey(false);
                 }
@@ -404,9 +447,11 @@ public class GameScene extends Scene {
         if(player.getSound() != null)
             player.getSound().stop();
 
-        HighscoresUpdater highscoresUpdater = new HighscoresUpdater(username, player.getScore(), player.getTimeAlive(), level, player.getKills());
-        Thread highScoresThread = new Thread(highscoresUpdater);
-        highScoresThread.start();
+        HighscoresUpdater highscoresUpdater = new HighscoresUpdater(username, player.getScore(), player.getTimeAlive(), level, player.getKills(), gameMode.toString());
+        /*Thread highScoresThread = new Thread(highscoresUpdater);
+        highScoresThread.start();*/ //FIXME: Removed multithreading due to race condition
+        highscoresUpdater.updateHighscores();
+
 
         GameOverScene gameOverScene = new GameOverScene(getWindow(), getWindow().getScene(0));
         int gameOverSceneIndex = getWindow().addScene(gameOverScene);
@@ -423,14 +468,15 @@ public class GameScene extends Scene {
 
         this.deactivate();
 
-        HighscoresUpdater highscoresUpdater = new HighscoresUpdater(username, player.getScore(), player.getTimeAlive(), level, player.getKills());
-        Thread highScoresThread = new Thread(highscoresUpdater);
-        highScoresThread.start();
+        HighscoresUpdater highscoresUpdater = new HighscoresUpdater(username, player.getScore(), player.getTimeAlive(), level, player.getKills(), gameMode.toString());
+        /*Thread highScoresThread = new Thread(highscoresUpdater);
+        highScoresThread.start();*/
+        highscoresUpdater.updateHighscores();
 
         GameWinScene gameWinScene = new GameWinScene(getWindow(), getWindow().getScene(0), player);
-        int gameWinrSceneIndex = getWindow().addScene(gameWinScene);
+        int gameWinSceneIndex = getWindow().addScene(gameWinScene);
         gameWinScene.activate();
-        getWindow().setCurrentScene(gameWinrSceneIndex);
+        getWindow().setCurrentScene(gameWinSceneIndex);
         getWindow().setView(new View(new FloatRect(0.0f, 0.0f, getWindow().getSize().x, getWindow().getSize().y)));
     }
 
