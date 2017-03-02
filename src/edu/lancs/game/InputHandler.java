@@ -172,6 +172,10 @@ public class InputHandler {
             case MINIMAP_BUTTON:
                 ctrlKeyPressed = event.type == JOYSTICK_BUTTON_PRESSED;
                 break;
+
+            case BOOST_BUTTON:
+                shiftKeyPressed = event.type == JOYSTICK_BUTTON_PRESSED;
+                break;
         }
     }
 
