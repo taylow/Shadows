@@ -1,17 +1,18 @@
 package edu.lancs.game.scenes;
 
-import edu.lancs.game.Constants;
 import edu.lancs.game.Debug;
 import edu.lancs.game.HighscoresUpdater;
 import edu.lancs.game.Window;
 import edu.lancs.game.entity.*;
-import edu.lancs.game.generation.*;
+import edu.lancs.game.generation.Door;
+import edu.lancs.game.generation.Floor;
+import edu.lancs.game.generation.Level;
+import edu.lancs.game.generation.Tile;
 import edu.lancs.game.gui.HUD;
 import edu.lancs.game.gui.Lighting;
 import edu.lancs.game.gui.MiniMap;
 import org.jsfml.audio.Sound;
 import org.jsfml.graphics.Color;
-import org.jsfml.graphics.Drawable;
 import org.jsfml.graphics.FloatRect;
 import org.jsfml.graphics.View;
 import org.jsfml.system.Clock;

@@ -56,7 +56,7 @@ public class Constants {
     public static final int ENEMY_STARTING_HEALTH_MAX = 5;
     public static final int ENEMY_MAGIC_DAMAGE = 1;
     public static final int ENEMY_STARTING_RUNES = 5;
-    public static final int ENEMY_TRANSPARENCY = 100;
+    public static final int ENEMY_TRANSPARENCY = 125;
     public static final float ENEMY_SCALE_WIDTH = 0.9f;
     public static final float ENEMY_SCALE_HEIGHT = 0.9f;
     public static final float BOSS_SCALE_WIDTH = 1.5f;

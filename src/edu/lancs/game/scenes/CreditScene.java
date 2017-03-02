@@ -6,7 +6,7 @@ import edu.lancs.game.gui.buttons.BackButton;
 import edu.lancs.game.gui.buttons.Button;
 import org.jsfml.graphics.Color;
 import org.jsfml.graphics.FloatRect;
-import org.jsfml.window.Joystick;
+import org.jsfml.graphics.Text;
 import org.jsfml.window.event.Event;
 
 import java.util.ArrayList;
@@ -17,6 +17,7 @@ public class CreditScene extends Scene {
 
     private ArrayList<Decoration> decorations;
     private ArrayList<Button> buttons;
+    private ArrayList<Text> texts;
 
     public CreditScene(Window window, Scene returnScene) {
         super(window);
@@ -25,30 +26,50 @@ public class CreditScene extends Scene {
 
         buttons = new ArrayList<>();
         decorations = new ArrayList<>();
+        texts = new ArrayList<>();
 
 
         // decorations and buttons to be added
         decorations.add(new Decoration(window, "menu_dungeon_background", 0, 0, getWindow().getWidth(), getWindow().getHeight()));
         decorations.add(new Decoration(window, "menu_scroll1", getWindow().getWidth() / 2 - (600 / 2), getWindow().getHeight() / 2 - (600 / 2), 600, 600));
-
-        // display the correct controls for when a controller is plugged in
-        if(Joystick.isConnected(0) || Joystick.isConnected(1) || Joystick.isConnected(2) || Joystick.isConnected(3)) {
-            decorations.add(new Decoration(window, "tutorial_controls_controller", getWindow().getWidth() / 2 - (800 / 2), getWindow().getHeight() / 2 - (400 / 2), 800, 400));
-        } else {
-            decorations.add(new Decoration(window, "tutorial_controls", getWindow().getWidth() / 2 - (800 / 2), getWindow().getHeight() / 2 - (400 / 2), 800, 400));
-        }
         buttons.add(new BackButton(window, returnScene, 20, getWindow().getHeight() - (MENU_BUTTON_HEIGHT / 2) - 20));
+
+        texts.add(new Text("Taylor Woodcock", getWindow().getResourceManager().getFont("BLKCHCRY")));
+        texts.get(0).setColor(Color.BLACK);
+        texts.get(0).setPosition(getWindow().getWidth()/2, getWindow().getHeight()/2);
+
+        texts.add(new Text("Bogdan Babachev", getWindow().getResourceManager().getFont("BLKCHCRY")));
+        texts.get(1).setColor(Color.BLACK);
+
+        texts.add(new Text("Shehriyar Faisal", getWindow().getResourceManager().getFont("BLKCHCRY")));
+        texts.get(2).setColor(Color.BLACK);
+
+        texts.add(new Text("Rory Willox", getWindow().getResourceManager().getFont("BLKCHCRY")));
+        texts.get(3).setColor(Color.BLACK);
+
+        texts.add(new Text("Robert Carr", getWindow().getResourceManager().getFont("BLKCHCRY")));
+        texts.get(4).setColor(Color.BLACK);
+
+        texts.add(new Text("Amelia Carney", getWindow().getResourceManager().getFont("BLKCHCRY")));
+        texts.get(5).setColor(Color.BLACK);
+
+        //texts.add(texts); // adds this text to the ArrayList of texts (means for multiple texts with one one draw)
+        //creditText.setString(String.format("%06d", "CREDITS")); // updates the players score
+
     }
 
     /***
-     * Draws the decorations and buttons for the TutorialScene.
-     *jy7rhdfgmhf,gm,tmnujhqa   swzaqsxwz
+     * Draws the decorations and buttons for the TutorialScene
      * @param window - Window that the objects will be drawn to
      */
     @Override
     public void draw(Window window) {
+        for(int x = 0; x < texts.size(); x++) {
+            texts.get(x).setPosition(getWindow().getWidth() / 2 -100, 200 + (x * 50));
+        }
         decorations.forEach(window::draw);
         buttons.forEach(window::draw);
+        texts.forEach(window::draw);
     }
 
     /***
