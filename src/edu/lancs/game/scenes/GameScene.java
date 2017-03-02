@@ -427,7 +427,7 @@ public class GameScene extends Scene {
         Thread highScoresThread = new Thread(highscoresUpdater);
         highScoresThread.start();
 
-        GameWinScene gameWinScene = new GameWinScene(getWindow(), getWindow().getScene(0));
+        GameWinScene gameWinScene = new GameWinScene(getWindow(), getWindow().getScene(0), player);
         int gameWinrSceneIndex = getWindow().addScene(gameWinScene);
         gameWinScene.activate();
         getWindow().setCurrentScene(gameWinrSceneIndex);
