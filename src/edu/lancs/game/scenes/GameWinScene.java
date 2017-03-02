@@ -28,6 +28,7 @@ public class GameWinScene extends Scene {
         this.player = player;
         setTitle("Winner!");
         getWindow().getResourceManager().stopSound("boss_music");
+        getWindow().getResourceManager().stopSound("game_music");
         getWindow().getResourceManager().getSound("menu_music").play(); // TODO: Gameover sound, then menu sound
 
         setBackgroundColour(Color.CYAN);

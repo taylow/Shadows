@@ -19,6 +19,7 @@ public class GameOverScene extends Scene {
     public GameOverScene(Window window, Scene returnScene) {
         super(window);
         setTitle("Game Over!");
+        getWindow().getResourceManager().stopSound("boss_music");
         getWindow().getResourceManager().stopSound("game_music");
         getWindow().getResourceManager().getSound("menu_music").play(); // TODO: Gameover sound, then menu sound
 

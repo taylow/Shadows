@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df7e5be-326c-48a9-947d-b0eec08caa13" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sprites/game/pickups/fire_talisman.png" afterPath="$PROJECT_DIR$/resources/sprites/game/pickups/fire_talisman.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Window.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Window.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameOverScene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameOverScene.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameWinScene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameWinScene.java" />
     </list>
     <ignored path="SCC210 - OOP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameScene.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GameScene.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="478" column="55" selection-start-line="478" selection-start-column="55" selection-end-line="478" selection-end-column="55" />
+            <state relative-caret-position="631">
+              <caret line="473" column="45" selection-start-line="473" selection-start-column="45" selection-end-line="473" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -50,19 +52,6 @@
                 <element signature="e#4370#4371#0" expanded="true" />
                 <element signature="e#4402#4403#0" expanded="true" />
                 <element signature="e#4492#4493#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Actor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Actor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1326">
-              <caret line="89" column="48" selection-start-line="89" selection-start-column="48" selection-end-line="89" selection-end-column="48" />
-              <folding>
-                <element signature="e#11686#11687#0" expanded="true" />
-                <element signature="e#11714#11715#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -141,8 +130,18 @@
       <file leaf-file-name="GameWinScene.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameWinScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+            <state relative-caret-position="272">
+              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameOverScene.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameOverScene.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="21" column="65" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -203,7 +202,6 @@
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/Button.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Tile.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/Scene.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameOverScene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/MiniMap.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/SplashScreen.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Loot.java" />
@@ -226,8 +224,9 @@
         <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/HighscoresUpdater.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameWinScene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameWinScene.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameOverScene.java" />
       </list>
     </option>
   </component>
@@ -779,13 +778,6 @@
       <option name="presentableId" value="Default" />
       <updated>1487464780101</updated>
     </task>
-    <task id="LOCAL-00026" summary="Bed pls">
-      <created>1487743916977</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1487743916977</updated>
-    </task>
     <task id="LOCAL-00027" summary="Added lighting, fixed MiniMap, added random Enemies in rooms, etc.">
       <created>1487805402162</created>
       <option name="number" value="00027" />
@@ -1122,7 +1114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488444827638</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Fire Talismand">
+      <created>1488445309619</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1488445309619</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1140,12 +1139,13 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3198146" sideWeight="0.47775307" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43105447" sideWeight="0.5311457" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792583" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26882967" sideWeight="0.46885428" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26882967" sideWeight="0.46885428" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908458" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1161,7 +1161,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3198146" sideWeight="0.47775307" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1212,7 +1211,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added TimeAlive counter to the player to add to the HighScores and displayed it on the HUD." />
     <MESSAGE value="Fixed the setOrigin of the Actor" />
     <MESSAGE value="-" />
     <MESSAGE value="Speed Icon is Correct Format" />
@@ -1237,7 +1235,8 @@
     <MESSAGE value="Added fire talisman too the game" />
     <MESSAGE value="Added controller support to magic, added shadow effect to Enemy, added Game Modes (Easy = 1 level, Medium = 2 levels, Hard = 3 levels, Impossible = infinite levels)" />
     <MESSAGE value="Fixed the major room glitch (I think)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed the major room glitch (I think)." />
+    <MESSAGE value="Fire Talismand" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fire Talismand" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1250,11 +1249,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/sprites/game/projectiles/tri.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/sprites/game/projectiles/skeletonBossBlast.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1515,6 +1509,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="173" column="8" selection-start-line="173" selection-start-column="8" selection-end-line="173" selection-end-column="21" />
+          <folding>
+            <element signature="e#5231#5232#0" expanded="true" />
+            <element signature="e#5265#5266#0" expanded="true" />
+            <element signature="e#5296#5297#0" expanded="true" />
+            <element signature="e#5324#5325#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1616,18 +1616,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameWinScene.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+        <state relative-caret-position="631">
+          <caret line="473" column="45" selection-start-line="473" selection-start-column="45" selection-end-line="473" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameWinScene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="478" column="55" selection-start-line="478" selection-start-column="55" selection-end-line="478" selection-end-column="55" />
+        <state relative-caret-position="272">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameOverScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="21" column="65" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
           <folding />
         </state>
       </provider>
