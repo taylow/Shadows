@@ -1,6 +1,7 @@
 package edu.lancs.game.scenes;
 
 import edu.lancs.game.Window;
+import edu.lancs.game.entity.Player;
 import edu.lancs.game.gui.Decoration;
 import edu.lancs.game.gui.buttons.BackButton;
 import edu.lancs.game.gui.buttons.Button;
@@ -16,7 +17,7 @@ public class GameOverScene extends Scene {
     private ArrayList<Decoration> decorations;
     private ArrayList<Button> buttons;
 
-    public GameOverScene(Window window, Scene returnScene) {
+    public GameOverScene(Window window, Scene returnScene, Player player) {
         super(window);
         setTitle("Game Over!");
         getWindow().getResourceManager().stopSound("boss_music");
