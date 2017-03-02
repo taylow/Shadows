@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5df7e5be-326c-48a9-947d-b0eec08caa13" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameWinScene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Constants.class" afterPath="$PROJECT_DIR$/out/production/SCC210 - OOP/edu/lancs/game/Constants.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/entity/Actor.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/entity/Actor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/entity/Enemy.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/entity/Enemy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/entity/Projectile.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/entity/Projectile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/MenuButton.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/MenuButton.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/lancs/game/scenes/UserNameScene.java" afterPath="$PROJECT_DIR$/src/edu/lancs/game/scenes/UserNameScene.java" />
     </list>
     <ignored path="SCC210 - OOP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,14 +29,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameScene.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameScene.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="59" column="37" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
+            <state relative-caret-position="255">
+              <caret line="77" column="13" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
               <folding>
-                <element signature="e#19699#19700#0" expanded="true" />
-                <element signature="e#19738#19739#0" expanded="true" />
+                <element signature="e#19841#19842#0" expanded="true" />
+                <element signature="e#19880#19881#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,10 +82,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
+            <state relative-caret-position="432">
               <caret line="115" column="154" selection-start-line="115" selection-start-column="154" selection-end-line="115" selection-end-column="154" />
               <folding />
             </state>
@@ -224,7 +213,6 @@
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameWinScene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/UserNameScene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/gui/buttons/MenuButton.java" />
-        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/generation/Level.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/Constants.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/InputHandler.java" />
@@ -232,6 +220,7 @@
         <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Actor.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Enemy.java" />
         <option value="$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java" />
+        <option value="$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java" />
       </list>
     </option>
   </component>
@@ -742,13 +731,6 @@
       <option name="presentableId" value="Default" />
       <updated>1487464780101</updated>
     </task>
-    <task id="LOCAL-00023" summary="Current progress. Level grid generation, basic AI, working doors, working collision, random coloured rooms, working MiniMap (hold control to view), working combat sounds, and much more.">
-      <created>1487739365674</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1487739365674</updated>
-    </task>
     <task id="LOCAL-00024" summary="Added a MiniMap black backdrop as you couldn't really see the map properly before. Also fixed a collision issue when you were colliding while entering a door (could freeze the player).&#10;Going to bed now, 11AM lecture in 4 hours.">
       <created>1487741720303</created>
       <option name="number" value="00024" />
@@ -1085,7 +1067,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488385270949</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Added controller support to magic, added shadow effect to Enemy, added Game Modes (Easy = 1 level, Medium = 2 levels, Hard = 3 levels, Impossible = infinite levels)">
+      <created>1488418516258</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1488418516258</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1175,7 +1164,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adding custom SplashScreen for our game." />
     <MESSAGE value="Added TimeAlive counter to the player to add to the HighScores." />
     <MESSAGE value="Added TimeAlive counter to the player to add to the HighScores and displayed it on the HUD." />
     <MESSAGE value="Fixed the setOrigin of the Actor" />
@@ -1200,7 +1188,8 @@
     <MESSAGE value="Magic attack added to Controller" />
     <MESSAGE value="Added CreditScenes, just need buttons and content" />
     <MESSAGE value="Added fire talisman too the game" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added fire talisman too the game" />
+    <MESSAGE value="Added controller support to magic, added shadow effect to Enemy, added Game Modes (Easy = 1 level, Medium = 2 levels, Hard = 3 levels, Impossible = infinite levels)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added controller support to magic, added shadow effect to Enemy, added Game Modes (Easy = 1 level, Medium = 2 levels, Hard = 3 levels, Impossible = infinite levels)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1509,17 +1498,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="59" column="37" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
-          <folding>
-            <element signature="e#19699#19700#0" expanded="true" />
-            <element signature="e#19738#19739#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
@@ -1579,9 +1557,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/entity/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
+        <state relative-caret-position="432">
           <caret line="115" column="154" selection-start-line="115" selection-start-column="154" selection-end-line="115" selection-end-column="154" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/lancs/game/scenes/GameScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="77" column="13" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
+          <folding>
+            <element signature="e#19841#19842#0" expanded="true" />
+            <element signature="e#19880#19881#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

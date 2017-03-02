@@ -78,10 +78,12 @@ public class GameScene extends Scene {
         draw:
         player.update();
         // draws the level tiles
+        boolean teleported = false;
         for (Tile[] tileRow : currentLevel.getTiles()) {
             for (Tile tile : tileRow) {
                 window.draw(tile);
-                tileCollision(tile);
+                if(!teleported) // quick fix for the room glitch
+                    teleported = tileCollision(tile);
             }
         }
 
@@ -206,10 +208,10 @@ public class GameScene extends Scene {
      * VERY VERY VERY bad collision and level teleportation FIXME: NEEDS TO BE LOOKED AT AND COMPLETELY REWRITTEN
      * @param tile
      */
-    private void tileCollision(Tile tile) {
+    private boolean tileCollision(Tile tile) {
         //FIXME: Some basic collision detection, worst way possible, needs changing (DON'T USE instanceOf, this was a last resort test)
+        boolean teleport = false; //FIXME: Quick fix, should be rewritten
         if (!(tile instanceof Floor)) {
-            boolean teleport = false; //FIXME: Quick fix, should be rewritten
             Tile.Direction direction = tile.getDirection();
             if (tile.getGlobalBounds().intersection(new FloatRect(player.getPosition().x, player.getPosition().y, 1, 1)) != null) {
                 if(tile instanceof Door) {
@@ -269,6 +271,7 @@ public class GameScene extends Scene {
                 }
             }
         }
+        return teleport;
     }
 
     public boolean useDoor(Door door) {
